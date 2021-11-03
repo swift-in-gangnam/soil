@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18283B74BE9164E71388BBE3 /* Pods_Soil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB83404A77136625EC07DAD /* Pods_Soil.framework */; };
 		3C10AFCD2732975A00B1E973 /* dummy1.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3C10AFCC2732975A00B1E973 /* dummy1.rtf */; };
 		3C10AFCF2732978700B1E973 /* dummy2.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3C10AFCE2732978700B1E973 /* dummy2.rtf */; };
 		3C10AFD12732979A00B1E973 /* dummy3.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3C10AFD02732979A00B1E973 /* dummy3.rtf */; };
@@ -35,16 +36,13 @@
 		3C45E0C827313ADA002E3C8D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C45E0C727313ADA002E3C8D /* TabBarController.swift */; };
 		3C45E0CD27313ADB002E3C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C45E0CC27313ADB002E3C8D /* Assets.xcassets */; };
 		3C45E0D027313ADB002E3C8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C45E0CE27313ADB002E3C8D /* LaunchScreen.storyboard */; };
+		3C953CF32732C04D00B12039 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3C953CF22732C04D00B12039 /* .swiftlint.yml */; };
 		3C968084273271540020A72F /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C968083273271540020A72F /* Montserrat-Medium.ttf */; };
 		3C96808A273286F20020A72F /* NewPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C968089273286F20020A72F /* NewPostController.swift */; };
-		3C96808D2732875F0020A72F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3C96808C2732875F0020A72F /* SnapKit */; };
-		3C968090273287990020A72F /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = 3C96808F273287990020A72F /* Parchment */; };
-		3C968093273288AB0020A72F /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3C968092273288AB0020A72F /* IQKeyboardManagerSwift */; };
-		3C968096273288E00020A72F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3C968095273288E00020A72F /* Alamofire */; };
-		3C968099273289110020A72F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3C968098273289110020A72F /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EB83404A77136625EC07DAD /* Pods_Soil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C10AFCC2732975A00B1E973 /* dummy1.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = dummy1.rtf; sourceTree = "<group>"; };
 		3C10AFCE2732978700B1E973 /* dummy2.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = dummy2.rtf; sourceTree = "<group>"; };
 		3C10AFD02732979A00B1E973 /* dummy3.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = dummy3.rtf; sourceTree = "<group>"; };
@@ -75,8 +73,11 @@
 		3C45E0CC27313ADB002E3C8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C45E0CF27313ADB002E3C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C45E0D127313ADB002E3C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C953CF22732C04D00B12039 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3C968083273271540020A72F /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		3C968089273286F20020A72F /* NewPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostController.swift; sourceTree = "<group>"; };
+		54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.debug.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.debug.xcconfig"; sourceTree = "<group>"; };
+		F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.release.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,11 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C968099273289110020A72F /* Lottie in Frameworks */,
-				3C96808D2732875F0020A72F /* SnapKit in Frameworks */,
-				3C968096273288E00020A72F /* Alamofire in Frameworks */,
-				3C968090273287990020A72F /* Parchment in Frameworks */,
-				3C968093273288AB0020A72F /* IQKeyboardManagerSwift in Frameworks */,
+				18283B74BE9164E71388BBE3 /* Pods_Soil.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,10 +185,15 @@
 		3C45E0B727313AD9002E3C8D = {
 			isa = PBXGroup;
 			children = (
+				3C953CF22732C04D00B12039 /* .swiftlint.yml */,
 				3C45E0C227313ADA002E3C8D /* Soil */,
 				3C45E0C127313ADA002E3C8D /* Products */,
+				F1330D15E367A70B4DD9DBCF /* Pods */,
+				5BE05618A4959280097D7EC3 /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		3C45E0C127313ADA002E3C8D /* Products */ = {
 			isa = PBXGroup;
@@ -237,6 +239,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		5BE05618A4959280097D7EC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EB83404A77136625EC07DAD /* Pods_Soil.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1330D15E367A70B4DD9DBCF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */,
+				F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,22 +263,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C45E0D427313ADB002E3C8D /* Build configuration list for PBXNativeTarget "Soil" */;
 			buildPhases = (
+				1EEAD6A7D79419E5C5E5B032 /* [CP] Check Pods Manifest.lock */,
+				3C576CBA2732B2F7006FB222 /* SwiftLint Script */,
 				3C45E0BC27313AD9002E3C8D /* Sources */,
 				3C45E0BD27313AD9002E3C8D /* Frameworks */,
 				3C45E0BE27313AD9002E3C8D /* Resources */,
+				C2456802A6F0C2935326BCDF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Soil;
-			packageProductDependencies = (
-				3C96808C2732875F0020A72F /* SnapKit */,
-				3C96808F273287990020A72F /* Parchment */,
-				3C968092273288AB0020A72F /* IQKeyboardManagerSwift */,
-				3C968095273288E00020A72F /* Alamofire */,
-				3C968098273289110020A72F /* Lottie */,
-			);
 			productName = Soil;
 			productReference = 3C45E0C027313ADA002E3C8D /* Soil.app */;
 			productType = "com.apple.product-type.application";
@@ -288,13 +303,6 @@
 				Base,
 			);
 			mainGroup = 3C45E0B727313AD9002E3C8D;
-			packageReferences = (
-				3C96808B2732875F0020A72F /* XCRemoteSwiftPackageReference "SnapKit" */,
-				3C96808E273287990020A72F /* XCRemoteSwiftPackageReference "Parchment" */,
-				3C968091273288AB0020A72F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				3C968094273288E00020A72F /* XCRemoteSwiftPackageReference "Alamofire" */,
-				3C968097273289110020A72F /* XCRemoteSwiftPackageReference "lottie-ios" */,
-			);
 			productRefGroup = 3C45E0C127313ADA002E3C8D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -329,12 +337,73 @@
 				3C10AFE42732A33D00B1E973 /* Montserrat-Thin.ttf in Resources */,
 				3C10AFEF2732A49400B1E973 /* CeraPro-Black.otf in Resources */,
 				3C10AFD12732979A00B1E973 /* dummy3.rtf in Resources */,
+				3C953CF32732C04D00B12039 /* .swiftlint.yml in Resources */,
 				3C10AFE72732A33D00B1E973 /* Montserrat-Bold.ttf in Resources */,
 				3C10AFE52732A33D00B1E973 /* Montserrat-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1EEAD6A7D79419E5C5E5B032 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Soil-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C576CBA2732B2F7006FB222 /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		C2456802A6F0C2935326BCDF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Soil/Pods-Soil-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Soil/Pods-Soil-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Soil/Pods-Soil-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C45E0BC27313AD9002E3C8D /* Sources */ = {
@@ -484,6 +553,7 @@
 		};
 		3C45E0D527313ADB002E3C8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -513,6 +583,7 @@
 		};
 		3C45E0D627313ADB002E3C8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -562,77 +633,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		3C96808B2732875F0020A72F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		3C96808E273287990020A72F /* XCRemoteSwiftPackageReference "Parchment" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/rechsteiner/Parchment.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		3C968091273288AB0020A72F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-		3C968094273288E00020A72F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		3C968097273289110020A72F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3C96808C2732875F0020A72F /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3C96808B2732875F0020A72F /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		3C96808F273287990020A72F /* Parchment */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3C96808E273287990020A72F /* XCRemoteSwiftPackageReference "Parchment" */;
-			productName = Parchment;
-		};
-		3C968092273288AB0020A72F /* IQKeyboardManagerSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3C968091273288AB0020A72F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
-			productName = IQKeyboardManagerSwift;
-		};
-		3C968095273288E00020A72F /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3C968094273288E00020A72F /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		3C968098273289110020A72F /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3C968097273289110020A72F /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3C45E0B827313AD9002E3C8D /* Project object */;
 }

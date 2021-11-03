@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    
-    static var soilBackgroundColor: UIColor {
-        return UIColor(named: "E5E5E5")!
-    }
+  
+  static var soilBackgroundColor: UIColor {
+    return UIColor(named: "E5E5E5")!
+  }
 }
