@@ -24,12 +24,13 @@ class TabBarController: UITabBarController {
   
   private func configureTabBar() {
     tabBar.tintColor = .black
+    // Tab Bar의 모습을 iOS 15 이전 처럼 하기 위해 추가.
     let tabBarAppearance = UITabBar.appearance()
     tabBarAppearance.isTranslucent = false
     tabBarAppearance.barTintColor = UIColor.soilBackgroundColor
     tabBarAppearance.backgroundColor = UIColor.soilBackgroundColor
     
-    let feedNavController = initVC(ofType: FeedController.self,
+    let feedNavController = initNavController(ofType: FeedController.self,
                                    title: "feed",
                                    tabBarFont: UIFont.montserrat(size: 25, family: .medium),
                                    navBarFont: UIFont.montserrat(size: 25, family: .bold))
@@ -38,7 +39,7 @@ class TabBarController: UITabBarController {
     dummyVC.tabBarItem.image = UIImage(named: "PlusButton")!.withRenderingMode(.alwaysOriginal)
     dummyVC.tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
     
-    let youNavController = initVC(ofType: YouController.self,
+    let youNavController = initNavController(ofType: YouController.self,
                                   title: "you",
                                   tabBarFont: UIFont.montserrat(size: 25, family: .medium),
                                   navBarFont: UIFont.montserrat(size: 25, family: .bold))
@@ -46,7 +47,7 @@ class TabBarController: UITabBarController {
     viewControllers = [feedNavController, dummyVC, youNavController]
   }
   
-  private func initVC<T: UIViewController>(ofType: T.Type,
+  private func initNavController<T: UIViewController>(ofType: T.Type,
                                            title: String,
                                            tabBarFont: UIFont,
                                            navBarFont: UIFont) -> UINavigationController {
@@ -72,6 +73,7 @@ class TabBarController: UITabBarController {
 
 // MARK: - UITabBarController Delegate
 extension TabBarController: UITabBarControllerDelegate {
+  
   func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
     let isModalView = viewController is NewPostController
     

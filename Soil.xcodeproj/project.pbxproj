@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		18283B74BE9164E71388BBE3 /* Pods_Soil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB83404A77136625EC07DAD /* Pods_Soil.framework */; };
 		3C10AFCD2732975A00B1E973 /* dummy1.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3C10AFCC2732975A00B1E973 /* dummy1.rtf */; };
-		3C10AFCF2732978700B1E973 /* dummy2.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3C10AFCE2732978700B1E973 /* dummy2.rtf */; };
 		3C10AFD12732979A00B1E973 /* dummy3.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3C10AFD02732979A00B1E973 /* dummy3.rtf */; };
 		3C10AFD32732981600B1E973 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C10AFD22732981600B1E973 /* FeedController.swift */; };
 		3C10AFD52732981F00B1E973 /* YouController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C10AFD42732981F00B1E973 /* YouController.swift */; };
@@ -39,12 +38,15 @@
 		3C953CF32732C04D00B12039 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3C953CF22732C04D00B12039 /* .swiftlint.yml */; };
 		3C968084273271540020A72F /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C968083273271540020A72F /* Montserrat-Medium.ttf */; };
 		3C96808A273286F20020A72F /* NewPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C968089273286F20020A72F /* NewPostController.swift */; };
+		3CA91E682733CC5E00390A89 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E672733CC5E00390A89 /* LoginController.swift */; };
+		3CA91E6A2733CC6A00390A89 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E692733CC6A00390A89 /* RegistrationController.swift */; };
+		3CA91E6C2733CD3C00390A89 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E6B2733CD3C00390A89 /* AuthTextField.swift */; };
+		3CA91E6E2733CF6400390A89 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E6D2733CF6400390A89 /* AuthButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2EB83404A77136625EC07DAD /* Pods_Soil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C10AFCC2732975A00B1E973 /* dummy1.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = dummy1.rtf; sourceTree = "<group>"; };
-		3C10AFCE2732978700B1E973 /* dummy2.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = dummy2.rtf; sourceTree = "<group>"; };
 		3C10AFD02732979A00B1E973 /* dummy3.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = dummy3.rtf; sourceTree = "<group>"; };
 		3C10AFD22732981600B1E973 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		3C10AFD42732981F00B1E973 /* YouController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,10 @@
 		3C953CF22732C04D00B12039 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3C968083273271540020A72F /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		3C968089273286F20020A72F /* NewPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostController.swift; sourceTree = "<group>"; };
+		3CA91E672733CC5E00390A89 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		3CA91E692733CC6A00390A89 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		3CA91E6B2733CD3C00390A89 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		3CA91E6D2733CF6400390A89 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.debug.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.debug.xcconfig"; sourceTree = "<group>"; };
 		F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.release.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +101,7 @@
 		3C10AFC52732945100B1E973 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3CA91E662733CC3800390A89 /* Authentication */,
 				3C45E0C727313ADA002E3C8D /* TabBarController.swift */,
 				3C10AFD22732981600B1E973 /* FeedController.swift */,
 				3C10AFD42732981F00B1E973 /* YouController.swift */,
@@ -114,7 +121,7 @@
 		3C10AFCA2732971500B1E973 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3C10AFCE2732978700B1E973 /* dummy2.rtf */,
+				3CA91E6F2733CFB600390A89 /* Authentication */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +246,24 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		3CA91E662733CC3800390A89 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				3CA91E672733CC5E00390A89 /* LoginController.swift */,
+				3CA91E692733CC6A00390A89 /* RegistrationController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		3CA91E6F2733CFB600390A89 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				3CA91E6B2733CD3C00390A89 /* AuthTextField.swift */,
+				3CA91E6D2733CF6400390A89 /* AuthButton.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		5BE05618A4959280097D7EC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,7 +350,6 @@
 				3C10AFF92732A67600B1E973 /* NotoSansKR-Regular.otf in Resources */,
 				3C10AFFE2732A67600B1E973 /* NotoSansKR-Light.otf in Resources */,
 				3C45E0D027313ADB002E3C8D /* LaunchScreen.storyboard in Resources */,
-				3C10AFCF2732978700B1E973 /* dummy2.rtf in Resources */,
 				3C10AFCD2732975A00B1E973 /* dummy1.rtf in Resources */,
 				3C10AFFD2732A67600B1E973 /* NotoSansKR-Medium.otf in Resources */,
 				3C10AFE32732A33D00B1E973 /* Montserrat-SemiBold.ttf in Resources */,
@@ -411,13 +435,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C10AFD52732981F00B1E973 /* YouController.swift in Sources */,
+				3CA91E6E2733CF6400390A89 /* AuthButton.swift in Sources */,
 				3C10AFD82732A05A00B1E973 /* UIColorExtension.swift in Sources */,
 				3C10AFDB2732A1C400B1E973 /* UIFontExtension.swift in Sources */,
 				3C45E0C827313ADA002E3C8D /* TabBarController.swift in Sources */,
+				3CA91E682733CC5E00390A89 /* LoginController.swift in Sources */,
 				3C10AFD32732981600B1E973 /* FeedController.swift in Sources */,
 				3C45E0C427313ADA002E3C8D /* AppDelegate.swift in Sources */,
 				3C96808A273286F20020A72F /* NewPostController.swift in Sources */,
+				3CA91E6A2733CC6A00390A89 /* RegistrationController.swift in Sources */,
 				3C45E0C627313ADA002E3C8D /* SceneDelegate.swift in Sources */,
+				3CA91E6C2733CD3C00390A89 /* AuthTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

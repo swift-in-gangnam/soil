@@ -25,13 +25,13 @@ extension UIFont {
     return UIFont(name: "Montserrat-\(family)", size: size)!
   }
   
-  /// Family: .Black, .Bold, .Light, .Medium만 지원
+  /// Family: .black, .bold, .light, .medium만 지원
   static func ceraPro(size: CGFloat = 10, family: Family = .medium) -> UIFont {
     return UIFont(name: "CeraPro-\(family)", size: size)!
   }
   
-  /// Family: .SemiBold 빼고 지원
-  static func notoSansKR(size: CGFloat = 10, family: Family = .medium) -> UIFont {
+  /// Family: .semiBold 빼고 지원
+  static func notoSansKR(size: CGFloat = 10, family: Family = .regular) -> UIFont {
     return UIFont(name: "NotoSansKR-\(family)", size: size)!
   }
 }
