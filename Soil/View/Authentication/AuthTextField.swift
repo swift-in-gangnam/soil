@@ -22,7 +22,7 @@ class AuthTextField: UITextField {
     leftViewMode = .always
     
     borderStyle = .none
-    textColor = .gray
+    textColor = .white
     keyboardAppearance = .light
     backgroundColor = UIColor.systemGray4
     
