@@ -40,6 +40,7 @@
 		3C58C83827342D11003A1F9D /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3C58C83727342D11003A1F9D /* IQKeyboardManagerSwift */; };
 		3C58C83B27342D23003A1F9D /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = 3C58C83A27342D23003A1F9D /* Parchment */; };
 		3C58C83E27342D30003A1F9D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3C58C83D27342D30003A1F9D /* SnapKit */; };
+		3C58C8432734327F003A1F9D /* dummy4.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3C58C8422734327F003A1F9D /* dummy4.rtf */; };
 		3C953CF32732C04D00B12039 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3C953CF22732C04D00B12039 /* .swiftlint.yml */; };
 		3C968084273271540020A72F /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C968083273271540020A72F /* Montserrat-Medium.ttf */; };
 		3C96808A273286F20020A72F /* NewPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C968089273286F20020A72F /* NewPostController.swift */; };
@@ -80,6 +81,7 @@
 		3C45E0CC27313ADB002E3C8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C45E0CF27313ADB002E3C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C45E0D127313ADB002E3C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C58C8422734327F003A1F9D /* dummy4.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = dummy4.rtf; sourceTree = "<group>"; };
 		3C953CF22732C04D00B12039 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3C968083273271540020A72F /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		3C968089273286F20020A72F /* NewPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostController.swift; sourceTree = "<group>"; };
@@ -228,10 +230,19 @@
 				3C10AFCA2732971500B1E973 /* View */,
 				3C10AFCB2732971E00B1E973 /* View Model */,
 				3C10AFC52732945100B1E973 /* Controller */,
+				3C58C83F273431F9003A1F9D /* API */,
 				3C10AFD62732A01700B1E973 /* Utils */,
 				3C45E0CE27313ADB002E3C8D /* LaunchScreen.storyboard */,
 			);
 			path = Soil;
+			sourceTree = "<group>";
+		};
+		3C58C83F273431F9003A1F9D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3C58C8422734327F003A1F9D /* dummy4.rtf */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		3C968081273270E90020A72F /* Supporting Files */ = {
@@ -377,6 +388,7 @@
 				3C10AFFD2732A67600B1E973 /* NotoSansKR-Medium.otf in Resources */,
 				3C10AFE32732A33D00B1E973 /* Montserrat-SemiBold.ttf in Resources */,
 				3C968084273271540020A72F /* Montserrat-Medium.ttf in Resources */,
+				3C58C8432734327F003A1F9D /* dummy4.rtf in Resources */,
 				3C10AFF02732A49400B1E973 /* CeraPro-Light.otf in Resources */,
 				3C10AFFB2732A67600B1E973 /* NotoSansKR-Black.otf in Resources */,
 				3C45E0CD27313ADB002E3C8D /* Assets.xcassets in Resources */,
