@@ -6,11 +6,6 @@ target 'Soil' do
   use_frameworks!
 
   # Pods for Soil
-  pod 'SnapKit', '~> 5.0.0'
-  pod 'Parchment', '~> 3.0'
-  pod 'IQKeyboardManagerSwift'
-  pod 'Alamofire', '~> 5.4'
-  pod 'lottie-ios'
   pod 'SwiftLint'
 
 end
