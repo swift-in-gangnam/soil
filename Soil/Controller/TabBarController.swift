@@ -31,18 +31,18 @@ class TabBarController: UITabBarController {
     tabBarAppearance.backgroundColor = UIColor.soilBackgroundColor
     
     let feedNavController = initNavController(ofType: FeedController.self,
-                                   title: "feed",
-                                   tabBarFont: UIFont.montserrat(size: 25, family: .medium),
-                                   navBarFont: UIFont.montserrat(size: 25, family: .bold))
+                                              title: "feed",
+                                              tabBarFont: UIFont.montserrat(size: 25, family: .medium),
+                                              navBarFont: UIFont.montserrat(size: 25, family: .bold))
     
     let dummyVC = NewPostController()
     dummyVC.tabBarItem.image = UIImage(named: "PlusButton")!.withRenderingMode(.alwaysOriginal)
     dummyVC.tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
     
     let youNavController = initNavController(ofType: YouController.self,
-                                  title: "you",
-                                  tabBarFont: UIFont.montserrat(size: 25, family: .medium),
-                                  navBarFont: UIFont.montserrat(size: 25, family: .bold))
+                                             title: "you",
+                                             tabBarFont: UIFont.montserrat(size: 25, family: .medium),
+                                             navBarFont: UIFont.montserrat(size: 25, family: .bold))
     
     viewControllers = [feedNavController, dummyVC, youNavController]
   }
