@@ -48,9 +48,9 @@ class TabBarController: UITabBarController {
   }
   
   private func initNavController<T: UIViewController>(ofType: T.Type,
-                                           title: String,
-                                           tabBarFont: UIFont,
-                                           navBarFont: UIFont) -> UINavigationController {
+                                                      title: String,
+                                                      tabBarFont: UIFont,
+                                                      navBarFont: UIFont) -> UINavigationController {
     let vc = T.init()
     vc.navigationItem.title = title
     let navController = UINavigationController(rootViewController: vc)
