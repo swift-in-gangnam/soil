@@ -14,10 +14,17 @@ class TabBarController: UITabBarController {
   
   var user: User? {
     didSet {
-      configurController()
-      configureTabBar()
+      guard let user = user else { return }
+      configureViewControllers(withUser: user)
     }
   }
+  
+  private let uploadController: UploadPostController = {
+    let controller = UploadPostController()
+    controller.tabBarItem.image = UIImage(named: "PlusButton")!.withRenderingMode(.alwaysOriginal)
+    controller.tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
+    return controller
+  }()
   
   // MARK: - Lifecycle
   
@@ -48,77 +55,66 @@ class TabBarController: UITabBarController {
   }
   
   // MARK: - Helpers
-  
-  private func configurController() {
+    
+  private func configureViewControllers(withUser user: User) {
     view.backgroundColor = .white
-    self.delegate = self
-  }
-  
-  private func configureTabBar() {
     tabBar.tintColor = .black
-    // Tab Bar의 모습을 iOS 15 이전 처럼 하기 위해 추가.
-    let tabBarAppearance = UITabBar.appearance()
-    tabBarAppearance.isTranslucent = false
-    tabBarAppearance.barTintColor = UIColor.soilBackgroundColor
-    tabBarAppearance.backgroundColor = UIColor.soilBackgroundColor
+    self.delegate = self
+
+    if #available(iOS 13.0, *) {
+      let tabBarAppearance = UITabBarAppearance()
+      tabBarAppearance.configureWithDefaultBackground()
+      tabBarAppearance.backgroundColor = .soilBackgroundColor
+      tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [
+        NSAttributedString.Key.font: UIFont.montserrat(size: 23, family: .medium)
+      ]
+      tabBarAppearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -14)
+      self.tabBar.standardAppearance = tabBarAppearance
+      
+      if #available(iOS 15.0, *) {
+        self.tabBar.scrollEdgeAppearance = tabBarAppearance
+      }
+    }
     
-    let feedNavController = initNavController(
-      ofType: FeedController.self,
-      title: "feed",
-      tabBarFont: UIFont.montserrat(size: 25, family: .medium),
-      navBarFont: UIFont.montserrat(size: 25, family: .bold)
-    )
-    
-    let dummyVC = NewPostController()
-    dummyVC.tabBarItem.image = UIImage(named: "PlusButton")!.withRenderingMode(.alwaysOriginal)
-    dummyVC.tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
-    
-    let youNavController = initNavController(
-      ofType: YouController.self,
-      title: "you",
-      tabBarFont: UIFont.montserrat(size: 25, family: .medium),
-      navBarFont: UIFont.montserrat(size: 25, family: .bold)
-    )
-    
-    viewControllers = [feedNavController, dummyVC, youNavController]
+    if #available(iOS 13.0, *) {
+      let navigationBarAppearance = UINavigationBarAppearance()
+      navigationBarAppearance.configureWithDefaultBackground()
+      navigationBarAppearance.backgroundColor = .soilBackgroundColor
+      navigationBarAppearance.shadowColor = .soilBackgroundColor
+      navigationBarAppearance.largeTitleTextAttributes = [
+        NSAttributedString.Key.font: UIFont.montserrat(size: 35, family: .bold)
+      ]
+      UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+      UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+      
+      if #available(iOS 15.0, *) {
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+      }
+    }
+        
+    let feedNavController = templateNavigationController(title: "feed", rootVC: FeedController())
+    let youNavController = templateNavigationController(title: "you", rootVC: YouController(user: user))
+  
+    viewControllers = [feedNavController, uploadController, youNavController]
   }
   
-  private func initNavController<T: UIViewController>(
-    ofType: T.Type,
-    title: String,
-    tabBarFont: UIFont,
-    navBarFont: UIFont
-  ) -> UINavigationController {
-    
-    let vc = T.init()
-    vc.navigationItem.title = title
-    let navController = UINavigationController(rootViewController: vc)
-    navController.tabBarItem.title = title
-    navController.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font: tabBarFont], for: .normal)
-    navController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -14)
-    // Navigation Bar의 모습을 iOS 15 이전 처럼 하기 위해 추가.
-    let appearance = UINavigationBarAppearance()
-    appearance.backgroundColor = UIColor.soilBackgroundColor
-    navController.navigationBar.standardAppearance = appearance
-    navController.navigationBar.scrollEdgeAppearance = appearance
-    // backbutton 색깔 .black으로 설정.
-    navController.navigationBar.tintColor = UIColor.black
-    // largeTitles 켜기.
-    navController.navigationBar.prefersLargeTitles = true
-    navController.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: navBarFont]
-    return navController
+  func templateNavigationController(title: String, rootVC: UIViewController) -> UINavigationController {
+    let nav = UINavigationController(rootViewController: rootVC)
+    nav.tabBarItem.title = title
+    nav.navigationBar.tintColor = .black
+    return nav
   }
 }
 
 // MARK: - UITabBarController Delegate
 
 extension TabBarController: UITabBarControllerDelegate {
-  
   func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-    let isModalView = viewController is NewPostController
+    let isModalView = viewController is UploadPostController
     
     if isModalView {
-      let vc = NewPostController()
+      let vc = UploadPostController()
+      vc.modalPresentationStyle = .fullScreen
       self.present(vc, animated: true, completion: nil)
       return false
     }
