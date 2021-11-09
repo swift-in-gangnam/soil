@@ -10,7 +10,6 @@ import Firebase
 
 class YouController: UIViewController {
   
-  
   // MARK: - Lifecycle
   
   override func viewDidLoad() {

@@ -1,7 +1,7 @@
 excluded: # SwiftLint 검사에서 제외할 파일 경로
     - Pods
-    - Soil/Supporting Files/AppDelegate.swift
-    - Soil/Supporting Files/SceneDelegate.swift
+    - Soil/Supporting/AppDelegate.swift
+    - Soil/Supporting/SceneDelegate.swift
 
 disabled_rules: # Default Rules에서 비활성화할 규칙
     
@@ -15,6 +15,3 @@ disabled_rules: # Default Rules에서 비활성화할 규칙
     - force_unwrapping
     
     - identifier_name
-
-identifier_name:
-  min_length: 2
