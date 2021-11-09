@@ -6,20 +6,52 @@
 //
 
 import UIKit
+import Firebase
 
 class TabBarController: UITabBarController {
   
-  // MARK: - View Lifecycle
+  // MARK: - Properties
+  
+  var user: User? {
+    didSet {
+      configurController()
+      configureTabBar()
+    }
+  }
+  
+  // MARK: - Lifecycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    configurController()
-    configureTabBar()
+    checkIfUserIsLoggedIn()
+    fetchUser()
+  }
+  
+  // MARK: - API
+  
+  func checkIfUserIsLoggedIn() {
+    if Auth.auth().currentUser == nil {
+      DispatchQueue.main.async {
+        let controller = LoginController()
+        controller.delegate = self
+        let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil)
+      }
+    }
+  }
+    
+  func fetchUser() {
+    UserService.fetchUser { user in
+      self.user = user
+    }
   }
   
   // MARK: - Helpers
+  
   private func configurController() {
     view.backgroundColor = .white
-    delegate = self
+    self.delegate = self
   }
   
   private func configureTabBar() {
@@ -30,27 +62,34 @@ class TabBarController: UITabBarController {
     tabBarAppearance.barTintColor = UIColor.soilBackgroundColor
     tabBarAppearance.backgroundColor = UIColor.soilBackgroundColor
     
-    let feedNavController = initNavController(ofType: FeedController.self,
-                                              title: "feed",
-                                              tabBarFont: UIFont.montserrat(size: 25, family: .medium),
-                                              navBarFont: UIFont.montserrat(size: 25, family: .bold))
+    let feedNavController = initNavController(
+      ofType: FeedController.self,
+      title: "feed",
+      tabBarFont: UIFont.montserrat(size: 25, family: .medium),
+      navBarFont: UIFont.montserrat(size: 25, family: .bold)
+    )
     
     let dummyVC = NewPostController()
     dummyVC.tabBarItem.image = UIImage(named: "PlusButton")!.withRenderingMode(.alwaysOriginal)
     dummyVC.tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
     
-    let youNavController = initNavController(ofType: YouController.self,
-                                             title: "you",
-                                             tabBarFont: UIFont.montserrat(size: 25, family: .medium),
-                                             navBarFont: UIFont.montserrat(size: 25, family: .bold))
+    let youNavController = initNavController(
+      ofType: YouController.self,
+      title: "you",
+      tabBarFont: UIFont.montserrat(size: 25, family: .medium),
+      navBarFont: UIFont.montserrat(size: 25, family: .bold)
+    )
     
     viewControllers = [feedNavController, dummyVC, youNavController]
   }
   
-  private func initNavController<T: UIViewController>(ofType: T.Type,
-                                                      title: String,
-                                                      tabBarFont: UIFont,
-                                                      navBarFont: UIFont) -> UINavigationController {
+  private func initNavController<T: UIViewController>(
+    ofType: T.Type,
+    title: String,
+    tabBarFont: UIFont,
+    navBarFont: UIFont
+  ) -> UINavigationController {
+    
     let vc = T.init()
     vc.navigationItem.title = title
     let navController = UINavigationController(rootViewController: vc)
@@ -72,6 +111,7 @@ class TabBarController: UITabBarController {
 }
 
 // MARK: - UITabBarController Delegate
+
 extension TabBarController: UITabBarControllerDelegate {
   
   func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
@@ -84,5 +124,14 @@ extension TabBarController: UITabBarControllerDelegate {
     }
     
     return true
+  }
+}
+
+// MARK: - AuthenticationDelegate
+
+extension TabBarController: AuthenticationDelegate {
+  func authenticationDidComplete() {
+    fetchUser()
+    self.dismiss(animated: true, completion: nil)
   }
 }

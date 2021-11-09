@@ -22,8 +22,6 @@
 		<string>Montserrat-Thin.ttf</string>
 		<string>Montserrat-Medium.ttf</string>
 	</array>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
