@@ -1,9 +1,9 @@
 ---
 name: Bug Report
 about: 소일의 Bug를 알리는 Template
-title: ""
-labels: Type: bug, Priority: medium
-assignees: ""
+title: ''
+labels: 'Type: bug, Priority: medium'
+assignees: ''
 
 ---
 

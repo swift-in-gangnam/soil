@@ -1,9 +1,9 @@
 ---
 name: Feature Request
 about: 소일에 추가될 기능을 제안하는 Template
-title: ""
-labels: Type: feat, Priority: medium
-assignees: ""
+title: ''
+labels: 'Type: feat, Priority: medium'
+assignees: ''
 
 ---
 
