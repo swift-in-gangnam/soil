@@ -10,18 +10,25 @@ import Firebase
 
 class YouController: UIViewController {
   
+  // MARK: - Properties
+  
+  private var user: User
+  
   // MARK: - Lifecycle
+  
+  init(user: User) {
+    self.user = user
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    view.backgroundColor = .cyan
-    navigationItem.rightBarButtonItem = UIBarButtonItem(
-      image: UIImage(systemName: "person.fill.xmark"),
-      style: .plain,
-      target: self,
-      action: #selector(handleLogout)
-    )
+    configure()
+
   }
 
   // MARK: - Actions
@@ -37,6 +44,18 @@ class YouController: UIViewController {
     } catch {
       print("DEBUG: Failed to Sign out")
     }
+  }
+  
+  // MARK: - Helpers
+  
+  func configure() {
+    view.backgroundColor = .soilBackgroundColor
+    navigationItem.rightBarButtonItem = UIBarButtonItem(
+      image: UIImage(systemName: "gearshape"),
+      style: .plain,
+      target: self,
+      action: #selector(handleLogout)
+    )
   }
   
 }

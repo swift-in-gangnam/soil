@@ -40,7 +40,7 @@
 		3C58C83E27342D30003A1F9D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3C58C83D27342D30003A1F9D /* SnapKit */; };
 		3C953CF32732C04D00B12039 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3C953CF22732C04D00B12039 /* .swiftlint.yml */; };
 		3C968084273271540020A72F /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C968083273271540020A72F /* Montserrat-Medium.ttf */; };
-		3C96808A273286F20020A72F /* NewPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C968089273286F20020A72F /* NewPostController.swift */; };
+		3C96808A273286F20020A72F /* UploadPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C968089273286F20020A72F /* UploadPostController.swift */; };
 		3CA91E682733CC5E00390A89 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E672733CC5E00390A89 /* LoginController.swift */; };
 		3CA91E6A2733CC6A00390A89 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E692733CC6A00390A89 /* RegistrationController.swift */; };
 		3CA91E6C2733CD3C00390A89 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E6B2733CD3C00390A89 /* AuthTextField.swift */; };
@@ -56,6 +56,7 @@
 		D5C0A917273A5032005F9E9B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A916273A5032005F9E9B /* UserService.swift */; };
 		D5C0A919273A5063005F9E9B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A918273A5063005F9E9B /* Constants.swift */; };
 		D5C0A91B273A5AB7005F9E9B /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A91A273A5AB6005F9E9B /* StorageService.swift */; };
+		D5D12240273AD92F0022290E /* .github in Resources */ = {isa = PBXBuildFile; fileRef = D5D1223F273AD92F0022290E /* .github */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,7 +90,7 @@
 		3C45E0D127313ADB002E3C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C953CF22732C04D00B12039 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3C968083273271540020A72F /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
-		3C968089273286F20020A72F /* NewPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostController.swift; sourceTree = "<group>"; };
+		3C968089273286F20020A72F /* UploadPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostController.swift; sourceTree = "<group>"; };
 		3CA91E672733CC5E00390A89 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3CA91E692733CC6A00390A89 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		3CA91E6B2733CD3C00390A89 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		D5C0A916273A5032005F9E9B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		D5C0A918273A5063005F9E9B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D5C0A91A273A5AB6005F9E9B /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		D5D1223F273AD92F0022290E /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
 		F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.release.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +135,7 @@
 				3C45E0C727313ADA002E3C8D /* TabBarController.swift */,
 				3C10AFD22732981600B1E973 /* FeedController.swift */,
 				3C10AFD42732981F00B1E973 /* YouController.swift */,
-				3C968089273286F20020A72F /* NewPostController.swift */,
+				3C968089273286F20020A72F /* UploadPostController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -221,6 +223,7 @@
 		3C45E0B727313AD9002E3C8D = {
 			isa = PBXGroup;
 			children = (
+				D5D1223F273AD92F0022290E /* .github */,
 				3C953CF22732C04D00B12039 /* .swiftlint.yml */,
 				3C45E0C227313ADA002E3C8D /* Soil */,
 				3C45E0C127313ADA002E3C8D /* Products */,
@@ -414,6 +417,7 @@
 				3C10AFE32732A33D00B1E973 /* Montserrat-SemiBold.ttf in Resources */,
 				3C968084273271540020A72F /* Montserrat-Medium.ttf in Resources */,
 				3C10AFF02732A49400B1E973 /* CeraPro-Light.otf in Resources */,
+				D5D12240273AD92F0022290E /* .github in Resources */,
 				3C10AFFB2732A67600B1E973 /* NotoSansKR-Black.otf in Resources */,
 				3C45E0CD27313ADB002E3C8D /* Assets.xcassets in Resources */,
 				3C10AFFC2732A67600B1E973 /* NotoSansKR-Bold.otf in Resources */,
@@ -489,7 +493,7 @@
 				D5C0A915273A4E8E005F9E9B /* User.swift in Sources */,
 				3C10AFD32732981600B1E973 /* FeedController.swift in Sources */,
 				3C45E0C427313ADA002E3C8D /* AppDelegate.swift in Sources */,
-				3C96808A273286F20020A72F /* NewPostController.swift in Sources */,
+				3C96808A273286F20020A72F /* UploadPostController.swift in Sources */,
 				D5C0A917273A5032005F9E9B /* UserService.swift in Sources */,
 				3CA91E6A2733CC6A00390A89 /* RegistrationController.swift in Sources */,
 				3C45E0C627313ADA002E3C8D /* SceneDelegate.swift in Sources */,
@@ -637,7 +641,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2W776SPR4X;
+				DEVELOPMENT_TEAM = QHPW755BR8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소일";
@@ -669,7 +673,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2W776SPR4X;
+				DEVELOPMENT_TEAM = QHPW755BR8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소일";
