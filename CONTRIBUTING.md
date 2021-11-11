@@ -1,4 +1,4 @@
-# Contributing to 소일
+# 소일 Contributing Guide
 
 소일 프로젝트에 기여하여 현재보다 더 나은 모습이 되길 바랍니다! Contributor로서 다음과 같은 지침을 준수해주세요.
 
@@ -10,7 +10,7 @@
 
 ### Issue 제출하기
 
-템플릿을 바탕으로 Issue를 제출할 수 있습니다.
+만약 당신이 아이디어나 버그를 알고있다면, 다음 사항을 따라 알려주세요:
 
 1. Issue를 생성합니다.
 
@@ -18,13 +18,13 @@
 
 3. 관련있는 Label를 추가합니다.
 
-4. 템플릿에 맞게 내용을 작성 후 제출해주세요.
+4. 템플릿 컨벤션을 준수하여 제출해주세요.
 
 ### Pull Request 제출하기
 
 당신의 Pull Request를 제출하기 전에 다음 사항을 따라주세요:
 
-1. 이미 존재하는 Issue를 해결할 수 있는 것인지 확인해주세요. 없는 경우 먼저 Issue를 만들어주세요.
+1. 이미 존재하는 하나의 Issue를 해결할 수 있는 것인지 확인해주세요.
 
 2. 해결할 수 있으면 Fork / Clone 후 다음과 같이 Branch를 만들어주세요:
 
@@ -32,13 +32,15 @@
   git checkout -b <issue number>
   ```
 
-3. 코드를 작성하여 해당 이슈를 해결해주세요.
+3. 코드를 작성하여 해당 Issue를 해결해주세요.
 
 4. [Git Commit Message Convention](#commit) 규칙을 따르는 커밋 메시지를 사용하여 커밋해주세요.
 
 5. 당신의 브랜치를 Github에 푸쉬해주세요.
 
-6. Github에서 템플릿 컨벤션을 준수하여 Pull Request를 생성해주세요.
+6. Github에서 템플릿 컨벤션을 준수하여 Pull Request를 제출해주세요.
+
+7. 만약 Pull Request가 승인이 되면 해당 Local Branch는 삭제해주세요.
 
 ### Pull Request 리뷰하기
 
@@ -50,14 +52,14 @@
 
 3. [Github PR Merge Commit Message Convention](#merge-commit) 규칙을 따르는 커밋 메시지를 사용하여 머지해주세요.
 
-4. 머지가 완료되면 해당 Branch는 삭제해주세요.
+4. 머지가 완료되면 해당 Remote Branch는 삭제해주세요.
 
 
 ## <a name="commit"></a> Git Commit Message Convention
 
 ### Commit Message Format
 
-모든 커밋 메시지는 **제목**, **본문**, **꼬릿말** 영역으로 구성되며, 각 영역은 빈 줄로 분리된다.
+모든 커밋 메시지는 **제목**, **본문**, **꼬릿말** 영역으로 구성되며, 각 영역은 빈 줄로 분리됩니다.
 
 ```
 <제목 | header>
@@ -137,7 +139,7 @@ Related to: #1
 
 ## <a name="merge-commit"></a> Github PR Merge Commit Message Convention
 
-Pull Request를 하는 경우 커밋 메시지에 다음와 같이 작성합니다.
+Pull Request를 머지하는 경우 커밋 메시지에 다음와 같이 작성합니다.
 
 ```
 Fix #<issue number>
