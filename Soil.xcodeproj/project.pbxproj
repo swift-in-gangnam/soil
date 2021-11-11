@@ -57,6 +57,10 @@
 		D5C0A919273A5063005F9E9B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A918273A5063005F9E9B /* Constants.swift */; };
 		D5C0A91B273A5AB7005F9E9B /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A91A273A5AB6005F9E9B /* StorageService.swift */; };
 		D5D12240273AD92F0022290E /* .github in Resources */ = {isa = PBXBuildFile; fileRef = D5D1223F273AD92F0022290E /* .github */; };
+		D5D12244273D1E230022290E /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12243273D1E230022290E /* ProfileController.swift */; };
+		D5D12246273D1E2C0022290E /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12245273D1E2C0022290E /* DayController.swift */; };
+		D5D12248273D1E330022290E /* MonthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12247273D1E330022290E /* MonthController.swift */; };
+		D5D1224A273D1E3D0022290E /* YearController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12249273D1E3D0022290E /* YearController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +108,10 @@
 		D5C0A918273A5063005F9E9B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D5C0A91A273A5AB6005F9E9B /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		D5D1223F273AD92F0022290E /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
+		D5D12243273D1E230022290E /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		D5D12245273D1E2C0022290E /* DayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
+		D5D12247273D1E330022290E /* MonthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthController.swift; sourceTree = "<group>"; };
+		D5D12249273D1E3D0022290E /* YearController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearController.swift; sourceTree = "<group>"; };
 		F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.release.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,8 +142,12 @@
 				3CA91E662733CC3800390A89 /* Authentication */,
 				3C45E0C727313ADA002E3C8D /* TabBarController.swift */,
 				3C10AFD22732981600B1E973 /* FeedController.swift */,
-				3C10AFD42732981F00B1E973 /* YouController.swift */,
 				3C968089273286F20020A72F /* UploadPostController.swift */,
+				3C10AFD42732981F00B1E973 /* YouController.swift */,
+				D5D12243273D1E230022290E /* ProfileController.swift */,
+				D5D12245273D1E2C0022290E /* DayController.swift */,
+				D5D12247273D1E330022290E /* MonthController.swift */,
+				D5D12249273D1E3D0022290E /* YearController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -482,8 +494,12 @@
 			files = (
 				3C10AFD52732981F00B1E973 /* YouController.swift in Sources */,
 				D5C0A919273A5063005F9E9B /* Constants.swift in Sources */,
+				D5D12244273D1E230022290E /* ProfileController.swift in Sources */,
+				D5D1224A273D1E3D0022290E /* YearController.swift in Sources */,
 				3CA91E6E2733CF6400390A89 /* AuthButton.swift in Sources */,
+				D5D12246273D1E2C0022290E /* DayController.swift in Sources */,
 				D5C0A913273A4CB1005F9E9B /* AuthenticationViewModel.swift in Sources */,
+				D5D12248273D1E330022290E /* MonthController.swift in Sources */,
 				3C10AFD82732A05A00B1E973 /* UIColorExtension.swift in Sources */,
 				3C10AFDB2732A1C400B1E973 /* UIFontExtension.swift in Sources */,
 				3C45E0C827313ADA002E3C8D /* TabBarController.swift in Sources */,
