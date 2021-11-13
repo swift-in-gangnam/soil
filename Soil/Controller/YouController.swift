@@ -105,6 +105,7 @@ extension YouController: PagingViewControllerDataSource {
   func pagingViewController(_: PagingViewController, viewControllerAt index: Int) -> UIViewController {
     if index == 0 {
       let profileVC = ProfileController()
+      profileVC.delegate = self
       return profileVC
     } else if index == 1 {
       let dayVC = DayController()
@@ -120,5 +121,11 @@ extension YouController: PagingViewControllerDataSource {
   
   func pagingViewController(_: PagingViewController, pagingItemAt index: Int) -> PagingItem {
     return PagingIndexItem(index: index, title: menuArr[index])
+  }
+}
+
+extension YouController: ProfileControllerDelegate {
+  func didTapUserStatBtn() {
+    navigationController?.pushViewController(UserStatController(), animated: true)
   }
 }
