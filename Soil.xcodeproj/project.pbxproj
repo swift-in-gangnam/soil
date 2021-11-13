@@ -61,6 +61,7 @@
 		D5D12246273D1E2C0022290E /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12245273D1E2C0022290E /* DayController.swift */; };
 		D5D12248273D1E330022290E /* MonthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12247273D1E330022290E /* MonthController.swift */; };
 		D5D1224A273D1E3D0022290E /* YearController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12249273D1E3D0022290E /* YearController.swift */; };
+		D5D12242273C5F9A0022290E /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = D5D12241273C5F9A0022290E /* CONTRIBUTING.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		D5D12245273D1E2C0022290E /* DayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
 		D5D12247273D1E330022290E /* MonthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthController.swift; sourceTree = "<group>"; };
 		D5D12249273D1E3D0022290E /* YearController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearController.swift; sourceTree = "<group>"; };
+		D5D12241273C5F9A0022290E /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.release.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +237,7 @@
 		3C45E0B727313AD9002E3C8D = {
 			isa = PBXGroup;
 			children = (
+				D5D12241273C5F9A0022290E /* CONTRIBUTING.md */,
 				D5D1223F273AD92F0022290E /* .github */,
 				3C953CF22732C04D00B12039 /* .swiftlint.yml */,
 				3C45E0C227313ADA002E3C8D /* Soil */,
@@ -420,6 +423,7 @@
 				3C10AFFA2732A67600B1E973 /* NotoSansKR-Thin.otf in Resources */,
 				3C10AFEE2732A49400B1E973 /* CeraPro-Medium.otf in Resources */,
 				3C10AFF12732A49400B1E973 /* CeraPro-Bold.otf in Resources */,
+				D5D12242273C5F9A0022290E /* CONTRIBUTING.md in Resources */,
 				3C10AFE82732A33D00B1E973 /* Montserrat-Regular.ttf in Resources */,
 				3C10AFE62732A33D00B1E973 /* Montserrat-Light.ttf in Resources */,
 				3C10AFF92732A67600B1E973 /* NotoSansKR-Regular.otf in Resources */,
