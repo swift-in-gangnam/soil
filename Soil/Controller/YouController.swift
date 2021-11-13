@@ -105,6 +105,7 @@ extension YouController: PagingViewControllerDataSource {
   func pagingViewController(_: PagingViewController, viewControllerAt index: Int) -> UIViewController {
     if index == 0 {
       let profileVC = ProfileController()
+      profileVC.viewModel = ProfileViewModel(user: user)
       profileVC.delegate = self
       return profileVC
     } else if index == 1 {
