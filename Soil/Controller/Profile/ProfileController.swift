@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 import Kingfisher
 
@@ -14,6 +15,13 @@ protocol ProfileControllerDelegate: AnyObject {
 }
 
 class ProfileController: UIViewController {
+
+  private enum Font {
+    static let fullnameLabel = UIFont.notoSansKR(size: 22, family: .bold)
+    static let usernameLabel = UIFont.ceraPro(size: 15, family: .medium)
+    static let editProfileFollowButton = UIFont.ceraPro(size: 17, family: .bold)
+    static let bioLabel = UIFont.notoSansKR(size: 14, family: .regular)
+  }
   
   // MARK: - Properties
   
@@ -34,13 +42,13 @@ class ProfileController: UIViewController {
   
   private let fullnameLabel: UILabel = {
     let label = UILabel()
-    label.font = UIFont.notoSansKR(size: 22, family: .bold)
+    label.font = Font.fullnameLabel
     return label
   }()
   
   private let usernameLabel: UILabel = {
     let label = UILabel()
-    label.font = UIFont.ceraPro(size: 15, family: .medium)
+    label.font = Font.usernameLabel
     return label
   }()
   
@@ -60,7 +68,7 @@ class ProfileController: UIViewController {
     let button = UIButton(type: .system)
     button.backgroundColor = .white
     button.setTitle("Edit Profile", for: .normal)
-    button.titleLabel?.font = UIFont.ceraPro(size: 17, family: .bold)
+    button.titleLabel?.font = Font.editProfileFollowButton
     button.setTitleColor(.systemGray2, for: .normal)
     button.layer.cornerRadius = 10
     button.addTarget(self, action: #selector(handleEditProfileFollowTapped), for: .touchUpInside)
@@ -70,7 +78,7 @@ class ProfileController: UIViewController {
   private let bioLabel: UILabel = {
     let label = UILabel()
     label.numberOfLines = 0
-    label.font = UIFont.notoSansKR(size: 14, family: .regular)
+    label.font = Font.bioLabel
     return label
   }()
   
