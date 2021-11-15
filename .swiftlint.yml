@@ -15,3 +15,6 @@ disabled_rules: # Default Rules에서 비활성화할 규칙
     - force_unwrapping
     
     - identifier_name
+
+    # 함수 바디 길이. https://realm.github.io/SwiftLint/function_body_length.html
+    - function_body_length

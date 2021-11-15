@@ -46,6 +46,9 @@
 		3CA91E6C2733CD3C00390A89 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E6B2733CD3C00390A89 /* AuthTextField.swift */; };
 		3CA91E6E2733CF6400390A89 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E6D2733CF6400390A89 /* AuthButton.swift */; };
 		D56F658E273A3D5C00EE88F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D56F658D273A3D5C00EE88F0 /* GoogleService-Info.plist */; };
+		D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EB52740182E0099AA63 /* UserStatController.swift */; };
+		D57E8EB827401C9A0099AA63 /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EB727401C9A0099AA63 /* EditProfileController.swift */; };
+		D57E8EBB274020820099AA63 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EBA274020820099AA63 /* ProfileViewModel.swift */; };
 		D5C0A908273A4235005F9E9B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D5C0A907273A4235005F9E9B /* Kingfisher */; };
 		D5C0A90B273A480A005F9E9B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D5C0A90A273A480A005F9E9B /* FirebaseAuth */; };
 		D5C0A90D273A480A005F9E9B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D5C0A90C273A480A005F9E9B /* FirebaseFirestore */; };
@@ -57,11 +60,11 @@
 		D5C0A919273A5063005F9E9B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A918273A5063005F9E9B /* Constants.swift */; };
 		D5C0A91B273A5AB7005F9E9B /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A91A273A5AB6005F9E9B /* StorageService.swift */; };
 		D5D12240273AD92F0022290E /* .github in Resources */ = {isa = PBXBuildFile; fileRef = D5D1223F273AD92F0022290E /* .github */; };
+		D5D12242273C5F9A0022290E /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = D5D12241273C5F9A0022290E /* CONTRIBUTING.md */; };
 		D5D12244273D1E230022290E /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12243273D1E230022290E /* ProfileController.swift */; };
 		D5D12246273D1E2C0022290E /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12245273D1E2C0022290E /* DayController.swift */; };
 		D5D12248273D1E330022290E /* MonthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12247273D1E330022290E /* MonthController.swift */; };
 		D5D1224A273D1E3D0022290E /* YearController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12249273D1E3D0022290E /* YearController.swift */; };
-		D5D12242273C5F9A0022290E /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = D5D12241273C5F9A0022290E /* CONTRIBUTING.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +105,9 @@
 		3CA91E6D2733CF6400390A89 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.debug.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.debug.xcconfig"; sourceTree = "<group>"; };
 		D56F658D273A3D5C00EE88F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D57E8EB52740182E0099AA63 /* UserStatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatController.swift; sourceTree = "<group>"; };
+		D57E8EB727401C9A0099AA63 /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
+		D57E8EBA274020820099AA63 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		D5C0A910273A4B91005F9E9B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D5C0A912273A4CB1005F9E9B /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		D5C0A914273A4E8E005F9E9B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -109,11 +115,11 @@
 		D5C0A918273A5063005F9E9B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D5C0A91A273A5AB6005F9E9B /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		D5D1223F273AD92F0022290E /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
+		D5D12241273C5F9A0022290E /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		D5D12243273D1E230022290E /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		D5D12245273D1E2C0022290E /* DayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
 		D5D12247273D1E330022290E /* MonthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthController.swift; sourceTree = "<group>"; };
 		D5D12249273D1E3D0022290E /* YearController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearController.swift; sourceTree = "<group>"; };
-		D5D12241273C5F9A0022290E /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.release.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,11 +148,11 @@
 			isa = PBXGroup;
 			children = (
 				3CA91E662733CC3800390A89 /* Authentication */,
+				D57E8EB927401E360099AA63 /* Profile */,
 				3C45E0C727313ADA002E3C8D /* TabBarController.swift */,
 				3C10AFD22732981600B1E973 /* FeedController.swift */,
 				3C968089273286F20020A72F /* UploadPostController.swift */,
 				3C10AFD42732981F00B1E973 /* YouController.swift */,
-				D5D12243273D1E230022290E /* ProfileController.swift */,
 				D5D12245273D1E2C0022290E /* DayController.swift */,
 				D5D12247273D1E330022290E /* MonthController.swift */,
 				D5D12249273D1E3D0022290E /* YearController.swift */,
@@ -174,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				D5C0A912273A4CB1005F9E9B /* AuthenticationViewModel.swift */,
+				D57E8EBA274020820099AA63 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -237,8 +244,8 @@
 		3C45E0B727313AD9002E3C8D = {
 			isa = PBXGroup;
 			children = (
-				D5D12241273C5F9A0022290E /* CONTRIBUTING.md */,
 				D5D1223F273AD92F0022290E /* .github */,
+				D5D12241273C5F9A0022290E /* CONTRIBUTING.md */,
 				3C953CF22732C04D00B12039 /* .swiftlint.yml */,
 				3C45E0C227313ADA002E3C8D /* Soil */,
 				3C45E0C127313ADA002E3C8D /* Products */,
@@ -329,6 +336,16 @@
 				2EB83404A77136625EC07DAD /* Pods_Soil.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D57E8EB927401E360099AA63 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D5D12243273D1E230022290E /* ProfileController.swift */,
+				D57E8EB52740182E0099AA63 /* UserStatController.swift */,
+				D57E8EB727401C9A0099AA63 /* EditProfileController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		F1330D15E367A70B4DD9DBCF /* Pods */ = {
@@ -500,6 +517,7 @@
 				D5C0A919273A5063005F9E9B /* Constants.swift in Sources */,
 				D5D12244273D1E230022290E /* ProfileController.swift in Sources */,
 				D5D1224A273D1E3D0022290E /* YearController.swift in Sources */,
+				D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */,
 				3CA91E6E2733CF6400390A89 /* AuthButton.swift in Sources */,
 				D5D12246273D1E2C0022290E /* DayController.swift in Sources */,
 				D5C0A913273A4CB1005F9E9B /* AuthenticationViewModel.swift in Sources */,
@@ -509,9 +527,11 @@
 				3C45E0C827313ADA002E3C8D /* TabBarController.swift in Sources */,
 				D5C0A91B273A5AB7005F9E9B /* StorageService.swift in Sources */,
 				3CA91E682733CC5E00390A89 /* LoginController.swift in Sources */,
+				D57E8EBB274020820099AA63 /* ProfileViewModel.swift in Sources */,
 				D5C0A911273A4B91005F9E9B /* AuthService.swift in Sources */,
 				D5C0A915273A4E8E005F9E9B /* User.swift in Sources */,
 				3C10AFD32732981600B1E973 /* FeedController.swift in Sources */,
+				D57E8EB827401C9A0099AA63 /* EditProfileController.swift in Sources */,
 				3C45E0C427313ADA002E3C8D /* AppDelegate.swift in Sources */,
 				3C96808A273286F20020A72F /* UploadPostController.swift in Sources */,
 				D5C0A917273A5032005F9E9B /* UserService.swift in Sources */,
