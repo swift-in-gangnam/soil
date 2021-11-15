@@ -59,6 +59,7 @@
 		D5C0A917273A5032005F9E9B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A916273A5032005F9E9B /* UserService.swift */; };
 		D5C0A919273A5063005F9E9B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A918273A5063005F9E9B /* Constants.swift */; };
 		D5C0A91B273A5AB7005F9E9B /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A91A273A5AB6005F9E9B /* StorageService.swift */; };
+		D5CFC562274267A800CDC204 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D5CFC561274267A800CDC204 /* Then */; };
 		D5D12240273AD92F0022290E /* .github in Resources */ = {isa = PBXBuildFile; fileRef = D5D1223F273AD92F0022290E /* .github */; };
 		D5D12242273C5F9A0022290E /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = D5D12241273C5F9A0022290E /* CONTRIBUTING.md */; };
 		D5D12244273D1E230022290E /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12243273D1E230022290E /* ProfileController.swift */; };
@@ -130,6 +131,7 @@
 			files = (
 				3C58C83527342D04003A1F9D /* Alamofire in Frameworks */,
 				3C58C83827342D11003A1F9D /* IQKeyboardManagerSwift in Frameworks */,
+				D5CFC562274267A800CDC204 /* Then in Frameworks */,
 				D5C0A908273A4235005F9E9B /* Kingfisher in Frameworks */,
 				D5C0A90F273A480A005F9E9B /* FirebaseStorage in Frameworks */,
 				3C58C83B27342D23003A1F9D /* Parchment in Frameworks */,
@@ -385,6 +387,7 @@
 				D5C0A90A273A480A005F9E9B /* FirebaseAuth */,
 				D5C0A90C273A480A005F9E9B /* FirebaseFirestore */,
 				D5C0A90E273A480A005F9E9B /* FirebaseStorage */,
+				D5CFC561274267A800CDC204 /* Then */,
 			);
 			productName = Soil;
 			productReference = 3C45E0C027313ADA002E3C8D /* Soil.app */;
@@ -422,6 +425,7 @@
 				3C58C83C27342D30003A1F9D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				D5C0A906273A4235005F9E9B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				D5C0A909273A4809005F9E9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D5CFC560274267A800CDC204 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = 3C45E0C127313ADA002E3C8D /* Products */;
 			projectDirPath = "";
@@ -817,6 +821,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		D5CFC560274267A800CDC204 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -864,6 +876,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D5C0A909273A4809005F9E9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		D5CFC561274267A800CDC204 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5CFC560274267A800CDC204 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
