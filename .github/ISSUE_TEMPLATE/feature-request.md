@@ -1,8 +1,8 @@
 ---
 name: Feature Request
 about: 소일에 추가될 기능을 제안하는 Template
-title: ''
-labels: 'Type: feat, Priority: medium'
+title: 'feat: '
+labels: 'Type: feat'
 assignees: ''
 
 ---
@@ -13,9 +13,7 @@ assignees: ''
 
 ## 작업 상세 내역
 
-<!-- 해당 Issue를 통해 해결할 것을 상세하게 적어주세요. -->
-
-- []
+- [ ] <!-- 해당 Issue를 통해 해결할 것을  상세하게 적어주세요. -->
 
 ## 참고 사항
 

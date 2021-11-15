@@ -1,8 +1,8 @@
 ---
 name: Bug Report
 about: 소일의 Bug를 알리는 Template
-title: ''
-labels: 'Type: bug, Priority: medium'
+title: 'bug: '
+labels: 'Type: bug'
 assignees: ''
 
 ---
@@ -13,4 +13,4 @@ assignees: ''
 
 ## 참고 사항
 
-<!-- 해당 Issue를 해결하기 위해 참고할 수 있는 것을 자유롭게 적어주세요. -->
+<!-- 해당 Bug를 해결하기 위해 참고할 수 있는 것을 자유롭게 적어주세요. -->
