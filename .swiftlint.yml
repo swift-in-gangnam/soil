@@ -18,3 +18,6 @@ disabled_rules: # Default Rules에서 비활성화할 규칙
 
     # 함수 바디 길이. https://realm.github.io/SwiftLint/function_body_length.html
     - function_body_length
+    
+    # 파일 길이.
+    - file_length

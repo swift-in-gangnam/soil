@@ -164,6 +164,15 @@
         }
       },
       {
+        "package": "Tags",
+        "repositoryURL": "https://github.com/pikachu987/Tags.git",
+        "state": {
+          "branch": null,
+          "revision": "2535fbd10182c01240fb521495e16d0f7ed8ac4c",
+          "version": "0.3.2"
+        }
+      },
+      {
         "package": "Then",
         "repositoryURL": "https://github.com/devxoul/Then",
         "state": {

@@ -32,8 +32,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func sceneDidEnterBackground(_ scene: UIScene) {}
   
   func configureIQKeyboardManager() {
-      IQKeyboardManager.shared.enable = true
-      IQKeyboardManager.shared.enableAutoToolbar = true
-      IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+    IQKeyboardManager.shared.enable = true
+    IQKeyboardManager.shared.enableAutoToolbar = true
+    IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+    IQKeyboardManager.shared.keyboardDistanceFromTextField = 50
   }
 }
