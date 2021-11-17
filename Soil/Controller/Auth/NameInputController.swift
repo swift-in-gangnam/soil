@@ -11,9 +11,9 @@ class NameInputController: UIViewController {
 
   @IBOutlet weak var nameTextField: UITextField!
   override func viewDidLoad() {
-      super.viewDidLoad()
-      self.navigationController?.navigationBar.topItem?.title = ""
-    }
+    super.viewDidLoad()
+    self.navigationController?.navigationBar.topItem?.title = ""
+  }
   
   @IBAction func tapView(_ sender: UITapGestureRecognizer) {
     self.view.endEditing(true)

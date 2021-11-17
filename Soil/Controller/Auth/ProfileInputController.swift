@@ -9,8 +9,8 @@ import UIKit
 
 class ProfileInputController: UIViewController {
 
-    override func viewDidLoad() {
-      super.viewDidLoad()
-      self.navigationController?.navigationBar.topItem?.title = ""
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.navigationController?.navigationBar.topItem?.title = ""
+  }
 }

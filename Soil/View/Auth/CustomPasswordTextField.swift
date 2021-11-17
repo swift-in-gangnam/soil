@@ -4,16 +4,14 @@
 //
 //  Created by 임영선 on 2021/11/16.
 //
-
-import Foundation
 import UIKit
 
 class CustomPasswordTextField: UITextField {
   
   enum CurrentPasswordInputStatus {
-          case invalidPassword
-          case validPassword
-      }
+    case invalidPassword
+    case validPassword
+  }
   
   private var eyeButton: UIButton!
   private var passwordInputStatus: CurrentPasswordInputStatus = .invalidPassword

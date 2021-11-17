@@ -5,7 +5,6 @@
 //  Created by 임영선 on 2021/11/16.
 //
 
-import Foundation
 import UIKit
 
 class CustomTextField: UITextField {
