@@ -311,10 +311,11 @@ extension UploadPostController: TagsDelegate {
   
   func tagsLastTagAction(_ tagsView: TagsView, tagButton: TagButton) {
     let alertController = UIAlertController(title: nil, message: "태그 추가", preferredStyle: .alert)
-    alertController.addTextField(configurationHandler: { (textField) in
+    alertController.addTextField { (textField) in
       textField.returnKeyType = .next
       textField.becomeFirstResponder()
-    })
+    }
+    
     let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
     cancelAction.setValue(UIColor.black, forKey: "titleTextColor")
     let addAction = UIAlertAction(title: "추가", style: .default) { (_) in
@@ -326,6 +327,7 @@ extension UploadPostController: TagsDelegate {
     addAction.setValue(UIColor.black, forKey: "titleTextColor")
     alertController.addAction(cancelAction)
     alertController.addAction(addAction)
+    
     self.present(alertController, animated: true, completion: nil)
   }
   
