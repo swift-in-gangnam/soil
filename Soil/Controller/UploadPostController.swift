@@ -33,7 +33,7 @@ class UploadPostController: UIViewController {
   }
   
   private lazy var doneButton = UIBarButtonItem().then {
-    $0.title = "Done"
+    $0.title = "Write"
     $0.setTitleTextAttributes(titleButtonAttributes, for: .normal)
     $0.target = self
     $0.action = #selector(didTapDone)
@@ -393,7 +393,7 @@ extension UploadPostController: UploadPostInputAccessoryViewDelegate {
     // vc.delegate = self 설정
   }
   
-  func selectDone() {
+  func selectClose() {
     view.endEditing(true)
   }
 }
