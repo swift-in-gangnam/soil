@@ -45,6 +45,9 @@
 		3CA91E6A2733CC6A00390A89 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E692733CC6A00390A89 /* RegistrationController.swift */; };
 		3CA91E6C2733CD3C00390A89 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E6B2733CD3C00390A89 /* AuthTextField.swift */; };
 		3CA91E6E2733CF6400390A89 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E6D2733CF6400390A89 /* AuthButton.swift */; };
+		3CC1B09C2742BB6600A715C0 /* HorizontalSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */; };
+		3CC1B09F27436B8200A715C0 /* Tags in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC1B09E27436B8200A715C0 /* Tags */; };
+		3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */; };
 		D56F658E273A3D5C00EE88F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D56F658D273A3D5C00EE88F0 /* GoogleService-Info.plist */; };
 		D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EB52740182E0099AA63 /* UserStatController.swift */; };
 		D57E8EB827401C9A0099AA63 /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EB727401C9A0099AA63 /* EditProfileController.swift */; };
@@ -104,6 +107,8 @@
 		3CA91E692733CC6A00390A89 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		3CA91E6B2733CD3C00390A89 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		3CA91E6D2733CF6400390A89 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSeperator.swift; sourceTree = "<group>"; };
+		3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostInputAccessoryView.swift; sourceTree = "<group>"; };
 		54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.debug.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.debug.xcconfig"; sourceTree = "<group>"; };
 		D56F658D273A3D5C00EE88F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D57E8EB52740182E0099AA63 /* UserStatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatController.swift; sourceTree = "<group>"; };
@@ -140,6 +145,7 @@
 				18283B74BE9164E71388BBE3 /* Pods_Soil.framework in Frameworks */,
 				3C58C83227342CEE003A1F9D /* Lottie in Frameworks */,
 				D5C0A90B273A480A005F9E9B /* FirebaseAuth in Frameworks */,
+				3CC1B09F27436B8200A715C0 /* Tags in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				3CA91E6F2733CFB600390A89 /* Authentication */,
+				3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */,
+				3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,6 +396,7 @@
 				D5C0A90C273A480A005F9E9B /* FirebaseFirestore */,
 				D5C0A90E273A480A005F9E9B /* FirebaseStorage */,
 				D5CFC561274267A800CDC204 /* Then */,
+				3CC1B09E27436B8200A715C0 /* Tags */,
 			);
 			productName = Soil;
 			productReference = 3C45E0C027313ADA002E3C8D /* Soil.app */;
@@ -426,6 +435,7 @@
 				D5C0A906273A4235005F9E9B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				D5C0A909273A4809005F9E9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				D5CFC560274267A800CDC204 /* XCRemoteSwiftPackageReference "Then" */,
+				3CC1B09D27436B8100A715C0 /* XCRemoteSwiftPackageReference "Tags" */,
 			);
 			productRefGroup = 3C45E0C127313ADA002E3C8D /* Products */;
 			projectDirPath = "";
@@ -520,6 +530,8 @@
 				3C10AFD52732981F00B1E973 /* YouController.swift in Sources */,
 				D5C0A919273A5063005F9E9B /* Constants.swift in Sources */,
 				D5D12244273D1E230022290E /* ProfileController.swift in Sources */,
+				3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */,
+				3CC1B09C2742BB6600A715C0 /* HorizontalSeperator.swift in Sources */,
 				D5D1224A273D1E3D0022290E /* YearController.swift in Sources */,
 				D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */,
 				3CA91E6E2733CF6400390A89 /* AuthButton.swift in Sources */,
@@ -685,7 +697,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QHPW755BR8;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소일";
@@ -717,7 +729,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QHPW755BR8;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소일";
@@ -805,6 +817,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		3CC1B09D27436B8100A715C0 /* XCRemoteSwiftPackageReference "Tags" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pikachu987/Tags.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.2;
+			};
+		};
 		D5C0A906273A4235005F9E9B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -856,6 +876,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3C58C83C27342D30003A1F9D /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		3CC1B09E27436B8200A715C0 /* Tags */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3CC1B09D27436B8100A715C0 /* XCRemoteSwiftPackageReference "Tags" */;
+			productName = Tags;
 		};
 		D5C0A907273A4235005F9E9B /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
