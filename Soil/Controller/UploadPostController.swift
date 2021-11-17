@@ -21,8 +21,8 @@ class UploadPostController: UIViewController {
   }
   
   private let titleButtonAttributes: [NSAttributedString.Key: Any] = [
-    NSAttributedString.Key.font: UIFont.montserrat(size: 16, family: .medium),
-    NSAttributedString.Key.foregroundColor: UIColor.black
+    .font: UIFont.montserrat(size: 16, family: .medium),
+    .foregroundColor: UIColor.black
   ]
   
   private lazy var cancelButton = UIBarButtonItem().then {
@@ -33,7 +33,7 @@ class UploadPostController: UIViewController {
   }
   
   private lazy var doneButton = UIBarButtonItem().then {
-    $0.title = "Done"
+    $0.title = "Write"
     $0.setTitleTextAttributes(titleButtonAttributes, for: .normal)
     $0.target = self
     $0.action = #selector(didTapDone)
@@ -46,14 +46,14 @@ class UploadPostController: UIViewController {
   private let titleTextField = UITextField().then {
     $0.placeholder = "제목"
     var attributes: [NSAttributedString.Key: Any] = [
-      NSAttributedString.Key.font: UIFont.notoSansKR(size: 25, family: .regular),
-      NSAttributedString.Key.foregroundColor: UIColor.systemGray3
+      .font: UIFont.notoSansKR(size: 25, family: .regular),
+      .foregroundColor: UIColor.systemGray3
     ]
     $0.attributedPlaceholder = NSAttributedString(
       string: "제목",
       attributes: attributes
     )
-    attributes[NSAttributedString.Key.foregroundColor] = UIColor.black
+    attributes[.foregroundColor] = UIColor.black
     $0.defaultTextAttributes = attributes
     
     let spacer = UIView()
@@ -94,7 +94,6 @@ class UploadPostController: UIViewController {
     $0.clipsToBounds = true
     $0.contentMode = .scaleAspectFill
     $0.snp.makeConstraints { make in
-      make.width.equalTo(330)
       make.height.equalTo(0)
     }
   }
@@ -211,7 +210,7 @@ class UploadPostController: UIViewController {
     contentsView.addSubview(imageView)
     imageView.snp.makeConstraints { make in
       make.top.equalTo(textView.snp.bottom).offset(100)
-      make.centerX.equalToSuperview()
+      make.leading.trailing.equalToSuperview().inset(20)
       make.bottom.lessThanOrEqualToSuperview().offset(-70)
     }
   }
@@ -240,8 +239,8 @@ class UploadPostController: UIViewController {
     textView.delegate = self
     let text = "나만의 소중한 일상을 기록해보세요"
     let attributes: [NSAttributedString.Key: Any] = [
-      NSAttributedString.Key.font: UIFont.notoSansKR(size: 15, family: .regular),
-      NSAttributedString.Key.foregroundColor: UIColor.lightGray
+      .font: UIFont.notoSansKR(size: 15, family: .regular),
+      .foregroundColor: UIColor.lightGray
     ]
     textView.attributedText = NSAttributedString(string: text, attributes: attributes)
   }
@@ -287,8 +286,8 @@ extension UploadPostController: UITextViewDelegate {
     if textView.textColor == UIColor.lightGray {
       textView.text = nil
       let attributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.font: UIFont.notoSansKR(size: 15, family: .regular),
-        NSAttributedString.Key.foregroundColor: UIColor.black
+        .font: UIFont.notoSansKR(size: 15, family: .regular),
+        .foregroundColor: UIColor.black
       ]
       textView.typingAttributes = attributes
     }
@@ -298,8 +297,8 @@ extension UploadPostController: UITextViewDelegate {
     if textView.text.isEmpty {
       let text = "나만의 소중한 일상을 기록해보세요"
       let attributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.font: UIFont.notoSansKR(size: 15, family: .regular),
-        NSAttributedString.Key.foregroundColor: UIColor.lightGray
+        .font: UIFont.notoSansKR(size: 15, family: .regular),
+        .foregroundColor: UIColor.lightGray
       ]
       textView.attributedText = NSAttributedString(string: text, attributes: attributes)
     }
@@ -312,10 +311,11 @@ extension UploadPostController: TagsDelegate {
   
   func tagsLastTagAction(_ tagsView: TagsView, tagButton: TagButton) {
     let alertController = UIAlertController(title: nil, message: "태그 추가", preferredStyle: .alert)
-    alertController.addTextField(configurationHandler: { (textField) in
+    alertController.addTextField { (textField) in
       textField.returnKeyType = .next
       textField.becomeFirstResponder()
-    })
+    }
+    
     let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
     cancelAction.setValue(UIColor.black, forKey: "titleTextColor")
     let addAction = UIAlertAction(title: "추가", style: .default) { (_) in
@@ -327,6 +327,7 @@ extension UploadPostController: TagsDelegate {
     addAction.setValue(UIColor.black, forKey: "titleTextColor")
     alertController.addAction(cancelAction)
     alertController.addAction(addAction)
+    
     self.present(alertController, animated: true, completion: nil)
   }
   
@@ -393,7 +394,7 @@ extension UploadPostController: UploadPostInputAccessoryViewDelegate {
     // vc.delegate = self 설정
   }
   
-  func selectDone() {
+  func selectClose() {
     view.endEditing(true)
   }
 }
@@ -416,7 +417,7 @@ extension UploadPostController: UIImagePickerControllerDelegate, UINavigationCon
     
     imageView.image = newImage
     imageView.snp.updateConstraints { make in
-      make.height.equalTo(200)
+      make.height.equalTo(300)
     }
     picker.dismiss(animated: true) {
       self.inputAccessoryView?.isHidden = false

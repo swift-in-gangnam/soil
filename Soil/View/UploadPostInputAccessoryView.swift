@@ -10,7 +10,7 @@ import UIKit
 protocol UploadPostInputAccessoryViewDelegate: AnyObject {
   func selectPhoto()
   func selectMusic()
-  func selectDone()
+  func selectClose()
 }
 
 class UploadPostInputAccessoryView: UIView {
@@ -37,16 +37,16 @@ class UploadPostInputAccessoryView: UIView {
     $0.addTarget(self, action: #selector(addMusicTapped), for: .touchUpInside)
   }
   
-  private let doneButton = UIButton(type: .system).then {
+  private let closeButton = UIButton(type: .system).then {
     let attrs: [NSAttributedString.Key: Any] = [
-      NSAttributedString.Key.font: UIFont.montserrat(size: 16, family: .semiBold),
-      NSAttributedString.Key.foregroundColor: UIColor.black
+      .font: UIFont.montserrat(size: 16, family: .semiBold),
+      .foregroundColor: UIColor.black
     ]
     $0.setAttributedTitle(
       NSAttributedString(string: "Close", attributes: attrs),
       for: .normal
     )
-    $0.addTarget(self, action: #selector(doneTapped), for: .touchUpInside)
+    $0.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
   }
   
   // MARK: - Lifecycle
@@ -76,8 +76,8 @@ class UploadPostInputAccessoryView: UIView {
       make.centerY.equalTo(addPhotoButton)
     }
     
-    addSubview(doneButton)
-    doneButton.snp.makeConstraints { make in
+    addSubview(closeButton)
+    closeButton.snp.makeConstraints { make in
       make.trailing.equalToSuperview().offset(-30)
       make.centerY.equalTo(addPhotoButton)
     }
@@ -102,7 +102,7 @@ class UploadPostInputAccessoryView: UIView {
     self.delegate?.selectMusic()
   }
   
-  @objc private func doneTapped() {
-    self.delegate?.selectDone()
+  @objc private func closeTapped() {
+    self.delegate?.selectClose()
   }
 }
