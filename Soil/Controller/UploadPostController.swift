@@ -94,7 +94,6 @@ class UploadPostController: UIViewController {
     $0.clipsToBounds = true
     $0.contentMode = .scaleAspectFill
     $0.snp.makeConstraints { make in
-      make.width.equalTo(330)
       make.height.equalTo(0)
     }
   }
@@ -211,7 +210,7 @@ class UploadPostController: UIViewController {
     contentsView.addSubview(imageView)
     imageView.snp.makeConstraints { make in
       make.top.equalTo(textView.snp.bottom).offset(100)
-      make.centerX.equalToSuperview()
+      make.leading.trailing.equalToSuperview().inset(20)
       make.bottom.lessThanOrEqualToSuperview().offset(-70)
     }
   }
@@ -416,7 +415,7 @@ extension UploadPostController: UIImagePickerControllerDelegate, UINavigationCon
     
     imageView.image = newImage
     imageView.snp.updateConstraints { make in
-      make.height.equalTo(200)
+      make.height.equalTo(300)
     }
     picker.dismiss(animated: true) {
       self.inputAccessoryView?.isHidden = false
