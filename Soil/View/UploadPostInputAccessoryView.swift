@@ -39,8 +39,8 @@ class UploadPostInputAccessoryView: UIView {
   
   private let closeButton = UIButton(type: .system).then {
     let attrs: [NSAttributedString.Key: Any] = [
-      NSAttributedString.Key.font: UIFont.montserrat(size: 16, family: .semiBold),
-      NSAttributedString.Key.foregroundColor: UIColor.black
+      .font: UIFont.montserrat(size: 16, family: .semiBold),
+      .foregroundColor: UIColor.black
     ]
     $0.setAttributedTitle(
       NSAttributedString(string: "Close", attributes: attrs),
