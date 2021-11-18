@@ -48,7 +48,6 @@
 		3CC1B09C2742BB6600A715C0 /* HorizontalSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */; };
 		3CC1B09F27436B8200A715C0 /* Tags in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC1B09E27436B8200A715C0 /* Tags */; };
 		3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */; };
-		D56F658E273A3D5C00EE88F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D56F658D273A3D5C00EE88F0 /* GoogleService-Info.plist */; };
 		D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EB52740182E0099AA63 /* UserStatController.swift */; };
 		D57E8EB827401C9A0099AA63 /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EB727401C9A0099AA63 /* EditProfileController.swift */; };
 		D57E8EBB274020820099AA63 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EBA274020820099AA63 /* ProfileViewModel.swift */; };
@@ -69,6 +68,21 @@
 		D5D12246273D1E2C0022290E /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12245273D1E2C0022290E /* DayController.swift */; };
 		D5D12248273D1E330022290E /* MonthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12247273D1E330022290E /* MonthController.swift */; };
 		D5D1224A273D1E3D0022290E /* YearController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12249273D1E3D0022290E /* YearController.swift */; };
+		FA12E7F22744CC7D00EB8834 /* CustomPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7EF2744CC7D00EB8834 /* CustomPasswordTextField.swift */; };
+		FA12E7F32744CC7D00EB8834 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7F02744CC7D00EB8834 /* CustomTextField.swift */; };
+		FA12E7F42744CC7D00EB8834 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA12E7F12744CC7D00EB8834 /* Auth.storyboard */; };
+		FA12E7F62744CD2500EB8834 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA12E7F52744CD2500EB8834 /* GoogleService-Info.plist */; };
+		FA12E8002744CFB000EB8834 /* EmailInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */; };
+		FA12E8022744CFB000EB8834 /* ProfileInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FA2744CFB000EB8834 /* ProfileInputController.swift */; };
+		FA12E8032744CFB000EB8834 /* NickNameInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FB2744CFB000EB8834 /* NickNameInputController.swift */; };
+		FA12E8042744CFB000EB8834 /* EmailConfirmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FC2744CFB000EB8834 /* EmailConfirmController.swift */; };
+		FA12E8052744CFB000EB8834 /* PasswordInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */; };
+		FA12E8062744CFB000EB8834 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FE2744CFB000EB8834 /* SignInController.swift */; };
+		FA12E8072744CFB000EB8834 /* NameInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FF2744CFB000EB8834 /* NameInputController.swift */; };
+		FA3D3E0D2744D51700A86040 /* LoginHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */; };
+		FA3D3E112744E8DB00A86040 /* task-completed.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3D3E0F2744E8DB00A86040 /* task-completed.json */; };
+		FA3D3E122744E8DB00A86040 /* email-sent.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3D3E102744E8DB00A86040 /* email-sent.json */; };
+		FA3D3E142744EB0E00A86040 /* SignUpCompletedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,7 +124,6 @@
 		3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSeperator.swift; sourceTree = "<group>"; };
 		3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostInputAccessoryView.swift; sourceTree = "<group>"; };
 		54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.debug.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.debug.xcconfig"; sourceTree = "<group>"; };
-		D56F658D273A3D5C00EE88F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D57E8EB52740182E0099AA63 /* UserStatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatController.swift; sourceTree = "<group>"; };
 		D57E8EB727401C9A0099AA63 /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		D57E8EBA274020820099AA63 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -127,6 +140,21 @@
 		D5D12247273D1E330022290E /* MonthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthController.swift; sourceTree = "<group>"; };
 		D5D12249273D1E3D0022290E /* YearController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearController.swift; sourceTree = "<group>"; };
 		F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.release.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.release.xcconfig"; sourceTree = "<group>"; };
+		FA12E7EF2744CC7D00EB8834 /* CustomPasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPasswordTextField.swift; sourceTree = "<group>"; };
+		FA12E7F02744CC7D00EB8834 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		FA12E7F12744CC7D00EB8834 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		FA12E7F52744CD2500EB8834 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailInputViewController.swift; sourceTree = "<group>"; };
+		FA12E7FA2744CFB000EB8834 /* ProfileInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInputController.swift; sourceTree = "<group>"; };
+		FA12E7FB2744CFB000EB8834 /* NickNameInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NickNameInputController.swift; sourceTree = "<group>"; };
+		FA12E7FC2744CFB000EB8834 /* EmailConfirmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailConfirmController.swift; sourceTree = "<group>"; };
+		FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputController.swift; sourceTree = "<group>"; };
+		FA12E7FE2744CFB000EB8834 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		FA12E7FF2744CFB000EB8834 /* NameInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameInputController.swift; sourceTree = "<group>"; };
+		FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHomeController.swift; sourceTree = "<group>"; };
+		FA3D3E0F2744E8DB00A86040 /* task-completed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "task-completed.json"; sourceTree = "<group>"; };
+		FA3D3E102744E8DB00A86040 /* email-sent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "email-sent.json"; sourceTree = "<group>"; };
+		FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletedController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +183,7 @@
 		3C10AFC52732945100B1E973 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA12E7F72744CF4700EB8834 /* Auth */,
 				3CA91E662733CC3800390A89 /* Authentication */,
 				D57E8EB927401E360099AA63 /* Profile */,
 				3C45E0C727313ADA002E3C8D /* TabBarController.swift */,
@@ -179,6 +208,7 @@
 		3C10AFCA2732971500B1E973 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA12E7EE2744CBCE00EB8834 /* Auth */,
 				3CA91E6F2733CFB600390A89 /* Authentication */,
 				3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */,
 				3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */,
@@ -302,11 +332,12 @@
 		3C968081273270E90020A72F /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				FA3D3E0E2744E87400A86040 /* Lottie */,
+				FA12E7F52744CD2500EB8834 /* GoogleService-Info.plist */,
 				3C45E0C327313ADA002E3C8D /* AppDelegate.swift */,
 				3C45E0C527313ADA002E3C8D /* SceneDelegate.swift */,
 				3C45E0CC27313ADB002E3C8D /* Assets.xcassets */,
 				3C45E0D127313ADB002E3C8D /* Info.plist */,
-				D56F658D273A3D5C00EE88F0 /* GoogleService-Info.plist */,
 				3C968082273270F20020A72F /* Fonts */,
 			);
 			path = Supporting;
@@ -365,6 +396,41 @@
 				F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA12E7EE2744CBCE00EB8834 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FA12E7EF2744CC7D00EB8834 /* CustomPasswordTextField.swift */,
+				FA12E7F02744CC7D00EB8834 /* CustomTextField.swift */,
+				FA12E7F12744CC7D00EB8834 /* Auth.storyboard */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FA12E7F72744CF4700EB8834 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FA12E7FC2744CFB000EB8834 /* EmailConfirmController.swift */,
+				FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */,
+				FA12E7FF2744CFB000EB8834 /* NameInputController.swift */,
+				FA12E7FB2744CFB000EB8834 /* NickNameInputController.swift */,
+				FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */,
+				FA12E7FA2744CFB000EB8834 /* ProfileInputController.swift */,
+				FA12E7FE2744CFB000EB8834 /* SignInController.swift */,
+				FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */,
+				FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FA3D3E0E2744E87400A86040 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				FA3D3E102744E8DB00A86040 /* email-sent.json */,
+				FA3D3E0F2744E8DB00A86040 /* task-completed.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,22 +519,25 @@
 			files = (
 				3C10AFFA2732A67600B1E973 /* NotoSansKR-Thin.otf in Resources */,
 				3C10AFEE2732A49400B1E973 /* CeraPro-Medium.otf in Resources */,
+				FA12E7F62744CD2500EB8834 /* GoogleService-Info.plist in Resources */,
 				3C10AFF12732A49400B1E973 /* CeraPro-Bold.otf in Resources */,
 				D5D12242273C5F9A0022290E /* CONTRIBUTING.md in Resources */,
+				FA3D3E112744E8DB00A86040 /* task-completed.json in Resources */,
 				3C10AFE82732A33D00B1E973 /* Montserrat-Regular.ttf in Resources */,
 				3C10AFE62732A33D00B1E973 /* Montserrat-Light.ttf in Resources */,
 				3C10AFF92732A67600B1E973 /* NotoSansKR-Regular.otf in Resources */,
 				3C10AFFE2732A67600B1E973 /* NotoSansKR-Light.otf in Resources */,
+				FA12E7F42744CC7D00EB8834 /* Auth.storyboard in Resources */,
 				3C45E0D027313ADB002E3C8D /* LaunchScreen.storyboard in Resources */,
 				3C10AFFD2732A67600B1E973 /* NotoSansKR-Medium.otf in Resources */,
 				3C10AFE32732A33D00B1E973 /* Montserrat-SemiBold.ttf in Resources */,
 				3C968084273271540020A72F /* Montserrat-Medium.ttf in Resources */,
 				3C10AFF02732A49400B1E973 /* CeraPro-Light.otf in Resources */,
+				FA3D3E122744E8DB00A86040 /* email-sent.json in Resources */,
 				D5D12240273AD92F0022290E /* .github in Resources */,
 				3C10AFFB2732A67600B1E973 /* NotoSansKR-Black.otf in Resources */,
 				3C45E0CD27313ADB002E3C8D /* Assets.xcassets in Resources */,
 				3C10AFFC2732A67600B1E973 /* NotoSansKR-Bold.otf in Resources */,
-				D56F658E273A3D5C00EE88F0 /* GoogleService-Info.plist in Resources */,
 				3C10AFE42732A33D00B1E973 /* Montserrat-Thin.ttf in Resources */,
 				3C10AFEF2732A49400B1E973 /* CeraPro-Black.otf in Resources */,
 				3C953CF32732C04D00B12039 /* .swiftlint.yml in Resources */,
@@ -531,26 +600,37 @@
 				D5C0A919273A5063005F9E9B /* Constants.swift in Sources */,
 				D5D12244273D1E230022290E /* ProfileController.swift in Sources */,
 				3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */,
+				FA12E8052744CFB000EB8834 /* PasswordInputController.swift in Sources */,
 				3CC1B09C2742BB6600A715C0 /* HorizontalSeperator.swift in Sources */,
+				FA12E7F32744CC7D00EB8834 /* CustomTextField.swift in Sources */,
 				D5D1224A273D1E3D0022290E /* YearController.swift in Sources */,
+				FA12E8022744CFB000EB8834 /* ProfileInputController.swift in Sources */,
 				D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */,
 				3CA91E6E2733CF6400390A89 /* AuthButton.swift in Sources */,
 				D5D12246273D1E2C0022290E /* DayController.swift in Sources */,
+				FA12E8042744CFB000EB8834 /* EmailConfirmController.swift in Sources */,
 				D5C0A913273A4CB1005F9E9B /* AuthenticationViewModel.swift in Sources */,
 				D5D12248273D1E330022290E /* MonthController.swift in Sources */,
 				3C10AFD82732A05A00B1E973 /* UIColorExtension.swift in Sources */,
+				FA3D3E0D2744D51700A86040 /* LoginHomeController.swift in Sources */,
+				FA3D3E142744EB0E00A86040 /* SignUpCompletedController.swift in Sources */,
 				3C10AFDB2732A1C400B1E973 /* UIFontExtension.swift in Sources */,
 				3C45E0C827313ADA002E3C8D /* TabBarController.swift in Sources */,
 				D5C0A91B273A5AB7005F9E9B /* StorageService.swift in Sources */,
 				3CA91E682733CC5E00390A89 /* LoginController.swift in Sources */,
 				D57E8EBB274020820099AA63 /* ProfileViewModel.swift in Sources */,
+				FA12E8072744CFB000EB8834 /* NameInputController.swift in Sources */,
+				FA12E8062744CFB000EB8834 /* SignInController.swift in Sources */,
 				D5C0A911273A4B91005F9E9B /* AuthService.swift in Sources */,
 				D5C0A915273A4E8E005F9E9B /* User.swift in Sources */,
 				3C10AFD32732981600B1E973 /* FeedController.swift in Sources */,
 				D57E8EB827401C9A0099AA63 /* EditProfileController.swift in Sources */,
 				3C45E0C427313ADA002E3C8D /* AppDelegate.swift in Sources */,
 				3C96808A273286F20020A72F /* UploadPostController.swift in Sources */,
+				FA12E7F22744CC7D00EB8834 /* CustomPasswordTextField.swift in Sources */,
+				FA12E8032744CFB000EB8834 /* NickNameInputController.swift in Sources */,
 				D5C0A917273A5032005F9E9B /* UserService.swift in Sources */,
+				FA12E8002744CFB000EB8834 /* EmailInputViewController.swift in Sources */,
 				3CA91E6A2733CC6A00390A89 /* RegistrationController.swift in Sources */,
 				3C45E0C627313ADA002E3C8D /* SceneDelegate.swift in Sources */,
 				3CA91E6C2733CD3C00390A89 /* AuthTextField.swift in Sources */,
