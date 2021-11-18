@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import SnapKit
-import Then
 import Tags
 
 class UploadPostController: UIViewController {

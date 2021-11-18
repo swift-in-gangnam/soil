@@ -9,7 +9,6 @@ import UIKit
 
 import Firebase
 import Parchment
-import SnapKit
 
 class YouController: UIViewController {
   

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 protocol AuthenticationDelegate: AnyObject {
   func authenticationDidComplete()
