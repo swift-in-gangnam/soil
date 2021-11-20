@@ -45,7 +45,6 @@
 		3CA91E6A2733CC6A00390A89 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E692733CC6A00390A89 /* RegistrationController.swift */; };
 		3CA91E6C2733CD3C00390A89 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E6B2733CD3C00390A89 /* AuthTextField.swift */; };
 		3CA91E6E2733CF6400390A89 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E6D2733CF6400390A89 /* AuthButton.swift */; };
-		3CC0D4E82746824B0017F824 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CC0D4E72746824B0017F824 /* GoogleService-Info.plist */; };
 		3CC1B09C2742BB6600A715C0 /* HorizontalSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */; };
 		3CC1B09F27436B8200A715C0 /* Tags in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC1B09E27436B8200A715C0 /* Tags */; };
 		3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */; };
@@ -83,6 +82,7 @@
 		FA3D3E112744E8DB00A86040 /* task-completed.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3D3E0F2744E8DB00A86040 /* task-completed.json */; };
 		FA3D3E122744E8DB00A86040 /* email-sent.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3D3E102744E8DB00A86040 /* email-sent.json */; };
 		FA3D3E142744EB0E00A86040 /* SignUpCompletedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */; };
+		FA3F69EA2748D6F60064587E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3F69E92748D6F60064587E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,7 +121,6 @@
 		3CA91E692733CC6A00390A89 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		3CA91E6B2733CD3C00390A89 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		3CA91E6D2733CF6400390A89 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
-		3CC0D4E72746824B0017F824 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSeperator.swift; sourceTree = "<group>"; };
 		3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostInputAccessoryView.swift; sourceTree = "<group>"; };
 		54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.debug.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +154,7 @@
 		FA3D3E0F2744E8DB00A86040 /* task-completed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "task-completed.json"; sourceTree = "<group>"; };
 		FA3D3E102744E8DB00A86040 /* email-sent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "email-sent.json"; sourceTree = "<group>"; };
 		FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletedController.swift; sourceTree = "<group>"; };
+		FA3F69E92748D6F60064587E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,8 +332,8 @@
 		3C968081273270E90020A72F /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				FA3F69E92748D6F60064587E /* GoogleService-Info.plist */,
 				FA3D3E0E2744E87400A86040 /* Lottie */,
-				3CC0D4E72746824B0017F824 /* GoogleService-Info.plist */,
 				3C45E0C327313ADA002E3C8D /* AppDelegate.swift */,
 				3C45E0C527313ADA002E3C8D /* SceneDelegate.swift */,
 				3C45E0CC27313ADB002E3C8D /* Assets.xcassets */,
@@ -527,10 +527,10 @@
 				3C10AFF92732A67600B1E973 /* NotoSansKR-Regular.otf in Resources */,
 				3C10AFFE2732A67600B1E973 /* NotoSansKR-Light.otf in Resources */,
 				FA12E7F42744CC7D00EB8834 /* Auth.storyboard in Resources */,
-				3CC0D4E82746824B0017F824 /* GoogleService-Info.plist in Resources */,
 				3C45E0D027313ADB002E3C8D /* LaunchScreen.storyboard in Resources */,
 				3C10AFFD2732A67600B1E973 /* NotoSansKR-Medium.otf in Resources */,
 				3C10AFE32732A33D00B1E973 /* Montserrat-SemiBold.ttf in Resources */,
+				FA3F69EA2748D6F60064587E /* GoogleService-Info.plist in Resources */,
 				3C968084273271540020A72F /* Montserrat-Medium.ttf in Resources */,
 				3C10AFF02732A49400B1E973 /* CeraPro-Light.otf in Resources */,
 				FA3D3E122744E8DB00A86040 /* email-sent.json in Resources */,

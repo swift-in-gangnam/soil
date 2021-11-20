@@ -24,5 +24,6 @@ class CustomTextField: UITextField {
     buttonLine.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1).cgColor
     self.borderStyle = .none
     self.layer.addSublayer(buttonLine)
+    self.backgroundColor = .soilBackgroundColor
   }
 }
