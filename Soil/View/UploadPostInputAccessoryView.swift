@@ -37,7 +37,7 @@ class UploadPostInputAccessoryView: UIView {
     $0.addTarget(self, action: #selector(addMusicTapped), for: .touchUpInside)
   }
   
-  private let closeButton = UIButton(type: .system).then {
+  let closeButton = UIButton(type: .system).then {
     let attrs: [NSAttributedString.Key: Any] = [
       .font: UIFont.montserrat(size: 16, family: .semiBold),
       .foregroundColor: UIColor.black
@@ -47,6 +47,7 @@ class UploadPostInputAccessoryView: UIView {
       for: .normal
     )
     $0.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
+    $0.isHidden = true
   }
   
   // MARK: - Lifecycle
