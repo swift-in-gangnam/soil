@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol EditProfileControllerDelegte: AnyObject {
+    func didUpdateProfile(_ controller: EditProfileController)
+}
+
 class EditProfileController: UIViewController {
   
   // MARK: - Properties
@@ -14,8 +18,12 @@ class EditProfileController: UIViewController {
   var viewModel: ProfileViewModel? {
     didSet { updateUI() }
   }
-  
-  private var selectedProfileImage: UIImage?
+  weak var delegate: EditProfileControllerDelegte?
+  private var selectedProfileImage: UIImage? {
+    didSet {
+      profileImageView.image = selectedProfileImage
+    }
+  }
   
   private let barButtonAttrs: [NSAttributedString.Key: Any] = [
     .font: UIFont.montserrat(size: 16, family: .medium)
@@ -125,7 +133,18 @@ class EditProfileController: UIViewController {
   }
   
   @objc func didTapDone() {
-    self.dismiss(animated: true, completion: nil)
+    guard let viewModel = viewModel else { return }
+    guard let fullname = nameTextField.text else { return }
+    guard let bio = bioTextView.text else { return }
+    let data = ["fullname": fullname, "bio": bio]
+    
+    UserService.updateUser(uid: viewModel.uid, data: data, profileImage: selectedProfileImage) { error in
+      if let error = error {
+        print("DEBUG: Failed to update user with error \(error.localizedDescription)")
+        return
+      }
+      self.delegate?.didUpdateProfile(self)
+    }
   }
   
   @objc func didTapImageChangeBtn() {
@@ -246,8 +265,6 @@ extension EditProfileController: UIImagePickerControllerDelegate, UINavigationCo
   ) {
     guard let selectedImage = info[.editedImage] as? UIImage else { return }
     selectedProfileImage = selectedImage
-    profileImageView.image = selectedImage
-    
     self.dismiss(animated: true, completion: nil)
   }
 }

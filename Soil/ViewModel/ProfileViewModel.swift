@@ -11,6 +11,8 @@ struct ProfileViewModel {
   
   let user: User
   
+  var uid: String { return user.uid }
+  
   var fullname: String { return user.fullname }
   
   var username: String { return user.username }
