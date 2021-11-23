@@ -139,7 +139,7 @@ class EditProfileController: UIViewController {
     guard let bio = bioTextView.text else { return }
     let data = ["fullname": fullname, "bio": bio]
     
-    UserService.updateUser(uid: viewModel.uid, data: data, profileImage: selectedProfileImage) { error in
+    UserService.updateUser(user: viewModel.user, data: data, profileImage: selectedProfileImage) { error in
       if let error = error {
         print("DEBUG: Failed to update user with error \(error.localizedDescription)")
         return

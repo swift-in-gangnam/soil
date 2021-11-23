@@ -29,21 +29,19 @@ struct UserService {
   }
   
   static func updateUser(
-    uid: String,
+    user: User,
     data: [String: Any],
     profileImage: UIImage?,
     completion: @escaping(FirestoreCompletion)
   ) {
     if let profileImage = profileImage {
-      StorageService.uploadImage(image: profileImage) { imageUUID, imageURL in
+      StorageService.updateImage(uuid: user.profileImageUUID, image: profileImage) { imageURL in
         var mutatedData = data
-        mutatedData["profileImageUUID"] = imageUUID
         mutatedData["profileImageURL"] = imageURL
-        
-        COLLECTION_USERS.document(uid).updateData(mutatedData, completion: completion)
+        COLLECTION_USERS.document(user.uid).updateData(mutatedData, completion: completion)
       }
     } else {
-      COLLECTION_USERS.document(uid).updateData(data, completion: completion)
+      COLLECTION_USERS.document(user.uid).updateData(data, completion: completion)
     }
   }
 }
