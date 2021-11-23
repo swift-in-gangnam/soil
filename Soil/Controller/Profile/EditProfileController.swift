@@ -220,6 +220,7 @@ class EditProfileController: UIViewController {
       make.top.equalTo(nameLabel.snp.bottom).offset(53)
       make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing)
       make.width.equalTo(fullnameTextField.snp.width)
+      make.bottom.lessThanOrEqualTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-50)
     }
     bioTextView.snp.makeConstraints { make in
       make.width.equalToSuperview()
