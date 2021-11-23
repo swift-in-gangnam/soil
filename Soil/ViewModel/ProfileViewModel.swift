@@ -29,6 +29,14 @@ struct ProfileViewModel {
     return attributedStatText(label: "팔로잉  ", value: user.stats.following)
   }
   
+  var fullnameCount: String {
+    return "\(fullname.count) / 10"
+  }
+  
+  var bioCount: String {
+    return "\(bio.count) / 500"
+  }
+  
   init(user: User) {
     self.user = user
   }

@@ -91,9 +91,13 @@ class ProfileController: UIViewController {
   // MARK: - Action
   
   @objc func handleEditProfileFollowTapped() {
+    guard let viewModel = viewModel else { return }
+    
     let controller = EditProfileController()
-    controller.modalPresentationStyle = .fullScreen
-    self.present(controller, animated: true, completion: nil)
+    controller.viewModel = ProfileViewModel(user: viewModel.user)
+    let nav = UINavigationController(rootViewController: controller)
+    nav.modalPresentationStyle = .fullScreen
+    self.present(nav, animated: true, completion: nil)
   }
   
   @objc func didTapFollowersBtn() {
