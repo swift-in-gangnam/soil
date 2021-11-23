@@ -32,11 +32,11 @@ struct ProfileViewModel {
   }
   
   var fullnameCount: String {
-    return "\(fullname.count) / 10"
+    return "\(fullname.count) / 15"
   }
   
   var bioCount: String {
-    return "\(bio.count) / 500"
+    return "\(bio.count) / 300"
   }
   
   init(user: User) {

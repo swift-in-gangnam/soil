@@ -67,9 +67,10 @@ class EditProfileController: UIViewController {
     $0.font = UIFont.ceraPro(size: 15, family: .medium)
   }
   
-  private lazy var nameTextField = UITextField().then {
+  private lazy var fullnameTextField = UITextField().then {
     $0.placeholder = "이름을 입력해주세요."
     $0.font = UIFont.ceraPro(size: 15, family: .bold)
+    $0.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
   }
   
   private let fullnameCountLabel = UILabel().then {
@@ -123,7 +124,7 @@ class EditProfileController: UIViewController {
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    nameTextField.addBottomBorderWithColor(color: .systemGray3, height: 1.0)
+    fullnameTextField.addBottomBorderWithColor(color: .systemGray3, height: 1.0)
   }
   
   // MARK: - Action
@@ -134,7 +135,7 @@ class EditProfileController: UIViewController {
   
   @objc func didTapDone() {
     guard let viewModel = viewModel else { return }
-    guard let fullname = nameTextField.text else { return }
+    guard let fullname = fullnameTextField.text else { return }
     guard let bio = bioTextView.text else { return }
     let data = ["fullname": fullname, "bio": bio]
     
@@ -152,6 +153,11 @@ class EditProfileController: UIViewController {
     picker.delegate = self
     picker.allowsEditing = true
     present(picker, animated: true, completion: nil)
+  }
+  
+  @objc func textDidChange(sender: UITextField) {
+    checkFullnameMaxLength(sender)
+    fullnameCountLabel.text = "\(sender.text?.count ?? 0) / 15"
   }
   
   // MARK: - Helpers
@@ -186,8 +192,8 @@ class EditProfileController: UIViewController {
       make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).offset(16)
     }
     
-    view.addSubview(nameTextField)
-    nameTextField.snp.makeConstraints { make in
+    view.addSubview(fullnameTextField)
+    fullnameTextField.snp.makeConstraints { make in
       make.leading.equalTo(nameLabel.snp.trailing).offset(15)
       make.bottom.equalTo(nameLabel.snp.bottom)
       make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing)
@@ -195,7 +201,7 @@ class EditProfileController: UIViewController {
     
     view.addSubview(fullnameCountLabel)
     fullnameCountLabel.snp.makeConstraints { make in
-      make.top.equalTo(nameTextField.snp.bottom).offset(10)
+      make.top.equalTo(fullnameTextField.snp.bottom).offset(10)
       make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).offset(-12)
     }
     
@@ -213,7 +219,7 @@ class EditProfileController: UIViewController {
     bioStackView.snp.makeConstraints { make in
       make.top.equalTo(nameLabel.snp.bottom).offset(53)
       make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing)
-      make.width.equalTo(nameTextField.snp.width)
+      make.width.equalTo(fullnameTextField.snp.width)
     }
     bioTextView.snp.makeConstraints { make in
       make.width.equalToSuperview()
@@ -234,14 +240,20 @@ class EditProfileController: UIViewController {
     guard let viewModel = viewModel else { return }
     
     profileImageView.kf.setImage(with: viewModel.profileImageURL)
-    nameTextField.text = viewModel.fullname
+    fullnameTextField.text = viewModel.fullname
     fullnameCountLabel.text = viewModel.fullnameCount
     bioTextView.text = viewModel.bio
     bioCountLabel.text = viewModel.bioCount
   }
   
-  func checkMaxBioLength(_ textView: UITextView) {
-    if (textView.text.count) > 500 {
+  func checkFullnameMaxLength(_ textField: UITextField) {
+    if (textField.text?.count ?? 0) > 15 {
+      textField.deleteBackward()
+    }
+  }
+  
+  func checkBioMaxLength(_ textView: UITextView) {
+    if (textView.text.count) > 300 {
       textView.deleteBackward()
     }
   }
@@ -251,8 +263,8 @@ class EditProfileController: UIViewController {
 
 extension EditProfileController: UITextViewDelegate {
   func textViewDidChange(_ textView: UITextView) {
-    checkMaxBioLength(textView)
-    bioCountLabel.text = "\(textView.text.count) / 500"
+    checkBioMaxLength(textView)
+    bioCountLabel.text = "\(textView.text.count) / 300"
   }
 }
 
