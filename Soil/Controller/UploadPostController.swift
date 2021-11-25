@@ -26,22 +26,25 @@ class UploadPostController: UIViewController {
   private lazy var cancelButton = UIBarButtonItem().then {
     $0.title = "Cancel"
     $0.setTitleTextAttributes(titleButtonAttributes, for: .normal)
+    $0.setTitleTextAttributes(titleButtonAttributes, for: .highlighted)
     $0.target = self
     $0.action = #selector(didTapCancel)
   }
   
-  private lazy var doneButton = UIBarButtonItem().then {
+  private lazy var writeButton = UIBarButtonItem().then {
     $0.title = "Write"
     $0.setTitleTextAttributes(titleButtonAttributes, for: .normal)
+    $0.setTitleTextAttributes(titleButtonAttributes, for: .highlighted)
     $0.target = self
-    $0.action = #selector(didTapDone)
+    $0.action = #selector(didTapWrite)
   }
   
   private let scrollView = UIScrollView().then {
     $0.keyboardDismissMode = .interactive
   }
   
-  private let titleTextField = UITextField().then {
+  private lazy var titleTextField = UITextField().then {
+    $0.delegate = self
     $0.placeholder = "제목"
     var attributes: [NSAttributedString.Key: Any] = [
       .font: UIFont.notoSansKR(size: 25, family: .regular),
@@ -132,7 +135,7 @@ class UploadPostController: UIViewController {
     
     let naviItem = UINavigationItem(title: "")
     naviItem.leftBarButtonItem = cancelButton
-    naviItem.rightBarButtonItem = doneButton
+    naviItem.rightBarButtonItem = writeButton
     
     naviBar.items = [naviItem]
     
@@ -255,8 +258,8 @@ class UploadPostController: UIViewController {
     self.dismiss(animated: true, completion: nil)
   }
   
-  @objc private func didTapDone() {
-    print("DEBUG: done Tapped...")
+  @objc private func didTapWrite() {
+    print("DEBUG: write Tapped...")
   }
   
   @objc private func didTapImageView(gestureRecognizer: UITapGestureRecognizer) {
@@ -281,6 +284,7 @@ class UploadPostController: UIViewController {
 extension UploadPostController: UITextViewDelegate {
   
   func textViewDidBeginEditing(_ textView: UITextView) {
+    customInputAccessoryView.closeButton.isHidden = false
     if textView.textColor == UIColor.lightGray {
       textView.text = nil
       let attributes: [NSAttributedString.Key: Any] = [
@@ -292,6 +296,7 @@ extension UploadPostController: UITextViewDelegate {
   }
   
   func textViewDidEndEditing(_ textView: UITextView) {
+    customInputAccessoryView.closeButton.isHidden = true
     if textView.text.isEmpty {
       let text = "나만의 소중한 일상을 기록해보세요"
       let attributes: [NSAttributedString.Key: Any] = [
@@ -300,6 +305,17 @@ extension UploadPostController: UITextViewDelegate {
       ]
       textView.attributedText = NSAttributedString(string: text, attributes: attributes)
     }
+  }
+}
+
+extension UploadPostController: UITextFieldDelegate {
+  
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    customInputAccessoryView.closeButton.isHidden = false
+  }
+  
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    customInputAccessoryView.closeButton.isHidden = true
   }
 }
 
@@ -417,6 +433,12 @@ extension UploadPostController: UIImagePickerControllerDelegate, UINavigationCon
     imageView.snp.updateConstraints { make in
       make.height.equalTo(300)
     }
+    picker.dismiss(animated: true) {
+      self.inputAccessoryView?.isHidden = false
+    }
+  }
+  
+  func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     picker.dismiss(animated: true) {
       self.inputAccessoryView?.isHidden = false
     }

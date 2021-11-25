@@ -60,9 +60,13 @@ class YouController: UIViewController {
   @objc private func handleLogout() {
     do {
       try Auth.auth().signOut()
-      let controller = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
-      //controller.delegate = self.tabBarController as? TabBarController
-      let nav = UINavigationController(rootViewController: controller)
+      let homeVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "homeVC")
+      let controller = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
+      if let loginVC: SignInController = controller as? SignInController {
+              loginVC.delegate = self.tabBarController as? TabBarController
+      }
+      
+      let nav = UINavigationController(rootViewController: homeVC)
       nav.modalPresentationStyle = .fullScreen
       self.present(nav, animated: true, completion: nil)
     } catch {

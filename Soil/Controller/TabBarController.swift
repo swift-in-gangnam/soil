@@ -43,9 +43,12 @@ class TabBarController: UITabBarController {
   func checkIfUserIsLoggedIn() {
     if Auth.auth().currentUser == nil {
       DispatchQueue.main.async {
-        let controller = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
-        //controller.delegate = self
-        let nav = UINavigationController(rootViewController: controller)
+        let homeVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "homeVC")
+        let controller = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
+        if let loginVC: SignInController = controller as? SignInController {
+                loginVC.delegate = self
+        }
+        let nav = UINavigationController(rootViewController: homeVC)
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true, completion: nil)
       }
