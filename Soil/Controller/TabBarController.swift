@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import SnapKit
 import Then
+import Kingfisher
 
 class TabBarController: UITabBarController {
   

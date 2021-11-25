@@ -7,8 +7,6 @@
 
 import UIKit
 
-import Kingfisher
-
 protocol ProfileControllerDelegate: AnyObject {
   func didTapUserStatBtn()
 }
@@ -88,12 +86,16 @@ class ProfileController: UIViewController {
     configureUI()
   }
   
-  // MARK: - Action
-  
+  // MARK: - Action0
   @objc func handleEditProfileFollowTapped() {
+    guard let viewModel = viewModel else { return }
+    
     let controller = EditProfileController()
-    controller.modalPresentationStyle = .fullScreen
-    self.present(controller, animated: true, completion: nil)
+    controller.viewModel = ProfileViewModel(user: viewModel.user)
+    controller.delegate = self
+    let nav = UINavigationController(rootViewController: controller)
+    nav.modalPresentationStyle = .fullScreen
+    self.present(nav, animated: true, completion: nil)
   }
   
   @objc func didTapFollowersBtn() {
@@ -184,5 +186,16 @@ class ProfileController: UIViewController {
     followersBtn.setAttributedTitle(viewModel.numberOfFollowers, for: .normal)
     followingBtn.setAttributedTitle(viewModel.numberOfFollowing, for: .normal)
     bioLabel.text = viewModel.bio
+  }
+}
+
+// MARK: - EditProfileControllerDelegte
+
+extension ProfileController: EditProfileControllerDelegte {
+  func didUpdateProfile(_ controller: EditProfileController) {
+    controller.dismiss(animated: true, completion: nil)
+    UserService.fetchUser { user in
+      self.viewModel = ProfileViewModel(user: user)
+    }
   }
 }

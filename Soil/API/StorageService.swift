@@ -30,4 +30,22 @@ struct StorageService {
       }
     }
   }
+  
+  static func updateImage(uuid: String, image: UIImage, completion: @escaping(String) -> Void) {
+    guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+        
+    let ref = Storage.storage().reference(withPath: "/profile_images/\(uuid)")
+        
+    ref.putData(imageData, metadata: nil) { _, error in
+      if let error = error {
+        print("DEBUG: Failed to update image \(error.localizedDescription)")
+        return
+      }
+            
+      ref.downloadURL { url, _ in
+        guard let imageURL = url?.absoluteString else { return }
+        completion(imageURL)
+      }
+    }
+  }
 }

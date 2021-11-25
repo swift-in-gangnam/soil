@@ -11,6 +11,8 @@ struct ProfileViewModel {
   
   let user: User
   
+  var uid: String { return user.uid }
+  
   var fullname: String { return user.fullname }
   
   var username: String { return user.username }
@@ -27,6 +29,14 @@ struct ProfileViewModel {
   
   var numberOfFollowing: NSAttributedString {
     return attributedStatText(label: "팔로잉  ", value: user.stats.following)
+  }
+  
+  var fullnameCount: String {
+    return "\(fullname.count) / 15"
+  }
+  
+  var bioCount: String {
+    return "\(bio.count) / 300"
   }
   
   init(user: User) {
