@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol AuthDelegate: AnyObject {
-  func authenticationDidComplete()
-}
-
 class SignInController: UIViewController {
   
   // MARK: - Properties
@@ -20,7 +16,6 @@ class SignInController: UIViewController {
   @IBOutlet weak var loginButton: UIButton!
   
   private var viewModel = LoginViewModel()
-  weak var delegate: AuthenticationDelegate?
   
   // MARK: LifeCycle
   override func viewDidLoad() {
@@ -42,11 +37,7 @@ class SignInController: UIViewController {
         print("DEBUG: Failed to log user in \(error.localizedDescription)")
         return
       }
-      
-      self.delegate?.authenticationDidComplete()
-      let controller = TabBarController()
-      controller.modalPresentationStyle = .fullScreen
-      self.present(controller, animated: true, completion: nil)
+      NotificationCenter.default.post(name: .authNotificationName, object: nil)
     }
   }
   
