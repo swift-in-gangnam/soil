@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -131,9 +132,9 @@
                                 <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xas-pD-3hr" customClass="CustomTextField" customModule="Soil" customModuleProvider="target">
-                                <rect key="frame" x="39.5" y="302" width="335" height="34"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xas-pD-3hr">
+                                <rect key="frame" x="39.5" y="302" width="335" height="18.5"/>
+                                <color key="backgroundColor" name="E5E5E5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="O3Y-KF-79V"/>
                                 </constraints>
@@ -383,9 +384,9 @@
                                     <segue destination="xc2-D9-BAI" kind="show" id="NMJ-TT-4VH"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wSH-jD-Al5" customClass="CustomTextField" customModule="Soil" customModuleProvider="target">
-                                <rect key="frame" x="32" y="295" width="350" height="34"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wSH-jD-Al5">
+                                <rect key="frame" x="32" y="295" width="350" height="17"/>
+                                <color key="backgroundColor" name="E5E5E5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="SRH-j6-JJo"/>
                                 </constraints>
@@ -463,9 +464,9 @@
                                     <segue destination="1Bx-id-CUT" kind="show" id="1Sb-N1-X3O"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="@" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDt-ML-CXr" customClass="CustomTextField" customModule="Soil" customModuleProvider="target">
-                                <rect key="frame" x="32" y="295" width="350" height="34"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="@" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDt-ML-CXr">
+                                <rect key="frame" x="32" y="295" width="350" height="18.5"/>
+                                <color key="backgroundColor" name="E5E5E5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="FMk-Gy-1Vz"/>
                                 </constraints>
@@ -544,9 +545,9 @@
                                     <segue destination="XKK-lH-TJv" kind="show" id="ahk-Pm-sRb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQG-hn-MHu" customClass="CustomTextField" customModule="Soil" customModuleProvider="target">
-                                <rect key="frame" x="32" y="295" width="350" height="34"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQG-hn-MHu">
+                                <rect key="frame" x="32" y="295" width="350" height="18.5"/>
+                                <color key="backgroundColor" name="E5E5E5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="Tzp-xn-sfm"/>
                                 </constraints>
@@ -663,9 +664,9 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRs-vX-e6X" customClass="CustomTextField" customModule="Soil" customModuleProvider="target">
-                                <rect key="frame" x="32" y="227.5" width="350" height="34"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRs-vX-e6X">
+                                <rect key="frame" x="32" y="227.5" width="350" height="18.5"/>
+                                <color key="backgroundColor" name="E5E5E5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="1AU-Mp-HUi"/>
                                 </constraints>
@@ -690,15 +691,21 @@
                                     <action selector="didTapLogin:" destination="Rbd-OM-J1L" eventType="touchUpInside" id="tKG-6J-Hi5"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ikx-2c-Emq" customClass="CustomTextField" customModule="Soil" customModuleProvider="target">
-                                <rect key="frame" x="32" y="331.5" width="350" height="34"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ikx-2c-Emq">
+                                <rect key="frame" x="32" y="316" width="350" height="17"/>
+                                <color key="backgroundColor" name="E5E5E5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="AV5-GU-xYT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lah-VP-3L4">
+                                <rect key="frame" x="20" y="353" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XdL-c6-NNX"/>
                         <color key="backgroundColor" name="E5E5E5"/>
@@ -706,11 +713,13 @@
                         <constraints>
                             <constraint firstItem="Ikx-2c-Emq" firstAttribute="centerX" secondItem="y1w-QO-mSI" secondAttribute="centerX" id="6Vp-lh-Wp5"/>
                             <constraint firstItem="FPH-J8-R0f" firstAttribute="leading" secondItem="XdL-c6-NNX" secondAttribute="leading" constant="20" id="HrT-j3-4HH"/>
+                            <constraint firstItem="lah-VP-3L4" firstAttribute="top" secondItem="Ikx-2c-Emq" secondAttribute="bottom" constant="20" id="LCB-16-p3O"/>
                             <constraint firstItem="HqN-iC-NbT" firstAttribute="centerX" secondItem="y1w-QO-mSI" secondAttribute="centerX" id="Q7Z-q0-DS9"/>
                             <constraint firstItem="hRs-vX-e6X" firstAttribute="centerX" secondItem="y1w-QO-mSI" secondAttribute="centerX" id="Qnh-Qs-IRu"/>
                             <constraint firstItem="HqN-iC-NbT" firstAttribute="leading" secondItem="XdL-c6-NNX" secondAttribute="leading" constant="39.5" id="UIu-OQ-PBD"/>
                             <constraint firstItem="XdL-c6-NNX" firstAttribute="trailing" secondItem="HqN-iC-NbT" secondAttribute="trailing" constant="39.5" id="dE5-gp-VY7"/>
                             <constraint firstItem="Ikx-2c-Emq" firstAttribute="top" secondItem="hRs-vX-e6X" secondAttribute="bottom" constant="70" id="huV-EV-Ql0"/>
+                            <constraint firstItem="lah-VP-3L4" firstAttribute="leading" secondItem="XdL-c6-NNX" secondAttribute="leading" constant="20" id="pO4-08-LuP"/>
                             <constraint firstItem="FPH-J8-R0f" firstAttribute="top" secondItem="XdL-c6-NNX" secondAttribute="top" constant="20" id="syS-fb-ZY8"/>
                             <constraint firstItem="XdL-c6-NNX" firstAttribute="bottom" secondItem="HqN-iC-NbT" secondAttribute="bottom" constant="50" id="vU0-ad-hBJ"/>
                             <constraint firstItem="hRs-vX-e6X" firstAttribute="top" secondItem="FPH-J8-R0f" secondAttribute="bottom" constant="83" id="xNJ-vE-PJO"/>
@@ -723,6 +732,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="hRs-vX-e6X" id="bcB-a7-oK8"/>
                         <outlet property="loginButton" destination="HqN-iC-NbT" id="xxy-7t-cBz"/>
+                        <outlet property="loginCheckLabel" destination="lah-VP-3L4" id="IrK-IU-ce9"/>
                         <outlet property="passwordTextField" destination="Ikx-2c-Emq" id="XOW-3j-Oqq"/>
                     </connections>
                 </viewController>
@@ -742,5 +752,8 @@
         <namedColor name="E5E5E5">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

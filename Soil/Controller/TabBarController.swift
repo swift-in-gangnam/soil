@@ -32,6 +32,10 @@ class TabBarController: UITabBarController {
   
   // MARK: - Lifecycle
   
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     checkIfUserIsLoggedIn()
@@ -41,13 +45,13 @@ class TabBarController: UITabBarController {
   // MARK: - API
   
   func checkIfUserIsLoggedIn() {
+    NotificationCenter.default.addObserver(
+      self, selector: #selector(self.authenticationDidComplete), name: .authNotificationName, object: nil
+    )
+    
     if Auth.auth().currentUser == nil {
       DispatchQueue.main.async {
         let homeVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "homeVC")
-
-        NotificationCenter.default.addObserver(
-          self, selector: #selector(self.authenticationDidComplete), name: .authNotificationName, object: nil
-        )
 
         let nav = UINavigationController(rootViewController: homeVC)
         nav.modalPresentationStyle = .fullScreen
