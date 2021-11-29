@@ -30,7 +30,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPM-uY-5m1">
-                                <rect key="frame" x="38" y="416.5" width="338" height="72.5"/>
+                                <rect key="frame" x="38" y="391.5" width="338" height="72.5"/>
                                 <string key="text">어떠한 것에 재미를 붙여
    심심하지 아니하게 세월을 보냄.</string>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Thin" family="Noto Sans KR" pointSize="25"/>
@@ -38,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNA-E8-h3B">
-                                <rect key="frame" x="39.5" y="762" width="335" height="50"/>
+                                <rect key="frame" x="32" y="762" width="350" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1C3-M9-Fda"/>
@@ -56,7 +56,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="‘消日’" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDs-4u-ZAI">
-                                <rect key="frame" x="38" y="326" width="128" height="72.5"/>
+                                <rect key="frame" x="38" y="303" width="128" height="72.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="50"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -90,12 +90,12 @@
                             <constraint firstItem="8z9-fc-gTW" firstAttribute="centerX" secondItem="6Km-Gx-CeL" secondAttribute="centerX" id="96t-xe-5Hk"/>
                             <constraint firstItem="ZPM-uY-5m1" firstAttribute="centerX" secondItem="6Km-Gx-CeL" secondAttribute="centerX" id="Hco-Fo-jUC"/>
                             <constraint firstItem="KDs-4u-ZAI" firstAttribute="leading" secondItem="xrL-uc-8bi" secondAttribute="leading" constant="38" id="HeG-Zb-Wmq"/>
-                            <constraint firstItem="KDs-4u-ZAI" firstAttribute="top" secondItem="dgg-Rv-Loj" secondAttribute="bottom" constant="111" id="KHX-Ut-9I4"/>
+                            <constraint firstItem="KDs-4u-ZAI" firstAttribute="top" secondItem="dgg-Rv-Loj" secondAttribute="bottom" constant="88" id="KHX-Ut-9I4"/>
                             <constraint firstItem="xrL-uc-8bi" firstAttribute="bottom" secondItem="8z9-fc-gTW" secondAttribute="bottom" constant="17" id="W5V-kR-m2C"/>
-                            <constraint firstItem="xrL-uc-8bi" firstAttribute="trailing" secondItem="lNA-E8-h3B" secondAttribute="trailing" constant="39.5" id="cYt-SG-Vk2"/>
-                            <constraint firstItem="lNA-E8-h3B" firstAttribute="leading" secondItem="xrL-uc-8bi" secondAttribute="leading" constant="39.5" id="hxA-iE-DvR"/>
+                            <constraint firstItem="xrL-uc-8bi" firstAttribute="trailing" secondItem="lNA-E8-h3B" secondAttribute="trailing" constant="32" id="cYt-SG-Vk2"/>
+                            <constraint firstItem="lNA-E8-h3B" firstAttribute="leading" secondItem="xrL-uc-8bi" secondAttribute="leading" constant="32" id="hxA-iE-DvR"/>
                             <constraint firstItem="8z9-fc-gTW" firstAttribute="top" secondItem="lNA-E8-h3B" secondAttribute="bottom" constant="3" id="qZB-VY-Rf4"/>
-                            <constraint firstItem="ZPM-uY-5m1" firstAttribute="top" secondItem="KDs-4u-ZAI" secondAttribute="bottom" constant="18" id="tfQ-g5-Eli"/>
+                            <constraint firstItem="ZPM-uY-5m1" firstAttribute="top" secondItem="KDs-4u-ZAI" secondAttribute="bottom" constant="16" id="tfQ-g5-Eli"/>
                             <constraint firstItem="dgg-Rv-Loj" firstAttribute="centerX" secondItem="6Km-Gx-CeL" secondAttribute="centerX" id="vrQ-me-Nd2"/>
                         </constraints>
                     </view>
@@ -118,13 +118,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Og9-4E-wzB">
-                                <rect key="frame" x="20" y="115" width="245.5" height="36.5"/>
+                                <rect key="frame" x="24" y="115" width="245.5" height="36.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxB-yU-ABJ">
-                                <rect key="frame" x="20" y="161.5" width="178" height="17.5"/>
+                                <rect key="frame" x="24" y="165.5" width="178" height="17.5"/>
                                 <string key="text">로그인 또는 회원가입에 필요합니다.
 
 </string>
@@ -133,7 +133,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xas-pD-3hr">
-                                <rect key="frame" x="39.5" y="302" width="335" height="18.5"/>
+                                <rect key="frame" x="39.5" y="306" width="335" height="18.5"/>
                                 <color key="backgroundColor" name="E5E5E5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="O3Y-KF-79V"/>
@@ -142,7 +142,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1W-EW-tB0">
-                                <rect key="frame" x="39.5" y="762" width="335" height="50"/>
+                                <rect key="frame" x="32" y="762" width="350" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="qKL-jH-4Yj"/>
@@ -164,13 +164,14 @@
                         <color key="backgroundColor" name="E5E5E5"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="c1W-EW-tB0" firstAttribute="leading" secondItem="orZ-jS-Cfz" secondAttribute="leading" constant="39.5" id="25b-6o-dS9"/>
+                            <constraint firstItem="c1W-EW-tB0" firstAttribute="leading" secondItem="orZ-jS-Cfz" secondAttribute="leading" constant="32" id="25b-6o-dS9"/>
                             <constraint firstItem="c1W-EW-tB0" firstAttribute="centerX" secondItem="RCv-rf-VoA" secondAttribute="centerX" id="9Ni-om-YV0"/>
+                            <constraint firstItem="orZ-jS-Cfz" firstAttribute="trailing" secondItem="c1W-EW-tB0" secondAttribute="trailing" constant="32" id="Ber-DS-LIJ"/>
                             <constraint firstItem="Og9-4E-wzB" firstAttribute="top" secondItem="orZ-jS-Cfz" secondAttribute="top" constant="27" id="Dd6-Bn-kUo"/>
-                            <constraint firstItem="bxB-yU-ABJ" firstAttribute="top" secondItem="Og9-4E-wzB" secondAttribute="bottom" constant="10" id="NkS-iT-0xu"/>
-                            <constraint firstItem="Og9-4E-wzB" firstAttribute="leading" secondItem="orZ-jS-Cfz" secondAttribute="leading" constant="20" id="Qov-N1-AsC"/>
+                            <constraint firstItem="bxB-yU-ABJ" firstAttribute="top" secondItem="Og9-4E-wzB" secondAttribute="bottom" constant="14" id="NkS-iT-0xu"/>
+                            <constraint firstItem="Og9-4E-wzB" firstAttribute="leading" secondItem="orZ-jS-Cfz" secondAttribute="leading" constant="24" id="Qov-N1-AsC"/>
                             <constraint firstItem="orZ-jS-Cfz" firstAttribute="bottom" secondItem="c1W-EW-tB0" secondAttribute="bottom" constant="50" id="fDT-Og-x1G"/>
-                            <constraint firstItem="bxB-yU-ABJ" firstAttribute="leading" secondItem="orZ-jS-Cfz" secondAttribute="leading" constant="20" id="lsG-6a-sEp"/>
+                            <constraint firstItem="bxB-yU-ABJ" firstAttribute="leading" secondItem="orZ-jS-Cfz" secondAttribute="leading" constant="24" id="lsG-6a-sEp"/>
                             <constraint firstItem="xas-pD-3hr" firstAttribute="centerX" secondItem="RCv-rf-VoA" secondAttribute="centerX" id="vHj-tN-kXH"/>
                             <constraint firstItem="xas-pD-3hr" firstAttribute="top" secondItem="bxB-yU-ABJ" secondAttribute="bottom" constant="123" id="y4g-0o-XeS"/>
                         </constraints>
@@ -224,19 +225,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아래의 이메일로 메일을 보냈습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKF-Dm-Uph">
-                                <rect key="frame" x="110" y="522.5" width="194" height="19"/>
+                                <rect key="frame" x="110" y="516.5" width="194" height="19"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="abc@icloud.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoT-tH-VvA">
-                                <rect key="frame" x="156" y="551.5" width="102" height="19"/>
+                                <rect key="frame" x="156" y="540.5" width="102" height="19"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="om1-Uw-71d">
-                                <rect key="frame" x="39.5" y="762" width="335" height="50"/>
+                                <rect key="frame" x="32" y="762" width="350" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gyf-Ia-4xl"/>
@@ -278,16 +279,16 @@
                         <color key="backgroundColor" name="E5E5E5"/>
                         <constraints>
                             <constraint firstItem="eoT-tH-VvA" firstAttribute="centerX" secondItem="gep-uL-jhF" secondAttribute="centerX" id="0rq-02-0UQ"/>
-                            <constraint firstItem="MKF-Dm-Uph" firstAttribute="top" secondItem="nYA-OB-G4m" secondAttribute="bottom" constant="19" id="AmC-BA-aL3"/>
+                            <constraint firstItem="MKF-Dm-Uph" firstAttribute="top" secondItem="nYA-OB-G4m" secondAttribute="bottom" constant="13" id="AmC-BA-aL3"/>
                             <constraint firstItem="LUe-bS-wO8" firstAttribute="bottom" secondItem="rxi-qd-fVL" secondAttribute="bottom" constant="17" id="C2L-Kd-Udb"/>
-                            <constraint firstItem="LUe-bS-wO8" firstAttribute="trailing" secondItem="om1-Uw-71d" secondAttribute="trailing" constant="39.5" id="Ch8-0H-ZL1"/>
+                            <constraint firstItem="LUe-bS-wO8" firstAttribute="trailing" secondItem="om1-Uw-71d" secondAttribute="trailing" constant="32" id="Ch8-0H-ZL1"/>
                             <constraint firstItem="om1-Uw-71d" firstAttribute="centerX" secondItem="gep-uL-jhF" secondAttribute="centerX" id="Kaq-ul-8LW"/>
                             <constraint firstItem="nYA-OB-G4m" firstAttribute="centerX" secondItem="gep-uL-jhF" secondAttribute="centerX" id="OSm-CO-UVK"/>
                             <constraint firstItem="rxi-qd-fVL" firstAttribute="centerX" secondItem="gep-uL-jhF" secondAttribute="centerX" id="TMe-07-3gN"/>
                             <constraint firstItem="rxi-qd-fVL" firstAttribute="top" secondItem="om1-Uw-71d" secondAttribute="bottom" constant="3" id="bcb-Bf-hUm"/>
-                            <constraint firstItem="eoT-tH-VvA" firstAttribute="top" secondItem="MKF-Dm-Uph" secondAttribute="bottom" constant="10" id="lxr-GI-mwC"/>
+                            <constraint firstItem="eoT-tH-VvA" firstAttribute="top" secondItem="MKF-Dm-Uph" secondAttribute="bottom" constant="5" id="lxr-GI-mwC"/>
                             <constraint firstItem="MKF-Dm-Uph" firstAttribute="centerX" secondItem="gep-uL-jhF" secondAttribute="centerX" id="sCZ-v2-3OJ"/>
-                            <constraint firstItem="om1-Uw-71d" firstAttribute="leading" secondItem="LUe-bS-wO8" secondAttribute="leading" constant="39.5" id="xF1-mF-A19"/>
+                            <constraint firstItem="om1-Uw-71d" firstAttribute="leading" secondItem="LUe-bS-wO8" secondAttribute="leading" constant="32" id="xF1-mF-A19"/>
                             <constraint firstItem="nYA-OB-G4m" firstAttribute="top" secondItem="LUe-bS-wO8" secondAttribute="top" constant="379" id="yLw-PV-kPi"/>
                         </constraints>
                     </view>
@@ -306,7 +307,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXq-lG-OWb">
-                                <rect key="frame" x="20" y="108" width="124.5" height="72.5"/>
+                                <rect key="frame" x="24" y="108" width="124.5" height="72.5"/>
                                 <string key="text">가입을
 환영합니다!</string>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="25"/>
@@ -314,7 +315,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXw-uu-CvM">
-                                <rect key="frame" x="39.5" y="762" width="335" height="50"/>
+                                <rect key="frame" x="32" y="762" width="350" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nab-fk-eHI"/>
@@ -335,9 +336,9 @@
                             <constraint firstItem="rXw-uu-CvM" firstAttribute="centerX" secondItem="Eu3-xb-hy9" secondAttribute="centerX" id="4Q8-iy-OSP"/>
                             <constraint firstItem="fLF-u2-DUL" firstAttribute="bottom" secondItem="rXw-uu-CvM" secondAttribute="bottom" constant="50" id="Ikx-f8-nKG"/>
                             <constraint firstItem="hXq-lG-OWb" firstAttribute="top" secondItem="fLF-u2-DUL" secondAttribute="top" constant="20" id="Pu3-qx-ziL"/>
-                            <constraint firstItem="hXq-lG-OWb" firstAttribute="leading" secondItem="fLF-u2-DUL" secondAttribute="leading" constant="20" id="ibT-RC-s7G"/>
-                            <constraint firstItem="rXw-uu-CvM" firstAttribute="leading" secondItem="fLF-u2-DUL" secondAttribute="leading" constant="39.5" id="s1V-Ck-gff"/>
-                            <constraint firstItem="fLF-u2-DUL" firstAttribute="trailing" secondItem="rXw-uu-CvM" secondAttribute="trailing" constant="39.5" id="sAs-ux-HFE"/>
+                            <constraint firstItem="hXq-lG-OWb" firstAttribute="leading" secondItem="fLF-u2-DUL" secondAttribute="leading" constant="24" id="ibT-RC-s7G"/>
+                            <constraint firstItem="rXw-uu-CvM" firstAttribute="leading" secondItem="fLF-u2-DUL" secondAttribute="leading" constant="32" id="s1V-Ck-gff"/>
+                            <constraint firstItem="fLF-u2-DUL" firstAttribute="trailing" secondItem="rXw-uu-CvM" secondAttribute="trailing" constant="32" id="sAs-ux-HFE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Glu-37-1S0"/>
@@ -355,19 +356,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eY3-hc-6Pa">
-                                <rect key="frame" x="20" y="108" width="268.5" height="36.5"/>
+                                <rect key="frame" x="24" y="108" width="268.5" height="36.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1번만 입력하니 정확히 입력해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhi-5H-FIv">
-                                <rect key="frame" x="20" y="154.5" width="185.5" height="17.5"/>
+                                <rect key="frame" x="24" y="158.5" width="185.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="12"/>
                                 <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppb-pz-lgE">
-                                <rect key="frame" x="39.5" y="762" width="335" height="50"/>
+                                <rect key="frame" x="32" y="762" width="350" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Wet-a3-jqS"/>
@@ -385,7 +386,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wSH-jD-Al5">
-                                <rect key="frame" x="32" y="295" width="350" height="17"/>
+                                <rect key="frame" x="32" y="299" width="350" height="17"/>
                                 <color key="backgroundColor" name="E5E5E5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="SRH-j6-JJo"/>
@@ -399,14 +400,14 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="wSH-jD-Al5" firstAttribute="top" secondItem="lhi-5H-FIv" secondAttribute="bottom" constant="123" id="1bb-aT-97y"/>
-                            <constraint firstItem="eY3-hc-6Pa" firstAttribute="leading" secondItem="S07-B8-lTX" secondAttribute="leading" constant="20" id="2Qg-N2-kjx"/>
+                            <constraint firstItem="eY3-hc-6Pa" firstAttribute="leading" secondItem="S07-B8-lTX" secondAttribute="leading" constant="24" id="2Qg-N2-kjx"/>
                             <constraint firstItem="wSH-jD-Al5" firstAttribute="centerX" secondItem="Ka8-GK-5ov" secondAttribute="centerX" id="6Mz-S9-JdN"/>
-                            <constraint firstItem="S07-B8-lTX" firstAttribute="trailing" secondItem="Ppb-pz-lgE" secondAttribute="trailing" constant="39.5" id="CGK-AO-1de"/>
+                            <constraint firstItem="S07-B8-lTX" firstAttribute="trailing" secondItem="Ppb-pz-lgE" secondAttribute="trailing" constant="32" id="CGK-AO-1de"/>
                             <constraint firstItem="S07-B8-lTX" firstAttribute="bottom" secondItem="Ppb-pz-lgE" secondAttribute="bottom" constant="50" id="Qv4-MS-hjE"/>
-                            <constraint firstItem="Ppb-pz-lgE" firstAttribute="leading" secondItem="S07-B8-lTX" secondAttribute="leading" constant="39.5" id="b8W-IZ-orH"/>
+                            <constraint firstItem="Ppb-pz-lgE" firstAttribute="leading" secondItem="S07-B8-lTX" secondAttribute="leading" constant="32" id="b8W-IZ-orH"/>
                             <constraint firstItem="eY3-hc-6Pa" firstAttribute="top" secondItem="S07-B8-lTX" secondAttribute="top" constant="20" id="c0U-82-psP"/>
-                            <constraint firstItem="lhi-5H-FIv" firstAttribute="leading" secondItem="S07-B8-lTX" secondAttribute="leading" constant="20" id="hSa-7o-ZNQ"/>
-                            <constraint firstItem="lhi-5H-FIv" firstAttribute="top" secondItem="eY3-hc-6Pa" secondAttribute="bottom" constant="10" id="w1u-E7-IDw"/>
+                            <constraint firstItem="lhi-5H-FIv" firstAttribute="leading" secondItem="S07-B8-lTX" secondAttribute="leading" constant="24" id="hSa-7o-ZNQ"/>
+                            <constraint firstItem="lhi-5H-FIv" firstAttribute="top" secondItem="eY3-hc-6Pa" secondAttribute="bottom" constant="14" id="w1u-E7-IDw"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="t4f-Wd-LWb" appends="YES" id="4V8-PT-HY2"/>
@@ -435,19 +436,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Q6-uh-RpF">
-                                <rect key="frame" x="20" y="108" width="245.5" height="36.5"/>
+                                <rect key="frame" x="24" y="108" width="245.5" height="36.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한번 선택하면 변경이 불가능하니 신중히 입력해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvb-LV-qGO">
-                                <rect key="frame" x="20" y="154.5" width="272" height="17.5"/>
+                                <rect key="frame" x="24" y="158.5" width="272" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="12"/>
                                 <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="has-ia-BgR">
-                                <rect key="frame" x="39.5" y="762" width="335" height="50"/>
+                                <rect key="frame" x="32" y="762" width="350" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="e2y-fD-6lM"/>
@@ -465,7 +466,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="@" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDt-ML-CXr">
-                                <rect key="frame" x="32" y="295" width="350" height="18.5"/>
+                                <rect key="frame" x="32" y="299" width="350" height="18.5"/>
                                 <color key="backgroundColor" name="E5E5E5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="FMk-Gy-1Vz"/>
@@ -479,15 +480,15 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="DwP-mO-nrm" firstAttribute="bottom" secondItem="has-ia-BgR" secondAttribute="bottom" constant="50" id="D0P-jR-5Nw"/>
-                            <constraint firstItem="DwP-mO-nrm" firstAttribute="trailing" secondItem="has-ia-BgR" secondAttribute="trailing" constant="39.5" id="Jcm-a4-w2u"/>
+                            <constraint firstItem="DwP-mO-nrm" firstAttribute="trailing" secondItem="has-ia-BgR" secondAttribute="trailing" constant="32" id="Jcm-a4-w2u"/>
                             <constraint firstItem="NDt-ML-CXr" firstAttribute="top" secondItem="Nvb-LV-qGO" secondAttribute="bottom" constant="123" id="LKJ-zU-FW2"/>
                             <constraint firstItem="8Q6-uh-RpF" firstAttribute="top" secondItem="DwP-mO-nrm" secondAttribute="top" constant="20" id="Ppz-LK-xuk"/>
-                            <constraint firstItem="Nvb-LV-qGO" firstAttribute="top" secondItem="8Q6-uh-RpF" secondAttribute="bottom" constant="10" id="jEb-VO-ZBA"/>
-                            <constraint firstItem="Nvb-LV-qGO" firstAttribute="leading" secondItem="DwP-mO-nrm" secondAttribute="leading" constant="20" id="lOw-HA-nBV"/>
+                            <constraint firstItem="Nvb-LV-qGO" firstAttribute="top" secondItem="8Q6-uh-RpF" secondAttribute="bottom" constant="14" id="jEb-VO-ZBA"/>
+                            <constraint firstItem="Nvb-LV-qGO" firstAttribute="leading" secondItem="DwP-mO-nrm" secondAttribute="leading" constant="24" id="lOw-HA-nBV"/>
                             <constraint firstItem="NDt-ML-CXr" firstAttribute="centerX" secondItem="ZUo-x7-IEd" secondAttribute="centerX" id="mKZ-F7-QWo"/>
                             <constraint firstItem="has-ia-BgR" firstAttribute="centerX" secondItem="ZUo-x7-IEd" secondAttribute="centerX" id="rOx-s9-wPn"/>
-                            <constraint firstItem="has-ia-BgR" firstAttribute="leading" secondItem="DwP-mO-nrm" secondAttribute="leading" constant="39.5" id="suA-nb-bUL"/>
-                            <constraint firstItem="8Q6-uh-RpF" firstAttribute="leading" secondItem="DwP-mO-nrm" secondAttribute="leading" constant="20" id="y0G-vQ-gqm"/>
+                            <constraint firstItem="has-ia-BgR" firstAttribute="leading" secondItem="DwP-mO-nrm" secondAttribute="leading" constant="32" id="suA-nb-bUL"/>
+                            <constraint firstItem="8Q6-uh-RpF" firstAttribute="leading" secondItem="DwP-mO-nrm" secondAttribute="leading" constant="24" id="y0G-vQ-gqm"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Ebg-Jh-Tk5" appends="YES" id="ENm-tq-vIx"/>
@@ -516,19 +517,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ab1-bx-Csp">
-                                <rect key="frame" x="20" y="108" width="222.5" height="36.5"/>
+                                <rect key="frame" x="24" y="108" width="222.5" height="36.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추후에 변경이 가능합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnT-wg-yhH">
-                                <rect key="frame" x="20" y="154.5" width="132.5" height="17.5"/>
+                                <rect key="frame" x="24" y="158.5" width="132.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="12"/>
                                 <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7J-W9-FlC">
-                                <rect key="frame" x="39.5" y="762" width="335" height="50"/>
+                                <rect key="frame" x="32" y="762" width="350" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="kfN-QG-8tc"/>
@@ -546,7 +547,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQG-hn-MHu">
-                                <rect key="frame" x="32" y="295" width="350" height="18.5"/>
+                                <rect key="frame" x="32" y="299" width="350" height="18.5"/>
                                 <color key="backgroundColor" name="E5E5E5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="Tzp-xn-sfm"/>
@@ -560,14 +561,14 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ab1-bx-Csp" firstAttribute="top" secondItem="sNH-ac-h8T" secondAttribute="top" constant="20" id="00a-uJ-z7T"/>
-                            <constraint firstItem="sNH-ac-h8T" firstAttribute="trailing" secondItem="a7J-W9-FlC" secondAttribute="trailing" constant="39.5" id="Bsa-tA-Ha5"/>
+                            <constraint firstItem="sNH-ac-h8T" firstAttribute="trailing" secondItem="a7J-W9-FlC" secondAttribute="trailing" constant="32" id="Bsa-tA-Ha5"/>
                             <constraint firstItem="a7J-W9-FlC" firstAttribute="centerX" secondItem="sCc-hF-l6Z" secondAttribute="centerX" id="Dbf-fh-2y3"/>
-                            <constraint firstItem="OnT-wg-yhH" firstAttribute="leading" secondItem="sNH-ac-h8T" secondAttribute="leading" constant="20" id="K1R-Ve-WGP"/>
-                            <constraint firstItem="ab1-bx-Csp" firstAttribute="leading" secondItem="sNH-ac-h8T" secondAttribute="leading" constant="20" id="V7V-vS-9I8"/>
+                            <constraint firstItem="OnT-wg-yhH" firstAttribute="leading" secondItem="sNH-ac-h8T" secondAttribute="leading" constant="24" id="K1R-Ve-WGP"/>
+                            <constraint firstItem="ab1-bx-Csp" firstAttribute="leading" secondItem="sNH-ac-h8T" secondAttribute="leading" constant="24" id="V7V-vS-9I8"/>
                             <constraint firstItem="sNH-ac-h8T" firstAttribute="bottom" secondItem="a7J-W9-FlC" secondAttribute="bottom" constant="50" id="btS-Hl-2r3"/>
                             <constraint firstItem="GQG-hn-MHu" firstAttribute="centerX" secondItem="sCc-hF-l6Z" secondAttribute="centerX" id="eCS-qP-fDF"/>
-                            <constraint firstItem="OnT-wg-yhH" firstAttribute="top" secondItem="ab1-bx-Csp" secondAttribute="bottom" constant="10" id="iAt-ag-rV9"/>
-                            <constraint firstItem="a7J-W9-FlC" firstAttribute="leading" secondItem="sNH-ac-h8T" secondAttribute="leading" constant="39.5" id="onG-be-NKa"/>
+                            <constraint firstItem="OnT-wg-yhH" firstAttribute="top" secondItem="ab1-bx-Csp" secondAttribute="bottom" constant="14" id="iAt-ag-rV9"/>
+                            <constraint firstItem="a7J-W9-FlC" firstAttribute="leading" secondItem="sNH-ac-h8T" secondAttribute="leading" constant="32" id="onG-be-NKa"/>
                             <constraint firstItem="GQG-hn-MHu" firstAttribute="top" secondItem="OnT-wg-yhH" secondAttribute="bottom" constant="123" id="u6Z-e1-gYB"/>
                         </constraints>
                         <connections>
@@ -597,7 +598,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jd9-pH-8Oj">
-                                <rect key="frame" x="20" y="108" width="287.5" height="72.5"/>
+                                <rect key="frame" x="24" y="108" width="287.5" height="72.5"/>
                                 <string key="text">이제 마지막이에요!
 프로필 사진을 선택해주세요</string>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="25"/>
@@ -605,7 +606,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72P-GV-8kr">
-                                <rect key="frame" x="39.5" y="762" width="335" height="50"/>
+                                <rect key="frame" x="32" y="762" width="350" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="L9w-4t-96F"/>
@@ -637,11 +638,11 @@
                             <constraint firstItem="iwH-lJ-Z4n" firstAttribute="bottom" secondItem="72P-GV-8kr" secondAttribute="bottom" constant="50" id="2X6-s6-Bak"/>
                             <constraint firstItem="72P-GV-8kr" firstAttribute="centerX" secondItem="ZSC-GQ-UBV" secondAttribute="centerX" id="AVO-s4-LE4"/>
                             <constraint firstItem="7bk-6K-LDa" firstAttribute="centerY" secondItem="ZSC-GQ-UBV" secondAttribute="centerY" id="CNY-dl-4yH"/>
-                            <constraint firstItem="iwH-lJ-Z4n" firstAttribute="trailing" secondItem="72P-GV-8kr" secondAttribute="trailing" constant="39.5" id="JVH-7F-C6T"/>
+                            <constraint firstItem="iwH-lJ-Z4n" firstAttribute="trailing" secondItem="72P-GV-8kr" secondAttribute="trailing" constant="32" id="JVH-7F-C6T"/>
                             <constraint firstItem="7bk-6K-LDa" firstAttribute="centerX" secondItem="ZSC-GQ-UBV" secondAttribute="centerX" id="afU-yV-Kdc"/>
-                            <constraint firstItem="Jd9-pH-8Oj" firstAttribute="leading" secondItem="iwH-lJ-Z4n" secondAttribute="leading" constant="20" id="ic2-Et-OCt"/>
+                            <constraint firstItem="Jd9-pH-8Oj" firstAttribute="leading" secondItem="iwH-lJ-Z4n" secondAttribute="leading" constant="24" id="ic2-Et-OCt"/>
                             <constraint firstItem="Jd9-pH-8Oj" firstAttribute="top" secondItem="iwH-lJ-Z4n" secondAttribute="top" constant="20" id="kSR-3Q-mVE"/>
-                            <constraint firstItem="72P-GV-8kr" firstAttribute="leading" secondItem="iwH-lJ-Z4n" secondAttribute="leading" constant="39.5" id="klm-KU-zfz"/>
+                            <constraint firstItem="72P-GV-8kr" firstAttribute="leading" secondItem="iwH-lJ-Z4n" secondAttribute="leading" constant="32" id="klm-KU-zfz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hbi-ZN-MvE"/>
@@ -659,7 +660,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPH-J8-R0f">
-                                <rect key="frame" x="20" y="108" width="69" height="36.5"/>
+                                <rect key="frame" x="24" y="108" width="69" height="36.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -674,7 +675,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqN-iC-NbT">
-                                <rect key="frame" x="39.5" y="762" width="335" height="50"/>
+                                <rect key="frame" x="32" y="762" width="350" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XmI-yM-3kM"/>
@@ -712,12 +713,12 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Ikx-2c-Emq" firstAttribute="centerX" secondItem="y1w-QO-mSI" secondAttribute="centerX" id="6Vp-lh-Wp5"/>
-                            <constraint firstItem="FPH-J8-R0f" firstAttribute="leading" secondItem="XdL-c6-NNX" secondAttribute="leading" constant="20" id="HrT-j3-4HH"/>
+                            <constraint firstItem="FPH-J8-R0f" firstAttribute="leading" secondItem="XdL-c6-NNX" secondAttribute="leading" constant="24" id="HrT-j3-4HH"/>
                             <constraint firstItem="lah-VP-3L4" firstAttribute="top" secondItem="Ikx-2c-Emq" secondAttribute="bottom" constant="20" id="LCB-16-p3O"/>
                             <constraint firstItem="HqN-iC-NbT" firstAttribute="centerX" secondItem="y1w-QO-mSI" secondAttribute="centerX" id="Q7Z-q0-DS9"/>
                             <constraint firstItem="hRs-vX-e6X" firstAttribute="centerX" secondItem="y1w-QO-mSI" secondAttribute="centerX" id="Qnh-Qs-IRu"/>
-                            <constraint firstItem="HqN-iC-NbT" firstAttribute="leading" secondItem="XdL-c6-NNX" secondAttribute="leading" constant="39.5" id="UIu-OQ-PBD"/>
-                            <constraint firstItem="XdL-c6-NNX" firstAttribute="trailing" secondItem="HqN-iC-NbT" secondAttribute="trailing" constant="39.5" id="dE5-gp-VY7"/>
+                            <constraint firstItem="HqN-iC-NbT" firstAttribute="leading" secondItem="XdL-c6-NNX" secondAttribute="leading" constant="32" id="UIu-OQ-PBD"/>
+                            <constraint firstItem="XdL-c6-NNX" firstAttribute="trailing" secondItem="HqN-iC-NbT" secondAttribute="trailing" constant="32" id="dE5-gp-VY7"/>
                             <constraint firstItem="Ikx-2c-Emq" firstAttribute="top" secondItem="hRs-vX-e6X" secondAttribute="bottom" constant="70" id="huV-EV-Ql0"/>
                             <constraint firstItem="lah-VP-3L4" firstAttribute="leading" secondItem="XdL-c6-NNX" secondAttribute="leading" constant="20" id="pO4-08-LuP"/>
                             <constraint firstItem="FPH-J8-R0f" firstAttribute="top" secondItem="XdL-c6-NNX" secondAttribute="top" constant="20" id="syS-fb-ZY8"/>
