@@ -9,20 +9,30 @@ import UIKit
 import Lottie
 
 class EmailConfirmController: UIViewController {
-
+  // MARK: - Properties
+  let animationView = AnimationView()
+  
+  // MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
-
     self.navigationController?.navigationBar.topItem?.title = ""
-        
-    // lottie 애니메이션뷰 설정
-    let animationView = AnimationView(name: "email-sent")
-    let x = self.view.center.x - 200
-    animationView.frame = CGRect(x: x, y: 50, width: 400, height: 400)
+    setUpAnimation()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    animationView.play()
+  }
+  
+  // MARK: - Methods
+  func setUpAnimation() {
+    animationView.animation = Animation.named("20425-emailtitle")
+    let x = self.view.center.x - 100
+    let y = self.view.center.y - 200
+    animationView.frame = CGRect(x: x, y: y, width: 200, height: 200)
     animationView.contentMode = .scaleAspectFit
     animationView.loopMode = .loop
     animationView.animationSpeed = 0.4
     view.addSubview(animationView)
-    animationView.play()
   }
 }

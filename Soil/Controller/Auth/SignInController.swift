@@ -7,25 +7,23 @@
 
 import UIKit
 
-protocol AuthDelegate: AnyObject {
-  func authenticationDidComplete()
-}
-
 class SignInController: UIViewController {
   
   // MARK: - Properties
   
-  @IBOutlet weak var emailTextField: CustomTextField!
-  @IBOutlet weak var passwordTextField: CustomTextField!
+  @IBOutlet weak var emailTextField: UITextField!
+  @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var loginButton: UIButton!
+  @IBOutlet weak var loginCheckLabel: UILabel!
   
   private var viewModel = LoginViewModel()
-  weak var delegate: AuthenticationDelegate?
   
   // MARK: LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationController?.navigationBar.topItem?.title = ""
+    emailTextField.addBottomBorderWithColor(color: .black, height: 2.0)
+    passwordTextField.addBottomBorderWithColor(color: .black, height: 2.0)
   }
 
   // MARK: - Actions
@@ -40,13 +38,11 @@ class SignInController: UIViewController {
     AuthService.logUserIn(withEmail: email, password: password) { (_, error) in
       if let error = error {
         print("DEBUG: Failed to log user in \(error.localizedDescription)")
+        self.loginCheckLabel.text = "아이디 또는 비밀번호가 틀렸습니다."
         return
       }
-      
-      self.delegate?.authenticationDidComplete()
-      let controller = TabBarController()
-      controller.modalPresentationStyle = .fullScreen
-      self.present(controller, animated: true, completion: nil)
+      self.loginCheckLabel.text = " "
+      NotificationCenter.default.post(name: .authNotificationName, object: nil)
     }
   }
   

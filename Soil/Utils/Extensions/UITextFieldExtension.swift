@@ -13,7 +13,7 @@ extension UITextField {
     border.backgroundColor = color.cgColor
     border.frame = CGRect(
       x: 0,
-      y: self.frame.size.height - height + 5,
+      y: self.frame.size.height - height + 10,
       width: self.frame.size.width,
       height: height
     )

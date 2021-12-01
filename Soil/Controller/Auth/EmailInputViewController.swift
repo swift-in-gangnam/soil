@@ -13,6 +13,7 @@ class EmailInputController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationController?.navigationBar.topItem?.title = ""
+    emailTextField.addBottomBorderWithColor(color: .black, height: 2.0)
   }
   
   @IBAction func tapView(_ sender: UITapGestureRecognizer) {

@@ -32,6 +32,10 @@ class TabBarController: UITabBarController {
   
   // MARK: - Lifecycle
   
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     checkIfUserIsLoggedIn()
@@ -41,16 +45,17 @@ class TabBarController: UITabBarController {
   // MARK: - API
   
   func checkIfUserIsLoggedIn() {
+    NotificationCenter.default.addObserver(
+      self, selector: #selector(self.authenticationDidComplete), name: .authNotificationName, object: nil
+    )
+    
     if Auth.auth().currentUser == nil {
       DispatchQueue.main.async {
         let homeVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "homeVC")
-        let controller = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
-        if let loginVC: SignInController = controller as? SignInController {
-                loginVC.delegate = self
-        }
+
         let nav = UINavigationController(rootViewController: homeVC)
         nav.modalPresentationStyle = .fullScreen
-        self.present(nav, animated: true, completion: nil)
+        self.present(nav, animated: false, completion: nil)
       }
     }
   }
@@ -59,6 +64,11 @@ class TabBarController: UITabBarController {
     UserService.fetchUser { user in
       self.user = user
     }
+  }
+  
+  @objc func authenticationDidComplete() {
+    fetchUser()
+    self.dismiss(animated: true, completion: nil)
   }
   
   // MARK: - Helpers
@@ -127,14 +137,5 @@ extension TabBarController: UITabBarControllerDelegate {
     }
     
     return true
-  }
-}
-
-// MARK: - AuthenticationDelegate
-
-extension TabBarController: AuthenticationDelegate {
-  func authenticationDidComplete() {
-    fetchUser()
-    self.dismiss(animated: true, completion: nil)
   }
 }

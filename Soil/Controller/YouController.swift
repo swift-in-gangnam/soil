@@ -61,10 +61,8 @@ class YouController: UIViewController {
     do {
       try Auth.auth().signOut()
       let homeVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "homeVC")
-      let controller = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
-      if let loginVC: SignInController = controller as? SignInController {
-              loginVC.delegate = self.tabBarController as? TabBarController
-      }
+
+      NotificationCenter.default.post(name: .authNotificationName, object: nil)
       
       let nav = UINavigationController(rootViewController: homeVC)
       nav.modalPresentationStyle = .fullScreen
