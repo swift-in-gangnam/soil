@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import KeychainAccess
 
 class SignInController: UIViewController {
   
@@ -17,8 +19,10 @@ class SignInController: UIViewController {
   @IBOutlet weak var loginCheckLabel: UILabel!
   
   private var viewModel = LoginViewModel()
+  private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
   
-  // MARK: LifeCycle
+  // MARK: - Lifecycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationController?.navigationBar.topItem?.title = ""
@@ -27,6 +31,7 @@ class SignInController: UIViewController {
   }
 
   // MARK: - Actions
+  
   @IBAction func tapView(_ sender: UITapGestureRecognizer) {
     self.view.endEditing(true)
   }

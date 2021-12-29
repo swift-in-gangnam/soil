@@ -70,6 +70,7 @@
 		D5D12246273D1E2C0022290E /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12245273D1E2C0022290E /* DayController.swift */; };
 		D5D12248273D1E330022290E /* MonthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12247273D1E330022290E /* MonthController.swift */; };
 		D5D1224A273D1E3D0022290E /* YearController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12249273D1E3D0022290E /* YearController.swift */; };
+		D5D44EC4277C81CF00C48D8E /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D5D44EC3277C81CF00C48D8E /* KeychainAccess */; };
 		FA12E7F22744CC7D00EB8834 /* CustomPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7EF2744CC7D00EB8834 /* CustomPasswordTextField.swift */; };
 		FA12E7F42744CC7D00EB8834 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA12E7F12744CC7D00EB8834 /* Auth.storyboard */; };
 		FA12E8002744CFB000EB8834 /* EmailInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */; };
@@ -169,6 +170,7 @@
 				D5CFC562274267A800CDC204 /* Then in Frameworks */,
 				D5C0A908273A4235005F9E9B /* Kingfisher in Frameworks */,
 				D5C0A90F273A480A005F9E9B /* FirebaseStorage in Frameworks */,
+				D5D44EC4277C81CF00C48D8E /* KeychainAccess in Frameworks */,
 				3C58C83B27342D23003A1F9D /* Parchment in Frameworks */,
 				3C58C83E27342D30003A1F9D /* SnapKit in Frameworks */,
 				D5C0A90D273A480A005F9E9B /* FirebaseFirestore in Frameworks */,
@@ -466,6 +468,7 @@
 				D5C0A90E273A480A005F9E9B /* FirebaseStorage */,
 				D5CFC561274267A800CDC204 /* Then */,
 				3CC1B09E27436B8200A715C0 /* Tags */,
+				D5D44EC3277C81CF00C48D8E /* KeychainAccess */,
 			);
 			productName = Soil;
 			productReference = 3C45E0C027313ADA002E3C8D /* Soil.app */;
@@ -505,6 +508,7 @@
 				D5C0A909273A4809005F9E9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				D5CFC560274267A800CDC204 /* XCRemoteSwiftPackageReference "Then" */,
 				3CC1B09D27436B8100A715C0 /* XCRemoteSwiftPackageReference "Tags" */,
+				D5D44EC2277C81CE00C48D8E /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 3C45E0C127313ADA002E3C8D /* Products */;
 			projectDirPath = "";
@@ -933,6 +937,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		D5D44EC2277C81CE00C48D8E /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -990,6 +1002,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D5CFC560274267A800CDC204 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		D5D44EC3277C81CF00C48D8E /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5D44EC2277C81CE00C48D8E /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
