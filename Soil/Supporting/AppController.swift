@@ -38,7 +38,6 @@ final class AppController {
   
   func show(in window: UIWindow) {
     self.window = window
-    window.backgroundColor = .systemBackground
     window.makeKeyAndVisible()
     
     checkLogin()
