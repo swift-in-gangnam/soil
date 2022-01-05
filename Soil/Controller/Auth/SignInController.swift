@@ -40,14 +40,13 @@ class SignInController: UIViewController {
     guard let email = emailTextField.text else { return }
     guard let password = passwordTextField.text else { return }
     
-    AuthService.logUserIn(withEmail: email, password: password) { (_, error) in
+    AuthService.logUserIn(withEmail: email, password: password) { [weak self] (_, error) in
       if let error = error {
         print("DEBUG: Failed to log user in \(error.localizedDescription)")
-        self.loginCheckLabel.text = "아이디 또는 비밀번호가 틀렸습니다."
+        self?.loginCheckLabel.text = "아이디 또는 비밀번호가 틀렸습니다."
         return
       }
-      self.loginCheckLabel.text = " "
-      NotificationCenter.default.post(name: .authNotificationName, object: nil)
+      self?.loginCheckLabel.text = " "
     }
   }
   

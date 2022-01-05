@@ -60,13 +60,6 @@ class YouController: UIViewController {
   @objc private func handleLogout() {
     do {
       try Auth.auth().signOut()
-      let homeVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "homeVC")
-
-      NotificationCenter.default.post(name: .authNotificationName, object: nil)
-      
-      let nav = UINavigationController(rootViewController: homeVC)
-      nav.modalPresentationStyle = .fullScreen
-      self.present(nav, animated: true, completion: nil)
     } catch {
       print("DEBUG: Failed to Sign out")
     }

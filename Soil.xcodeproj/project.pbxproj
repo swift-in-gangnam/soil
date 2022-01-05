@@ -48,6 +48,7 @@
 		3CC1B09C2742BB6600A715C0 /* HorizontalSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */; };
 		3CC1B09F27436B8200A715C0 /* Tags in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC1B09E27436B8200A715C0 /* Tags */; };
 		3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */; };
+		3CC62DC3278584B800362941 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC62DC2278584B800362941 /* AppController.swift */; };
 		3CEC004E274B590300359D30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC004D274B590300359D30 /* GoogleService-Info.plist */; };
 		D57BEC0B274CEB8E00E65966 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BEC0A274CEB8E00E65966 /* UITextFieldExtension.swift */; };
 		D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EB52740182E0099AA63 /* UserStatController.swift */; };
@@ -125,6 +126,7 @@
 		3CA91E6D2733CF6400390A89 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSeperator.swift; sourceTree = "<group>"; };
 		3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostInputAccessoryView.swift; sourceTree = "<group>"; };
+		3CC62DC2278584B800362941 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		3CEC004D274B590300359D30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.debug.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.debug.xcconfig"; sourceTree = "<group>"; };
 		D57BEC0A274CEB8E00E65966 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				FA3D3E0E2744E87400A86040 /* Lottie */,
 				3CEC004D274B590300359D30 /* GoogleService-Info.plist */,
 				3C45E0C327313ADA002E3C8D /* AppDelegate.swift */,
+				3CC62DC2278584B800362941 /* AppController.swift */,
 				3C45E0C527313ADA002E3C8D /* SceneDelegate.swift */,
 				3C45E0CC27313ADB002E3C8D /* Assets.xcassets */,
 				3C45E0D127313ADB002E3C8D /* Info.plist */,
@@ -614,6 +617,7 @@
 				FA12E8022744CFB000EB8834 /* ProfileInputController.swift in Sources */,
 				D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */,
 				3CA91E6E2733CF6400390A89 /* AuthButton.swift in Sources */,
+				3CC62DC3278584B800362941 /* AppController.swift in Sources */,
 				D5D12246273D1E2C0022290E /* DayController.swift in Sources */,
 				FA12E8042744CFB000EB8834 /* EmailConfirmController.swift in Sources */,
 				D5C0A913273A4CB1005F9E9B /* AuthenticationViewModel.swift in Sources */,
@@ -785,10 +789,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QHPW755BR8;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소일";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"일기장 사진 작성을 위해 사용자의 사진첩 접근 허가가 필요합니다.\"";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -801,7 +806,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-in-gangnam.Soil";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xc2dkco4rd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -817,10 +822,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QHPW755BR8;
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소일";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"일기장 사진 작성을 위해 사용자의 사진첩 접근 허가가 필요합니다.\"";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -833,7 +839,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-in-gangnam.Soil";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xc2dkco4rd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
