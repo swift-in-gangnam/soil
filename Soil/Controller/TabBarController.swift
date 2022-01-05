@@ -25,10 +25,6 @@ class TabBarController: UITabBarController {
   
   // MARK: - Lifecycle
   
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     configureViewControllers()

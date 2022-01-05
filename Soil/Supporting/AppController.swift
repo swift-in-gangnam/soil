@@ -51,7 +51,9 @@ final class AppController {
     self.window = window
     window.makeKeyAndVisible()
     
-    checkLogin()
+    if Auth.auth().currentUser == nil {
+      routeToLogin()
+    }
   }
   
   private func registerAuthStateDidChangeEvent() {
@@ -68,28 +70,25 @@ final class AppController {
       print("user = \(user)")
       
       // idToken, uid를 Keychain에 저장
-      user.getIDToken { idToken, error in
+      user.getIDToken { [weak self] idToken, error in
         if let error = error {
           print("DEBUG: Failed to fetch idToken with error \(error.localizedDescription)")
           return
         }
         do {
-          try self.keychain.set(String(describing: idToken), key: "token")
-          try self.keychain.set(String(describing: user.uid), key: "uid")
+          try self?.keychain.set(String(describing: idToken), key: "token")
+          try self?.keychain.set(String(describing: user.uid), key: "uid")
         } catch let error {
-          print("DEBUG: Failed to add keychain with error \(error.localizedDescription)")
-          return
+          fatalError("DEBUG: Failed to add keychain with error \(error.localizedDescription)")
         }
       }
       setHome()
-      
     } else {
       // keychain 비우기
       do {
         try keychain.removeAll()
       } catch let error {
-        print("DEBUG: Failed to remove keychain with error \(error.localizedDescription)")
-        return
+        fatalError("DEBUG: Failed to remove keychain with error \(error.localizedDescription)")
       }
       routeToLogin()
     }
