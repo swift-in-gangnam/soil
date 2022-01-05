@@ -10,18 +10,12 @@ import Firebase
 
 final class AppController {
   
+  // MARK: - Properties
+  
   static let shared = AppController()
   
-  private init() {
-    FirebaseApp.configure()
-    registerAuthStateDidChangeEvent()
-  }
-  
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-  
   private var window: UIWindow!
+  
   private var rootViewController: UIViewController? {
     didSet {
       window.rootViewController = rootViewController
@@ -35,6 +29,19 @@ final class AppController {
       )
     }
   }
+  
+  // MARK: - Lifecycle
+  
+  private init() {
+    FirebaseApp.configure()
+    registerAuthStateDidChangeEvent()
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
+  
+  // MARK: - Helpers
   
   func show(in window: UIWindow) {
     self.window = window

@@ -343,8 +343,8 @@
 				FA3D3E0E2744E87400A86040 /* Lottie */,
 				3CEC004D274B590300359D30 /* GoogleService-Info.plist */,
 				3C45E0C327313ADA002E3C8D /* AppDelegate.swift */,
-				3CC62DC2278584B800362941 /* AppController.swift */,
 				3C45E0C527313ADA002E3C8D /* SceneDelegate.swift */,
+				3CC62DC2278584B800362941 /* AppController.swift */,
 				3C45E0CC27313ADB002E3C8D /* Assets.xcassets */,
 				3C45E0D127313ADB002E3C8D /* Info.plist */,
 				3C968082273270F20020A72F /* Fonts */,
@@ -789,7 +789,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2W776SPR4X;
+				DEVELOPMENT_TEAM = QHPW755BR8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소일";
@@ -806,7 +806,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xc2dkco4rd;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-in-gangnam.Soil";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -822,7 +822,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2W776SPR4X;
+				DEVELOPMENT_TEAM = QHPW755BR8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소일";
@@ -839,7 +839,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xc2dkco4rd;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-in-gangnam.Soil";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
