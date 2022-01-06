@@ -8,14 +8,12 @@
 import UIKit
 
 import Firebase
-import KeychainAccess
 
 final class AppController {
   
   // MARK: - Properties
   
   static let shared = AppController()
-  
   private var window: UIWindow!
   
   private var rootViewController: UIViewController? {
@@ -31,8 +29,6 @@ final class AppController {
       )
     }
   }
-  
-  private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
   
   // MARK: - Lifecycle
   
@@ -66,31 +62,8 @@ final class AppController {
   @objc private func checkLogin() {
     if let user = Auth.auth().currentUser { // <- Firebase Auth
       print("user = \(user)")
-      
-      // idToken, uid를 Keychain에 저장
-      user.getIDToken { idToken, error in
-        if let error = error {
-          print("DEBUG: Failed to fetch idToken with error \(error.localizedDescription)")
-          return
-        }
-        do {
-          try self.keychain.set(String(describing: idToken), key: "token")
-          try self.keychain.set(String(describing: user.uid), key: "uid")
-        } catch let error {
-          print("DEBUG: Failed to add keychain with error \(error.localizedDescription)")
-          return
-        }
-      }
       setHome()
-      
     } else {
-      // keychain 비우기
-      do {
-        try keychain.removeAll()
-      } catch let error {
-        print("DEBUG: Failed to remove keychain with error \(error.localizedDescription)")
-        return
-      }
       routeToLogin()
     }
   }

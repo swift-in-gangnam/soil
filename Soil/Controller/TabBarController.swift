@@ -73,7 +73,7 @@ class TabBarController: UITabBarController {
     }
         
     let feedNavController = templateNavigationController(title: "feed", rootVC: FeedController())
-    let youNavController = templateNavigationController(title: "you", rootVC: YouController(user: user))
+    let youNavController = templateNavigationController(title: "you", rootVC: YouController())
   
     viewControllers = [feedNavController, uploadController, youNavController]
   }
