@@ -47,7 +47,9 @@ final class AppController {
     self.window = window
     window.makeKeyAndVisible()
     
-    checkLogin()
+    if Auth.auth().currentUser == nil {
+      routeToLogin()
+    }
   }
   
   private func registerAuthStateDidChangeEvent() {
