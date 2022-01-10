@@ -139,13 +139,13 @@ class EditProfileController: UIViewController {
     guard let bio = bioTextView.text else { return }
     let data = ["fullname": fullname, "bio": bio]
     
-    UserService.updateUser(user: viewModel.user, data: data, profileImage: selectedProfileImage) { error in
-      if let error = error {
-        print("DEBUG: Failed to update user with error \(error.localizedDescription)")
-        return
-      }
-      self.delegate?.didUpdateProfile(self)
-    }
+//    UserService.updateUser(user: viewModel.user, data: data, profileImage: selectedProfileImage) { error in
+//      if let error = error {
+//        print("DEBUG: Failed to update user with error \(error.localizedDescription)")
+//        return
+//      }
+//      self.delegate?.didUpdateProfile(self)
+//    }
   }
   
   @objc func didTapImageChangeBtn() {

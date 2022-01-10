@@ -17,7 +17,7 @@ class YouController: UIViewController {
   // MARK: - Properties
   
   private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
-  private var user: User?
+  fileprivate var user: User?
   private let menuArr = ["profile", "day", "month", "year"]
   
   private let pagingVC: PagingViewController = {
@@ -102,6 +102,19 @@ class YouController: UIViewController {
       .validate(contentType: ["application/json"])
       .responseJSON { res in
         debugPrint(res)
+        switch res.result {
+        case .success(let value):
+          do {
+            let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+            let decodedData = try JSONDecoder().decode(User.self, from: dataJSON)
+            self.user = decodedData
+            self.pagingVC.reloadData()
+          } catch {
+            print("DEBUG: failed to ~~~~\(error.localizedDescription)")
+          }
+        case .failure(let error):
+          print("DEBUG: \(error)")
+        }
       }
   }
 }
@@ -114,10 +127,14 @@ extension YouController: PagingViewControllerDataSource {
   }
   
   func pagingViewController(_: PagingViewController, viewControllerAt index: Int) -> UIViewController {
+    
     if index == 0 {
       let profileVC = ProfileController()
-//      profileVC.viewModel = ProfileViewModel(user: user)
-      profileVC.delegate = self
+      
+      if let user = user {
+        profileVC.viewModel = ProfileViewModel(user: user)
+        profileVC.delegate = self
+      }
       return profileVC
     } else if index == 1 {
       let dayVC = DayController()
