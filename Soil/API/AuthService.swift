@@ -22,7 +22,7 @@ struct AuthService {
     Auth.auth().signIn(withEmail: email, password: password, completion: completion)
   }
     
-  static func registerUser(withCredential credentials: AuthCredentials, completion: @escaping(Error?) -> Void) {
+  static func registerUser(withCredential credentials: AuthCredentials, completion: @escaping (Error?) -> Void) {
     StorageService.uploadImage(image: credentials.profileImage) { imageUUID, imageURL in
       Auth.auth().createUser(withEmail: credentials.email, password: credentials.password) { result, error in
         if let error = error {
@@ -32,14 +32,15 @@ struct AuthService {
 
         guard let uid = result?.user.uid else { return }
 
-        let data: [String: Any] = ["uid": uid,
-                                     "email": credentials.email,
-                                     "fullname": credentials.fullname,
-                                     "username": credentials.username,
-                                     "profileImageURL": imageURL,
-                                     "profileImageUUID": imageUUID
-                                     ]
-        COLLECTION_USERS.document(uid).setData(data, completion: completion)
+        let data: [String: Any] = [
+          "uid": uid,
+          "email": credentials.email,
+          "fullname": credentials.fullname,
+          "username": credentials.username,
+          "profileImageURL": imageURL,
+          "profileImageUUID": imageUUID
+        ]
+        firestoreUsers.document(uid).setData(data, completion: completion)
       }
     }
   }
