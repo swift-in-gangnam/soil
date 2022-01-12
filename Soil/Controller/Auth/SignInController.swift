@@ -60,6 +60,7 @@ class SignInController: UIViewController {
         }
         
         guard let idToken = idToken else { return }
+        print("token - \(idToken)")
         
         do {
           try self?.keychain.set(idToken, key: "token")

@@ -86,7 +86,7 @@ class YouController: UIViewController {
   
   private func fetchUser() {
 
-    let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
+     let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
     let token = try? keychain.get("token")
     let uid = try? keychain.get("uid")
     
