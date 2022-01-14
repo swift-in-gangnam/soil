@@ -13,6 +13,10 @@ import Alamofire
 import Firebase
 import KeychainAccess
 
+import Alamofire
+import Firebase
+import KeychainAccess
+
 class SignInController: UIViewController {
   
   // MARK: - Properties
@@ -44,7 +48,6 @@ class SignInController: UIViewController {
   @IBAction func didTapLogin(_ sender: Any) {
     guard let email = emailTextField.text else { return }
     guard let password = passwordTextField.text else { return }
-    
     
     AuthService.logUserIn(withEmail: email, password: password) { [weak self] (result, error) in
       if let error = error {
