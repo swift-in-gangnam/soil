@@ -9,4 +9,4 @@ import Firebase
 
 typealias FirestoreCompletion = (Error?) -> Void
 
-let COLLECTION_USERS = Firestore.firestore().collection("users")
+let firestoreUsers = Firestore.firestore().collection("users")

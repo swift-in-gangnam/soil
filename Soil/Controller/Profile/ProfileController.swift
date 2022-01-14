@@ -15,7 +15,7 @@ class ProfileController: UIViewController {
 
   private enum Font {
     static let fullnameLabel = UIFont.notoSansKR(size: 22, family: .bold)
-    static let usernameLabel = UIFont.ceraPro(size: 15, family: .medium)
+    static let nicknameLabel = UIFont.ceraPro(size: 15, family: .medium)
     static let editProfileFollowButton = UIFont.ceraPro(size: 17, family: .bold)
     static let bioLabel = UIFont.notoSansKR(size: 14, family: .regular)
   }
@@ -43,9 +43,9 @@ class ProfileController: UIViewController {
     return label
   }()
   
-  private let usernameLabel: UILabel = {
+  private let nicknameLabel: UILabel = {
     let label = UILabel()
-    label.font = Font.usernameLabel
+    label.font = Font.nicknameLabel
     return label
   }()
   
@@ -123,8 +123,8 @@ class ProfileController: UIViewController {
       make.centerX.equalToSuperview()
     }
     
-    view.addSubview(usernameLabel)
-    usernameLabel.snp.makeConstraints { make in
+    view.addSubview(nicknameLabel)
+    nicknameLabel.snp.makeConstraints { make in
       make.top.equalTo(self.fullnameLabel.snp.bottom).offset(4)
       make.centerX.equalToSuperview()
     }
@@ -132,7 +132,7 @@ class ProfileController: UIViewController {
     let userStatDivider = UIView()
     view.addSubview(userStatDivider)
     userStatDivider.snp.makeConstraints { make in
-      make.top.equalTo(self.usernameLabel.snp.bottom).offset(11)
+      make.top.equalTo(self.nicknameLabel.snp.bottom).offset(11)
       make.centerX.equalToSuperview()
       make.height.equalTo(30)
       make.width.equalTo(1)
@@ -182,7 +182,7 @@ class ProfileController: UIViewController {
     
     profileImageView.kf.setImage(with: viewModel.profileImageURL)
     fullnameLabel.text = viewModel.fullname
-    usernameLabel.text = viewModel.username
+    nicknameLabel.text = viewModel.nickname
     followersBtn.setAttributedTitle(viewModel.numberOfFollowers, for: .normal)
     followingBtn.setAttributedTitle(viewModel.numberOfFollowing, for: .normal)
     bioLabel.text = viewModel.bio
@@ -194,8 +194,8 @@ class ProfileController: UIViewController {
 extension ProfileController: EditProfileControllerDelegte {
   func didUpdateProfile(_ controller: EditProfileController) {
     controller.dismiss(animated: true, completion: nil)
-    UserService.fetchUser { user in
-      self.viewModel = ProfileViewModel(user: user)
-    }
+//    UserService.fetchUser { user in
+//      self.viewModel = ProfileViewModel(user: user)
+//    }
   }
 }

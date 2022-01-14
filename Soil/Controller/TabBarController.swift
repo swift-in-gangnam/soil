@@ -8,20 +8,13 @@
 import UIKit
 
 import Firebase
+import Kingfisher
 import SnapKit
 import Then
-import Kingfisher
 
 class TabBarController: UITabBarController {
   
   // MARK: - Properties
-  
-  var user: User? {
-    didSet {
-      guard let user = user else { return }
-      configureViewControllers(withUser: user)
-    }
-  }
   
   private let uploadController: UploadPostController = {
     let controller = UploadPostController()
@@ -32,48 +25,14 @@ class TabBarController: UITabBarController {
   
   // MARK: - Lifecycle
   
-  deinit {
-    NotificationCenter.default.removeObserver(self)
-  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    checkIfUserIsLoggedIn()
-    fetchUser()
-  }
-  
-  // MARK: - API
-  
-  func checkIfUserIsLoggedIn() {
-    NotificationCenter.default.addObserver(
-      self, selector: #selector(self.authenticationDidComplete), name: .authNotificationName, object: nil
-    )
-    
-    if Auth.auth().currentUser == nil {
-      DispatchQueue.main.async {
-        let homeVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "homeVC")
-
-        let nav = UINavigationController(rootViewController: homeVC)
-        nav.modalPresentationStyle = .fullScreen
-        self.present(nav, animated: false, completion: nil)
-      }
-    }
-  }
-    
-  func fetchUser() {
-    UserService.fetchUser { user in
-      self.user = user
-    }
-  }
-  
-  @objc func authenticationDidComplete() {
-    fetchUser()
-    self.dismiss(animated: true, completion: nil)
+    configureViewControllers()
   }
   
   // MARK: - Helpers
     
-  private func configureViewControllers(withUser user: User) {
+  private func configureViewControllers() {
     view.backgroundColor = .white
     tabBar.tintColor = .black
     self.delegate = self
@@ -110,7 +69,7 @@ class TabBarController: UITabBarController {
     }
         
     let feedNavController = templateNavigationController(title: "feed", rootVC: FeedController())
-    let youNavController = templateNavigationController(title: "you", rootVC: YouController(user: user))
+    let youNavController = templateNavigationController(title: "you", rootVC: YouController())
   
     viewControllers = [feedNavController, uploadController, youNavController]
   }

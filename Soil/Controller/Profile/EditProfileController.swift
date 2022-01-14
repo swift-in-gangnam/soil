@@ -7,6 +7,9 @@
 
 import UIKit
 
+import Alamofire
+import KeychainAccess
+
 protocol EditProfileControllerDelegte: AnyObject {
     func didUpdateProfile(_ controller: EditProfileController)
 }
@@ -15,10 +18,14 @@ class EditProfileController: UIViewController {
   
   // MARK: - Properties
   
+  private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
+  
   var viewModel: ProfileViewModel? {
     didSet { updateUI() }
   }
+  
   weak var delegate: EditProfileControllerDelegte?
+  
   private var selectedProfileImage: UIImage? {
     didSet {
       profileImageView.image = selectedProfileImage
@@ -67,13 +74,13 @@ class EditProfileController: UIViewController {
     $0.font = UIFont.ceraPro(size: 15, family: .medium)
   }
   
-  private lazy var fullnameTextField = UITextField().then {
+  private lazy var nameTextField = UITextField().then {
     $0.placeholder = "이름을 입력해주세요."
     $0.font = UIFont.ceraPro(size: 15, family: .bold)
     $0.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
   }
   
-  private let fullnameCountLabel = UILabel().then {
+  private let nameCountLabel = UILabel().then {
     $0.textColor = .systemGray2
     $0.font = UIFont.ceraPro(size: 13, family: .medium)
   }
@@ -124,7 +131,7 @@ class EditProfileController: UIViewController {
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    fullnameTextField.addBottomBorderWithColor(color: .systemGray3, height: 1.0)
+    nameTextField.addBottomBorderWithColor(color: .systemGray3, height: 1.0)
   }
   
   // MARK: - Action
@@ -134,18 +141,45 @@ class EditProfileController: UIViewController {
   }
   
   @objc func didTapDone() {
-    guard let viewModel = viewModel else { return }
-    guard let fullname = fullnameTextField.text else { return }
+    guard let name = nameTextField.text else { return }
     guard let bio = bioTextView.text else { return }
-    let data = ["fullname": fullname, "bio": bio]
     
-    UserService.updateUser(user: viewModel.user, data: data, profileImage: selectedProfileImage) { error in
-      if let error = error {
-        print("DEBUG: Failed to update user with error \(error.localizedDescription)")
-        return
+    let url = "http://15.165.215.29:8080/user"
+    let token = try? keychain.get("token")
+    let headers: HTTPHeaders = [
+      .contentType("multipart/form-data"),
+      .authorization(token!)
+    ]
+    
+    let parameters: [String: Any] = [
+      "user_name": name,
+      "user_bio": bio
+    ]
+    
+    AF.upload(
+      multipartFormData: { multipartFormData in
+        for (key, value) in parameters {
+          multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+        }
+        
+        if let imageData = self.selectedProfileImage?.jpegData(compressionQuality: 0.75) {
+          multipartFormData.append(imageData, withName: "file", fileName: "\(imageData).jpeg", mimeType: "image/jpeg")
+        } else {
+          multipartFormData.append("".data(using: .utf8)!, withName: "file", fileName: "", mimeType: "")
+        }
+      },
+      to: url,
+      method: .patch,
+      headers: headers).responseJSON { response in
+        // debugPrint(response)
+        switch response.result {
+        case .success(let value):
+          print(value)
+          self.delegate?.didUpdateProfile(self)
+        case .failure(let error):
+          print("DEBUG: Failed to update user with error \(error.localizedDescription)")
+        }
       }
-      self.delegate?.didUpdateProfile(self)
-    }
   }
   
   @objc func didTapImageChangeBtn() {
@@ -157,7 +191,7 @@ class EditProfileController: UIViewController {
   
   @objc func textDidChange(sender: UITextField) {
     checkFullnameMaxLength(sender)
-    fullnameCountLabel.text = "\(sender.text?.count ?? 0) / 15"
+    nameCountLabel.text = "\(sender.text?.count ?? 0) / 15"
   }
   
   // MARK: - Helpers
@@ -192,16 +226,16 @@ class EditProfileController: UIViewController {
       make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).offset(16)
     }
     
-    view.addSubview(fullnameTextField)
-    fullnameTextField.snp.makeConstraints { make in
+    view.addSubview(nameTextField)
+    nameTextField.snp.makeConstraints { make in
       make.leading.equalTo(nameLabel.snp.trailing).offset(15)
       make.bottom.equalTo(nameLabel.snp.bottom)
       make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing)
     }
     
-    view.addSubview(fullnameCountLabel)
-    fullnameCountLabel.snp.makeConstraints { make in
-      make.top.equalTo(fullnameTextField.snp.bottom).offset(10)
+    view.addSubview(nameCountLabel)
+    nameCountLabel.snp.makeConstraints { make in
+      make.top.equalTo(nameTextField.snp.bottom).offset(10)
       make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).offset(-12)
     }
     
@@ -219,7 +253,7 @@ class EditProfileController: UIViewController {
     bioStackView.snp.makeConstraints { make in
       make.top.equalTo(nameLabel.snp.bottom).offset(53)
       make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing)
-      make.width.equalTo(fullnameTextField.snp.width)
+      make.width.equalTo(nameTextField.snp.width)
       make.bottom.lessThanOrEqualTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-50)
     }
     bioTextView.snp.makeConstraints { make in
@@ -241,8 +275,8 @@ class EditProfileController: UIViewController {
     guard let viewModel = viewModel else { return }
     
     profileImageView.kf.setImage(with: viewModel.profileImageURL)
-    fullnameTextField.text = viewModel.fullname
-    fullnameCountLabel.text = viewModel.fullnameCount
+    nameTextField.text = viewModel.fullname
+    nameCountLabel.text = viewModel.fullnameCount
     bioTextView.text = viewModel.bio
     bioCountLabel.text = viewModel.bioCount
   }

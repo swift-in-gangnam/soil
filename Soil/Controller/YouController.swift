@@ -7,14 +7,17 @@
 
 import UIKit
 
+import Alamofire
 import Firebase
 import Parchment
+import KeychainAccess
 
 class YouController: UIViewController {
   
   // MARK: - Properties
   
-  private var user: User
+  private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
+  fileprivate var user: User?
   private let menuArr = ["profile", "day", "month", "year"]
   
   private let pagingVC: PagingViewController = {
@@ -41,40 +44,26 @@ class YouController: UIViewController {
   
   // MARK: - Lifecycle
   
-  init(user: User) {
-    self.user = user
-    super.init(nibName: nil, bundle: nil)
-  }
-  
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     configure()
+    fetchUser()
   }
 
   // MARK: - Actions
   
   @objc private func handleLogout() {
     do {
+      try keychain.removeAll()  // keychain 비우기
       try Auth.auth().signOut()
-      let homeVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "homeVC")
-
-      NotificationCenter.default.post(name: .authNotificationName, object: nil)
-      
-      let nav = UINavigationController(rootViewController: homeVC)
-      nav.modalPresentationStyle = .fullScreen
-      self.present(nav, animated: true, completion: nil)
-    } catch {
-      print("DEBUG: Failed to Sign out")
+    } catch let error {
+      fatalError("DEBUG: Failed to Sign out with error \(error.localizedDescription)")
     }
   }
   
   // MARK: - Helpers
   
-  func configure() {
+  private func configure() {
     view.backgroundColor = .soilBackgroundColor
     navigationItem.rightBarButtonItem = UIBarButtonItem(
       image: UIImage(systemName: "gearshape"),
@@ -94,6 +83,40 @@ class YouController: UIViewController {
     }
     pagingVC.dataSource = self
   }
+  
+  private func fetchUser() {
+
+     let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
+    let token = try? keychain.get("token")
+    let uid = try? keychain.get("uid")
+    
+    let url = "http://15.165.215.29:8080/user/\(uid!)"
+    
+    let headers: HTTPHeaders = [
+      .authorization(token!),
+      .accept("application/json")
+    ]
+
+    AF.request(url, method: .get, headers: headers)
+      .validate(statusCode: 200..<300)
+      .validate(contentType: ["application/json"])
+      .responseJSON { res in
+        debugPrint(res)
+        switch res.result {
+        case .success(let value):
+          do {
+            let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+            let decodedData = try JSONDecoder().decode(User.self, from: dataJSON)
+            self.user = decodedData
+            self.pagingVC.reloadData()
+          } catch {
+            print("DEBUG: failed to ~~~~\(error.localizedDescription)")
+          }
+        case .failure(let error):
+          print("DEBUG: \(error)")
+        }
+      }
+  }
 }
 
 // MARK: - PagingViewControllerDataSource
@@ -104,10 +127,14 @@ extension YouController: PagingViewControllerDataSource {
   }
   
   func pagingViewController(_: PagingViewController, viewControllerAt index: Int) -> UIViewController {
+    
     if index == 0 {
       let profileVC = ProfileController()
-      profileVC.viewModel = ProfileViewModel(user: user)
-      profileVC.delegate = self
+      
+      if let user = user {
+        profileVC.viewModel = ProfileViewModel(user: user)
+        profileVC.delegate = self
+      }
       return profileVC
     } else if index == 1 {
       let dayVC = DayController()

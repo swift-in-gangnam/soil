@@ -7,5 +7,5 @@
 import Foundation
 
 extension Notification.Name {
-  static let authNotificationName = Notification.Name("authNotificationName")
+  
 }

@@ -48,6 +48,7 @@
 		3CC1B09C2742BB6600A715C0 /* HorizontalSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */; };
 		3CC1B09F27436B8200A715C0 /* Tags in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC1B09E27436B8200A715C0 /* Tags */; };
 		3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */; };
+		3CC62DC3278584B800362941 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC62DC2278584B800362941 /* AppController.swift */; };
 		3CEC004E274B590300359D30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC004D274B590300359D30 /* GoogleService-Info.plist */; };
 		D57BEC0B274CEB8E00E65966 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BEC0A274CEB8E00E65966 /* UITextFieldExtension.swift */; };
 		D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EB52740182E0099AA63 /* UserStatController.swift */; };
@@ -70,6 +71,7 @@
 		D5D12246273D1E2C0022290E /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12245273D1E2C0022290E /* DayController.swift */; };
 		D5D12248273D1E330022290E /* MonthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12247273D1E330022290E /* MonthController.swift */; };
 		D5D1224A273D1E3D0022290E /* YearController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12249273D1E3D0022290E /* YearController.swift */; };
+		D5D44EC4277C81CF00C48D8E /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D5D44EC3277C81CF00C48D8E /* KeychainAccess */; };
 		FA12E7F22744CC7D00EB8834 /* CustomPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7EF2744CC7D00EB8834 /* CustomPasswordTextField.swift */; };
 		FA12E7F42744CC7D00EB8834 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA12E7F12744CC7D00EB8834 /* Auth.storyboard */; };
 		FA12E8002744CFB000EB8834 /* EmailInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */; };
@@ -79,6 +81,7 @@
 		FA12E8052744CFB000EB8834 /* PasswordInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */; };
 		FA12E8062744CFB000EB8834 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FE2744CFB000EB8834 /* SignInController.swift */; };
 		FA12E8072744CFB000EB8834 /* NameInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FF2744CFB000EB8834 /* NameInputController.swift */; };
+		FA3AC8392781DA3F00B8BDFF /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */; };
 		FA3D3E0D2744D51700A86040 /* LoginHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */; };
 		FA3D3E142744EB0E00A86040 /* SignUpCompletedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */; };
 		FA43FC572751158000A020D6 /* 20425-emailtitle.json in Resources */ = {isa = PBXBuildFile; fileRef = FA43FC552751158000A020D6 /* 20425-emailtitle.json */; };
@@ -124,6 +127,7 @@
 		3CA91E6D2733CF6400390A89 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSeperator.swift; sourceTree = "<group>"; };
 		3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostInputAccessoryView.swift; sourceTree = "<group>"; };
+		3CC62DC2278584B800362941 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		3CEC004D274B590300359D30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.debug.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.debug.xcconfig"; sourceTree = "<group>"; };
 		D57BEC0A274CEB8E00E65966 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 		FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputController.swift; sourceTree = "<group>"; };
 		FA12E7FE2744CFB000EB8834 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		FA12E7FF2744CFB000EB8834 /* NameInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameInputController.swift; sourceTree = "<group>"; };
+		FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
 		FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHomeController.swift; sourceTree = "<group>"; };
 		FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletedController.swift; sourceTree = "<group>"; };
 		FA43FC552751158000A020D6 /* 20425-emailtitle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "20425-emailtitle.json"; sourceTree = "<group>"; };
@@ -169,6 +174,7 @@
 				D5CFC562274267A800CDC204 /* Then in Frameworks */,
 				D5C0A908273A4235005F9E9B /* Kingfisher in Frameworks */,
 				D5C0A90F273A480A005F9E9B /* FirebaseStorage in Frameworks */,
+				D5D44EC4277C81CF00C48D8E /* KeychainAccess in Frameworks */,
 				3C58C83B27342D23003A1F9D /* Parchment in Frameworks */,
 				3C58C83E27342D30003A1F9D /* SnapKit in Frameworks */,
 				D5C0A90D273A480A005F9E9B /* FirebaseFirestore in Frameworks */,
@@ -203,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				D5C0A914273A4E8E005F9E9B /* User.swift */,
+				FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,6 +347,7 @@
 				3CEC004D274B590300359D30 /* GoogleService-Info.plist */,
 				3C45E0C327313ADA002E3C8D /* AppDelegate.swift */,
 				3C45E0C527313ADA002E3C8D /* SceneDelegate.swift */,
+				3CC62DC2278584B800362941 /* AppController.swift */,
 				3C45E0CC27313ADB002E3C8D /* Assets.xcassets */,
 				3C45E0D127313ADB002E3C8D /* Info.plist */,
 				3C968082273270F20020A72F /* Fonts */,
@@ -414,14 +422,14 @@
 		FA12E7F72744CF4700EB8834 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				FA12E7FC2744CFB000EB8834 /* EmailConfirmController.swift */,
-				FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */,
-				FA12E7FF2744CFB000EB8834 /* NameInputController.swift */,
-				FA12E7FB2744CFB000EB8834 /* NickNameInputController.swift */,
-				FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */,
-				FA12E7FA2744CFB000EB8834 /* ProfileInputController.swift */,
-				FA12E7FE2744CFB000EB8834 /* SignInController.swift */,
 				FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */,
+				FA12E7FE2744CFB000EB8834 /* SignInController.swift */,
+				FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */,
+				FA12E7FC2744CFB000EB8834 /* EmailConfirmController.swift */,
+				FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */,
+				FA12E7FB2744CFB000EB8834 /* NickNameInputController.swift */,
+				FA12E7FF2744CFB000EB8834 /* NameInputController.swift */,
+				FA12E7FA2744CFB000EB8834 /* ProfileInputController.swift */,
 				FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */,
 			);
 			path = Auth;
@@ -466,6 +474,7 @@
 				D5C0A90E273A480A005F9E9B /* FirebaseStorage */,
 				D5CFC561274267A800CDC204 /* Then */,
 				3CC1B09E27436B8200A715C0 /* Tags */,
+				D5D44EC3277C81CF00C48D8E /* KeychainAccess */,
 			);
 			productName = Soil;
 			productReference = 3C45E0C027313ADA002E3C8D /* Soil.app */;
@@ -505,6 +514,7 @@
 				D5C0A909273A4809005F9E9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				D5CFC560274267A800CDC204 /* XCRemoteSwiftPackageReference "Then" */,
 				3CC1B09D27436B8100A715C0 /* XCRemoteSwiftPackageReference "Tags" */,
+				D5D44EC2277C81CE00C48D8E /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 3C45E0C127313ADA002E3C8D /* Products */;
 			projectDirPath = "";
@@ -610,6 +620,7 @@
 				FA12E8022744CFB000EB8834 /* ProfileInputController.swift in Sources */,
 				D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */,
 				3CA91E6E2733CF6400390A89 /* AuthButton.swift in Sources */,
+				3CC62DC3278584B800362941 /* AppController.swift in Sources */,
 				D5D12246273D1E2C0022290E /* DayController.swift in Sources */,
 				FA12E8042744CFB000EB8834 /* EmailConfirmController.swift in Sources */,
 				D5C0A913273A4CB1005F9E9B /* AuthenticationViewModel.swift in Sources */,
@@ -617,6 +628,7 @@
 				3C10AFD82732A05A00B1E973 /* UIColorExtension.swift in Sources */,
 				FA3D3E0D2744D51700A86040 /* LoginHomeController.swift in Sources */,
 				FA3D3E142744EB0E00A86040 /* SignUpCompletedController.swift in Sources */,
+				FA3AC8392781DA3F00B8BDFF /* AuthUser.swift in Sources */,
 				3C10AFDB2732A1C400B1E973 /* UIFontExtension.swift in Sources */,
 				3C45E0C827313ADA002E3C8D /* TabBarController.swift in Sources */,
 				D5C0A91B273A5AB7005F9E9B /* StorageService.swift in Sources */,
@@ -781,10 +793,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QHPW755BR8;
+				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소일";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"일기장 사진 작성을 위해 사용자의 사진첩 접근 허가가 필요합니다.\"";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -797,7 +811,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-in-gangnam.Soil";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-in-gangnam.Soils";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -813,10 +827,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QHPW755BR8;
+				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2W776SPR4X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소일";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"일기장 사진 작성을 위해 사용자의 사진첩 접근 허가가 필요합니다.\"";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -829,7 +845,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-in-gangnam.Soil";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-in-gangnam.Soils";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -933,6 +949,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		D5D44EC2277C81CE00C48D8E /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -990,6 +1014,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D5CFC560274267A800CDC204 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		D5D44EC3277C81CF00C48D8E /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5D44EC2277C81CE00C48D8E /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

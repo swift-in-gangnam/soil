@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import Firebase
 
 class SignUpCompletedController: UIViewController {
   // MARK: - Properties
@@ -17,6 +18,7 @@ class SignUpCompletedController: UIViewController {
     super.viewDidLoad()
     self.navigationController?.navigationBar.topItem?.title = ""
     setUpAnimation()
+    registerUser()
   }
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -34,5 +36,20 @@ class SignUpCompletedController: UIViewController {
     animationView.loopMode = .loop
     animationView.animationSpeed = 0.5
     view.addSubview(animationView)
+  }
+  
+  func registerUser() {
+    let user = AuthUser.shared
+    guard let email = user.email else { return }
+    guard let password = user.password else { return }
+    
+    Auth.auth().createUser(withEmail: email, password: password) { authResult, error  in
+      if let error = error {
+        print("register user error : \(error.localizedDescription)")
+      }
+     // guard let user = authResult?.user else { return }
+     // print("user : \(user)")
+      
+    }
   }
 }

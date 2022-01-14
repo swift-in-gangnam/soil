@@ -11,24 +11,24 @@ struct ProfileViewModel {
   
   let user: User
   
-  var uid: String { return user.uid }
+//  var uid: String { return user.uid }
   
-  var fullname: String { return user.fullname }
+  var fullname: String { return user.name ?? "" }
   
-  var username: String { return user.username }
+  var nickname: String { return user.nickname }
   
-  var bio: String { return user.bio }
+  var bio: String { return user.bio ?? "" }
   
   var profileImageURL: URL? {
-    return URL(string: user.profileImageURL)
+    return URL(string: user.profileImageURL ?? "")
   }
 
   var numberOfFollowers: NSAttributedString {
-    return attributedStatText(label: "팔로워  ", value: user.stats.followers)
+    return attributedStatText(label: "팔로워  ", value: user.followers)
   }
   
   var numberOfFollowing: NSAttributedString {
-    return attributedStatText(label: "팔로잉  ", value: user.stats.following)
+    return attributedStatText(label: "팔로잉  ", value: user.following)
   }
   
   var fullnameCount: String {
@@ -46,12 +46,18 @@ struct ProfileViewModel {
   func attributedStatText(label: String, value: Int) -> NSAttributedString {
     let attributedText = NSMutableAttributedString(
       string: label,
-      attributes: [.font: UIFont.notoSansKR(size: 13, family: .medium), .foregroundColor: UIColor.black]
+      attributes: [
+        .font: UIFont.notoSansKR(size: 13, family: .medium),
+        .foregroundColor: UIColor.black
+      ]
     )
     attributedText.append(
       NSAttributedString(
         string: "\(value)",
-        attributes: [.font: UIFont.ceraPro(size: 20, family: .bold), .foregroundColor: UIColor.black]
+        attributes: [
+          .font: UIFont.ceraPro(size: 20, family: .bold),
+          .foregroundColor: UIColor.black
+        ]
       )
     )
     return attributedText
