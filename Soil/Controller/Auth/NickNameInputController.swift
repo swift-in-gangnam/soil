@@ -9,8 +9,11 @@ import UIKit
 
 class NickNameInputController: UIViewController {
 
+  // MARK: - Properties
   @IBOutlet weak var nicknameCheckLabel: UILabel!
   @IBOutlet weak var nickNameTextField: UITextField!
+  
+  // MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationController?.navigationBar.topItem?.title = ""
@@ -20,7 +23,7 @@ class NickNameInputController: UIViewController {
     nickNameTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
   }
   
-  // Methods
+  // MARK:- Methods
  
   @objc func textFieldDidChange(_ sender: Any?) {
     nicknameCheckLabel.textColor = .red
@@ -38,8 +41,8 @@ class NickNameInputController: UIViewController {
       nicknameCheckLabel.textColor = .red
     }
   }
-  // (?=.*[a-zA-Z]{2,50})
-  // 영문으로만 5~15글자 사이의 text 체크하는 정규표현식
+
+  // 영문, 숫자로만 5~15글자 사이의 text 체크하는 정규표현식
   func validNickname(nickname: String) -> Bool {
     let nicknameReg = "[A-Za-z0-9]{5,15}"
     let nicknameTesting = NSPredicate(format: "SELF MATCHES %@", nicknameReg)

@@ -19,17 +19,9 @@ class EmailInputController: UIViewController {
     super.viewDidLoad()
     self.navigationController?.navigationBar.topItem?.title = ""
     emailTextField.addBottomBorderWithColor(color: .black, height: 2.0)
-    //emailTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
   }
   
   // MARK: - Methods
-//  @objc func textFieldDidChange(_ textField: UITextField) {
-//    if textField.text?.isEmpty == true {
-//      nextButton.isEnabled = false
-//    } else {
-//      nextButton.isEnabled = true
-//    }
-//  }
   @IBAction func tapView(_ sender: UITapGestureRecognizer) {
     self.view.endEditing(true)
   }

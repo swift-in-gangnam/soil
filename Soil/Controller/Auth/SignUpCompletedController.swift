@@ -47,9 +47,6 @@ class SignUpCompletedController: UIViewController {
       if let error = error {
         print("register user error : \(error.localizedDescription)")
       }
-     // guard let user = authResult?.user else { return }
-     // print("user : \(user)")
-      
     }
   }
 }
