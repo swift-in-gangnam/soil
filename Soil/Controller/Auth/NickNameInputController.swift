@@ -23,8 +23,7 @@ class NickNameInputController: UIViewController {
     nickNameTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
   }
   
-  // MARK:- Methods
- 
+  // MARK: - Methods
   @objc func textFieldDidChange(_ sender: Any?) {
     nicknameCheckLabel.textColor = .red
     nicknameCheckLabel.text = "5자 이상 15자 이하의 영문 또는 숫자를 입력해주세요."

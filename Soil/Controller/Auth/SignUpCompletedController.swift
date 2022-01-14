@@ -45,7 +45,7 @@ class SignUpCompletedController: UIViewController {
     
     Auth.auth().createUser(withEmail: email, password: password) { authResult, error  in
       if let error = error {
-        print("register user error : \(error.localizedDescription)")
+        print("register user error : \(error.localizedDescription), \(authResult?.user.uid ?? "")")
       }
     }
   }

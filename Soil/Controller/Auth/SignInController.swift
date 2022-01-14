@@ -8,13 +8,6 @@
 import UIKit
 import Firebase
 import Alamofire
-
-import Alamofire
-import Firebase
-import KeychainAccess
-
-import Alamofire
-import Firebase
 import KeychainAccess
 
 class SignInController: UIViewController {
