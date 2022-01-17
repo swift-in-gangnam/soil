@@ -63,8 +63,7 @@ class NickNameInputController: UIViewController {
       nicknameCheckLabel.textColor = UIColor(named: "AAAAAA")
       let authUser = AuthUser.shared
       authUser.nickname = nickname
-      print("nickname :\(authUser.nickname!)")
-      
+     
       guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "nameVC") else { return }
       self.navigationController?.pushViewController(vc, animated: true)
     }

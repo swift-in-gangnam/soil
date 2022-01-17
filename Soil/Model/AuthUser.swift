@@ -18,4 +18,12 @@ class AuthUser {
   
   private init() { }
   
+  func initUser() {
+    email = nil
+    password = nil
+    nickname = nil
+    name = nil
+    profileImage = nil
+  }
+  
 }

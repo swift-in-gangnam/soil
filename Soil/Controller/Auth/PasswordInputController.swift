@@ -48,7 +48,6 @@ class PasswordInputController: UIViewController {
       passwordCheckLabel.textColor = UIColor(named: "AAAAAA")
       let authUser = AuthUser.shared
       authUser.password = password
-      print("email :\(authUser.email!)")
       
       guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "nicknameVC") else { return }
       self.navigationController?.pushViewController(vc, animated: true)

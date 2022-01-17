@@ -8,10 +8,13 @@
 import UIKit
 import Lottie
 import Firebase
+import Alamofire
+import KeychainAccess
 
 class SignUpCompletedController: UIViewController {
   // MARK: - Properties
   let animationView = AnimationView()
+  private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
 
   // MARK: - LifeCycle
   override func viewDidLoad() {
@@ -43,10 +46,90 @@ class SignUpCompletedController: UIViewController {
     guard let email = user.email else { return }
     guard let password = user.password else { return }
     
-    Auth.auth().createUser(withEmail: email, password: password) { authResult, error  in
+    // firebase Auth에 user 생성
+    Auth.auth().createUser(withEmail: email, password: password) { result, error  in
       if let error = error {
-        print("register user error : \(error.localizedDescription), \(authResult?.user.uid ?? "")")
+        print("DEBUG: Failed to register firebase user with error \(error.localizedDescription)")
       }
+      
+      guard let result = result else { return }
+      
+      // idToken, uid를 Keychain에 저장
+      result.user.getIDToken(completion: { idToken, error in
+        if let error = error {
+          print("DEBUG: Failed to fetch idToken with error \(error.localizedDescription)")
+          return
+        }
+        
+        guard let idToken = idToken else { return }
+     
+        do {
+          try self.keychain.set(idToken, key: "token")
+          try self.keychain.set(result.user.uid, key: "uid")
+        } catch let error {
+          fatalError("DEBUG: Failed to add keychain with error \(error.localizedDescription)")
+        }
+        
+        // API
+        let url = "http://15.165.215.29:8080/user"
+       
+        let headers: HTTPHeaders = [
+          .authorization(idToken),
+          .accept("multipart/form-data")
+        ]
+       
+        guard let email = AuthUser.shared.email else { return }
+        guard let nickname = AuthUser.shared.nickname else { return }
+        guard let username = AuthUser.shared.name else { return }
+        
+        let parameters: [String: Any] = [
+          "user_email": email,
+          "user_nickname": nickname,
+          "user_name": username
+        ]
+     
+        AF.upload(
+          multipartFormData: { multipartFormData in
+            for (key, value) in parameters {
+              multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+            }
+            
+            if let imageData = AuthUser.shared.profileImage?.jpegData(compressionQuality: 0.75) {
+              multipartFormData.append(imageData, withName: "file",
+                                       fileName: "\(imageData).jpeg", mimeType: "image/jpeg")
+            } else {
+              multipartFormData.append("".data(using: .utf8)!, withName: "file", fileName: "", mimeType: "")
+            }
+          },
+          to: url,
+          method: .post,
+          headers: headers).responseJSON { response in
+            // debugPrint(response)
+            switch response.result {
+            case .success(let value):
+              print("signUp - \(value)")
+             
+            case .failure(let error):
+              print("\n\n===========Error===========")
+              print("Error Code: \(error._code)")
+              print("Error Messsage: \(error.localizedDescription)")
+              if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8) {
+                print("Server Error: " + str)
+              }
+              debugPrint(error as Any)
+              print("===========================\n\n")
+              
+              // print("DEBUG: Failed to signUp with error \(error.localizedDescription)")
+            }
+          }
+        
+//        AF.request(url, method: .post, parameters: parameters, headers: headers)
+//          .validate(statusCode: 200..<300)
+//          .validate(contentType: ["multipart/form-data"])
+//          .responseJSON { res in
+//          debugPrint(res)
+//        }
+      })
     }
   }
 }
