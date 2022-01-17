@@ -41,8 +41,6 @@
 		3C953CF32732C04D00B12039 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3C953CF22732C04D00B12039 /* .swiftlint.yml */; };
 		3C968084273271540020A72F /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C968083273271540020A72F /* Montserrat-Medium.ttf */; };
 		3C96808A273286F20020A72F /* UploadPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C968089273286F20020A72F /* UploadPostController.swift */; };
-		3CA91E682733CC5E00390A89 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E672733CC5E00390A89 /* LoginController.swift */; };
-		3CA91E6A2733CC6A00390A89 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E692733CC6A00390A89 /* RegistrationController.swift */; };
 		3CA91E6C2733CD3C00390A89 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E6B2733CD3C00390A89 /* AuthTextField.swift */; };
 		3CA91E6E2733CF6400390A89 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA91E6D2733CF6400390A89 /* AuthButton.swift */; };
 		3CC1B09C2742BB6600A715C0 /* HorizontalSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */; };
@@ -81,6 +79,7 @@
 		FA12E8052744CFB000EB8834 /* PasswordInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */; };
 		FA12E8062744CFB000EB8834 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FE2744CFB000EB8834 /* SignInController.swift */; };
 		FA12E8072744CFB000EB8834 /* NameInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FF2744CFB000EB8834 /* NameInputController.swift */; };
+		FA3AC8392781DA3F00B8BDFF /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */; };
 		FA3D3E0D2744D51700A86040 /* LoginHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */; };
 		FA3D3E142744EB0E00A86040 /* SignUpCompletedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */; };
 		FA43FC572751158000A020D6 /* 20425-emailtitle.json in Resources */ = {isa = PBXBuildFile; fileRef = FA43FC552751158000A020D6 /* 20425-emailtitle.json */; };
@@ -120,8 +119,6 @@
 		3C953CF22732C04D00B12039 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3C968083273271540020A72F /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		3C968089273286F20020A72F /* UploadPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostController.swift; sourceTree = "<group>"; };
-		3CA91E672733CC5E00390A89 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		3CA91E692733CC6A00390A89 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		3CA91E6B2733CD3C00390A89 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		3CA91E6D2733CF6400390A89 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSeperator.swift; sourceTree = "<group>"; };
@@ -155,6 +152,7 @@
 		FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputController.swift; sourceTree = "<group>"; };
 		FA12E7FE2744CFB000EB8834 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		FA12E7FF2744CFB000EB8834 /* NameInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameInputController.swift; sourceTree = "<group>"; };
+		FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
 		FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHomeController.swift; sourceTree = "<group>"; };
 		FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletedController.swift; sourceTree = "<group>"; };
 		FA43FC552751158000A020D6 /* 20425-emailtitle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "20425-emailtitle.json"; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				FA12E7F72744CF4700EB8834 /* Auth */,
-				3CA91E662733CC3800390A89 /* Authentication */,
 				D57E8EB927401E360099AA63 /* Profile */,
 				3C45E0C727313ADA002E3C8D /* TabBarController.swift */,
 				3C10AFD22732981600B1E973 /* FeedController.swift */,
@@ -207,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				D5C0A914273A4E8E005F9E9B /* User.swift */,
+				FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -362,15 +360,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		3CA91E662733CC3800390A89 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				3CA91E672733CC5E00390A89 /* LoginController.swift */,
-				3CA91E692733CC6A00390A89 /* RegistrationController.swift */,
-			);
-			path = Authentication;
-			sourceTree = "<group>";
-		};
 		3CA91E6F2733CFB600390A89 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,14 +408,14 @@
 		FA12E7F72744CF4700EB8834 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				FA12E7FC2744CFB000EB8834 /* EmailConfirmController.swift */,
-				FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */,
-				FA12E7FF2744CFB000EB8834 /* NameInputController.swift */,
-				FA12E7FB2744CFB000EB8834 /* NickNameInputController.swift */,
-				FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */,
-				FA12E7FA2744CFB000EB8834 /* ProfileInputController.swift */,
-				FA12E7FE2744CFB000EB8834 /* SignInController.swift */,
 				FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */,
+				FA12E7FE2744CFB000EB8834 /* SignInController.swift */,
+				FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */,
+				FA12E7FC2744CFB000EB8834 /* EmailConfirmController.swift */,
+				FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */,
+				FA12E7FB2744CFB000EB8834 /* NickNameInputController.swift */,
+				FA12E7FF2744CFB000EB8834 /* NameInputController.swift */,
+				FA12E7FA2744CFB000EB8834 /* ProfileInputController.swift */,
 				FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */,
 			);
 			path = Auth;
@@ -625,10 +614,10 @@
 				3C10AFD82732A05A00B1E973 /* UIColorExtension.swift in Sources */,
 				FA3D3E0D2744D51700A86040 /* LoginHomeController.swift in Sources */,
 				FA3D3E142744EB0E00A86040 /* SignUpCompletedController.swift in Sources */,
+				FA3AC8392781DA3F00B8BDFF /* AuthUser.swift in Sources */,
 				3C10AFDB2732A1C400B1E973 /* UIFontExtension.swift in Sources */,
 				3C45E0C827313ADA002E3C8D /* TabBarController.swift in Sources */,
 				D5C0A91B273A5AB7005F9E9B /* StorageService.swift in Sources */,
-				3CA91E682733CC5E00390A89 /* LoginController.swift in Sources */,
 				D57E8EBB274020820099AA63 /* ProfileViewModel.swift in Sources */,
 				FA12E8072744CFB000EB8834 /* NameInputController.swift in Sources */,
 				FA12E8062744CFB000EB8834 /* SignInController.swift in Sources */,
@@ -642,7 +631,6 @@
 				FA12E8032744CFB000EB8834 /* NickNameInputController.swift in Sources */,
 				D5C0A917273A5032005F9E9B /* UserService.swift in Sources */,
 				FA12E8002744CFB000EB8834 /* EmailInputViewController.swift in Sources */,
-				3CA91E6A2733CC6A00390A89 /* RegistrationController.swift in Sources */,
 				3C45E0C627313ADA002E3C8D /* SceneDelegate.swift in Sources */,
 				3CA91E6C2733CD3C00390A89 /* AuthTextField.swift in Sources */,
 				FA45DE15274F6AC800E38A90 /* NotificationNameExtension.swift in Sources */,
@@ -806,7 +794,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-in-gangnam.Soil";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-in-gangnam.Soils";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -839,7 +827,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-in-gangnam.Soil";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-in-gangnam.Soils";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

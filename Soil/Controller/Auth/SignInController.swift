@@ -6,9 +6,8 @@
 //
 
 import UIKit
-
-import Alamofire
 import Firebase
+import Alamofire
 import KeychainAccess
 
 class SignInController: UIViewController {

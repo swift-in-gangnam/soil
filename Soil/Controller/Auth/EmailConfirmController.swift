@@ -11,11 +11,13 @@ import Lottie
 class EmailConfirmController: UIViewController {
   // MARK: - Properties
   let animationView = AnimationView()
+  @IBOutlet weak var emailLabel: UILabel!
   
   // MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationController?.navigationBar.topItem?.title = ""
+    emailLabel.text = AuthUser.shared.email
     setUpAnimation()
   }
   
