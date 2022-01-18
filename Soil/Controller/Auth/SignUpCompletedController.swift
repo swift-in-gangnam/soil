@@ -83,9 +83,9 @@ class SignUpCompletedController: UIViewController {
         guard let username = AuthUser.shared.name else { return }
         
         let parameters: [String: Any] = [
-          "user_email": email,
-          "user_nickname": nickname,
-          "user_name": username
+          "email": email,
+          "nickname": nickname,
+          "name": username
         ]
      
         AF.upload(

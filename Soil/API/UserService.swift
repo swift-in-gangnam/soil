@@ -6,43 +6,37 @@
 //
 
 import UIKit
+import Alamofire
 import Firebase
 import KeychainAccess
 
 struct UserService {
     
-//  static func fetchUser(completion: @escaping (User) -> Void) {
-//    guard let uid = Auth.auth().currentUser?.uid else { return }
-//
-//    firestoreUsers.document(uid).getDocument { snapshot, _ in
-//      guard let dictionary = snapshot?.data() else { return }
-//      let user = User(dictionary: dictionary)
-//      completion(user)
-//    }
-//  }
-//
-//  static func fetchUsers(completion: @escaping ([User]) -> Void) {
-//    firestoreUsers.getDocuments { snapshot, _ in
-//      guard let snapshot = snapshot else { return }
-//      let users = snapshot.documents.map({ User(dictionary: $0.data()) })
-//      completion(users)
-//    }
-//  }
-//
-//  static func updateUser(
-//    user: User,
-//    data: [String: Any],
-//    profileImage: UIImage?,
-//    completion: @escaping (FirestoreCompletion)
-//  ) {
-//    if let profileImage = profileImage {
-//      StorageService.updateImage(uuid: user.profileImageUUID, image: profileImage) { imageURL in
-//        var mutatedData = data
-//        mutatedData["profileImageURL"] = imageURL
-//        firestoreUsers.document(user.uid).updateData(mutatedData, completion: completion)
-//      }
-//    } else {
-//      firestoreUsers.document(user.uid).updateData(data, completion: completion)
-//    }
-//  }
+  static func fetchUser(
+    request: FetchUserRequest,
+    completion: @escaping (DataResponse<User, AFError>) -> Void
+  ) {
+    AFManager
+      .shared
+      .session
+      .request(UserRouter.fetchUser(request))
+      .validate(statusCode: 200..<401)
+      .validate(contentType: ["application/json"])
+      .responseDecodable(of: User.self, completionHandler: completion)
+  }
+  
+  static func updateUser(
+    request: UpdateUserRequest,
+    completion: @escaping (AFDataResponse<Data?>) -> Void
+  ) {
+    let route = UserRouter.updateUser(request)
+    
+    AFManager
+      .shared
+      .session
+      .upload(multipartFormData: route.multipartFormData, with: route)
+      .validate(statusCode: 200..<401)
+      .validate(contentType: ["application/json"])
+      .response(completionHandler: completion)
+  }
 }

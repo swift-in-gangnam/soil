@@ -86,36 +86,37 @@ class YouController: UIViewController {
   
   private func fetchUser() {
 
-     let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
-    let token = try? keychain.get("token")
-    let uid = try? keychain.get("uid")
+    guard let uid = try? keychain.get("uid") else {
+      fatalError("DEBUG: Failed to fetch keychain with error")
+    }
     
-    let url = "http://15.165.215.29:8080/user/\(uid!)"
-    
-    let headers: HTTPHeaders = [
-      .authorization(token!),
-      .accept("application/json")
-    ]
+    let request = FetchUserRequest(uid: uid)
 
-    AF.request(url, method: .get, headers: headers)
-      .validate(statusCode: 200..<300)
-      .validate(contentType: ["application/json"])
-      .responseJSON { res in
-        debugPrint(res)
-        switch res.result {
-        case .success(let value):
-          do {
-            let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
-            let decodedData = try JSONDecoder().decode(User.self, from: dataJSON)
-            self.user = decodedData
-            self.pagingVC.reloadData()
-          } catch {
-            print("DEBUG: failed to ~~~~\(error.localizedDescription)")
-          }
-        case .failure(let error):
-          print("DEBUG: \(error)")
-        }
-      }
+    UserService.fetchUser(request: request) { response in
+      guard let user = response.value else { return }
+      self.user = user
+      self.pagingVC.reloadData()
+    }
+    
+//    AF.request(url, method: .get, headers: headers)
+//      .validate(statusCode: 200..<300)
+//      .validate(contentType: ["application/json"])
+//      .responseJSON { res in
+//        debugPrint(res)
+//        switch res.result {
+//        case .success(let value):
+//          do {
+//            let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+//            let decodedData = try JSONDecoder().decode(User.self, from: dataJSON)
+//            self.user = decodedData
+//            self.pagingVC.reloadData()
+//          } catch {
+//            print("DEBUG: failed to ~~~~\(error.localizedDescription)")
+//          }
+//        case .failure(let error):
+//          print("DEBUG: \(error)")
+//        }
+//      }
   }
 }
 
