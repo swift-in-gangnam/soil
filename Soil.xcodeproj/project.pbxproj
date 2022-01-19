@@ -338,14 +338,10 @@
 		3C58C83F273431F9003A1F9D /* API */ = {
 			isa = PBXGroup;
 			children = (
-				D5C0A916273A5032005F9E9B /* UserService.swift */,
-				D5C0A910273A4B91005F9E9B /* AuthService.swift */,
-				D569A3932796EF2C00B7BA4A /* TargetType.swift */,
-				D5D0C4B527975DCD00E96015 /* UserRequest.swift */,
-				D569A38D2796A27800B7BA4A /* BaseInterceptor.swift */,
-				D569A38B2796A19100B7BA4A /* AFManager.swift */,
-				D569A3912796ADD400B7BA4A /* UserRouter.swift */,
-				D569A38F2796A95300B7BA4A /* MyLogger.swift */,
+				D5D0C4BA2798A19D00E96015 /* Service */,
+				D5D0C4BB2798A1AA00E96015 /* Model */,
+				D5D0C4BC2798A1B500E96015 /* Router */,
+				D5D0C4BD2798A1C600E96015 /* Common */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -400,6 +396,42 @@
 				D57E8EB727401C9A0099AA63 /* EditProfileController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		D5D0C4BA2798A19D00E96015 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D5C0A916273A5032005F9E9B /* UserService.swift */,
+				D5C0A910273A4B91005F9E9B /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D5D0C4BB2798A1AA00E96015 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5D0C4B527975DCD00E96015 /* UserRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D5D0C4BC2798A1B500E96015 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D569A3912796ADD400B7BA4A /* UserRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D5D0C4BD2798A1C600E96015 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D569A3932796EF2C00B7BA4A /* TargetType.swift */,
+				D569A38B2796A19100B7BA4A /* AFManager.swift */,
+				D569A38D2796A27800B7BA4A /* BaseInterceptor.swift */,
+				D569A38F2796A95300B7BA4A /* MyLogger.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		F1330D15E367A70B4DD9DBCF /* Pods */ = {
