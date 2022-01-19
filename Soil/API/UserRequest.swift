@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct LoginRequest: Encodable {
+  let fcmToken: String
+}
+
 struct FetchUserRequest: Encodable {
   let uid: String
 }

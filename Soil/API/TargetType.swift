@@ -23,30 +23,31 @@ extension TargetType {
     let url = try baseURL.asURL()
     var request = URLRequest(url: url.appendingPathComponent(path))
     request.method = method
-    
     request.headers.add(.contentType(headerContentType))
+        
+    switch parameters {
+    case .body(let params):
+      let params = params?.toDictionary() ?? [:]
+      request.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
+      
+    default: ()
+    }
     
-//    switch parameters {
-//    case .query(let request):
-//      let params = request?.toDictionary() ?? [:]
-//      let queryParams = params.map {
-//        URLQueryItem(name: $0.key, value: "\($0.value)")
-//      }
-//      var components = URLComponents(string: url.appendingPathComponent(path).absoluteString)
-//      components?.queryItems = queryParams
-//      request.url = components?.url
-//    case .body(let request):
-//      let params = request?.toDictionary() ?? [:]
-//      request.httpBody = try JSONSerialization.data(
-//        withJSONObject: params, options: []
-//      )
-//    }
     return request
   }
 }
 
 enum RequestParams {
-  case query(_ parameter: Encodable?)
-  case body(_ parameter: Encodable?)
+  case query(_: Encodable?)
+  case body(_: Encodable?)
   case none
+}
+
+extension Encodable {
+  func toDictionary() -> [String: Any] {
+    guard let data = try? JSONEncoder().encode(self),
+          let jsonData = try? JSONSerialization.jsonObject(with: data),
+          let dictionaryData = jsonData as? [String: Any] else { return [:] }
+    return dictionaryData
+  }
 }

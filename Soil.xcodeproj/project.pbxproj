@@ -338,13 +338,13 @@
 		3C58C83F273431F9003A1F9D /* API */ = {
 			isa = PBXGroup;
 			children = (
-				D5C0A910273A4B91005F9E9B /* AuthService.swift */,
 				D5C0A916273A5032005F9E9B /* UserService.swift */,
+				D5C0A910273A4B91005F9E9B /* AuthService.swift */,
 				D569A3932796EF2C00B7BA4A /* TargetType.swift */,
 				D5D0C4B527975DCD00E96015 /* UserRequest.swift */,
 				D569A38D2796A27800B7BA4A /* BaseInterceptor.swift */,
-				D569A3912796ADD400B7BA4A /* UserRouter.swift */,
 				D569A38B2796A19100B7BA4A /* AFManager.swift */,
+				D569A3912796ADD400B7BA4A /* UserRouter.swift */,
 				D569A38F2796A95300B7BA4A /* MyLogger.swift */,
 			);
 			path = API;

@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 enum UserRouter {
+  case loginUser(LoginRequest)
   case fetchUser(FetchUserRequest)
   case updateUser(UpdateUserRequest)
 }
@@ -16,11 +17,13 @@ enum UserRouter {
 extension UserRouter: TargetType {
   
   var baseURL: String {
-    return "http://15.165.215.29:8080/user/"
+    return "http://15.165.215.29:8080/user"
   }
 
   var method: HTTPMethod {
     switch self {
+    case .loginUser:
+      return .post
     case .fetchUser:
       return .get
     case .updateUser:
@@ -30,8 +33,10 @@ extension UserRouter: TargetType {
 
   var path: String {
     switch self {
+    case .loginUser:
+      return "/login"
     case .fetchUser(let request):
-      return request.uid
+      return "/\(request.uid)"
     case .updateUser:
       return ""
     }
@@ -39,6 +44,8 @@ extension UserRouter: TargetType {
   
   var headerContentType: String {
     switch self {
+    case .loginUser:
+      return "application/json; charset=UTF-8"
     case .fetchUser:
       return "application/json; charset=UTF-8"
     case .updateUser:
@@ -48,6 +55,8 @@ extension UserRouter: TargetType {
   
   var parameters: RequestParams {
     switch self {
+    case .loginUser(let request):
+      return .body(request)
     case .fetchUser:
       return .none
     case .updateUser:
