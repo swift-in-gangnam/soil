@@ -14,7 +14,7 @@ enum UserRouter {
   case updateUser(UpdateUserRequest)
 }
 
-extension UserRouter: TargetType {
+extension UserRouter: APIConfiguration {
   
   var baseURL: String {
     return "http://15.165.215.29:8080/user"

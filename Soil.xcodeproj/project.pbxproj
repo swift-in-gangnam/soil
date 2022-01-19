@@ -52,7 +52,7 @@
 		D569A38E2796A27800B7BA4A /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38D2796A27800B7BA4A /* BaseInterceptor.swift */; };
 		D569A3902796A95300B7BA4A /* MyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38F2796A95300B7BA4A /* MyLogger.swift */; };
 		D569A3922796ADD400B7BA4A /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A3912796ADD400B7BA4A /* UserRouter.swift */; };
-		D569A3942796EF2C00B7BA4A /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A3932796EF2C00B7BA4A /* TargetType.swift */; };
+		D569A3942796EF2C00B7BA4A /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A3932796EF2C00B7BA4A /* APIConfiguration.swift */; };
 		D57BEC0B274CEB8E00E65966 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BEC0A274CEB8E00E65966 /* UITextFieldExtension.swift */; };
 		D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EB52740182E0099AA63 /* UserStatController.swift */; };
 		D57E8EB827401C9A0099AA63 /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EB727401C9A0099AA63 /* EditProfileController.swift */; };
@@ -135,7 +135,7 @@
 		D569A38D2796A27800B7BA4A /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
 		D569A38F2796A95300B7BA4A /* MyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLogger.swift; sourceTree = "<group>"; };
 		D569A3912796ADD400B7BA4A /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
-		D569A3932796EF2C00B7BA4A /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		D569A3932796EF2C00B7BA4A /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		D57BEC0A274CEB8E00E65966 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		D57E8EB52740182E0099AA63 /* UserStatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatController.swift; sourceTree = "<group>"; };
 		D57E8EB727401C9A0099AA63 /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
@@ -426,7 +426,7 @@
 		D5D0C4BD2798A1C600E96015 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				D569A3932796EF2C00B7BA4A /* TargetType.swift */,
+				D569A3932796EF2C00B7BA4A /* APIConfiguration.swift */,
 				D569A38B2796A19100B7BA4A /* AFManager.swift */,
 				D569A38D2796A27800B7BA4A /* BaseInterceptor.swift */,
 				D569A38F2796A95300B7BA4A /* MyLogger.swift */,
@@ -662,7 +662,7 @@
 				D5D12248273D1E330022290E /* MonthController.swift in Sources */,
 				3C10AFD82732A05A00B1E973 /* UIColorExtension.swift in Sources */,
 				FA3D3E0D2744D51700A86040 /* LoginHomeController.swift in Sources */,
-				D569A3942796EF2C00B7BA4A /* TargetType.swift in Sources */,
+				D569A3942796EF2C00B7BA4A /* APIConfiguration.swift in Sources */,
 				FA3D3E142744EB0E00A86040 /* SignUpCompletedController.swift in Sources */,
 				FA3AC8392781DA3F00B8BDFF /* AuthUser.swift in Sources */,
 				3C10AFDB2732A1C400B1E973 /* UIFontExtension.swift in Sources */,

@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-protocol TargetType: URLRequestConvertible {
+protocol APIConfiguration: URLRequestConvertible {
   var baseURL: String { get }
   var method: HTTPMethod { get }
   var path: String { get }
@@ -16,7 +16,7 @@ protocol TargetType: URLRequestConvertible {
   var parameters: RequestParams { get }
 }
 
-extension TargetType {
+extension APIConfiguration {
 
   // URLRequestConvertible 구현
   func asURLRequest() throws -> URLRequest {
