@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class NickNameInputController: UIViewController {
 
@@ -68,4 +69,28 @@ class NickNameInputController: UIViewController {
       self.navigationController?.pushViewController(vc, animated: true)
     }
   }
+  
+  // 닉네임 중복 체크 API
+  func getEmailDup(nickname: String) {
+    let url = "http://15.165.215.29:8080/user/dupNickname/\(nickname)"
+    
+    let headers: HTTPHeaders = [
+      .accept("application/json")
+    ]
+    
+    AF.request(url, method: .get, headers: headers)
+      .validate(statusCode: 200..<300)
+      .validate(contentType: ["application/json"])
+      .responseJSON { res in
+        debugPrint(res)
+        switch res.result {
+        case .success(let value):
+          print("email success : \(value)")
+          
+        case .failure(let error):
+          print("DEBUG: \(error)")
+        }
+      }
+  }
+  
 }

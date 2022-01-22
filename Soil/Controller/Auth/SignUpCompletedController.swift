@@ -21,8 +21,8 @@ class SignUpCompletedController: UIViewController {
     super.viewDidLoad()
     self.navigationController?.navigationBar.topItem?.title = ""
     setUpAnimation()
-    registerUser()
   }
+  
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -30,6 +30,10 @@ class SignUpCompletedController: UIViewController {
   }
   
   // MARK: - Methods
+  @IBAction func didTabStart(_ sender: UIButton) {
+    registerUser()
+  }
+  
   func setUpAnimation() {
     animationView.animation = Animation.named("70170-success-check")
     let x = self.view.center.x - 150
@@ -83,9 +87,9 @@ class SignUpCompletedController: UIViewController {
         guard let username = AuthUser.shared.name else { return }
         
         let parameters: [String: Any] = [
-          "user_email": email,
-          "user_nickname": nickname,
-          "user_name": username
+          "email": email,
+          "nickname": nickname,
+          "name": username
         ]
      
         AF.upload(
@@ -110,25 +114,9 @@ class SignUpCompletedController: UIViewController {
               print("signUp - \(value)")
              
             case .failure(let error):
-              print("\n\n===========Error===========")
-              print("Error Code: \(error._code)")
-              print("Error Messsage: \(error.localizedDescription)")
-              if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8) {
-                print("Server Error: " + str)
-              }
-              debugPrint(error as Any)
-              print("===========================\n\n")
-              
-              // print("DEBUG: Failed to signUp with error \(error.localizedDescription)")
+              print("DEBUG: Failed to signUp with error \(error.localizedDescription)")
             }
           }
-        
-//        AF.request(url, method: .post, parameters: parameters, headers: headers)
-//          .validate(statusCode: 200..<300)
-//          .validate(contentType: ["multipart/form-data"])
-//          .responseJSON { res in
-//          debugPrint(res)
-//        }
       })
     }
   }

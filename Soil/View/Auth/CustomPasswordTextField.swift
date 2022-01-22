@@ -26,19 +26,25 @@ class CustomPasswordTextField: UITextField {
     createCustomPasswordTextField()
   }
 
+  // show 버튼 rightView에 생성
   private func createCustomPasswordTextField() {
-   // delegate = self
     eyeButton = UIButton()
     eyeButton.contentMode = .scaleAspectFit
-    eyeButton.setImage(UIImage(named: "eye"), for: .normal)
+    eyeButton.setTitle("show", for: .normal)
+    eyeButton.setTitleColor(UIColor(named: "AAAAAA"), for: .normal)
+    
+    eyeButton.setTitle("show", for: .selected)
+    eyeButton.setTitleColor(.black, for: .selected)
+    
+    eyeButton.addTarget(self, action: #selector(togglePasswordView), for: .touchUpInside)
+    
     self.rightView = eyeButton
     self.rightViewMode = .always
     self.leftViewMode = .never
-    
-    let buttonLine = CALayer()
-    buttonLine.frame = CGRect(x: 0, y: self.frame.height-2, width: self.frame.width, height: 2)
-    buttonLine.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1).cgColor
-    self.borderStyle = .none
-    self.layer.addSublayer(buttonLine)
+  }
+  
+  @objc func togglePasswordView(_ sender: UIButton) {
+    isSecureTextEntry.toggle()
+    sender.isSelected.toggle()
   }
 }

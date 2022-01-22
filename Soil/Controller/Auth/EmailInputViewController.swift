@@ -36,12 +36,12 @@ class EmailInputController: UIViewController {
   @IBAction func didTabNext(_ sender: UIButton) {
     guard let email = emailTextField.text else { return }
     
-    getEmailDup()
-    
     if email.isEmpty == true { // 이메일 입력을 안했을 때
       emailCheckLabel.textColor = .red
       emailCheckLabel.text = "이메일을 입력해주세요."
     } else if validEmail(email: email) { // 이메일 규칙에 준수할 때
+      getEmailDup(email: email)
+      
       emailCheckLabel.text = ""
       let authUser = AuthUser.shared
       authUser.email = email
@@ -62,19 +62,15 @@ class EmailInputController: UIViewController {
     return emailTesting.evaluate(with: email)
   }
   
-  func getEmailDup() {
-    guard let email = emailTextField.text else { return }
-    let url = "http://15.165.215.29:8080/user/dupEmail"
+  // 이메일 중복 체크 API
+  func getEmailDup(email: String) {
+    let url = "http://15.165.215.29:8080/user/dupEmail/\(email)"
     
     let headers: HTTPHeaders = [
       .accept("application/json")
     ]
     
-    let parameters: [String: String] = [
-      "user_email": email
-    ]
-
-    AF.request(url, method: .get, parameters: parameters, headers: headers)
+    AF.request(url, method: .get, headers: headers)
       .validate(statusCode: 200..<300)
       .validate(contentType: ["application/json"])
       .responseJSON { res in
