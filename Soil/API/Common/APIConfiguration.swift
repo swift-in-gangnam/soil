@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 protocol APIConfiguration: URLRequestConvertible {
-  var baseURL: String { get }
   var method: HTTPMethod { get }
   var path: String { get }
   var headerContentType: String { get }
@@ -20,17 +19,18 @@ extension APIConfiguration {
 
   // URLRequestConvertible 구현
   func asURLRequest() throws -> URLRequest {
-    let url = try baseURL.asURL()
+    let url = try "http://15.165.215.29:8080".asURL()
     var request = URLRequest(url: url.appendingPathComponent(path))
     request.method = method
     request.headers.add(.contentType(headerContentType))
         
     switch parameters {
     case .body(let params):
-      let params = params?.toDictionary() ?? [:]
-      request.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
-      
-    default: ()
+      request = try JSONParameterEncoder().encode(params?.toDictionary(), into: request)
+    case .query(let params):
+      request = try URLEncodedFormParameterEncoder().encode(params?.toDictionary(), into: request)
+    default:
+      break
     }
     
     return request
@@ -38,16 +38,16 @@ extension APIConfiguration {
 }
 
 enum RequestParams {
-  case query(_: Encodable?)
-  case body(_: Encodable?)
+  case query(Encodable?)
+  case body(Encodable?)
   case none
 }
 
 extension Encodable {
-  func toDictionary() -> [String: Any] {
+  func toDictionary() -> [String: String] {
     guard let data = try? JSONEncoder().encode(self),
           let jsonData = try? JSONSerialization.jsonObject(with: data),
-          let dictionaryData = jsonData as? [String: Any] else { return [:] }
+          let dictionaryData = jsonData as? [String: String] else { return [:] }
     return dictionaryData
   }
 }

@@ -16,7 +16,7 @@ class YouController: UIViewController {
   
   // MARK: - Properties
   
-  private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
+  private let keychain = Keychain(service: "com.chuncheonian.Soil")
   fileprivate var user: User?
   private let menuArr = ["profile", "day", "month", "year"]
   

@@ -28,7 +28,7 @@ class ProfileController: UIViewController {
   }
   
   weak var delegate: ProfileControllerDelegate?
-  private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
+  private let keychain = Keychain(service: "com.chuncheonian.Soil")
   
   private let profileImageView: UIImageView = {
     let iv = UIImageView()

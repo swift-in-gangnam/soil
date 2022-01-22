@@ -21,5 +21,4 @@ final class MyLogger: EventMonitor {
     print("DEBUG: MyLogger - didParseResponse() called")
     debugPrint(response)
   }
-  
 }

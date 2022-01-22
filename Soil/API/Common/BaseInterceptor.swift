@@ -13,7 +13,7 @@ import KeychainAccess
 
 class BaseInterceptor: RequestInterceptor {
 
-  private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
+  private let keychain = Keychain(service: "com.chuncheonian.Soil")
   let retryLimit = 1
   let retryDelay: TimeInterval = 30
   

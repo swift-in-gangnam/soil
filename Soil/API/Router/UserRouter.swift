@@ -16,10 +16,6 @@ enum UserRouter {
 
 extension UserRouter: APIConfiguration {
   
-  var baseURL: String {
-    return "http://15.165.215.29:8080/user"
-  }
-
   var method: HTTPMethod {
     switch self {
     case .loginUser:
@@ -34,11 +30,11 @@ extension UserRouter: APIConfiguration {
   var path: String {
     switch self {
     case .loginUser:
-      return "/login"
+      return "user/login"
     case .fetchUser(let request):
-      return "/\(request.uid)"
+      return "user/\(request.uid)"
     case .updateUser:
-      return ""
+      return "user"
     }
   }
   
@@ -76,7 +72,8 @@ extension UserRouter: APIConfiguration {
       } else {
         multipartFormData.append("".data(using: .utf8)!, withName: "file", fileName: "", mimeType: "")
       }
-    default: ()
+    default:
+      break
     }
 
     return multipartFormData

@@ -21,7 +21,7 @@ class SignInController: UIViewController {
   
   private var viewModel = LoginViewModel()
   
-  private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
+  private let keychain = Keychain(service: "com.chuncheonian.Soil")
   
   // MARK: - Lifecycle
   
