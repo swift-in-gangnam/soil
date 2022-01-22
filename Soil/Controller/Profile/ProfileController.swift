@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 protocol ProfileControllerDelegate: AnyObject {
   func didTapUserStatBtn()
@@ -27,6 +28,7 @@ class ProfileController: UIViewController {
   }
   
   weak var delegate: ProfileControllerDelegate?
+  private let keychain = Keychain(service: "com.chuncheonian.Soil")
   
   private let profileImageView: UIImageView = {
     let iv = UIImageView()
@@ -194,8 +196,16 @@ class ProfileController: UIViewController {
 extension ProfileController: EditProfileControllerDelegte {
   func didUpdateProfile(_ controller: EditProfileController) {
     controller.dismiss(animated: true, completion: nil)
-//    UserService.fetchUser { user in
-//      self.viewModel = ProfileViewModel(user: user)
-//    }
+    
+    guard let uid = try? keychain.get("uid") else {
+      fatalError("DEBUG: Failed to fetch keychain with error")
+    }
+    
+    let request = FetchUserRequest(uid: uid)
+    
+    UserService.fetchUser(request: request) { response in
+      guard let user = response.value else { return }
+      self.viewModel = ProfileViewModel(user: user)
+    }
   }
 }

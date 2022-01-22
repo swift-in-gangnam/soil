@@ -14,7 +14,7 @@ import KeychainAccess
 class SignUpCompletedController: UIViewController {
   // MARK: - Properties
   let animationView = AnimationView()
-  private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
+  private let keychain = Keychain(service: "com.chuncheonian.Soil")
 
   // MARK: - LifeCycle
   override func viewDidLoad() {
@@ -83,9 +83,9 @@ class SignUpCompletedController: UIViewController {
         guard let username = AuthUser.shared.name else { return }
         
         let parameters: [String: Any] = [
-          "user_email": email,
-          "user_nickname": nickname,
-          "user_name": username
+          "email": email,
+          "nickname": nickname,
+          "name": username
         ]
      
         AF.upload(

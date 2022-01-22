@@ -8,7 +8,6 @@
 import UIKit
 
 import Alamofire
-import KeychainAccess
 
 protocol EditProfileControllerDelegte: AnyObject {
     func didUpdateProfile(_ controller: EditProfileController)
@@ -17,9 +16,7 @@ protocol EditProfileControllerDelegte: AnyObject {
 class EditProfileController: UIViewController {
   
   // MARK: - Properties
-  
-  private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
-  
+    
   var viewModel: ProfileViewModel? {
     didSet { updateUI() }
   }
@@ -144,43 +141,55 @@ class EditProfileController: UIViewController {
     guard let name = nameTextField.text else { return }
     guard let bio = bioTextView.text else { return }
     
-    let url = "http://15.165.215.29:8080/user"
-    let token = try? keychain.get("token")
-    let headers: HTTPHeaders = [
-      .contentType("multipart/form-data"),
-      .authorization(token!)
-    ]
-    
-    let parameters: [String: Any] = [
-      "user_name": name,
-      "user_bio": bio
-    ]
-    
-    AF.upload(
-      multipartFormData: { multipartFormData in
-        for (key, value) in parameters {
-          multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
-        }
+    let request = UpdateUserRequest(
+      name: name,
+      bio: bio,
+      file: selectedProfileImage?.jpegData(compressionQuality: 0.75)
+    )
         
-        if let imageData = self.selectedProfileImage?.jpegData(compressionQuality: 0.75) {
-          multipartFormData.append(imageData, withName: "file", fileName: "\(imageData).jpeg", mimeType: "image/jpeg")
-        } else {
-          multipartFormData.append("".data(using: .utf8)!, withName: "file", fileName: "", mimeType: "")
-        }
-      },
-      to: url,
-      method: .patch,
-      headers: headers).responseJSON { response in
-        // debugPrint(response)
-        switch response.result {
-        case .success(let value):
-          print(value)
-          self.delegate?.didUpdateProfile(self)
-        case .failure(let error):
-          print("DEBUG: Failed to update user with error \(error.localizedDescription)")
-        }
+    UserService.updateUser(request: request) { response in
+      debugPrint(response)
+      switch response.result {
+      case .success:
+        self.delegate?.didUpdateProfile(self)
+      case .failure(let error):
+        print("DEBUG: Failed to update user with error \(error.localizedDescription)")
       }
+    }
   }
+    
+//    AFManager
+//      .shared
+//      .session
+//      .upload(multipartFormData: route.multipartFormData, with: route)
+//      .responseJSON { response in
+//        debugPrint(response)
+//      }
+//    AF.upload(
+//      multipartFormData: { multipartFormData in
+//        for (key, value) in parameters {
+//          multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+//        }
+//
+//        if let imageData = self.selectedProfileImage?.jpegData(compressionQuality: 0.75) {
+//          multipartFormData.append(imageData, withName: "file", fileName: "\(imageData).jpeg", mimeType: "image/jpeg")
+//        } else {
+//          multipartFormData.append("".data(using: .utf8)!, withName: "file", fileName: "", mimeType: "")
+//        }
+//      },
+//      to: url,
+//      method: .patch,
+//      headers: headers).responseJSON { response in
+//        debugPrint(response)
+//        switch response.result {
+//        case .success(let value):
+//          print(value)
+//          self.delegate?.didUpdateProfile(self)
+//        case .failure(let error):
+//          print("DEBUG: Failed to update user with error \(error.localizedDescription)")
+//        }
+//      }
+//  }
   
   @objc func didTapImageChangeBtn() {
     let picker = UIImagePickerController()
