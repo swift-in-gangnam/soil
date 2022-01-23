@@ -88,7 +88,8 @@ class ProfileController: UIViewController {
     configureUI()
   }
   
-  // MARK: - Action0
+  // MARK: - Action
+  
   @objc func handleEditProfileFollowTapped() {
     guard let viewModel = viewModel else { return }
     

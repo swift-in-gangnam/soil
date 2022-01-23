@@ -53,6 +53,7 @@
 		D569A3902796A95300B7BA4A /* MyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38F2796A95300B7BA4A /* MyLogger.swift */; };
 		D569A3922796ADD400B7BA4A /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A3912796ADD400B7BA4A /* UserRouter.swift */; };
 		D569A3942796EF2C00B7BA4A /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A3932796EF2C00B7BA4A /* APIConfiguration.swift */; };
+		D56CB273279E0ACF0087FCC8 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56CB272279E0ACF0087FCC8 /* SearchController.swift */; };
 		D57BEC0B274CEB8E00E65966 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BEC0A274CEB8E00E65966 /* UITextFieldExtension.swift */; };
 		D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EB52740182E0099AA63 /* UserStatController.swift */; };
 		D57E8EB827401C9A0099AA63 /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E8EB727401C9A0099AA63 /* EditProfileController.swift */; };
@@ -136,6 +137,7 @@
 		D569A38F2796A95300B7BA4A /* MyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLogger.swift; sourceTree = "<group>"; };
 		D569A3912796ADD400B7BA4A /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		D569A3932796EF2C00B7BA4A /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		D56CB272279E0ACF0087FCC8 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		D57BEC0A274CEB8E00E65966 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		D57E8EB52740182E0099AA63 /* UserStatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatController.swift; sourceTree = "<group>"; };
 		D57E8EB727401C9A0099AA63 /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				D57E8EB927401E360099AA63 /* Profile */,
 				3C45E0C727313ADA002E3C8D /* TabBarController.swift */,
 				3C10AFD22732981600B1E973 /* FeedController.swift */,
+				D56CB272279E0ACF0087FCC8 /* SearchController.swift */,
 				3C968089273286F20020A72F /* UploadPostController.swift */,
 				3C10AFD42732981F00B1E973 /* YouController.swift */,
 				D5D12245273D1E2C0022290E /* DayController.swift */,
@@ -658,6 +661,7 @@
 				3CC62DC3278584B800362941 /* AppController.swift in Sources */,
 				D5D12246273D1E2C0022290E /* DayController.swift in Sources */,
 				FA12E8042744CFB000EB8834 /* EmailConfirmController.swift in Sources */,
+				D56CB273279E0ACF0087FCC8 /* SearchController.swift in Sources */,
 				D5C0A913273A4CB1005F9E9B /* AuthenticationViewModel.swift in Sources */,
 				D5D12248273D1E330022290E /* MonthController.swift in Sources */,
 				3C10AFD82732A05A00B1E973 /* UIColorExtension.swift in Sources */,
