@@ -14,7 +14,7 @@ import KeychainAccess
 class SignUpCompletedController: UIViewController {
   // MARK: - Properties
   let animationView = AnimationView()
-  private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
+  private let keychain = Keychain(service: "com.chuncheonian.Soil")
 
   // MARK: - LifeCycle
   override func viewDidLoad() {

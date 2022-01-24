@@ -21,7 +21,7 @@ class SignInController: UIViewController {
   
   private var viewModel = LoginViewModel()
   
-  private let keychain = Keychain(service: "com.swift-in-gangnam.Soil")
+  private let keychain = Keychain(service: "com.chuncheonian.Soil")
   
   // MARK: - Lifecycle
   
@@ -67,19 +67,18 @@ class SignInController: UIViewController {
         } catch let error {
           fatalError("DEBUG: Failed to add keychain with error \(error.localizedDescription)")
         }
-
-        let url = "http://15.165.215.29:8080/user/login"
-        let headers: HTTPHeaders = [
-          .authorization(idToken),
-          .accept("application/json")
-        ]
-
-        AF.request(url, method: .post, headers: headers)
-          .validate(statusCode: 200..<300)
+        
+        let request = LoginRequest(fcmToken: "xxx")
+        
+        AFManager
+          .shared
+          .session
+          .request(UserRouter.loginUser(request))
+          .validate(statusCode: 200..<401)
           .validate(contentType: ["application/json"])
-          .responseJSON { res in
-          debugPrint(res)
-        }
+          .responseJSON { response in
+            debugPrint(response)
+          }
       })
       
       self?.loginCheckLabel.text = " "
