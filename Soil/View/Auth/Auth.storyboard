@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wmh-A3-MAe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -19,115 +19,24 @@
         <array key="NotoSansKR-Regular.otf">
             <string>NotoSansKR-Regular</string>
         </array>
-        <array key="NotoSansKR-Thin.otf">
-            <string>NotoSansKR-Thin</string>
-        </array>
     </customFonts>
     <scenes>
-        <!--Login Home Controller-->
-        <scene sceneID="lvA-ld-aq9">
-            <objects>
-                <viewController storyboardIdentifier="homeVC" id="rAg-8d-Ghd" customClass="LoginHomeController" customModule="Soil" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6Km-Gx-CeL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPM-uY-5m1">
-                                <rect key="frame" x="38" y="391.5" width="338" height="72.5"/>
-                                <string key="text">어떠한 것에 재미를 붙여
-   심심하지 아니하게 세월을 보냄.</string>
-                                <fontDescription key="fontDescription" name="NotoSansKR-Thin" family="Noto Sans KR" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNA-E8-h3B">
-                                <rect key="frame" x="32" y="762" width="350" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="1C3-M9-Fda"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="17"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="회원가입"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="KVf-a6-5Gu" kind="show" id="EWu-Gr-McA"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="‘消日’" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDs-4u-ZAI">
-                                <rect key="frame" x="38" y="303" width="128" height="72.5"/>
-                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="50"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SoilIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dgg-Rv-Loj">
-                                <rect key="frame" x="136.5" y="122" width="141" height="93"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8z9-fc-gTW">
-                                <rect key="frame" x="151" y="815" width="112" height="30"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="이미 계정이 있어요">
-                                            <attributes>
-                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <integer key="NSUnderline" value="1"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <segue destination="Rbd-OM-J1L" kind="show" id="d1l-zL-GDl"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="xrL-uc-8bi"/>
-                        <color key="backgroundColor" name="E5E5E5"/>
-                        <constraints>
-                            <constraint firstItem="dgg-Rv-Loj" firstAttribute="top" secondItem="xrL-uc-8bi" secondAttribute="top" constant="34" id="0XC-nO-2FO"/>
-                            <constraint firstItem="lNA-E8-h3B" firstAttribute="centerX" secondItem="6Km-Gx-CeL" secondAttribute="centerX" id="7XS-kz-vGl"/>
-                            <constraint firstItem="8z9-fc-gTW" firstAttribute="centerX" secondItem="6Km-Gx-CeL" secondAttribute="centerX" id="96t-xe-5Hk"/>
-                            <constraint firstItem="ZPM-uY-5m1" firstAttribute="centerX" secondItem="6Km-Gx-CeL" secondAttribute="centerX" id="Hco-Fo-jUC"/>
-                            <constraint firstItem="KDs-4u-ZAI" firstAttribute="leading" secondItem="xrL-uc-8bi" secondAttribute="leading" constant="38" id="HeG-Zb-Wmq"/>
-                            <constraint firstItem="KDs-4u-ZAI" firstAttribute="top" secondItem="dgg-Rv-Loj" secondAttribute="bottom" constant="88" id="KHX-Ut-9I4"/>
-                            <constraint firstItem="xrL-uc-8bi" firstAttribute="bottom" secondItem="8z9-fc-gTW" secondAttribute="bottom" constant="17" id="W5V-kR-m2C"/>
-                            <constraint firstItem="xrL-uc-8bi" firstAttribute="trailing" secondItem="lNA-E8-h3B" secondAttribute="trailing" constant="32" id="cYt-SG-Vk2"/>
-                            <constraint firstItem="lNA-E8-h3B" firstAttribute="leading" secondItem="xrL-uc-8bi" secondAttribute="leading" constant="32" id="hxA-iE-DvR"/>
-                            <constraint firstItem="8z9-fc-gTW" firstAttribute="top" secondItem="lNA-E8-h3B" secondAttribute="bottom" constant="3" id="qZB-VY-Rf4"/>
-                            <constraint firstItem="ZPM-uY-5m1" firstAttribute="top" secondItem="KDs-4u-ZAI" secondAttribute="bottom" constant="16" id="tfQ-g5-Eli"/>
-                            <constraint firstItem="dgg-Rv-Loj" firstAttribute="centerX" secondItem="6Km-Gx-CeL" secondAttribute="centerX" id="vrQ-me-Nd2"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="ffz-vd-nMt"/>
-                    <connections>
-                        <outlet property="chineseLabel" destination="KDs-4u-ZAI" id="egJ-DR-VvE"/>
-                        <outlet property="soilExplanationLabel" destination="ZPM-uY-5m1" id="Vs5-JJ-Fsr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VRT-jL-f6k" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="75.669642857142847"/>
-        </scene>
         <!--Email Input Controller-->
         <scene sceneID="Psl-Uj-jvf">
             <objects>
-                <viewController id="KVf-a6-5Gu" customClass="EmailInputController" customModule="Soil" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="emailInputVC" id="KVf-a6-5Gu" customClass="EmailInputController" customModule="Soil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RCv-rf-VoA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Og9-4E-wzB">
-                                <rect key="frame" x="24" y="115" width="245.5" height="36.5"/>
+                                <rect key="frame" x="24" y="71" width="245.5" height="36.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxB-yU-ABJ">
-                                <rect key="frame" x="24" y="165.5" width="178" height="17.5"/>
+                                <rect key="frame" x="24" y="121.5" width="178" height="17.5"/>
                                 <string key="text">로그인 또는 회원가입에 필요합니다.
 
 </string>
@@ -154,7 +63,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ool-vd-DLt">
-                                <rect key="frame" x="39.5" y="306" width="335" height="88.5"/>
+                                <rect key="frame" x="39.5" y="262" width="335" height="88.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xas-pD-3hr">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="18.5"/>
@@ -207,29 +116,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1675" y="76"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="EGx-r8-uwb">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wmh-A3-MAe" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4RQ-A6-qM4">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="rAg-8d-Ghd" kind="relationship" relationship="rootViewController" id="OSJ-JM-vtj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HI4-iq-89v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="75.669642857142847"/>
         </scene>
         <!--Email Confirm Controller-->
         <scene sceneID="zix-rq-AhH">
@@ -733,13 +619,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPH-J8-R0f">
-                                <rect key="frame" x="24" y="108" width="69" height="36.5"/>
+                                <rect key="frame" x="24" y="64" width="69" height="36.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRs-vX-e6X">
-                                <rect key="frame" x="32" y="227.5" width="350" height="18.5"/>
+                                <rect key="frame" x="32" y="183.5" width="350" height="18.5"/>
                                 <color key="backgroundColor" name="E5E5E5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="1AU-Mp-HUi"/>
@@ -766,7 +652,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ikx-2c-Emq" customClass="CustomPasswordTextField" customModule="Soil" customModuleProvider="target">
-                                <rect key="frame" x="32" y="316" width="350" height="17"/>
+                                <rect key="frame" x="32" y="272" width="350" height="17"/>
                                 <color key="backgroundColor" name="E5E5E5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="AV5-GU-xYT"/>
@@ -775,7 +661,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lah-VP-3L4">
-                                <rect key="frame" x="20" y="353" width="0.0" height="0.0"/>
+                                <rect key="frame" x="20" y="309" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -825,7 +711,6 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ProfileButton" width="150" height="150"/>
-        <image name="SoilIcon" width="141" height="93"/>
         <namedColor name="AAAAAA">
             <color red="0.66699999570846558" green="0.66699999570846558" blue="0.66699999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
