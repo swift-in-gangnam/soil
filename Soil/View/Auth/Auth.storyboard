@@ -626,15 +626,38 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRs-vX-e6X">
-                                <rect key="frame" x="32" y="183.5" width="350" height="18.5"/>
-                                <color key="backgroundColor" name="E5E5E5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cOK-MQ-OeK">
+                                <rect key="frame" x="32" y="223.5" width="350" height="125.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRs-vX-e6X">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="18.5"/>
+                                        <color key="backgroundColor" name="E5E5E5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="1AU-Mp-HUi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ikx-2c-Emq" customClass="CustomPasswordTextField" customModule="Soil" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="38.5" width="350" height="17"/>
+                                        <color key="backgroundColor" name="E5E5E5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="AV5-GU-xYT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lah-VP-3L4">
+                                        <rect key="frame" x="0.0" y="75.5" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="1AU-Mp-HUi"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="awO-p1-07K"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                            </textField>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqN-iC-NbT">
                                 <rect key="frame" x="32" y="762" width="350" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -653,38 +676,19 @@
                                     <action selector="didTapLogin:" destination="Rbd-OM-J1L" eventType="touchUpInside" id="tKG-6J-Hi5"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ikx-2c-Emq" customClass="CustomPasswordTextField" customModule="Soil" customModuleProvider="target">
-                                <rect key="frame" x="32" y="272" width="350" height="17"/>
-                                <color key="backgroundColor" name="E5E5E5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="AV5-GU-xYT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lah-VP-3L4">
-                                <rect key="frame" x="20" y="309" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
-                                <color key="textColor" systemColor="systemRedColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XdL-c6-NNX"/>
                         <color key="backgroundColor" name="E5E5E5"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Ikx-2c-Emq" firstAttribute="centerX" secondItem="y1w-QO-mSI" secondAttribute="centerX" id="6Vp-lh-Wp5"/>
                             <constraint firstItem="FPH-J8-R0f" firstAttribute="leading" secondItem="XdL-c6-NNX" secondAttribute="leading" constant="24" id="HrT-j3-4HH"/>
-                            <constraint firstItem="lah-VP-3L4" firstAttribute="top" secondItem="Ikx-2c-Emq" secondAttribute="bottom" constant="20" id="LCB-16-p3O"/>
                             <constraint firstItem="HqN-iC-NbT" firstAttribute="centerX" secondItem="y1w-QO-mSI" secondAttribute="centerX" id="Q7Z-q0-DS9"/>
-                            <constraint firstItem="hRs-vX-e6X" firstAttribute="centerX" secondItem="y1w-QO-mSI" secondAttribute="centerX" id="Qnh-Qs-IRu"/>
+                            <constraint firstItem="cOK-MQ-OeK" firstAttribute="centerX" secondItem="y1w-QO-mSI" secondAttribute="centerX" id="QwU-1l-lFE"/>
+                            <constraint firstItem="cOK-MQ-OeK" firstAttribute="top" secondItem="FPH-J8-R0f" secondAttribute="bottom" constant="123" id="Rpv-3v-pMb"/>
                             <constraint firstItem="HqN-iC-NbT" firstAttribute="leading" secondItem="XdL-c6-NNX" secondAttribute="leading" constant="32" id="UIu-OQ-PBD"/>
                             <constraint firstItem="XdL-c6-NNX" firstAttribute="trailing" secondItem="HqN-iC-NbT" secondAttribute="trailing" constant="32" id="dE5-gp-VY7"/>
-                            <constraint firstItem="Ikx-2c-Emq" firstAttribute="top" secondItem="hRs-vX-e6X" secondAttribute="bottom" constant="70" id="huV-EV-Ql0"/>
-                            <constraint firstItem="lah-VP-3L4" firstAttribute="leading" secondItem="XdL-c6-NNX" secondAttribute="leading" constant="20" id="pO4-08-LuP"/>
                             <constraint firstItem="FPH-J8-R0f" firstAttribute="top" secondItem="XdL-c6-NNX" secondAttribute="top" constant="20" id="syS-fb-ZY8"/>
                             <constraint firstItem="XdL-c6-NNX" firstAttribute="bottom" secondItem="HqN-iC-NbT" secondAttribute="bottom" constant="50" id="vU0-ad-hBJ"/>
-                            <constraint firstItem="hRs-vX-e6X" firstAttribute="top" secondItem="FPH-J8-R0f" secondAttribute="bottom" constant="83" id="xNJ-vE-PJO"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="43b-LT-iMd" appends="YES" id="I7w-FV-0r1"/>
@@ -696,6 +700,7 @@
                         <outlet property="loginButton" destination="HqN-iC-NbT" id="xxy-7t-cBz"/>
                         <outlet property="loginCheckLabel" destination="lah-VP-3L4" id="IrK-IU-ce9"/>
                         <outlet property="passwordTextField" destination="Ikx-2c-Emq" id="XOW-3j-Oqq"/>
+                        <outlet property="stackView" destination="cOK-MQ-OeK" id="EXb-3U-Pg8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Huy-1h-LlW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

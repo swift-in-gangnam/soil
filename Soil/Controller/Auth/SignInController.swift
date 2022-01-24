@@ -18,6 +18,7 @@ class SignInController: UIViewController {
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var loginButton: UIButton!
   @IBOutlet weak var loginCheckLabel: UILabel!
+  @IBOutlet weak var stackView: UIStackView!
   
   private var viewModel = LoginViewModel()
   
@@ -30,6 +31,8 @@ class SignInController: UIViewController {
     self.navigationController?.navigationBar.topItem?.title = ""
     emailTextField.addBottomBorderWithColor(color: .black, height: 2.0)
     passwordTextField.addBottomBorderWithColor(color: .black, height: 2.0)
+    
+    stackView.setCustomSpacing(50, after: emailTextField)
   }
 
   // MARK: - Actions
@@ -41,6 +44,11 @@ class SignInController: UIViewController {
   @IBAction func didTapLogin(_ sender: Any) {
     guard let email = emailTextField.text else { return }
     guard let password = passwordTextField.text else { return }
+    
+    if email.isEmpty || password.isEmpty {
+      loginCheckLabel.text = "아이디 또는 비밀번호를 입력해주세요."
+      return
+    }
     
     AuthService.logUserIn(withEmail: email, password: password) { [weak self] (result, error) in
       if let error = error {
