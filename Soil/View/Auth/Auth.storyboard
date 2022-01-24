@@ -598,12 +598,14 @@
                     <navigationItem key="navigationItem" id="hbi-ZN-MvE">
                         <barButtonItem key="rightBarButtonItem" title="건너뛰기" id="5Hr-Yx-msg">
                             <connections>
+                                <action selector="didTabSkipButton:" destination="XKK-lH-TJv" id="QG0-ai-pX1"/>
                                 <segue destination="Tda-Nf-Gjl" kind="show" id="3gg-cf-9ai"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="profileButton" destination="7bk-6K-LDa" id="KbG-Lr-fX3"/>
+                        <outlet property="skipBarButton" destination="5Hr-Yx-msg" id="11M-qc-RC4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O9R-we-RvL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

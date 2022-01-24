@@ -9,12 +9,15 @@ import UIKit
 class ProfileInputController: UIViewController {
   // MARK: - Properties
   @IBOutlet weak var profileButton: UIButton!
-  
+  @IBOutlet weak var skipBarButton: UIBarButtonItem!
   // MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationController?.navigationBar.topItem?.title = ""
-    
+    // barButton 폰트 적용
+    let regularBarButtonTextAttributes: [NSAttributedString.Key: Any] =
+    [.font: UIFont.notoSansKR(size: 18, family: .black)]
+    skipBarButton.setTitleTextAttributes(regularBarButtonTextAttributes, for: .normal)
   }
   
   // MARK: Actions
@@ -23,6 +26,10 @@ class ProfileInputController: UIViewController {
     picker.delegate = self
     picker.allowsEditing = true
     present(picker, animated: true, completion: nil)
+  }
+  
+  @IBAction func didTabSkipButton(_ sender: UIBarButtonItem) {
+    AuthUser.shared.profileImage = nil
   }
 }
 

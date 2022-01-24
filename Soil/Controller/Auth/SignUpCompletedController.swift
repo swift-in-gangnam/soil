@@ -118,6 +118,7 @@ class SignUpCompletedController: UIViewController {
             }
           }
       })
+      AuthUser.shared.initUser()
     }
   }
 }
