@@ -24,62 +24,48 @@ class ProfileController: UIViewController {
   // MARK: - Properties
   
   var viewModel: ProfileViewModel? {
-    didSet { updateUI() }
+    didSet { bindViewModel() }
   }
   
   weak var delegate: ProfileControllerDelegate?
   private let keychain = Keychain(service: "com.chuncheonian.Soil")
   
-  private let profileImageView: UIImageView = {
-    let iv = UIImageView()
-    iv.contentMode = .scaleAspectFill
-    iv.clipsToBounds = true
-    iv.backgroundColor = .lightGray
-    iv.layer.cornerRadius = 100 / 2
-    return iv
-  }()
+  private let profileImageView = UIImageView().then {
+    $0.contentMode = .scaleAspectFill
+    $0.clipsToBounds = true
+    $0.backgroundColor = .lightGray
+    $0.layer.cornerRadius = 100 / 2
+  }
   
-  private let fullnameLabel: UILabel = {
-    let label = UILabel()
-    label.font = Font.fullnameLabel
-    return label
-  }()
+  private let fullnameLabel = UILabel().then {
+    $0.font = Font.fullnameLabel
+  }
   
-  private let nicknameLabel: UILabel = {
-    let label = UILabel()
-    label.font = Font.nicknameLabel
-    return label
-  }()
+  private let nicknameLabel = UILabel().then {
+    $0.font = Font.nicknameLabel
+  }
   
-  private lazy var followersBtn: UIButton = {
-    let btn = UIButton(type: .system)
-    btn.addTarget(self, action: #selector(didTapFollowersBtn), for: .touchUpInside)
-    return btn
-  }()
+  private lazy var followersBtn = UIButton(type: .system).then {
+    $0.addTarget(self, action: #selector(didTapFollowersBtn), for: .touchUpInside)
+  }
   
-  private lazy var followingBtn: UIButton = {
-    let btn = UIButton(type: .system)
-    btn.addTarget(self, action: #selector(didTapFollowingBtn), for: .touchUpInside)
-    return btn
-  }()
+  private lazy var followingBtn = UIButton(type: .system).then {
+    $0.addTarget(self, action: #selector(didTapFollowingBtn), for: .touchUpInside)
+  }
   
-  private lazy var editProfileFollowButton: UIButton = {
-    let button = UIButton(type: .system)
-    button.backgroundColor = .white
-    button.setTitle("Edit Profile", for: .normal)
-    button.titleLabel?.font = Font.editProfileFollowButton
-    button.setTitleColor(.systemGray2, for: .normal)
-    button.layer.cornerRadius = 10
-    button.addTarget(self, action: #selector(handleEditProfileFollowTapped), for: .touchUpInside)
-    return button
-  }()
+  private lazy var editProfileFollowButton = UIButton(type: .system).then {
+    $0.backgroundColor = .white
+    $0.setTitle("Edit Profile", for: .normal)
+    $0.titleLabel?.font = Font.editProfileFollowButton
+    $0.setTitleColor(.systemGray2, for: .normal)
+    $0.layer.cornerRadius = 10
+    $0.addTarget(self, action: #selector(handleEditProfileFollowTapped), for: .touchUpInside)
+  }
   
-  private let bioLabel: UILabel = {
-    let label = UILabel()
-    label.numberOfLines = 0
-    label.font = Font.bioLabel
-    return label
-  }()
+  private let bioLabel = UILabel().then {
+    $0.numberOfLines = 0
+    $0.font = Font.bioLabel
+  }
   
   // MARK: - Lifecycle
   
@@ -180,7 +166,7 @@ class ProfileController: UIViewController {
     }
   }
   
-  private func updateUI() {
+  private func bindViewModel() {
     guard let viewModel = viewModel else { return }
     
     profileImageView.kf.setImage(with: viewModel.profileImageURL)

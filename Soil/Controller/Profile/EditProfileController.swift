@@ -18,7 +18,7 @@ class EditProfileController: UIViewController {
   // MARK: - Properties
     
   var viewModel: ProfileViewModel? {
-    didSet { updateUI() }
+    didSet { bindViewModel() }
   }
   
   weak var delegate: EditProfileControllerDelegte?
@@ -157,40 +157,7 @@ class EditProfileController: UIViewController {
       }
     }
   }
-    
-//    AFManager
-//      .shared
-//      .session
-//      .upload(multipartFormData: route.multipartFormData, with: route)
-//      .responseJSON { response in
-//        debugPrint(response)
-//      }
-//    AF.upload(
-//      multipartFormData: { multipartFormData in
-//        for (key, value) in parameters {
-//          multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
-//        }
-//
-//        if let imageData = self.selectedProfileImage?.jpegData(compressionQuality: 0.75) {
-//          multipartFormData.append(imageData, withName: "file", fileName: "\(imageData).jpeg", mimeType: "image/jpeg")
-//        } else {
-//          multipartFormData.append("".data(using: .utf8)!, withName: "file", fileName: "", mimeType: "")
-//        }
-//      },
-//      to: url,
-//      method: .patch,
-//      headers: headers).responseJSON { response in
-//        debugPrint(response)
-//        switch response.result {
-//        case .success(let value):
-//          print(value)
-//          self.delegate?.didUpdateProfile(self)
-//        case .failure(let error):
-//          print("DEBUG: Failed to update user with error \(error.localizedDescription)")
-//        }
-//      }
-//  }
-  
+
   @objc func didTapImageChangeBtn() {
     let picker = UIImagePickerController()
     picker.delegate = self
@@ -280,7 +247,7 @@ class EditProfileController: UIViewController {
     }
   }
   
-  private func updateUI() {
+  private func bindViewModel() {
     guard let viewModel = viewModel else { return }
     
     profileImageView.kf.setImage(with: viewModel.profileImageURL)

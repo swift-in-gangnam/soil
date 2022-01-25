@@ -95,26 +95,6 @@ class YouController: UIViewController {
       self.user = user
       self.pagingVC.reloadData()
     }
-    
-//    AF.request(url, method: .get, headers: headers)
-//      .validate(statusCode: 200..<300)
-//      .validate(contentType: ["application/json"])
-//      .responseJSON { res in
-//        debugPrint(res)
-//        switch res.result {
-//        case .success(let value):
-//          do {
-//            let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
-//            let decodedData = try JSONDecoder().decode(User.self, from: dataJSON)
-//            self.user = decodedData
-//            self.pagingVC.reloadData()
-//          } catch {
-//            print("DEBUG: failed to ~~~~\(error.localizedDescription)")
-//          }
-//        case .failure(let error):
-//          print("DEBUG: \(error)")
-//        }
-//      }
   }
 }
 

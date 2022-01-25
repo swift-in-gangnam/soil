@@ -16,12 +16,10 @@ class TabBarController: UITabBarController {
   
   // MARK: - Properties
   
-  private let uploadController: UploadPostController = {
-    let controller = UploadPostController()
-    controller.tabBarItem.image = UIImage(named: "PlusButton")!.withRenderingMode(.alwaysOriginal)
-    controller.tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
-    return controller
-  }()
+  private let uploadController = UploadPostController().then {
+    $0.tabBarItem.image = UIImage(named: "PlusButton")!.withRenderingMode(.alwaysOriginal)
+    $0.tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
+  }
   
   // MARK: - Lifecycle
   
@@ -42,7 +40,7 @@ class TabBarController: UITabBarController {
       tabBarAppearance.configureWithDefaultBackground()
       tabBarAppearance.backgroundColor = .soilBackgroundColor
       tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [
-        NSAttributedString.Key.font: UIFont.montserrat(size: 23, family: .medium)
+        .font: UIFont.montserrat(size: 23, family: .medium)
       ]
       tabBarAppearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -14)
       self.tabBar.standardAppearance = tabBarAppearance
