@@ -20,27 +20,25 @@ class YouController: UIViewController {
   fileprivate var user: User?
   private let menuArr = ["profile", "day", "month", "year"]
   
-  private let pagingVC: PagingViewController = {
-    let vc = PagingViewController()
-    vc.menuBackgroundColor = .soilBackgroundColor
-    vc.menuItemSize = .selfSizing(estimatedWidth: 37, height: 43)
-    vc.menuHorizontalAlignment = .center
-    vc.menuItemSpacing = 15
-    vc.menuItemLabelSpacing = 3
-    vc.menuInteraction = .none
-    vc.indicatorOptions = .visible(
+  private let pagingVC = PagingViewController().then {
+    $0.menuBackgroundColor = .soilBackgroundColor
+    $0.menuItemSize = .selfSizing(estimatedWidth: 37, height: 43)
+    $0.menuHorizontalAlignment = .center
+    $0.menuItemSpacing = 15
+    $0.menuItemLabelSpacing = 3
+    $0.menuInteraction = .none
+    $0.indicatorOptions = .visible(
       height: 2.2,
       zIndex: Int.max,
       spacing: UIEdgeInsets.zero,
       insets: UIEdgeInsets.zero
     )
-    vc.indicatorColor = .black
-    vc.font = UIFont.montserrat(size: 20, family: .medium)
-    vc.selectedFont = UIFont.montserrat(size: 20, family: .medium)
-    vc.textColor = .systemGray
-    vc.selectedTextColor = .black
-    return vc
-  }()
+    $0.indicatorColor = .black
+    $0.font = UIFont.montserrat(size: 20, family: .medium)
+    $0.selectedFont = UIFont.montserrat(size: 20, family: .medium)
+    $0.textColor = .systemGray
+    $0.selectedTextColor = .black
+  }
   
   // MARK: - Lifecycle
   

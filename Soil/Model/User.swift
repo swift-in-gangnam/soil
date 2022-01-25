@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct User: Codable {
+struct User: Codable, Hashable {
+  
+  let uuid = UUID()
   
   let name: String?
   let nickname: String

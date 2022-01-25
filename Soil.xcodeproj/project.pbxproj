@@ -76,6 +76,9 @@
 		D5D12248273D1E330022290E /* MonthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12247273D1E330022290E /* MonthController.swift */; };
 		D5D1224A273D1E3D0022290E /* YearController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12249273D1E3D0022290E /* YearController.swift */; };
 		D5D44EC4277C81CF00C48D8E /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D5D44EC3277C81CF00C48D8E /* KeychainAccess */; };
+		D5EF98DB279F8F23004E6E55 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF98DA279F8F23004E6E55 /* UserCell.swift */; };
+		D5EF98DD279F92AD004E6E55 /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF98DC279F92AD004E6E55 /* UserCellViewModel.swift */; };
+		D5EF98DF279FB367004E6E55 /* SearchResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF98DE279FB366004E6E55 /* SearchResultsTableController.swift */; };
 		FA12E7F22744CC7D00EB8834 /* CustomPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7EF2744CC7D00EB8834 /* CustomPasswordTextField.swift */; };
 		FA12E7F42744CC7D00EB8834 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA12E7F12744CC7D00EB8834 /* Auth.storyboard */; };
 		FA12E8002744CFB000EB8834 /* EmailInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */; };
@@ -154,6 +157,9 @@
 		D5D12245273D1E2C0022290E /* DayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
 		D5D12247273D1E330022290E /* MonthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthController.swift; sourceTree = "<group>"; };
 		D5D12249273D1E3D0022290E /* YearController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearController.swift; sourceTree = "<group>"; };
+		D5EF98DA279F8F23004E6E55 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		D5EF98DC279F92AD004E6E55 /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
+		D5EF98DE279FB366004E6E55 /* SearchResultsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableController.swift; sourceTree = "<group>"; };
 		F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.release.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.release.xcconfig"; sourceTree = "<group>"; };
 		FA12E7EF2744CC7D00EB8834 /* CustomPasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPasswordTextField.swift; sourceTree = "<group>"; };
 		FA12E7F12744CC7D00EB8834 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
@@ -204,6 +210,7 @@
 				3C45E0C727313ADA002E3C8D /* TabBarController.swift */,
 				3C10AFD22732981600B1E973 /* FeedController.swift */,
 				D56CB272279E0ACF0087FCC8 /* SearchController.swift */,
+				D5EF98DE279FB366004E6E55 /* SearchResultsTableController.swift */,
 				3C968089273286F20020A72F /* UploadPostController.swift */,
 				3C10AFD42732981F00B1E973 /* YouController.swift */,
 				D5D12245273D1E2C0022290E /* DayController.swift */,
@@ -229,6 +236,7 @@
 				3CA91E6F2733CFB600390A89 /* Authentication */,
 				3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */,
 				3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */,
+				D5EF98DA279F8F23004E6E55 /* UserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,6 +246,7 @@
 			children = (
 				D5C0A912273A4CB1005F9E9B /* AuthenticationViewModel.swift */,
 				D57E8EBA274020820099AA63 /* ProfileViewModel.swift */,
+				D5EF98DC279F92AD004E6E55 /* UserCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -666,6 +675,7 @@
 				D5D12248273D1E330022290E /* MonthController.swift in Sources */,
 				3C10AFD82732A05A00B1E973 /* UIColorExtension.swift in Sources */,
 				FA3D3E0D2744D51700A86040 /* LoginHomeController.swift in Sources */,
+				D5EF98DD279F92AD004E6E55 /* UserCellViewModel.swift in Sources */,
 				D569A3942796EF2C00B7BA4A /* APIConfiguration.swift in Sources */,
 				FA3D3E142744EB0E00A86040 /* SignUpCompletedController.swift in Sources */,
 				FA3AC8392781DA3F00B8BDFF /* AuthUser.swift in Sources */,
@@ -679,7 +689,9 @@
 				D5C0A915273A4E8E005F9E9B /* User.swift in Sources */,
 				D569A38C2796A19100B7BA4A /* AFManager.swift in Sources */,
 				3C10AFD32732981600B1E973 /* FeedController.swift in Sources */,
+				D5EF98DB279F8F23004E6E55 /* UserCell.swift in Sources */,
 				D569A3922796ADD400B7BA4A /* UserRouter.swift in Sources */,
+				D5EF98DF279FB367004E6E55 /* SearchResultsTableController.swift in Sources */,
 				D57E8EB827401C9A0099AA63 /* EditProfileController.swift in Sources */,
 				3C45E0C427313ADA002E3C8D /* AppDelegate.swift in Sources */,
 				3C96808A273286F20020A72F /* UploadPostController.swift in Sources */,

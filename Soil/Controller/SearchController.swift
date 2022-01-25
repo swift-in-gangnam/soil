@@ -25,6 +25,12 @@ class SearchController: UIViewController {
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.title = "search"
     
+    let searchResultsTVC = SearchResultsTableController()
+    let searchController = UISearchController(searchResultsController: searchResultsTVC)
+    searchController.searchResultsUpdater = searchResultsTVC
+    searchController.searchBar.placeholder = "검색하기"
+    searchController.hidesNavigationBarDuringPresentation = false  // 검색 활성시 navigation title 숨김 방지
+    navigationItem.hidesSearchBarWhenScrolling = false
+    navigationItem.searchController = searchController
   }
-     
 }
