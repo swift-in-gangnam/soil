@@ -75,7 +75,7 @@ final class AppController {
   }
   
   private func routeToLogin() {
-    let loginHomeVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "homeVC")
+    let loginHomeVC = LoginHomeController()
     rootViewController = UINavigationController(rootViewController: loginHomeVC)
   }
 }

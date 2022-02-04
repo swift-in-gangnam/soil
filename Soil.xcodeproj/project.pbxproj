@@ -90,6 +90,7 @@
 		FA43FC572751158000A020D6 /* 20425-emailtitle.json in Resources */ = {isa = PBXBuildFile; fileRef = FA43FC552751158000A020D6 /* 20425-emailtitle.json */; };
 		FA43FC592751165700A020D6 /* 70170-success-check.json in Resources */ = {isa = PBXBuildFile; fileRef = FA43FC582751165700A020D6 /* 70170-success-check.json */; };
 		FA45DE15274F6AC800E38A90 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45DE14274F6AC700E38A90 /* NotificationNameExtension.swift */; };
+		FA635F222796EDEE002D63C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA635F212796EDEE002D63C6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,7 +130,6 @@
 		3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSeperator.swift; sourceTree = "<group>"; };
 		3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostInputAccessoryView.swift; sourceTree = "<group>"; };
 		3CC62DC2278584B800362941 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
-		3CEC004D274B590300359D30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.debug.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.debug.xcconfig"; sourceTree = "<group>"; };
 		D569A38B2796A19100B7BA4A /* AFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFManager.swift; sourceTree = "<group>"; };
 		D569A38D2796A27800B7BA4A /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
@@ -168,6 +168,7 @@
 		FA43FC552751158000A020D6 /* 20425-emailtitle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "20425-emailtitle.json"; sourceTree = "<group>"; };
 		FA43FC582751165700A020D6 /* 70170-success-check.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "70170-success-check.json"; sourceTree = "<group>"; };
 		FA45DE14274F6AC700E38A90 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
+		FA635F212796EDEE002D63C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,8 +350,8 @@
 		3C968081273270E90020A72F /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				FA635F212796EDEE002D63C6 /* GoogleService-Info.plist */,
 				FA3D3E0E2744E87400A86040 /* Lottie */,
-				3CEC004D274B590300359D30 /* GoogleService-Info.plist */,
 				3C45E0C327313ADA002E3C8D /* AppDelegate.swift */,
 				3C45E0C527313ADA002E3C8D /* SceneDelegate.swift */,
 				3CC62DC2278584B800362941 /* AppController.swift */,
@@ -575,8 +576,8 @@
 				3C45E0D027313ADB002E3C8D /* LaunchScreen.storyboard in Resources */,
 				3C10AFFD2732A67600B1E973 /* NotoSansKR-Medium.otf in Resources */,
 				3C10AFE32732A33D00B1E973 /* Montserrat-SemiBold.ttf in Resources */,
-				3CEC004E274B590300359D30 /* GoogleService-Info.plist in Resources */,
 				3C968084273271540020A72F /* Montserrat-Medium.ttf in Resources */,
+				FA635F222796EDEE002D63C6 /* GoogleService-Info.plist in Resources */,
 				FA43FC592751165700A020D6 /* 70170-success-check.json in Resources */,
 				3C10AFF02732A49400B1E973 /* CeraPro-Light.otf in Resources */,
 				D5D12240273AD92F0022290E /* .github in Resources */,
@@ -830,6 +831,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9738W25PF4;
 				DEVELOPMENT_TEAM = QHPW755BR8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
@@ -865,6 +867,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9738W25PF4;
 				DEVELOPMENT_TEAM = QHPW755BR8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
