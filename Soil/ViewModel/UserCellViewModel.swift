@@ -9,21 +9,21 @@ import Foundation
 
 struct UserCellViewModel {
   
-  private let user: User
+  private let userCell: UserCellModel
   
   var profileImageURL: URL? {
-    return URL(string: user.profileImageURL ?? "")
+    return URL(string: userCell.profileImageURL ?? "")
   }
   
   var nickname: String {
-    return user.nickname
+    return userCell.nickname
   }
   
   var name: String {
-    return user.name ?? ""
+    return userCell.name ?? ""
   }
   
-  init(user: User) {
-    self.user = user
+  init(userCell: UserCellModel) {
+    self.userCell = userCell
   }
 }

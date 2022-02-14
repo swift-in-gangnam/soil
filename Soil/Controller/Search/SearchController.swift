@@ -15,12 +15,12 @@ class SearchController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    configure()
+    setupSearchController()
   }
   
-  // MARK: - Helpers
+  // MARK: - Method
   
-  private func configure() {
+  private func setupSearchController() {
     view.backgroundColor = .soilBackgroundColor
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.title = "search"

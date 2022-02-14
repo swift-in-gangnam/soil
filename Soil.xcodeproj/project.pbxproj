@@ -79,6 +79,10 @@
 		D5EF98DB279F8F23004E6E55 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF98DA279F8F23004E6E55 /* UserCell.swift */; };
 		D5EF98DD279F92AD004E6E55 /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF98DC279F92AD004E6E55 /* UserCellViewModel.swift */; };
 		D5EF98DF279FB367004E6E55 /* SearchResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF98DE279FB366004E6E55 /* SearchResultsTableController.swift */; };
+		D5EF98E1279FE220004E6E55 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF98E0279FE220004E6E55 /* SearchRouter.swift */; };
+		D5EF98E3279FE3DF004E6E55 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF98E2279FE3DF004E6E55 /* SearchRequest.swift */; };
+		D5EF98E527A0C35D004E6E55 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF98E427A0C35C004E6E55 /* SearchService.swift */; };
+		D5EF98E727A0C442004E6E55 /* UserCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF98E627A0C442004E6E55 /* UserCellModel.swift */; };
 		FA12E7F22744CC7D00EB8834 /* CustomPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7EF2744CC7D00EB8834 /* CustomPasswordTextField.swift */; };
 		FA12E7F42744CC7D00EB8834 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA12E7F12744CC7D00EB8834 /* Auth.storyboard */; };
 		FA12E8002744CFB000EB8834 /* EmailInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */; };
@@ -160,6 +164,10 @@
 		D5EF98DA279F8F23004E6E55 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		D5EF98DC279F92AD004E6E55 /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		D5EF98DE279FB366004E6E55 /* SearchResultsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableController.swift; sourceTree = "<group>"; };
+		D5EF98E0279FE220004E6E55 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		D5EF98E2279FE3DF004E6E55 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
+		D5EF98E427A0C35C004E6E55 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		D5EF98E627A0C442004E6E55 /* UserCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellModel.swift; sourceTree = "<group>"; };
 		F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.release.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.release.xcconfig"; sourceTree = "<group>"; };
 		FA12E7EF2744CC7D00EB8834 /* CustomPasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPasswordTextField.swift; sourceTree = "<group>"; };
 		FA12E7F12744CC7D00EB8834 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
@@ -207,10 +215,9 @@
 			children = (
 				FA12E7F72744CF4700EB8834 /* Auth */,
 				D57E8EB927401E360099AA63 /* Profile */,
+				D5EF98E827A0C894004E6E55 /* Search */,
 				3C45E0C727313ADA002E3C8D /* TabBarController.swift */,
 				3C10AFD22732981600B1E973 /* FeedController.swift */,
-				D56CB272279E0ACF0087FCC8 /* SearchController.swift */,
-				D5EF98DE279FB366004E6E55 /* SearchResultsTableController.swift */,
 				3C968089273286F20020A72F /* UploadPostController.swift */,
 				3C10AFD42732981F00B1E973 /* YouController.swift */,
 				D5D12245273D1E2C0022290E /* DayController.swift */,
@@ -224,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				D5C0A914273A4E8E005F9E9B /* User.swift */,
+				D5EF98E627A0C442004E6E55 /* UserCellModel.swift */,
 				FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */,
 			);
 			path = Model;
@@ -415,6 +423,7 @@
 			children = (
 				D5C0A916273A5032005F9E9B /* UserService.swift */,
 				D5C0A910273A4B91005F9E9B /* AuthService.swift */,
+				D5EF98E427A0C35C004E6E55 /* SearchService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -423,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				D5D0C4B527975DCD00E96015 /* UserRequest.swift */,
+				D5EF98E2279FE3DF004E6E55 /* SearchRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -431,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				D569A3912796ADD400B7BA4A /* UserRouter.swift */,
+				D5EF98E0279FE220004E6E55 /* SearchRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -444,6 +455,15 @@
 				D569A38F2796A95300B7BA4A /* MyLogger.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		D5EF98E827A0C894004E6E55 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D56CB272279E0ACF0087FCC8 /* SearchController.swift */,
+				D5EF98DE279FB366004E6E55 /* SearchResultsTableController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		F1330D15E367A70B4DD9DBCF /* Pods */ = {
@@ -657,6 +677,7 @@
 				3C10AFD52732981F00B1E973 /* YouController.swift in Sources */,
 				D5C0A919273A5063005F9E9B /* Constants.swift in Sources */,
 				D5D12244273D1E230022290E /* ProfileController.swift in Sources */,
+				D5EF98E1279FE220004E6E55 /* SearchRouter.swift in Sources */,
 				3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */,
 				D569A38E2796A27800B7BA4A /* BaseInterceptor.swift in Sources */,
 				FA12E8052744CFB000EB8834 /* PasswordInputController.swift in Sources */,
@@ -666,6 +687,7 @@
 				D569A3902796A95300B7BA4A /* MyLogger.swift in Sources */,
 				FA12E8022744CFB000EB8834 /* ProfileInputController.swift in Sources */,
 				D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */,
+				D5EF98E3279FE3DF004E6E55 /* SearchRequest.swift in Sources */,
 				3CA91E6E2733CF6400390A89 /* AuthButton.swift in Sources */,
 				3CC62DC3278584B800362941 /* AppController.swift in Sources */,
 				D5D12246273D1E2C0022290E /* DayController.swift in Sources */,
@@ -691,6 +713,8 @@
 				3C10AFD32732981600B1E973 /* FeedController.swift in Sources */,
 				D5EF98DB279F8F23004E6E55 /* UserCell.swift in Sources */,
 				D569A3922796ADD400B7BA4A /* UserRouter.swift in Sources */,
+				D5EF98E527A0C35D004E6E55 /* SearchService.swift in Sources */,
+				D5EF98E727A0C442004E6E55 /* UserCellModel.swift in Sources */,
 				D5EF98DF279FB367004E6E55 /* SearchResultsTableController.swift in Sources */,
 				D57E8EB827401C9A0099AA63 /* EditProfileController.swift in Sources */,
 				3C45E0C427313ADA002E3C8D /* AppDelegate.swift in Sources */,
