@@ -11,10 +11,13 @@ import Firebase
 import Kingfisher
 import SnapKit
 import Then
+import KeychainAccess
 
 class TabBarController: UITabBarController {
   
   // MARK: - Properties
+  
+  private let keychain = Keychain(service: "com.chuncheonian.Soil")
   
   private let uploadController = UploadPostController().then {
     $0.tabBarItem.image = UIImage(named: "PlusButton")!.withRenderingMode(.alwaysOriginal)
@@ -65,9 +68,13 @@ class TabBarController: UITabBarController {
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
       }
     }
+    
+    guard let uid = try? keychain.get("uid") else {
+      fatalError("DEBUG: Failed to fetch keychain with error")
+    }
         
     let feedNavController = templateNavigationController(title: "feed", rootVC: FeedController())
-    let youNavController = templateNavigationController(title: "you", rootVC: YouController())
+    let youNavController = templateNavigationController(title: "you", rootVC: YouController(uid: uid))
   
     viewControllers = [feedNavController, uploadController, youNavController]
   }

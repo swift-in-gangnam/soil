@@ -9,6 +9,10 @@ import UIKit
 
 private let reuseIdentifier = "UserCell"
 
+protocol SearchResultsTableControllerDelegate: AnyObject {
+  func didTapUsercell(uid: String)
+}
+
 class SearchResultsTableController: UITableViewController {
 
   // MARK: - Value Types
@@ -18,6 +22,7 @@ class SearchResultsTableController: UITableViewController {
   
   // MARK: - Properties
   
+  weak var delegate: SearchResultsTableControllerDelegate?
   private lazy var dataSource = setupDataSource()
   
   private var users = [
@@ -28,13 +33,13 @@ class SearchResultsTableController: UITableViewController {
       profileImageURL: "https://soil-bucket.s3.ap-northeast-2.amazonaws.com/2287d308-fabc-44bc-8a92-8ce65b65b28e.jpeg"
     ),
     UserCellModel(
-      uid: "test2",
+      uid: "4gPR3ets2XNwPvIvbmw9tCOEIxq1",
       name: "admin",
       nickname: "admin",
       profileImageURL: "https://soil-bucket.s3.ap-northeast-2.amazonaws.com/2287d308-fabc-44bc-8a92-8ce65b65b28e.jpeg"
     ),
     UserCellModel(
-      uid: "test3",
+      uid: "x3DRICUgxzOYwmLrz9JCC52xqTr2",
       name: "admin2",
       nickname: "admin2",
       profileImageURL: "https://soil-bucket.s3.ap-northeast-2.amazonaws.com/2287d308-fabc-44bc-8a92-8ce65b65b28e.jpeg"
@@ -58,8 +63,6 @@ class SearchResultsTableController: UITableViewController {
     dataSource = DataSource(
       tableView: tableView,
       cellProvider: { tableView, indexPath, userCell in
-        tableView.deselectRow(at: indexPath, animated: true)
-        
         guard let cell = tableView.dequeueReusableCell(
           withIdentifier: reuseIdentifier,
           for: indexPath
@@ -79,7 +82,17 @@ class SearchResultsTableController: UITableViewController {
     dataSource.apply(snapshot, animatingDifferences: true)
   }
 }
+
+// MARK: - UITableView
+
+extension SearchResultsTableController {
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    self.delegate?.didTapUsercell(uid: users[indexPath.row].uid)
+  }
   
+}
+
 // MARK: - UISearchResultsUpdating
   
 extension SearchResultsTableController: UISearchResultsUpdating { 

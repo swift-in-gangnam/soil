@@ -17,6 +17,7 @@ class YouController: UIViewController {
   // MARK: - Properties
   
   private let keychain = Keychain(service: "com.chuncheonian.Soil")
+  private var uid: String
   fileprivate var user: User?
   private let menuArr = ["profile", "day", "month", "year"]
   
@@ -42,12 +43,26 @@ class YouController: UIViewController {
   
   // MARK: - Lifecycle
   
+  init(uid: String) {
+    self.uid = uid
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     configure()
     fetchUser()
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.navigationBar.prefersLargeTitles = false
+  }
+  
   // MARK: - Actions
   
   @objc private func handleLogout() {
@@ -59,7 +74,7 @@ class YouController: UIViewController {
     }
   }
   
-  // MARK: - Helpers
+  // MARK: - Method
   
   private func configure() {
     view.backgroundColor = .soilBackgroundColor
@@ -83,11 +98,6 @@ class YouController: UIViewController {
   }
   
   private func fetchUser() {
-
-    guard let uid = try? keychain.get("uid") else {
-      fatalError("DEBUG: Failed to fetch keychain with error")
-    }
-    
     let request = FetchUserRequest(uid: uid)
 
     UserService.fetchUser(request: request) { response in
