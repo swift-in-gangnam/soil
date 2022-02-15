@@ -17,7 +17,7 @@ class YouController: UIViewController {
   // MARK: - Properties
   
   private let keychain = Keychain(service: "com.chuncheonian.Soil")
-  private var uid: String
+  private var uid: String?
   fileprivate var user: User?
   private let menuArr = ["profile", "day", "month", "year"]
   
@@ -43,7 +43,7 @@ class YouController: UIViewController {
   
   // MARK: - Lifecycle
   
-  init(uid: String) {
+  init(uid: String?) {
     self.uid = uid
     super.init(nibName: nil, bundle: nil)
   }
@@ -98,10 +98,19 @@ class YouController: UIViewController {
   }
   
   private func fetchUser() {
-    let request = FetchUserRequest(uid: uid)
+    
+    // 현 계정의 YouController인 경우, uid를 keychain에서 가져온다.
+    if self.uid == nil {
+      guard let keychainUID = try? keychain.get("uid") else {
+        fatalError("DEBUG: Failed to fetch keychain with error")
+      }
+      self.uid = keychainUID
+    }
+    
+    let request = FetchUserRequest(uid: uid!)
 
     UserService.fetchUser(request: request) { response in
-      guard let user = response.value else { return }
+      guard let user = response.value?.data else { return }
       self.user = user
       self.pagingVC.reloadData()
     }

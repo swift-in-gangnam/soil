@@ -191,7 +191,7 @@ extension ProfileController: EditProfileControllerDelegte {
     let request = FetchUserRequest(uid: uid)
     
     UserService.fetchUser(request: request) { response in
-      guard let user = response.value else { return }
+      guard let user = response.value?.data else { return }
       self.viewModel = ProfileViewModel(user: user)
     }
   }

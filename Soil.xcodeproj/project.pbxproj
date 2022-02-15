@@ -48,6 +48,7 @@
 		3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */; };
 		3CC62DC3278584B800362941 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC62DC2278584B800362941 /* AppController.swift */; };
 		3CEC004E274B590300359D30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC004D274B590300359D30 /* GoogleService-Info.plist */; };
+		D54299D027BB97BE002BF0EC /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54299CF27BB97BE002BF0EC /* GeneralResponse.swift */; };
 		D569A38C2796A19100B7BA4A /* AFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38B2796A19100B7BA4A /* AFManager.swift */; };
 		D569A38E2796A27800B7BA4A /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38D2796A27800B7BA4A /* BaseInterceptor.swift */; };
 		D569A3902796A95300B7BA4A /* MyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38F2796A95300B7BA4A /* MyLogger.swift */; };
@@ -139,6 +140,7 @@
 		3CC62DC2278584B800362941 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		3CEC004D274B590300359D30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.debug.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.debug.xcconfig"; sourceTree = "<group>"; };
+		D54299CF27BB97BE002BF0EC /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
 		D569A38B2796A19100B7BA4A /* AFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFManager.swift; sourceTree = "<group>"; };
 		D569A38D2796A27800B7BA4A /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
 		D569A38F2796A95300B7BA4A /* MyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLogger.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 		D5D0C4BB2798A1AA00E96015 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D54299CF27BB97BE002BF0EC /* GeneralResponse.swift */,
 				D5D0C4B527975DCD00E96015 /* UserRequest.swift */,
 				D5EF98E2279FE3DF004E6E55 /* SearchRequest.swift */,
 			);
@@ -683,6 +686,7 @@
 				FA12E8052744CFB000EB8834 /* PasswordInputController.swift in Sources */,
 				3CC1B09C2742BB6600A715C0 /* HorizontalSeperator.swift in Sources */,
 				D57BEC0B274CEB8E00E65966 /* UITextFieldExtension.swift in Sources */,
+				D54299D027BB97BE002BF0EC /* GeneralResponse.swift in Sources */,
 				D5D1224A273D1E3D0022290E /* YearController.swift in Sources */,
 				D569A3902796A95300B7BA4A /* MyLogger.swift in Sources */,
 				FA12E8022744CFB000EB8834 /* ProfileInputController.swift in Sources */,

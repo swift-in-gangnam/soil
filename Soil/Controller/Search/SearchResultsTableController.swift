@@ -27,15 +27,15 @@ class SearchResultsTableController: UITableViewController {
   
   private var users = [
     UserCellModel(
-      uid: "yGzTdu9xuhbmMGAnT2Y8NCLarHD3",
+      uid: "l2EpADztzrYU9LsY28lMPbR5ROi2",
       name: "권동영",
       nickname: "d_oooong",
       profileImageURL: "https://soil-bucket.s3.ap-northeast-2.amazonaws.com/2287d308-fabc-44bc-8a92-8ce65b65b28e.jpeg"
     ),
     UserCellModel(
-      uid: "4gPR3ets2XNwPvIvbmw9tCOEIxq1",
-      name: "admin",
-      nickname: "admin",
+      uid: "MopQb2VcTPeIKVgbaLZZUhgz6P62",
+      name: "test",
+      nickname: "test",
       profileImageURL: "https://soil-bucket.s3.ap-northeast-2.amazonaws.com/2287d308-fabc-44bc-8a92-8ce65b65b28e.jpeg"
     ),
     UserCellModel(

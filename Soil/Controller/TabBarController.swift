@@ -28,6 +28,13 @@ class TabBarController: UITabBarController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+//    do {
+//      try keychain.removeAll()  // keychain 비우기
+//      try Auth.auth().signOut()
+//    } catch let error {
+//      fatalError("DEBUG: Failed to Sign out with error \(error.localizedDescription)")
+//    }
+    
     configureViewControllers()
   }
   
@@ -68,13 +75,9 @@ class TabBarController: UITabBarController {
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
       }
     }
-    
-    guard let uid = try? keychain.get("uid") else {
-      fatalError("DEBUG: Failed to fetch keychain with error")
-    }
-        
+            
     let feedNavController = templateNavigationController(title: "feed", rootVC: FeedController())
-    let youNavController = templateNavigationController(title: "you", rootVC: YouController(uid: uid))
+    let youNavController = templateNavigationController(title: "you", rootVC: YouController(uid: nil))
   
     viewControllers = [feedNavController, uploadController, youNavController]
   }
