@@ -17,7 +17,7 @@ class ProfileController: UIViewController {
   private enum Font {
     static let fullnameLabel = UIFont.notoSansKR(size: 22, family: .bold)
     static let nicknameLabel = UIFont.ceraPro(size: 15, family: .medium)
-    static let editProfileFollowButton = UIFont.ceraPro(size: 17, family: .bold)
+    static let followButton = UIFont.ceraPro(size: 17, family: .bold)
     static let bioLabel = UIFont.notoSansKR(size: 14, family: .regular)
   }
   
@@ -53,13 +53,10 @@ class ProfileController: UIViewController {
     $0.addTarget(self, action: #selector(didTapFollowingBtn), for: .touchUpInside)
   }
   
-  private lazy var editProfileFollowButton = UIButton(type: .system).then {
-    $0.backgroundColor = .white
-    $0.setTitle("Edit Profile", for: .normal)
-    $0.titleLabel?.font = Font.editProfileFollowButton
-    $0.setTitleColor(.systemGray2, for: .normal)
+  private lazy var followButton = UIButton(type: .system).then {
+    $0.titleLabel?.font = Font.followButton
     $0.layer.cornerRadius = 10
-    $0.addTarget(self, action: #selector(handleEditProfileFollowTapped), for: .touchUpInside)
+    $0.addTarget(self, action: #selector(handleFollowButtonTapped), for: .touchUpInside)
   }
   
   private let bioLabel = UILabel().then {
@@ -76,15 +73,19 @@ class ProfileController: UIViewController {
   
   // MARK: - Action
   
-  @objc func handleEditProfileFollowTapped() {
+  @objc func handleFollowButtonTapped() {
     guard let viewModel = viewModel else { return }
     
-    let controller = EditProfileController()
-    controller.viewModel = ProfileViewModel(user: viewModel.user)
-    controller.delegate = self
-    let nav = UINavigationController(rootViewController: controller)
-    nav.modalPresentationStyle = .fullScreen
-    self.present(nav, animated: true, completion: nil)
+    // Edit Profile
+    if viewModel.user.isCurrentUser {
+      let controller = EditProfileController()
+      controller.viewModel = ProfileViewModel(user: viewModel.user)
+      controller.delegate = self
+      let nav = UINavigationController(rootViewController: controller)
+      nav.modalPresentationStyle = .fullScreen
+      self.present(nav, animated: true, completion: nil)
+    }
+    
   }
   
   @objc func didTapFollowersBtn() {
@@ -140,8 +141,8 @@ class ProfileController: UIViewController {
       make.centerY.equalTo(userStatDivider.snp.centerY)
     }
     
-    view.addSubview(editProfileFollowButton)
-    editProfileFollowButton.snp.makeConstraints { make in
+    view.addSubview(followButton)
+    followButton.snp.makeConstraints { make in
       make.top.equalTo(userStatDivider.snp.bottom).offset(12)
       make.centerX.equalToSuperview()
       make.width.equalTo(150)
@@ -151,7 +152,7 @@ class ProfileController: UIViewController {
     let divider = UIView()
     view.addSubview(divider)
     divider.snp.makeConstraints { make in
-      make.top.equalTo(editProfileFollowButton.snp.bottom).offset(20)
+      make.top.equalTo(followButton.snp.bottom).offset(20)
       make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading)
       make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing)
       make.height.equalTo(1)
@@ -174,6 +175,9 @@ class ProfileController: UIViewController {
     nicknameLabel.text = viewModel.nickname
     followersBtn.setAttributedTitle(viewModel.numberOfFollowers, for: .normal)
     followingBtn.setAttributedTitle(viewModel.numberOfFollowing, for: .normal)
+    followButton.setTitle(viewModel.followButtonText, for: .normal)
+    followButton.backgroundColor = viewModel.followButtonBackgroundColor
+    followButton.setTitleColor(viewModel.followButtonTextColor, for: .normal)
     bioLabel.text = viewModel.bio
   }
 }

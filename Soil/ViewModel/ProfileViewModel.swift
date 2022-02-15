@@ -11,7 +11,7 @@ struct ProfileViewModel {
   
   let user: User
   
-//  var uid: String { return user.uid }
+  var uid: String { return user.uid }
   
   var fullname: String { return user.name ?? "" }
   
@@ -29,6 +29,22 @@ struct ProfileViewModel {
   
   var numberOfFollowing: NSAttributedString {
     return attributedStatText(label: "팔로잉  ", value: user.following)
+  }
+  
+  var followButtonText: String {
+    if user.isCurrentUser {
+      return "Edit Profile"
+    }
+    
+    return "Follow"
+  }
+  
+  var followButtonBackgroundColor: UIColor {
+    return user.isCurrentUser ? .white : .black
+  }
+  
+  var followButtonTextColor: UIColor {
+    return user.isCurrentUser ? .systemGray2 : .white
   }
   
   var fullnameCount: String {

@@ -17,9 +17,9 @@ struct User: Codable, Hashable {
   let followers: Int
   let following: Int
   
-//  var isCurrentUser: Bool {
-//    return Auth.auth().currentUser?.uid == self.uid
-//  }
+  var isCurrentUser: Bool {
+    return Auth.auth().currentUser?.uid == self.uid
+  }
   
   enum CodingKeys: String, CodingKey {
     case uid, name, nickname, bio
