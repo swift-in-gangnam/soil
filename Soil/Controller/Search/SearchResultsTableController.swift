@@ -24,34 +24,13 @@ class SearchResultsTableController: UITableViewController {
   
   weak var delegate: SearchResultsTableControllerDelegate?
   private lazy var dataSource = setupDataSource()
-  
-  private var users = [
-    UserCellModel(
-      uid: "l2EpADztzrYU9LsY28lMPbR5ROi2",
-      name: "권동영",
-      nickname: "d_oooong",
-      profileImageURL: "https://soil-bucket.s3.ap-northeast-2.amazonaws.com/2287d308-fabc-44bc-8a92-8ce65b65b28e.jpeg"
-    ),
-    UserCellModel(
-      uid: "MopQb2VcTPeIKVgbaLZZUhgz6P62",
-      name: "test",
-      nickname: "test",
-      profileImageURL: "https://soil-bucket.s3.ap-northeast-2.amazonaws.com/2287d308-fabc-44bc-8a92-8ce65b65b28e.jpeg"
-    ),
-    UserCellModel(
-      uid: "x3DRICUgxzOYwmLrz9JCC52xqTr2",
-      name: "admin2",
-      nickname: "admin2",
-      profileImageURL: "https://soil-bucket.s3.ap-northeast-2.amazonaws.com/2287d308-fabc-44bc-8a92-8ce65b65b28e.jpeg"
-    )
-  ]
+  private var userList = [UserCellModel]()
   
   // MARK: - Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .soilBackgroundColor
-    applySnapshot()
   }
   
   // MARK: - Method
@@ -78,8 +57,8 @@ class SearchResultsTableController: UITableViewController {
   private func applySnapshot() {
     var snapshot = Snapshot()
     snapshot.appendSections([0])
-    snapshot.appendItems(users)
-    dataSource.apply(snapshot, animatingDifferences: true)
+    snapshot.appendItems(userList)
+    dataSource.apply(snapshot, animatingDifferences: false)
   }
 }
 
@@ -88,7 +67,7 @@ class SearchResultsTableController: UITableViewController {
 extension SearchResultsTableController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    self.delegate?.didTapUsercell(uid: users[indexPath.row].uid)
+    self.delegate?.didTapUsercell(uid: userList[indexPath.row].uid)
   }
   
 }
@@ -98,21 +77,15 @@ extension SearchResultsTableController {
 extension SearchResultsTableController: UISearchResultsUpdating { 
   func updateSearchResults(for searchController: UISearchController) {
     guard let text = searchController.searchBar.text?.lowercased() else { return }
-    print(text)
-//    let request = SearchRequest(query: text, type: "user")
     
-//    SearchService.search(request: request) { response in
-//      debugPrint(response)
-//    }
-    
-//    AFManager
-//      .shared
-//      .session
-//      .request(SearchRouter.search(request))
-//      .validate(statusCode: 200..<401)
-//      .validate(contentType: ["application/json"])
-//      .responseJSON { response in
-//        debugPrint(response)
-//      }
+    if !text.isEmpty {
+      let request = SearchRequest(query: text, type: "user")
+      
+      SearchService.search(request: request) { response in
+        guard let userList = response.value?.data else { return }
+        self.userList = userList
+        self.applySnapshot()
+      }
+    }
   }
 }

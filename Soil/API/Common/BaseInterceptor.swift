@@ -22,12 +22,12 @@ class BaseInterceptor: RequestInterceptor {
     for session: Session,
     completion: @escaping (Result<URLRequest, Error>) -> Void
   ) {
-    print("DEBUG: BaseInterceptor - adapt() called")
+//    print("DEBUG: BaseInterceptor - adapt() called")
     
     var urlRequest = urlRequest
     
     if let token = try? keychain.get("token") {
-      print("DEBUG: token - \(token)")
+//      print("DEBUG: token - \(token)")
       urlRequest.headers.add(.authorization(token))
     }
     

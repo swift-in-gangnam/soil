@@ -22,8 +22,8 @@ class SearchController: UIViewController {
   
   private func setupSearchController() {
     view.backgroundColor = .soilBackgroundColor
-    navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.title = "search"
+    navigationItem.largeTitleDisplayMode = .always
     
     let searchResultsTVC = SearchResultsTableController()
     searchResultsTVC.delegate = self

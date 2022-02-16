@@ -8,15 +8,14 @@
 import Foundation
 
 struct UserCellModel: Codable, Hashable {
-  
+  let uuid = UUID()
   let uid: String
   let name: String?
   let nickname: String
   let profileImageURL: String?
   
   enum CodingKeys: String, CodingKey {
-    case uid = "user_uid"
-    case name, nickname
+    case uid, name, nickname
     case profileImageURL = "imageUrl"
   }
 }

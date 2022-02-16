@@ -12,7 +12,7 @@ struct SearchService {
   
   static func search(
     request: SearchRequest,
-    completion: @escaping (DataResponse<UserCellModel, AFError>) -> Void
+    completion: @escaping (DataResponse<GeneralResponse<[UserCellModel]>, AFError>) -> Void
   ) {
     AFManager
       .shared
@@ -20,6 +20,6 @@ struct SearchService {
       .request(SearchRouter.search(request))
       .validate(statusCode: 200..<401)
       .validate(contentType: ["application/json"])
-      .responseDecodable(completionHandler: completion)
+      .responseDecodable(of: GeneralResponse<[UserCellModel]>.self, completionHandler: completion)
   }
 }

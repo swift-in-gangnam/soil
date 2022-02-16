@@ -57,11 +57,6 @@ class YouController: UIViewController {
     configure()
     fetchUser()
   }
-
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    navigationController?.navigationBar.prefersLargeTitles = false
-  }
   
   // MARK: - Actions
   
@@ -78,6 +73,8 @@ class YouController: UIViewController {
   
   private func configure() {
     view.backgroundColor = .soilBackgroundColor
+    navigationItem.largeTitleDisplayMode = .never
+    
     navigationItem.rightBarButtonItem = UIBarButtonItem(
       image: UIImage(systemName: "gearshape"),
       style: .plain,

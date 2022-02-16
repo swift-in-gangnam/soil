@@ -28,13 +28,6 @@ class TabBarController: UITabBarController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-//    do {
-//      try keychain.removeAll()  // keychain 비우기
-//      try Auth.auth().signOut()
-//    } catch let error {
-//      fatalError("DEBUG: Failed to Sign out with error \(error.localizedDescription)")
-//    }
-    
     configureViewControllers()
   }
   

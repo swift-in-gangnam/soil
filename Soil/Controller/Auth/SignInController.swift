@@ -62,7 +62,6 @@ class SignInController: UIViewController {
         print("token - \(idToken)")
         
         do {
-          print(123)
           try self?.keychain.set(idToken, key: "token")
           try self?.keychain.set(result.user.uid, key: "uid")
         } catch let error {
