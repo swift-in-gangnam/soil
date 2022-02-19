@@ -19,6 +19,8 @@ struct ProfileViewModel {
   
   var bio: String { return user.bio ?? "" }
   
+  var type: Int { return user.type }
+  
   var profileImageURL: URL? {
     return URL(string: user.profileImageURL ?? "")
   }
@@ -32,19 +34,31 @@ struct ProfileViewModel {
   }
   
   var followButtonText: String {
-    if user.isCurrentUser {
+    if user.type == 1 {
       return "Edit Profile"
+    } else if user.type == 2 {
+      return "Following"
+    } else {
+      return "Follow"
     }
-    
-    return "Follow"
   }
   
   var followButtonBackgroundColor: UIColor {
-    return user.isCurrentUser ? .white : .black
+    if user.type == 1 || user.type == 2 {
+      return .white
+    } else {
+      return .black
+    }
   }
   
   var followButtonTextColor: UIColor {
-    return user.isCurrentUser ? .systemGray2 : .white
+    if user.type == 1 {
+      return .systemGray2
+    } else if user.type == 2 {
+      return .black
+    } else {
+      return .white
+    }
   }
   
   var fullnameCount: String {
@@ -78,5 +92,4 @@ struct ProfileViewModel {
     )
     return attributedText
   }
-  
 }

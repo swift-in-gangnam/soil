@@ -27,7 +27,7 @@ class BaseInterceptor: RequestInterceptor {
     var urlRequest = urlRequest
     
     if let token = try? keychain.get("token") {
-//      print("DEBUG: token - \(token)")
+      print("DEBUG: token - \(token)")
       urlRequest.headers.add(.authorization(token))
     }
     
