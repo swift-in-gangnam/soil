@@ -17,39 +17,47 @@ class YouController: UIViewController {
   // MARK: - Properties
   
   private let keychain = Keychain(service: "com.chuncheonian.Soil")
+  private var uid: String?
   fileprivate var user: User?
   private let menuArr = ["profile", "day", "month", "year"]
   
-  private let pagingVC: PagingViewController = {
-    let vc = PagingViewController()
-    vc.menuBackgroundColor = .soilBackgroundColor
-    vc.menuItemSize = .selfSizing(estimatedWidth: 37, height: 43)
-    vc.menuHorizontalAlignment = .center
-    vc.menuItemSpacing = 15
-    vc.menuItemLabelSpacing = 3
-    vc.menuInteraction = .none
-    vc.indicatorOptions = .visible(
+  private let pagingVC = PagingViewController().then {
+    $0.menuBackgroundColor = .soilBackgroundColor
+    $0.menuItemSize = .selfSizing(estimatedWidth: 37, height: 43)
+    $0.menuHorizontalAlignment = .center
+    $0.menuItemSpacing = 15
+    $0.menuItemLabelSpacing = 3
+    $0.menuInteraction = .none
+    $0.indicatorOptions = .visible(
       height: 2.2,
       zIndex: Int.max,
       spacing: UIEdgeInsets.zero,
       insets: UIEdgeInsets.zero
     )
-    vc.indicatorColor = .black
-    vc.font = UIFont.montserrat(size: 20, family: .medium)
-    vc.selectedFont = UIFont.montserrat(size: 20, family: .medium)
-    vc.textColor = .systemGray
-    vc.selectedTextColor = .black
-    return vc
-  }()
+    $0.indicatorColor = .black
+    $0.font = UIFont.montserrat(size: 20, family: .medium)
+    $0.selectedFont = UIFont.montserrat(size: 20, family: .medium)
+    $0.textColor = .systemGray
+    $0.selectedTextColor = .black
+  }
   
   // MARK: - Lifecycle
+  
+  init(uid: String?) {
+    self.uid = uid
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     configure()
     fetchUser()
   }
-
+  
   // MARK: - Actions
   
   @objc private func handleLogout() {
@@ -61,10 +69,12 @@ class YouController: UIViewController {
     }
   }
   
-  // MARK: - Helpers
+  // MARK: - Method
   
   private func configure() {
     view.backgroundColor = .soilBackgroundColor
+    navigationItem.largeTitleDisplayMode = .never
+    
     navigationItem.rightBarButtonItem = UIBarButtonItem(
       image: UIImage(systemName: "gearshape"),
       style: .plain,
@@ -85,38 +95,22 @@ class YouController: UIViewController {
   }
   
   private func fetchUser() {
-
-    guard let uid = try? keychain.get("uid") else {
-      fatalError("DEBUG: Failed to fetch keychain with error")
+    
+    // 현 계정의 YouController인 경우, uid를 keychain에서 가져온다.
+    if self.uid == nil {
+      guard let keychainUID = try? keychain.get("uid") else {
+        fatalError("DEBUG: Failed to fetch keychain with error")
+      }
+      self.uid = keychainUID
     }
     
-    let request = FetchUserRequest(uid: uid)
+    let request = FetchUserRequest(uid: uid!)
 
     UserService.fetchUser(request: request) { response in
-      guard let user = response.value else { return }
+      guard let user = response.value?.data else { return }
       self.user = user
       self.pagingVC.reloadData()
     }
-    
-//    AF.request(url, method: .get, headers: headers)
-//      .validate(statusCode: 200..<300)
-//      .validate(contentType: ["application/json"])
-//      .responseJSON { res in
-//        debugPrint(res)
-//        switch res.result {
-//        case .success(let value):
-//          do {
-//            let dataJSON = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
-//            let decodedData = try JSONDecoder().decode(User.self, from: dataJSON)
-//            self.user = decodedData
-//            self.pagingVC.reloadData()
-//          } catch {
-//            print("DEBUG: failed to ~~~~\(error.localizedDescription)")
-//          }
-//        case .failure(let error):
-//          print("DEBUG: \(error)")
-//        }
-//      }
   }
 }
 

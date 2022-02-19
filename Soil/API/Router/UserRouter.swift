@@ -30,7 +30,7 @@ extension UserRouter: APIConfiguration {
   var path: String {
     switch self {
     case .loginUser:
-      return "user/login"
+      return "auth/login"
     case .fetchUser(let request):
       return "user/\(request.uid)"
     case .updateUser:

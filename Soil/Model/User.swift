@@ -6,18 +6,24 @@
 //
 
 import Foundation
+import Firebase
 
-struct User: Codable {
-  
+struct User: Codable, Hashable {
+  let uid: String
   let name: String?
   let nickname: String
   let bio: String?
   let profileImageURL: String?
   let followers: Int
   let following: Int
+  let type: Int
+  
+  var isCurrentUser: Bool {
+    return Auth.auth().currentUser?.uid == self.uid
+  }
   
   enum CodingKeys: String, CodingKey {
-    case name, nickname, bio
+    case uid, name, nickname, bio, type
     case profileImageURL = "imageUrl"
     case followers = "followerCnt"
     case following = "followingCnt"

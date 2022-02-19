@@ -11,17 +11,18 @@ import Firebase
 import Kingfisher
 import SnapKit
 import Then
+import KeychainAccess
 
 class TabBarController: UITabBarController {
   
   // MARK: - Properties
   
-  private let uploadController: UploadPostController = {
-    let controller = UploadPostController()
-    controller.tabBarItem.image = UIImage(named: "PlusButton")!.withRenderingMode(.alwaysOriginal)
-    controller.tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
-    return controller
-  }()
+  private let keychain = Keychain(service: "com.chuncheonian.Soil")
+  
+  private let uploadController = UploadPostController().then {
+    $0.tabBarItem.image = UIImage(named: "PlusButton")!.withRenderingMode(.alwaysOriginal)
+    $0.tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
+  }
   
   // MARK: - Lifecycle
   
@@ -42,7 +43,7 @@ class TabBarController: UITabBarController {
       tabBarAppearance.configureWithDefaultBackground()
       tabBarAppearance.backgroundColor = .soilBackgroundColor
       tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [
-        NSAttributedString.Key.font: UIFont.montserrat(size: 23, family: .medium)
+        .font: UIFont.montserrat(size: 23, family: .medium)
       ]
       tabBarAppearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -14)
       self.tabBar.standardAppearance = tabBarAppearance
@@ -67,9 +68,9 @@ class TabBarController: UITabBarController {
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
       }
     }
-        
+            
     let feedNavController = templateNavigationController(title: "feed", rootVC: FeedController())
-    let youNavController = templateNavigationController(title: "you", rootVC: YouController())
+    let youNavController = templateNavigationController(title: "you", rootVC: YouController(uid: nil))
   
     viewControllers = [feedNavController, uploadController, youNavController]
   }

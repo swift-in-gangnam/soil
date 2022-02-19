@@ -22,7 +22,7 @@ class BaseInterceptor: RequestInterceptor {
     for session: Session,
     completion: @escaping (Result<URLRequest, Error>) -> Void
   ) {
-    print("DEBUG: BaseInterceptor - adapt() called")
+//    print("DEBUG: BaseInterceptor - adapt() called")
     
     var urlRequest = urlRequest
     

@@ -13,7 +13,7 @@ struct UserService {
     
   static func fetchUser(
     request: FetchUserRequest,
-    completion: @escaping (DataResponse<User, AFError>) -> Void
+    completion: @escaping (DataResponse<GeneralResponse<User>, AFError>) -> Void
   ) {
     AFManager
       .shared
@@ -21,7 +21,7 @@ struct UserService {
       .request(UserRouter.fetchUser(request))
       .validate(statusCode: 200..<401)
       .validate(contentType: ["application/json"])
-      .responseDecodable(of: User.self, completionHandler: completion)
+      .responseDecodable(of: GeneralResponse<User>.self, completionHandler: completion)
   }
   
   static func updateUser(
