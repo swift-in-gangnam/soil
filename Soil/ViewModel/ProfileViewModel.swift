@@ -34,29 +34,34 @@ struct ProfileViewModel {
   }
   
   var followButtonText: String {
-    if user.type == 1 {
+    switch self.type {
+    case 1:
       return "Edit Profile"
-    } else if user.type == 2 {
+    case 2:
       return "Following"
-    } else {
+    case 3:
       return "Follow"
+    default:
+      return "Loading..."
     }
   }
   
   var followButtonBackgroundColor: UIColor {
-    if user.type == 1 || user.type == 2 {
+    switch self.type {
+    case 1, 2:
       return .white
-    } else {
+    default:
       return .black
     }
   }
   
   var followButtonTextColor: UIColor {
-    if user.type == 1 {
+    switch self.type {
+    case 1:
       return .systemGray2
-    } else if user.type == 2 {
+    case 2:
       return .black
-    } else {
+    default:
       return .white
     }
   }

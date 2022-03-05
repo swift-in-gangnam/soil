@@ -76,16 +76,29 @@ class ProfileController: UIViewController {
   @objc func handleFollowButtonTapped() {
     guard let viewModel = viewModel else { return }
     
-    // Edit Profile
-    if viewModel.user.isCurrentUser {
+    switch viewModel.type {
+    case 1:  // Edit Profile
       let controller = EditProfileController()
       controller.viewModel = ProfileViewModel(user: viewModel.user)
       controller.delegate = self
       let nav = UINavigationController(rootViewController: controller)
       nav.modalPresentationStyle = .fullScreen
       self.present(nav, animated: true, completion: nil)
+    case 2:  // Unfollow User
+      let request = UnfollowUserRequest(unfollowUID: viewModel.uid)
+      FollowService.unfollowUser(request: request) { response in
+        guard let user = response.value?.data else { return }
+        self.viewModel = ProfileViewModel(user: user)
+      }
+    case 3:  // Follow User
+      let request = FollowUserRequest(followingUID: viewModel.uid)
+      FollowService.followUser(request: request) { response in
+        guard let user = response.value?.data else { return }
+        self.viewModel = ProfileViewModel(user: user)
+      }
+    default:
+      print("DEBUG: Not Exist User's Type")
     }
-    
   }
   
   @objc func didTapFollowersBtn() {
@@ -169,7 +182,6 @@ class ProfileController: UIViewController {
   
   private func bindViewModel() {
     guard let viewModel = viewModel else { return }
-    
     profileImageView.kf.setImage(with: viewModel.profileImageURL)
     fullnameLabel.text = viewModel.fullname
     nicknameLabel.text = viewModel.nickname
