@@ -47,7 +47,6 @@
 		3CC1B09F27436B8200A715C0 /* Tags in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC1B09E27436B8200A715C0 /* Tags */; };
 		3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */; };
 		3CC62DC3278584B800362941 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC62DC2278584B800362941 /* AppController.swift */; };
-		3CEC004E274B590300359D30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC004D274B590300359D30 /* GoogleService-Info.plist */; };
 		D569A38C2796A19100B7BA4A /* AFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38B2796A19100B7BA4A /* AFManager.swift */; };
 		D569A38E2796A27800B7BA4A /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38D2796A27800B7BA4A /* BaseInterceptor.swift */; };
 		D569A3902796A95300B7BA4A /* MyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38F2796A95300B7BA4A /* MyLogger.swift */; };
@@ -82,8 +81,10 @@
 		FA12E8032744CFB000EB8834 /* NickNameInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FB2744CFB000EB8834 /* NickNameInputController.swift */; };
 		FA12E8042744CFB000EB8834 /* EmailConfirmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FC2744CFB000EB8834 /* EmailConfirmController.swift */; };
 		FA12E8052744CFB000EB8834 /* PasswordInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */; };
-		FA12E8062744CFB000EB8834 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FE2744CFB000EB8834 /* SignInController.swift */; };
+		FA12E8062744CFB000EB8834 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FE2744CFB000EB8834 /* LoginController.swift */; };
 		FA12E8072744CFB000EB8834 /* NameInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FF2744CFB000EB8834 /* NameInputController.swift */; };
+		FA33A23F27C3BD5500E29DF5 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33A23E27C3BD5500E29DF5 /* AuthRequest.swift */; };
+		FA33A24127C3BD8500E29DF5 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33A24027C3BD8500E29DF5 /* AuthRouter.swift */; };
 		FA3AC8392781DA3F00B8BDFF /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */; };
 		FA3D3E0D2744D51700A86040 /* LoginHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */; };
 		FA3D3E142744EB0E00A86040 /* SignUpCompletedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */; };
@@ -160,8 +161,10 @@
 		FA12E7FB2744CFB000EB8834 /* NickNameInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NickNameInputController.swift; sourceTree = "<group>"; };
 		FA12E7FC2744CFB000EB8834 /* EmailConfirmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailConfirmController.swift; sourceTree = "<group>"; };
 		FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputController.swift; sourceTree = "<group>"; };
-		FA12E7FE2744CFB000EB8834 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		FA12E7FE2744CFB000EB8834 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FA12E7FF2744CFB000EB8834 /* NameInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameInputController.swift; sourceTree = "<group>"; };
+		FA33A23E27C3BD5500E29DF5 /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
+		FA33A24027C3BD8500E29DF5 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
 		FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHomeController.swift; sourceTree = "<group>"; };
 		FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletedController.swift; sourceTree = "<group>"; };
@@ -412,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				D5D0C4B527975DCD00E96015 /* UserRequest.swift */,
+				FA33A23E27C3BD5500E29DF5 /* AuthRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -420,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				D569A3912796ADD400B7BA4A /* UserRouter.swift */,
+				FA33A24027C3BD8500E29DF5 /* AuthRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -457,7 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */,
-				FA12E7FE2744CFB000EB8834 /* SignInController.swift */,
+				FA12E7FE2744CFB000EB8834 /* LoginController.swift */,
 				FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */,
 				FA12E7FC2744CFB000EB8834 /* EmailConfirmController.swift */,
 				FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */,
@@ -671,7 +676,7 @@
 				D5D0C4B627975DCD00E96015 /* UserRequest.swift in Sources */,
 				D57E8EBB274020820099AA63 /* ProfileViewModel.swift in Sources */,
 				FA12E8072744CFB000EB8834 /* NameInputController.swift in Sources */,
-				FA12E8062744CFB000EB8834 /* SignInController.swift in Sources */,
+				FA12E8062744CFB000EB8834 /* LoginController.swift in Sources */,
 				D5C0A911273A4B91005F9E9B /* AuthService.swift in Sources */,
 				D5C0A915273A4E8E005F9E9B /* User.swift in Sources */,
 				D569A38C2796A19100B7BA4A /* AFManager.swift in Sources */,
@@ -685,6 +690,8 @@
 				D5C0A917273A5032005F9E9B /* UserService.swift in Sources */,
 				FA12E8002744CFB000EB8834 /* EmailInputViewController.swift in Sources */,
 				3C45E0C627313ADA002E3C8D /* SceneDelegate.swift in Sources */,
+				FA33A23F27C3BD5500E29DF5 /* AuthRequest.swift in Sources */,
+				FA33A24127C3BD8500E29DF5 /* AuthRouter.swift in Sources */,
 				3CA91E6C2733CD3C00390A89 /* AuthTextField.swift in Sources */,
 				FA45DE15274F6AC800E38A90 /* NotificationNameExtension.swift in Sources */,
 			);
@@ -831,7 +838,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9738W25PF4;
 				DEVELOPMENT_TEAM = QHPW755BR8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
@@ -867,7 +873,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9738W25PF4;
 				DEVELOPMENT_TEAM = QHPW755BR8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;

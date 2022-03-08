@@ -38,4 +38,19 @@ struct UserService {
       .validate(contentType: ["application/json"])
       .response(completionHandler: completion)
   }
+  
+  static func postUser(
+    request: PostUserRequest,
+    completion: @escaping (AFDataResponse<Data?>) -> Void
+  ) {
+    let route = UserRouter.postUser(request)
+    
+    AFManager
+      .shared
+      .session
+      .upload(multipartFormData: route.multipartFormData, with: route)
+      .validate(statusCode: 200..<401)
+      .validate(contentType: ["application/json"])
+      .response(completionHandler: completion)
+  }
 }
