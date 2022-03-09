@@ -32,4 +32,3 @@ struct DupUser: Codable {
   let message: String
   let success: Bool
 }
-

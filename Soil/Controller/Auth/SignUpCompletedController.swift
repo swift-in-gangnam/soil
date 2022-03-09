@@ -83,54 +83,14 @@ class SignUpCompletedController: UIViewController {
         let request = PostUserRequest(email: email, nickname: nickname, name: name, file: imageData)
         
         UserService.postUser(request: request, completion: { response in
+          debugPrint(response)
           switch response.result {
           case .success:
             print("signIn success")
           case .failure(let error):
             print("DEBUG: Failed to signIn with error \(error.localizedDescription)")
           }
-          
         })
-        
-//        let url = "http://15.165.215.29:8080/user"
-//
-//        let headers: HTTPHeaders = [
-//          .authorization(idToken),
-//          .accept("multipart/form-data")
-//        ]
-//
-//
-//        let parameters: [String: Any] = [
-//          "email": email,
-//          "nickname": nickname,
-//          "name": username
-//        ]
-//
-//        AF.upload(
-//          multipartFormData: { multipartFormData in
-//            for (key, value) in parameters {
-//              multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
-//            }
-//
-//            if let imageData = AuthUser.shared.profileImage?.jpegData(compressionQuality: 0.75) {
-//              multipartFormData.append(imageData, withName: "file",
-//                                       fileName: "\(imageData).jpeg", mimeType: "image/jpeg")
-//            } else {
-//              multipartFormData.append("".data(using: .utf8)!, withName: "file", fileName: "", mimeType: "")
-//            }
-//          },
-//          to: url,
-//          method: .post,
-//          headers: headers).responseJSON { response in
-//            // debugPrint(response)
-//            switch response.result {
-//            case .success(let value):
-//              print("signUp - \(value)")
-//
-//            case .failure(let error):
-//              print("DEBUG: Failed to signUp with error \(error.localizedDescription)")
-//            }
-//          }
       })
       AuthUser.shared.initUser()
     }
