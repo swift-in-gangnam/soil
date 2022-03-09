@@ -200,6 +200,7 @@ class ProfileController: UIViewController {
     bioLabel.snp.makeConstraints { make in
       make.top.equalTo(divider.snp.bottom).offset(20)
       make.leading.equalTo(self.scrollView.safeAreaLayoutGuide.snp.leading).offset(16)
+      make.bottom.equalTo(self.scrollView.snp.bottom)
       make.trailing.equalTo(self.scrollView.safeAreaLayoutGuide.snp.trailing).offset(-16)
     }
   }
