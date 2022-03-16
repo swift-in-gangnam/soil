@@ -286,7 +286,7 @@ class EditProfileController: UIViewController {
   }
   
   func checkBioMaxLength(_ textView: UITextView) {
-    if (textView.text.count) > 300 {
+    if (textView.text.count) > 255 {
       textView.deleteBackward()
     }
   }
@@ -297,7 +297,7 @@ class EditProfileController: UIViewController {
 extension EditProfileController: UITextViewDelegate {
   func textViewDidChange(_ textView: UITextView) {
     checkBioMaxLength(textView)
-    bioCountLabel.text = "\(textView.text.count) / 300"
+    bioCountLabel.text = "\(textView.text.count) / 255"
   }
 }
 
