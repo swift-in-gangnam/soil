@@ -128,7 +128,7 @@ class EditProfileController: UIViewController {
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    nameTextField.addBottomBorderWithColor(color: .systemGray3, height: 1.0)
+    nameTextField.addBottomBorderWithColor(color: .systemGray3, spacing: 4, height: 1.0)
   }
   
   // MARK: - Action
