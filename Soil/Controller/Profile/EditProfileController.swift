@@ -159,10 +159,32 @@ class EditProfileController: UIViewController {
   }
 
   @objc func didTapImageChangeBtn() {
-    let picker = UIImagePickerController()
-    picker.delegate = self
-    picker.allowsEditing = true
-    present(picker, animated: true, completion: nil)
+    let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+   
+    let fetchPhotoAction = UIAlertAction(
+      title: "사진 가져오기",
+      style: .default
+    ) { _ in
+      let picker = UIImagePickerController()
+      picker.delegate = self
+      picker.allowsEditing = true
+      self.present(picker, animated: true)
+    }
+    
+    let deletePhotoAction = UIAlertAction(
+      title: "현재 사진 삭제",
+      style: .destructive
+    ) { _ in
+      self.selectedProfileImage = nil
+    }
+    
+    let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+    
+    alert.addAction(fetchPhotoAction)
+    alert.addAction(deletePhotoAction)
+    alert.addAction(cancelAction)
+    
+    self.present(alert, animated: true)
   }
   
   @objc func textDidChange(sender: UITextField) {
