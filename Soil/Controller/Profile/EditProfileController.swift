@@ -138,8 +138,9 @@ class EditProfileController: UIViewController {
   }
   
   @objc func didTapDone() {
-    guard let name = nameTextField.text else { return }
-    guard let bio = bioTextView.text else { return }
+    guard let name = nameTextField.text,
+          let bio = bioTextView.text
+    else { return }
     
     let request = UpdateUserRequest(
       name: name,
