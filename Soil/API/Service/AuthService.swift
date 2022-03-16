@@ -10,23 +10,22 @@ import Alamofire
 import Firebase
 
 struct AuthService {
-  
   static func firebaseLogin(withEmail email: String, password: String, completion: AuthDataResultCallback?) {
     Auth.auth().signIn(withEmail: email, password: password, completion: completion)
   }
-  
+
   static func login(
     request: LoginRequest,
-    completion: @escaping (DataResponse<Any, AFError>) -> Void
+    completion: @escaping (AFDataResponse<Data?>) -> Void
   ) {
-  AFManager
+    AFManager
       .shared
       .session
       .request(AuthRouter.login(request))
       .validate(statusCode: 200..<401)
       .validate(contentType: ["application/json"])
-      .responseJSON(completionHandler: completion)
-    }
+      .response(completionHandler: completion)
+  }
   
   static func logout(
     completion: @escaping (DataResponse<Any, AFError>) -> Void

@@ -604,6 +604,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="nextButton" destination="72P-GV-8kr" id="yXX-Ht-LSC"/>
                         <outlet property="profileButton" destination="7bk-6K-LDa" id="KbG-Lr-fX3"/>
                         <outlet property="skipBarButton" destination="5Hr-Yx-msg" id="11M-qc-RC4"/>
                     </connections>

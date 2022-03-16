@@ -66,7 +66,7 @@ class EmailInputController: UIViewController {
         print("getDupEmail success")
         do {
           let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-          let json = try JSONDecoder().decode(DupUser.self, from: jsonData)
+          let json = try JSONDecoder().decode(ResponseAuthUser.self, from: jsonData)
           if json.success { // 중복되지 않은 이메일이면
             self.emailCheckLabel.text = ""
             guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "emailConfirmVC") else { return }

@@ -75,24 +75,28 @@ class SignUpCompletedController: UIViewController {
         }
         
         // API
-        guard let email = AuthUser.shared.email else { return }
-        guard let nickname = AuthUser.shared.nickname else { return }
-        guard let name = AuthUser.shared.name else { return }
+        guard let email = AuthUser.shared.email,
+        let nickname = AuthUser.shared.nickname,
+        let name = AuthUser.shared.name else {
+          return
+        }
         let imageData = AuthUser.shared.profileImage?.jpegData(compressionQuality: 0.75)
         
         let request = PostUserRequest(email: email, nickname: nickname, name: name, file: imageData)
+        print(request)
         
         UserService.postUser(request: request, completion: { response in
           debugPrint(response)
           switch response.result {
           case .success:
             print("signIn success")
+            UserDefaults.standard.set(true, forKey: "isSignIn")
+            NotificationCenter.default.post(name: .loginStateDidChange, object: nil)
           case .failure(let error):
             print("DEBUG: Failed to signIn with error \(error.localizedDescription)")
           }
         })
       })
-      AuthUser.shared.initUser()
     }
   }
 }

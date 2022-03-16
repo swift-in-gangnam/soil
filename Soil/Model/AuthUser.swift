@@ -28,7 +28,7 @@ class AuthUser {
   }
 }
 
-struct DupUser: Codable {
+struct ResponseAuthUser: Codable {
   let message: String
   let success: Bool
 }

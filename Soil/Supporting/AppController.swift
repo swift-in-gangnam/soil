@@ -46,24 +46,22 @@ final class AppController {
   func show(in window: UIWindow) {
     self.window = window
     window.makeKeyAndVisible()
-    
-    if Auth.auth().currentUser == nil {
-      routeToLogin()
-    }
+    checkLogin()
+   
   }
   
   private func registerAuthStateDidChangeEvent() {
     NotificationCenter.default.addObserver(
       self,
       selector: #selector(checkLogin),
-      name: .AuthStateDidChange, // <- Firebase Auth 이벤트
+      name: .loginStateDidChange, // <- Firebase Auth 이벤트
       object: nil
     )
   }
   
   @objc private func checkLogin() {
-    if let user = Auth.auth().currentUser { // <- Firebase Auth
-      print("user = \(user)")
+    let isSignIn = UserDefaults.standard.bool(forKey: "isSignIn") == true
+    if isSignIn { // <- Firebase Auth
       setHome()
     } else {
       routeToLogin()

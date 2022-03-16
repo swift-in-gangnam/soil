@@ -73,23 +73,17 @@ class LoginController: UIViewController {
         }
         
         let request = LoginRequest(fcmToken: "xxx")
-        AFManager
-          .shared
-          .session
-          .request(AuthRouter.login(request))
-          .validate(statusCode: 200..<401)
-          .validate(contentType: ["application/json"])
-          .responseJSON { response in
-            debugPrint(response)
+
+        AuthService.login(request: request, completion: { response in
+          switch response.result {
+          case .success:
+            print("login succeess")
+            UserDefaults.standard.set(true, forKey: "isSignIn")
+            NotificationCenter.default.post(name: .loginStateDidChange, object: nil)
+          case .failure:
+            print("login failure")
           }
-//        AuthService.login(request: request, completion: { response in
-//          switch response.result {
-//          case .success(let data):
-//            print("login succeess : \(data)")
-//          case .failure:
-//            print("login failure")
-//          }
-//        })
+        })
         
       })
       

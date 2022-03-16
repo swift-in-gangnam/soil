@@ -9,6 +9,7 @@ import UIKit
 class ProfileInputController: UIViewController {
   // MARK: - Properties
   @IBOutlet weak var profileButton: UIButton!
+  @IBOutlet weak var nextButton: UIButton!
   @IBOutlet weak var skipBarButton: UIBarButtonItem!
   // MARK: - LifeCycle
   override func viewDidLoad() {
@@ -18,6 +19,9 @@ class ProfileInputController: UIViewController {
     let regularBarButtonTextAttributes: [NSAttributedString.Key: Any] =
     [.font: UIFont.notoSansKR(size: 18, family: .black)]
     skipBarButton.setTitleTextAttributes(regularBarButtonTextAttributes, for: .normal)
+    
+    nextButton.isEnabled = false
+    nextButton.backgroundColor = .lightGray
   }
   
   // MARK: Actions
@@ -42,6 +46,9 @@ extension ProfileInputController: UIImagePickerControllerDelegate, UINavigationC
     profileButton.clipsToBounds = true
     profileButton.layer.cornerRadius = profileButton.frame.width / 2
     profileButton.setBackgroundImage(selectedImage, for: .normal)
+    
+    nextButton.isEnabled = true
+    nextButton.backgroundColor = .black
     
     self.dismiss(animated: true, completion: nil)
     
