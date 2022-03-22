@@ -159,7 +159,6 @@ final class EditProfileController: UIViewController {
     )
         
     UserService.updateUser(request: request) { response in
-      debugPrint(response)
       switch response.result {
       case .success:
         self.delegate?.didUpdateProfile(self)
@@ -309,7 +308,7 @@ extension EditProfileController: UITextViewDelegate {
   func textViewDidChange(_ textView: UITextView) {
     checkBioMaxLength(textView)
     bioCountLabel.text = "\(textView.text.count) / 255"
-    isOversized = textView.contentSize.height >= 129 ? true : false
+    isOversized = textView.contentSize.height >= 129
   }
   
   func textViewDidBeginEditing(_ textView: UITextView) {
