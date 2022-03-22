@@ -13,7 +13,7 @@ protocol EditProfileControllerDelegte: AnyObject {
     func didUpdateProfile(_ controller: EditProfileController)
 }
 
-class EditProfileController: UIViewController {
+final class EditProfileController: UIViewController {
   
   // MARK: - Properties
     
@@ -101,6 +101,16 @@ class EditProfileController: UIViewController {
     $0.isScrollEnabled = false
     $0.textContainerInset = UIEdgeInsets(top: 0, left: -5, bottom: 0, right: 0)
     $0.delegate = self
+  }
+  
+  private var isOversized = false {
+    didSet {
+      guard oldValue != isOversized else {
+        return
+      }
+      bioTextView.isScrollEnabled = isOversized
+      bioTextView.setNeedsUpdateConstraints()
+    }
   }
   
   private let underLine = UIView().then {
@@ -253,7 +263,7 @@ class EditProfileController: UIViewController {
       make.top.equalTo(nameLabel.snp.bottom).offset(53)
       make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing)
       make.width.equalTo(nameTextField.snp.width)
-      make.bottom.lessThanOrEqualTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-50)
+      make.height.lessThanOrEqualTo(130)
     }
     bioTextView.snp.makeConstraints { make in
       make.width.equalToSuperview()
@@ -280,13 +290,13 @@ class EditProfileController: UIViewController {
     bioCountLabel.text = viewModel.bioCount
   }
   
-  func checkFullnameMaxLength(_ textField: UITextField) {
+  private func checkFullnameMaxLength(_ textField: UITextField) {
     if (textField.text?.count ?? 0) > 15 {
       textField.deleteBackward()
     }
   }
   
-  func checkBioMaxLength(_ textView: UITextView) {
+  private func checkBioMaxLength(_ textView: UITextView) {
     if (textView.text.count) > 255 {
       textView.deleteBackward()
     }
@@ -299,6 +309,13 @@ extension EditProfileController: UITextViewDelegate {
   func textViewDidChange(_ textView: UITextView) {
     checkBioMaxLength(textView)
     bioCountLabel.text = "\(textView.text.count) / 255"
+    isOversized = textView.contentSize.height >= 129 ? true : false
+  }
+  
+  func textViewDidBeginEditing(_ textView: UITextView) {
+    if textView.contentSize.height >= 129 {
+      textView.isScrollEnabled = true
+    }
   }
 }
 
