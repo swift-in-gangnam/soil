@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+
 class AuthUser {
   static let shared = AuthUser()
   
@@ -25,5 +26,9 @@ class AuthUser {
     name = nil
     profileImage = nil
   }
-  
+}
+
+struct ResponseAuthUser: Codable {
+  let message: String
+  let success: Bool
 }

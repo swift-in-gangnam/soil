@@ -40,19 +40,13 @@ class EmailInputController: UIViewController {
       emailCheckLabel.textColor = .red
       emailCheckLabel.text = "이메일을 입력해주세요."
     } else if validEmail(email: email) { // 이메일 규칙에 준수할 때
-      getEmailDup(email: email)
-      
-      emailCheckLabel.text = ""
       let authUser = AuthUser.shared
       authUser.email = email
-      
-      guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "emailConfirmVC") else { return }
-      self.navigationController?.pushViewController(vc, animated: true)
+      getEmailDup()
     } else { // 이메일 규칙에 어긋날 때
       emailCheckLabel.textColor = .red
       emailCheckLabel.text = "올바른 이메일 형식을 입력해주세요."
     }
-    
   }
   
   // 이메일 정규표현식
@@ -63,25 +57,31 @@ class EmailInputController: UIViewController {
   }
   
   // 이메일 중복 체크 API
-  func getEmailDup(email: String) {
-    let url = "http://15.165.215.29:8080/user/dupEmail/\(email)"
+  func getEmailDup() {
+    let email = AuthUser.shared.email
     
-    let headers: HTTPHeaders = [
-      .accept("application/json")
-    ]
-    
-    AF.request(url, method: .get, headers: headers)
-      .validate(statusCode: 200..<300)
-      .validate(contentType: ["application/json"])
-      .responseJSON { res in
-        debugPrint(res)
-        switch res.result {
-        case .success(let value):
-          print("email success : \(value)")
-          
-        case .failure(let error):
-          print("DEBUG: \(error)")
+    AuthService.getDupEmail(email: email!, completion: { (response) in
+      switch response.result {
+      case .success(let data):
+        print("getDupEmail success")
+        do {
+          let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+          let json = try JSONDecoder().decode(ResponseAuthUser.self, from: jsonData)
+          if json.success { // 중복되지 않은 이메일이면
+            self.emailCheckLabel.text = ""
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "emailConfirmVC") else { return }
+            self.navigationController?.pushViewController(vc, animated: true)
+          } else { // 중복된 이메일이면
+            self.emailCheckLabel.textColor = .red
+            self.emailCheckLabel.text = "중복된 이메일입니다."
+          }
+        } catch {
+          print("DEBUG: Failed to jsonParsing with error")
         }
+        
+      case .failure(let error):
+        print("DEBUG: Failed to getDupEmail with error : \(error.localizedDescription)")
       }
+    })
   }
 }

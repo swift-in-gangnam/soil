@@ -6,42 +6,62 @@
 //
 
 import UIKit
+import Alamofire
 import Firebase
 
-struct AuthCredentials {
-  let email: String
-  let password: String
-  let fullname: String
-  let username: String
-  let profileImage: UIImage
-}
-
 struct AuthService {
-    
-  static func logUserIn(withEmail email: String, password: String, completion: AuthDataResultCallback?) {
+  static func firebaseLogin(withEmail email: String, password: String, completion: AuthDataResultCallback?) {
     Auth.auth().signIn(withEmail: email, password: password, completion: completion)
   }
-    
-//  static func registerUser(withCredential credentials: AuthCredentials, completion: @escaping (Error?) -> Void) {
-//    StorageService.uploadImage(image: credentials.profileImage) { imageUUID, imageURL in
-//      Auth.auth().createUser(withEmail: credentials.email, password: credentials.password) { result, error in
-//        if let error = error {
-//          print("DEBUG: Failed to register user \(error.localizedDescription)")
-//          return
-//        }
-//
-//        guard let uid = result?.user.uid else { return }
-//
-//        let data: [String: Any] = [
-//          "uid": uid,
-//          "email": credentials.email,
-//          "fullname": credentials.fullname,
-//          "username": credentials.username,
-//          "profileImageURL": imageURL,
-//          "profileImageUUID": imageUUID
-//        ]
-//        firestoreUsers.document(uid).setData(data, completion: completion)
-//      }
-//    }
-//  }
+
+  static func login(
+    request: LoginRequest,
+    completion: @escaping (AFDataResponse<Data?>) -> Void
+  ) {
+    AFManager
+      .shared
+      .session
+      .request(AuthRouter.login(request))
+      .validate(statusCode: 200..<401)
+      .validate(contentType: ["application/json"])
+      .response(completionHandler: completion)
+  }
+  
+  static func logout(
+    completion: @escaping (DataResponse<Any, AFError>) -> Void
+  ) {
+  AFManager
+      .shared
+      .session
+      .request(AuthRouter.logout)
+      .validate(statusCode: 200..<401)
+      .validate(contentType: ["application/json"])
+      .responseJSON(completionHandler: completion)
+    }
+  
+  static func getDupEmail(
+    email: String,
+    completion: @escaping (DataResponse<Any, AFError>) -> Void
+  ) {
+  AFManager
+      .shared
+      .session
+      .request(AuthRouter.dupEmail(email))
+      .validate(statusCode: 200..<401)
+      .validate(contentType: ["application/json"])
+      .responseJSON(completionHandler: completion)
+    }
+  
+  static func getDupNickname(
+    nickname: String,
+    completion: @escaping (DataResponse<Any, AFError>) -> Void
+  ) {
+  AFManager
+      .shared
+      .session
+      .request(AuthRouter.dupNickName(nickname))
+      .validate(statusCode: 200..<401)
+      .validate(contentType: ["application/json"])
+      .responseJSON(completionHandler: completion)
+    }
 }
