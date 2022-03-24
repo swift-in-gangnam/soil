@@ -13,7 +13,7 @@ protocol EditProfileControllerDelegte: AnyObject {
     func didUpdateProfile(_ controller: EditProfileController)
 }
 
-class EditProfileController: UIViewController {
+final class EditProfileController: UIViewController {
   
   // MARK: - Properties
     
@@ -103,6 +103,16 @@ class EditProfileController: UIViewController {
     $0.delegate = self
   }
   
+  private var isOversized = false {
+    didSet {
+      guard oldValue != isOversized else {
+        return
+      }
+      bioTextView.isScrollEnabled = isOversized
+      bioTextView.setNeedsUpdateConstraints()
+    }
+  }
+  
   private let underLine = UIView().then {
     $0.layer.borderWidth = 1
     $0.layer.borderColor = UIColor.systemGray3.cgColor
@@ -128,7 +138,7 @@ class EditProfileController: UIViewController {
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    nameTextField.addBottomBorderWithColor(color: .systemGray3, height: 1.0)
+    nameTextField.addBottomBorderWithColor(color: .systemGray3, spacing: 4, height: 1.0)
   }
   
   // MARK: - Action
@@ -138,8 +148,9 @@ class EditProfileController: UIViewController {
   }
   
   @objc func didTapDone() {
-    guard let name = nameTextField.text else { return }
-    guard let bio = bioTextView.text else { return }
+    guard let name = nameTextField.text,
+          let bio = bioTextView.text
+    else { return }
     
     let request = UpdateUserRequest(
       name: name,
@@ -148,7 +159,6 @@ class EditProfileController: UIViewController {
     )
         
     UserService.updateUser(request: request) { response in
-      debugPrint(response)
       switch response.result {
       case .success:
         self.delegate?.didUpdateProfile(self)
@@ -159,10 +169,32 @@ class EditProfileController: UIViewController {
   }
 
   @objc func didTapImageChangeBtn() {
-    let picker = UIImagePickerController()
-    picker.delegate = self
-    picker.allowsEditing = true
-    present(picker, animated: true, completion: nil)
+    let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+   
+    let fetchPhotoAction = UIAlertAction(
+      title: "사진 가져오기",
+      style: .default
+    ) { _ in
+      let picker = UIImagePickerController()
+      picker.delegate = self
+      picker.allowsEditing = true
+      self.present(picker, animated: true)
+    }
+    
+    let deletePhotoAction = UIAlertAction(
+      title: "현재 사진 삭제",
+      style: .destructive
+    ) { _ in
+      self.selectedProfileImage = nil
+    }
+    
+    let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+    
+    alert.addAction(fetchPhotoAction)
+    alert.addAction(deletePhotoAction)
+    alert.addAction(cancelAction)
+    
+    self.present(alert, animated: true)
   }
   
   @objc func textDidChange(sender: UITextField) {
@@ -230,7 +262,7 @@ class EditProfileController: UIViewController {
       make.top.equalTo(nameLabel.snp.bottom).offset(53)
       make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing)
       make.width.equalTo(nameTextField.snp.width)
-      make.bottom.lessThanOrEqualTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-50)
+      make.height.lessThanOrEqualTo(130)
     }
     bioTextView.snp.makeConstraints { make in
       make.width.equalToSuperview()
@@ -257,14 +289,14 @@ class EditProfileController: UIViewController {
     bioCountLabel.text = viewModel.bioCount
   }
   
-  func checkFullnameMaxLength(_ textField: UITextField) {
+  private func checkFullnameMaxLength(_ textField: UITextField) {
     if (textField.text?.count ?? 0) > 15 {
       textField.deleteBackward()
     }
   }
   
-  func checkBioMaxLength(_ textView: UITextView) {
-    if (textView.text.count) > 300 {
+  private func checkBioMaxLength(_ textView: UITextView) {
+    if (textView.text.count) > 255 {
       textView.deleteBackward()
     }
   }
@@ -275,7 +307,14 @@ class EditProfileController: UIViewController {
 extension EditProfileController: UITextViewDelegate {
   func textViewDidChange(_ textView: UITextView) {
     checkBioMaxLength(textView)
-    bioCountLabel.text = "\(textView.text.count) / 300"
+    bioCountLabel.text = "\(textView.text.count) / 255"
+    isOversized = textView.contentSize.height >= 129
+  }
+  
+  func textViewDidBeginEditing(_ textView: UITextView) {
+    if textView.contentSize.height >= 129 {
+      textView.isScrollEnabled = true
+    }
   }
 }
 

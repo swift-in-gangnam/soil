@@ -71,7 +71,7 @@ struct ProfileViewModel {
   }
   
   var bioCount: String {
-    return "\(bio.count) / 300"
+    return "\(bio.count) / 255"
   }
   
   init(user: User) {

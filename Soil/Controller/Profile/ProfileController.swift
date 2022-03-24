@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import KeychainAccess
 
 protocol ProfileControllerDelegate: AnyObject {
   func didTapUserStatBtn()
@@ -23,12 +22,15 @@ class ProfileController: UIViewController {
   
   // MARK: - Properties
   
+  weak var delegate: ProfileControllerDelegate?
+  
   var viewModel: ProfileViewModel? {
     didSet { bindViewModel() }
   }
   
-  weak var delegate: ProfileControllerDelegate?
-  private let keychain = Keychain(service: "com.chuncheonian.Soil")
+  private let scrollView = UIScrollView()
+  
+  private let refreshControl = UIRefreshControl()
   
   private let profileImageView = UIImageView().then {
     $0.contentMode = .scaleAspectFill
@@ -69,9 +71,25 @@ class ProfileController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
+    handlePullToRefresh()
   }
   
   // MARK: - Action
+  
+  @objc func refreshUser() {
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+      guard let viewModel = self.viewModel else { return }
+
+      let request = FetchUserRequest(uid: viewModel.uid)
+      
+      UserService.fetchUser(request: request) { response in
+        guard let user = response.value?.data else { return }
+        self.viewModel = ProfileViewModel(user: user)
+      }
+      self.refreshControl.endRefreshing()
+    }
+  }
   
   @objc func handleFollowButtonTapped() {
     guard let viewModel = viewModel else { return }
@@ -112,28 +130,34 @@ class ProfileController: UIViewController {
   // MARK: - Helpers
   
   private func configureUI() {
-    view.addSubview(profileImageView)
     
+    view.addSubview(scrollView)
+    scrollView.snp.makeConstraints { make in
+      make.width.height.equalToSuperview()
+      make.center.equalToSuperview()
+    }
+    
+    scrollView.addSubview(profileImageView)
     profileImageView.snp.makeConstraints { make in
-      make.top.equalTo(self.view.snp.top).offset(24)
+      make.top.equalTo(self.scrollView.snp.top).offset(24)
       make.width.height.equalTo(100)
       make.centerX.equalToSuperview()
     }
     
-    view.addSubview(fullnameLabel)
+    scrollView.addSubview(fullnameLabel)
     fullnameLabel.snp.makeConstraints { make in
       make.top.equalTo(self.profileImageView.snp.bottom).offset(15)
       make.centerX.equalToSuperview()
     }
     
-    view.addSubview(nicknameLabel)
+    scrollView.addSubview(nicknameLabel)
     nicknameLabel.snp.makeConstraints { make in
       make.top.equalTo(self.fullnameLabel.snp.bottom).offset(4)
       make.centerX.equalToSuperview()
     }
     
     let userStatDivider = UIView()
-    view.addSubview(userStatDivider)
+    scrollView.addSubview(userStatDivider)
     userStatDivider.snp.makeConstraints { make in
       make.top.equalTo(self.nicknameLabel.snp.bottom).offset(11)
       make.centerX.equalToSuperview()
@@ -142,19 +166,19 @@ class ProfileController: UIViewController {
     }
     userStatDivider.backgroundColor = .systemGray3
     
-    view.addSubview(followersBtn)
+    scrollView.addSubview(followersBtn)
     followersBtn.snp.makeConstraints { make in
       make.trailing.equalTo(userStatDivider.snp.leading).offset(-20)
       make.centerY.equalTo(userStatDivider.snp.centerY)
     }
     
-    view.addSubview(followingBtn)
+    scrollView.addSubview(followingBtn)
     followingBtn.snp.makeConstraints { make in
       make.leading.equalTo(userStatDivider.snp.trailing).offset(20)
       make.centerY.equalTo(userStatDivider.snp.centerY)
     }
     
-    view.addSubview(followButton)
+    scrollView.addSubview(followButton)
     followButton.snp.makeConstraints { make in
       make.top.equalTo(userStatDivider.snp.bottom).offset(12)
       make.centerX.equalToSuperview()
@@ -163,20 +187,21 @@ class ProfileController: UIViewController {
     }
     
     let divider = UIView()
-    view.addSubview(divider)
+    scrollView.addSubview(divider)
     divider.snp.makeConstraints { make in
       make.top.equalTo(followButton.snp.bottom).offset(20)
-      make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading)
-      make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing)
+      make.leading.equalTo(self.scrollView.safeAreaLayoutGuide.snp.leading)
+      make.trailing.equalTo(self.scrollView.safeAreaLayoutGuide.snp.trailing)
       make.height.equalTo(1)
     }
     divider.backgroundColor = .systemGray3
     
-    view.addSubview(bioLabel)
+    scrollView.addSubview(bioLabel)
     bioLabel.snp.makeConstraints { make in
       make.top.equalTo(divider.snp.bottom).offset(20)
-      make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).offset(16)
-      make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).offset(-16)
+      make.leading.equalTo(self.scrollView.safeAreaLayoutGuide.snp.leading).offset(16)
+      make.bottom.equalTo(self.scrollView.snp.bottom)
+      make.trailing.equalTo(self.scrollView.safeAreaLayoutGuide.snp.trailing).offset(-16)
     }
   }
   
@@ -192,6 +217,11 @@ class ProfileController: UIViewController {
     followButton.setTitleColor(viewModel.followButtonTextColor, for: .normal)
     bioLabel.text = viewModel.bio
   }
+  
+  private func handlePullToRefresh() {
+    refreshControl.addTarget(self, action: #selector(refreshUser), for: .valueChanged)
+    scrollView.refreshControl = refreshControl
+  }
 }
 
 // MARK: - EditProfileControllerDelegte
@@ -200,11 +230,8 @@ extension ProfileController: EditProfileControllerDelegte {
   func didUpdateProfile(_ controller: EditProfileController) {
     controller.dismiss(animated: true, completion: nil)
     
-    guard let uid = try? keychain.get("uid") else {
-      fatalError("DEBUG: Failed to fetch keychain with error")
-    }
-    
-    let request = FetchUserRequest(uid: uid)
+    guard let viewModel = viewModel else { return }
+    let request = FetchUserRequest(uid: viewModel.uid)
     
     UserService.fetchUser(request: request) { response in
       guard let user = response.value?.data else { return }

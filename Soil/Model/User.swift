@@ -19,7 +19,7 @@ struct User: Codable, Hashable {
     
   enum CodingKeys: String, CodingKey {
     case uid, name, nickname, bio, type
-    case profileImageURL = "imageUrl"
+    case profileImageURL = "profileImageUrl"
     case followers = "followerCnt"
     case following = "followingCnt"
   }
