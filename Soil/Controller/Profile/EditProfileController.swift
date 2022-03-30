@@ -29,6 +29,8 @@ final class EditProfileController: UIViewController {
     }
   }
   
+  private var isDeletedProfileImage = false
+  
   private let barButtonAttrs: [NSAttributedString.Key: Any] = [
     .font: UIFont.montserrat(size: 16, family: .medium)
   ]
@@ -149,13 +151,23 @@ final class EditProfileController: UIViewController {
   
   @objc func didTapDone() {
     guard let name = nameTextField.text,
-          let bio = bioTextView.text
+          let bio = bioTextView.text,
+          let viewModel = viewModel
     else { return }
+    
+    var isDeleteParameter = false
+    
+    // 기존에 사진이 있으면서, 삭제하는 경우 `isDelete` 파라미터 true로
+    if viewModel.profileImageURL?.absoluteString != "empty",
+       self.isDeletedProfileImage == true {
+        isDeleteParameter = true
+    }
     
     let request = UpdateUserRequest(
       name: name,
       bio: bio,
-      file: selectedProfileImage?.jpegData(compressionQuality: 0.75)
+      file: selectedProfileImage?.jpegData(compressionQuality: 0.75),
+      isDelete: isDeleteParameter
     )
         
     UserService.updateUser(request: request) { response in
@@ -186,6 +198,7 @@ final class EditProfileController: UIViewController {
       style: .destructive
     ) { _ in
       self.selectedProfileImage = nil
+      self.isDeletedProfileImage = true
     }
     
     let cancelAction = UIAlertAction(title: "취소", style: .cancel)
@@ -327,6 +340,7 @@ extension EditProfileController: UIImagePickerControllerDelegate, UINavigationCo
   ) {
     guard let selectedImage = info[.editedImage] as? UIImage else { return }
     selectedProfileImage = selectedImage
+    self.isDeletedProfileImage = false
     self.dismiss(animated: true, completion: nil)
   }
 }
