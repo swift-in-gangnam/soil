@@ -21,6 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     configureIQKeyboardManager()
   }
   
+  func scene(_ scene: UIScene, continue userActivity: NSUserActivity) { // 동적 링크 클릭 시
+    NotificationCenter.default.post(name: .emailAuthStateDidChange, object: nil)
+  }
+  
   func sceneDidDisconnect(_ scene: UIScene) {}
   
   func sceneDidBecomeActive(_ scene: UIScene) {}

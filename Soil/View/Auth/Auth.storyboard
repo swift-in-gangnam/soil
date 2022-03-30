@@ -72,7 +72,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="O3Y-KF-79V"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crW-h6-05U">
                                         <rect key="frame" x="0.0" y="38.5" width="335" height="50"/>
@@ -151,9 +151,6 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="4Mv-PZ-scx" kind="show" id="pcL-j7-F9M"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-qd-fVL">
                                 <rect key="frame" x="153" y="815" width="108" height="30"/>
@@ -168,6 +165,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="didTabSendEmail:" destination="0FC-7i-MB5" eventType="touchUpInside" id="8S8-op-rry"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일을 확인해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYA-OB-G4m">
                                 <rect key="frame" x="84.5" y="423" width="245.5" height="36.5"/>
@@ -195,6 +195,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="YhU-YP-bwT"/>
                     <connections>
+                        <outlet property="confirmLabel" destination="nYA-OB-G4m" id="UFM-WZ-8as"/>
                         <outlet property="emailLabel" destination="eoT-tH-VvA" id="V3V-kj-4bT"/>
                     </connections>
                 </viewController>
@@ -257,25 +258,25 @@
         <!--Password Input Controller-->
         <scene sceneID="OLY-Lk-koB">
             <objects>
-                <viewController id="4Mv-PZ-scx" customClass="PasswordInputController" customModule="Soil" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="passwordVC" id="4Mv-PZ-scx" customClass="PasswordInputController" customModule="Soil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ka8-GK-5ov">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eY3-hc-6Pa">
-                                <rect key="frame" x="24" y="20" width="268.5" height="36.5"/>
+                                <rect key="frame" x="24" y="64" width="268.5" height="36.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1번만 입력하니 정확히 입력해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhi-5H-FIv">
-                                <rect key="frame" x="24" y="70.5" width="185.5" height="17.5"/>
+                                <rect key="frame" x="24" y="114.5" width="185.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="12"/>
                                 <color key="textColor" name="AAAAAA"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppb-pz-lgE">
-                                <rect key="frame" x="32" y="708" width="350" height="50"/>
+                                <rect key="frame" x="32" y="762" width="350" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Wet-a3-jqS"/>
@@ -293,7 +294,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ee1-Go-QX0">
-                                <rect key="frame" x="32" y="211" width="350" height="54.5"/>
+                                <rect key="frame" x="32" y="255" width="350" height="54.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="wSH-jD-Al5" customClass="CustomPasswordTextField" customModule="Soil" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="17"/>

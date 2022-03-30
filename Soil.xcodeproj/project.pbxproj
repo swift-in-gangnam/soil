@@ -194,6 +194,7 @@
 		FA43FC552751158000A020D6 /* 20425-emailtitle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "20425-emailtitle.json"; sourceTree = "<group>"; };
 		FA43FC582751165700A020D6 /* 70170-success-check.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "70170-success-check.json"; sourceTree = "<group>"; };
 		FA635F212796EDEE002D63C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA65791727EB5169006B5D6D /* Soil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Soil.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,6 +353,7 @@
 		3C45E0C227313ADA002E3C8D /* Soil */ = {
 			isa = PBXGroup;
 			children = (
+				FA65791727EB5169006B5D6D /* Soil.entitlements */,
 				3C10AFC9273296FC00B1E973 /* Model */,
 				3C10AFCA2732971500B1E973 /* View */,
 				3C10AFCB2732971E00B1E973 /* ViewModel */,
@@ -887,6 +889,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Soil/Soil.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -922,6 +925,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Soil/Soil.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

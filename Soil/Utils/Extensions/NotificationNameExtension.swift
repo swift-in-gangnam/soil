@@ -8,4 +8,5 @@ import Foundation
 
 extension Notification.Name {
   static let loginStateDidChange = NSNotification.Name("loginStateDidChange")
+  static let emailAuthStateDidChange = NSNotification.Name("emailAuthStateDidChange")
 }
