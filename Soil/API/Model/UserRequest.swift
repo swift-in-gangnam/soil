@@ -15,6 +15,7 @@ struct UpdateUserRequest: Encodable {
   let name: String
   let bio: String
   let file: Data?
+  let isDelete: Bool  // 기존에 사진이 있으면서 삭제하는 경우 true
 }
 
 struct PostUserRequest: Encodable {

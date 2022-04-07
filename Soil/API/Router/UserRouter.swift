@@ -66,6 +66,7 @@ extension UserRouter: APIConfiguration {
     case .updateUser(let request):
       multipartFormData.append(request.name.data(using: .utf8)!, withName: "name")
       multipartFormData.append(request.bio.data(using: .utf8)!, withName: "bio")
+      multipartFormData.append(request.isDelete.description.data(using: .utf8)!, withName: "isDelete")
       
       if let file = request.file {
         multipartFormData.append(file, withName: "file", fileName: "\(file).jpeg", mimeType: "image/jpeg")
