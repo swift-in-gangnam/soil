@@ -8,9 +8,22 @@
 import UIKit
 import Tags
 
+enum UploadPostError: Error, LocalizedError {
+  case emptyTitle
+  
+  var errorDescription: String? {
+    switch self {
+    case .emptyTitle:
+      return "일기 제목이 비었습니다"
+    }
+  }
+}
+
 class UploadPostController: UIViewController {
   
   // MARK: - Properties
+  
+  private let textViewPlaceholder = "나만의 소중한 일상을 기록해보세요"
   
   private lazy var imagePicker = UIImagePickerController().then {
     $0.sourceType = .photoLibrary
@@ -71,17 +84,19 @@ class UploadPostController: UIViewController {
     }
   }
   
-  private let isSecretButton = UIButton(type: .system).then {
+  private lazy var isSecretButton = UIButton(type: .custom).then {
     $0.setImage(UIImage(systemName: "square"), for: .normal)
     $0.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
     $0.setImage(UIImage(systemName: "checkmark.square"), for: .highlighted)
     $0.setTitle("비밀일기로 쓰기", for: .normal)
-    $0.tintColor = UIColor.darkGray
+    $0.setTitleColor(.darkGray, for: .normal)
+    $0.tintColor = .darkGray
+    $0.addTarget(self, action: #selector(didTapIsSecretButton), for: .touchUpInside)
   }
   
   private let tagsView = TagsView()
   
-  private let textView = UITextView().then {
+  private let contentTextView = UITextView().then {
     $0.backgroundColor = .soilBackgroundColor
     $0.isScrollEnabled = false
   }
@@ -107,8 +122,13 @@ class UploadPostController: UIViewController {
     view.backgroundColor = .soilBackgroundColor
     configureUI()
     configureTagsView()
-    configureTextView()
+    configureContentTextView()
     configureImageView()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    resignFirstResponder()
   }
   
   override var inputAccessoryView: UIView? {
@@ -118,8 +138,49 @@ class UploadPostController: UIViewController {
   override var canBecomeFirstResponder: Bool {
     return true
   }
+}
+
+// MARK: - Functions
+
+extension UploadPostController {
   
   // MARK: - Helpers
+  
+  private func getPostUploadDataFromSelf() throws -> PostUploadRequest {
+    guard let title = titleTextField.text, !title.isEmpty else {
+      throw UploadPostError.emptyTitle
+    }
+    
+    let content: String
+    
+    if contentTextView.textColor == .lightGray {
+      content = ""
+    } else {
+      content = contentTextView.text
+    }
+    
+    let imageData = imageView.image?.jpegData(compressionQuality: 0.9)
+    
+    let isSecret = isSecretButton.isSelected
+    let tags: [String] = tagsView.tagTextArray.map { originalString in
+      var updatedString = originalString
+      updatedString.removeFirst()
+      return updatedString
+    }
+    
+    let song = "Muse - Hysteria"
+          
+    let data = PostUploadRequest(
+      title: title,
+      isSecret: isSecret,
+      tags: tags,
+      content: content,
+      imageData: imageData,
+      song: song
+    )
+    
+    return data
+  }
   
   private func configureUI() {
     
@@ -128,7 +189,8 @@ class UploadPostController: UIViewController {
     let naviBar = UINavigationBar(frame: CGRect(
       x: 0,
       y: 0,
-      width: view.frame.width, height: 44)
+      width: view.frame.width,
+      height: 44)
     )
     naviBar.isTranslucent = false
     naviBar.backgroundColor = UIColor.soilBackgroundColor
@@ -200,8 +262,8 @@ class UploadPostController: UIViewController {
       make.leading.trailing.equalToSuperview()
     }
     
-    contentsView.addSubview(textView)
-    textView.snp.makeConstraints { make in
+    contentsView.addSubview(contentTextView)
+    contentTextView.snp.makeConstraints { make in
       make.top.equalTo(seperator3.snp.bottom).offset(40)
       make.leading.trailing.equalToSuperview().inset(30)
       make.height.greaterThanOrEqualTo(200)
@@ -210,7 +272,7 @@ class UploadPostController: UIViewController {
     
     contentsView.addSubview(imageView)
     imageView.snp.makeConstraints { make in
-      make.top.equalTo(textView.snp.bottom).offset(100)
+      make.top.equalTo(contentTextView.snp.bottom).offset(100)
       make.leading.trailing.equalToSuperview().inset(20)
       make.bottom.lessThanOrEqualToSuperview().offset(-70)
     }
@@ -236,20 +298,27 @@ class UploadPostController: UIViewController {
     tagsView.lastTagBackgroundColor = .white
   }
   
-  private func configureTextView() {
-    textView.delegate = self
+  private func configureContentTextView() {
+    contentTextView.delegate = self
     let text = "나만의 소중한 일상을 기록해보세요"
     let attributes: [NSAttributedString.Key: Any] = [
       .font: UIFont.notoSansKR(size: 15, family: .regular),
       .foregroundColor: UIColor.lightGray
     ]
-    textView.attributedText = NSAttributedString(string: text, attributes: attributes)
+    contentTextView.attributedText = NSAttributedString(string: text, attributes: attributes)
   }
   
   private func configureImageView() {
     let tapGR = UITapGestureRecognizer(target: self, action: #selector(didTapImageView))
     imageView.addGestureRecognizer(tapGR)
     imageView.isUserInteractionEnabled = true
+  }
+  
+  private func showAlert(title: String?, message: String?) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let confirm = UIAlertAction(title: "확인", style: .default)
+    alert.addAction(confirm)
+    present(alert, animated: true)
   }
   
   // MARK: - Actions
@@ -260,22 +329,44 @@ class UploadPostController: UIViewController {
   
   @objc private func didTapWrite() {
     print("DEBUG: write Tapped...")
+    do {
+      let data = try getPostUploadDataFromSelf()
+      PostService.uploadPost(data: data) { [weak self] response in
+        switch response.result {
+        case .success(let data):
+          if let data = data {
+            print(String(data: data, encoding: .utf8) ?? "")
+          }
+          self?.dismiss(animated: true, completion: nil)
+        case .failure(let error):
+          print(error)
+        }
+      }
+    } catch UploadPostError.emptyTitle {
+      showAlert(title: "오류 발생", message: UploadPostError.emptyTitle.errorDescription)
+    } catch {
+      print(error.localizedDescription)
+    }
+  }
+  
+  @objc private func didTapIsSecretButton() {
+    isSecretButton.isSelected.toggle()
   }
   
   @objc private func didTapImageView(gestureRecognizer: UITapGestureRecognizer) {
     let alertController = UIAlertController(title: nil, message: "이미지를 삭제하시겠어요?", preferredStyle: .alert)
     let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
     cancelAction.setValue(UIColor.black, forKey: "titleTextColor")
-    let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { (_) in
-      self.imageView.snp.updateConstraints { make in
+    let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { [weak self] _ in
+      self?.imageView.snp.updateConstraints { make in
         make.height.equalTo(0)
       }
-      self.imageView.image = nil
+      self?.imageView.image = nil
     }
     deleteAction.setValue(UIColor.black, forKey: "titleTextColor")
     alertController.addAction(cancelAction)
     alertController.addAction(deleteAction)
-    self.present(alertController, animated: true, completion: nil)
+    present(alertController, animated: true, completion: nil)
   }
 }
 
@@ -298,7 +389,7 @@ extension UploadPostController: UITextViewDelegate {
   func textViewDidEndEditing(_ textView: UITextView) {
     customInputAccessoryView.closeButton.isHidden = true
     if textView.text.isEmpty {
-      let text = "나만의 소중한 일상을 기록해보세요"
+      let text = textViewPlaceholder
       let attributes: [NSAttributedString.Key: Any] = [
         .font: UIFont.notoSansKR(size: 15, family: .regular),
         .foregroundColor: UIColor.lightGray
@@ -423,9 +514,9 @@ extension UploadPostController: UIImagePickerControllerDelegate, UINavigationCon
   ) {
     var newImage: UIImage?
     
-    if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+    if let possibleImage = info[.editedImage] as? UIImage {
       newImage = possibleImage
-    } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+    } else if let possibleImage = info[.originalImage] as? UIImage {
       newImage = possibleImage
     }
     

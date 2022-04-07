@@ -47,7 +47,9 @@
 		3CC1B09F27436B8200A715C0 /* Tags in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC1B09E27436B8200A715C0 /* Tags */; };
 		3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */; };
 		3CC62DC3278584B800362941 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC62DC2278584B800362941 /* AppController.swift */; };
-		3CEC004E274B590300359D30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC004D274B590300359D30 /* GoogleService-Info.plist */; };
+		3CEC29E527CB6ACA00294531 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEC29E427CB6ACA00294531 /* PostService.swift */; };
+		3CEC29E727CB71C000294531 /* PostUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEC29E627CB71C000294531 /* PostUploadRequest.swift */; };
+		3CEC29E927CB803400294531 /* PostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEC29E827CB803400294531 /* PostRouter.swift */; };
 		D54299D027BB97BE002BF0EC /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54299CF27BB97BE002BF0EC /* GeneralResponse.swift */; };
 		D569A38C2796A19100B7BA4A /* AFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38B2796A19100B7BA4A /* AFManager.swift */; };
 		D569A38E2796A27800B7BA4A /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38D2796A27800B7BA4A /* BaseInterceptor.swift */; };
@@ -139,6 +141,9 @@
 		3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSeperator.swift; sourceTree = "<group>"; };
 		3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostInputAccessoryView.swift; sourceTree = "<group>"; };
 		3CC62DC2278584B800362941 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+		3CEC29E427CB6ACA00294531 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		3CEC29E627CB71C000294531 /* PostUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUploadRequest.swift; sourceTree = "<group>"; };
+		3CEC29E827CB803400294531 /* PostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRouter.swift; sourceTree = "<group>"; };
 		54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.debug.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.debug.xcconfig"; sourceTree = "<group>"; };
 		D54299CF27BB97BE002BF0EC /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
 		D569A38B2796A19100B7BA4A /* AFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFManager.swift; sourceTree = "<group>"; };
@@ -427,6 +432,7 @@
 				D5C0A916273A5032005F9E9B /* UserService.swift */,
 				D5C0A910273A4B91005F9E9B /* AuthService.swift */,
 				D5EF98E427A0C35C004E6E55 /* SearchService.swift */,
+				3CEC29E427CB6ACA00294531 /* PostService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -437,6 +443,7 @@
 				D54299CF27BB97BE002BF0EC /* GeneralResponse.swift */,
 				D5D0C4B527975DCD00E96015 /* UserRequest.swift */,
 				D5EF98E2279FE3DF004E6E55 /* SearchRequest.swift */,
+				3CEC29E627CB71C000294531 /* PostUploadRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -446,6 +453,7 @@
 			children = (
 				D569A3912796ADD400B7BA4A /* UserRouter.swift */,
 				D5EF98E0279FE220004E6E55 /* SearchRouter.swift */,
+				3CEC29E827CB803400294531 /* PostRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -688,6 +696,7 @@
 				3CC1B09C2742BB6600A715C0 /* HorizontalSeperator.swift in Sources */,
 				D57BEC0B274CEB8E00E65966 /* UITextFieldExtension.swift in Sources */,
 				D54299D027BB97BE002BF0EC /* GeneralResponse.swift in Sources */,
+				3CEC29E927CB803400294531 /* PostRouter.swift in Sources */,
 				D5D1224A273D1E3D0022290E /* YearController.swift in Sources */,
 				D569A3902796A95300B7BA4A /* MyLogger.swift in Sources */,
 				FA12E8022744CFB000EB8834 /* ProfileInputController.swift in Sources */,
@@ -721,10 +730,12 @@
 				D5EF98E527A0C35D004E6E55 /* SearchService.swift in Sources */,
 				D5EF98E727A0C442004E6E55 /* UserCellModel.swift in Sources */,
 				D5EF98DF279FB367004E6E55 /* SearchResultsTableController.swift in Sources */,
+				3CEC29E527CB6ACA00294531 /* PostService.swift in Sources */,
 				D57E8EB827401C9A0099AA63 /* EditProfileController.swift in Sources */,
 				3C45E0C427313ADA002E3C8D /* AppDelegate.swift in Sources */,
 				3C96808A273286F20020A72F /* UploadPostController.swift in Sources */,
 				FA12E7F22744CC7D00EB8834 /* CustomPasswordTextField.swift in Sources */,
+				3CEC29E727CB71C000294531 /* PostUploadRequest.swift in Sources */,
 				FA12E8032744CFB000EB8834 /* NickNameInputController.swift in Sources */,
 				D5C0A917273A5032005F9E9B /* UserService.swift in Sources */,
 				FA12E8002744CFB000EB8834 /* EmailInputViewController.swift in Sources */,
@@ -875,7 +886,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9738W25PF4;
 				DEVELOPMENT_TEAM = QHPW755BR8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
@@ -911,7 +921,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9738W25PF4;
 				DEVELOPMENT_TEAM = QHPW755BR8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soil/Supporting/Info.plist;
