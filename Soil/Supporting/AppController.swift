@@ -54,14 +54,14 @@ final class AppController {
     NotificationCenter.default.addObserver(
       self,
       selector: #selector(checkLogin),
-      name: .loginStateDidChange, // <- Firebase Auth 이벤트
+      name: .loginStateDidChange, // 서버 로그인 체크
       object: nil
     )
   }
   
   @objc private func checkLogin() {
     let isSignIn = UserDefaults.standard.bool(forKey: "isSignIn") == true
-    if isSignIn { // <- Firebase Auth
+    if isSignIn { 
       setHome()
     } else {
       routeToLogin()

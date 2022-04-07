@@ -17,16 +17,31 @@ class EmailInputController: UIViewController {
   @IBOutlet weak var emailCheckLabel: UILabel!
   
   // MARK: LifeCycle
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationController?.navigationBar.topItem?.title = ""
     emailTextField.addBottomBorderWithColor(color: .black, height: 2.0)
     emailTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    
+    // 이메일 인증 체크 NotificationCenter 등록
+    NotificationCenter.default.addObserver(
+      self, selector: #selector(emailAuthSuccess),
+      name: .emailAuthStateDidChange, object: nil
+    )
   }
   
   // MARK: - Methods
   @objc func textFieldDidChange(_ sender: Any?) {
     emailCheckLabel.text = ""
+  }
+  
+  @objc func emailAuthSuccess() {
+    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "passwordVC") else { return }
+    self.navigationController?.pushViewController(vc, animated: true)
   }
   
   @IBAction func tapView(_ sender: UITapGestureRecognizer) {
@@ -69,6 +84,24 @@ class EmailInputController: UIViewController {
           let json = try JSONDecoder().decode(ResponseAuthUser.self, from: jsonData)
           if json.success { // 중복되지 않은 이메일이면
             self.emailCheckLabel.text = ""
+            
+            // 인증 이메일 전송
+            let actionCodeSettings = ActionCodeSettings()
+            if let email = email {
+              actionCodeSettings.url = URL(string: "https://soil-6d0b8.firebaseapp.com/?email=\(email)")
+              actionCodeSettings.handleCodeInApp = true
+              guard let bundleIdentifier = Bundle.main.bundleIdentifier else { return }
+              actionCodeSettings.setIOSBundleID(bundleIdentifier)
+              
+              Auth.auth().sendSignInLink(toEmail: email, actionCodeSettings: actionCodeSettings) { error in
+                if let error = error {
+                  print("email not sent \(error.localizedDescription)")
+                } else {
+                  print("email sent")
+                }
+              }
+            }
+            
             guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "emailConfirmVC") else { return }
             self.navigationController?.pushViewController(vc, animated: true)
           } else { // 중복된 이메일이면
