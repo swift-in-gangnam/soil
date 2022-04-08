@@ -64,33 +64,36 @@ class NickNameInputController: UIViewController {
       nicknameCheckLabel.textColor = UIColor(named: "AAAAAA")
       let authUser = AuthUser.shared
       authUser.nickname = nickname
-     
-      guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "nameVC") else { return }
-      self.navigationController?.pushViewController(vc, animated: true)
+      getNicknameDup()
     }
   }
   
   // 닉네임 중복 체크 API
-  func getEmailDup(nickname: String) {
-    let url = "http://15.165.215.29:8080/user/dupNickname/\(nickname)"
+  func getNicknameDup() {
+    let nickname = AuthUser.shared.nickname
     
-    let headers: HTTPHeaders = [
-      .accept("application/json")
-    ]
-    
-    AF.request(url, method: .get, headers: headers)
-      .validate(statusCode: 200..<300)
-      .validate(contentType: ["application/json"])
-      .responseJSON { res in
-        debugPrint(res)
-        switch res.result {
-        case .success(let value):
-          print("email success : \(value)")
-          
-        case .failure(let error):
-          print("DEBUG: \(error)")
+    AuthService.getDupNickname(nickname: nickname!, completion: { (response) in
+      switch response.result {
+      case .success(let data):
+        print("getDupNickname success")
+        do {
+          let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+          let json = try JSONDecoder().decode(ResponseAuthUser.self, from: jsonData)
+          if json.success { // 중복되지 않은 이메일이면
+            self.nicknameCheckLabel.text = ""
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "nameVC") else { return }
+            self.navigationController?.pushViewController(vc, animated: true)
+          } else { // 중복된 이메일이면
+            self.nicknameCheckLabel.textColor = .red
+            self.nicknameCheckLabel.text = "중복된 닉네임입니다."
+          }
+        } catch {
+          print("DEBUG: Failed to jsonParsing with error")
         }
+        
+      case .failure(let error):
+        print("DEBUG: Failed to getDupNickname with error : \(error.localizedDescription)")
       }
+    })
   }
-  
 }

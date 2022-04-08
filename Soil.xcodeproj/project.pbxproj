@@ -51,6 +51,9 @@
 		3CEC29E727CB71C000294531 /* PostUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEC29E627CB71C000294531 /* PostUploadRequest.swift */; };
 		3CEC29E927CB803400294531 /* PostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEC29E827CB803400294531 /* PostRouter.swift */; };
 		D54299D027BB97BE002BF0EC /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54299CF27BB97BE002BF0EC /* GeneralResponse.swift */; };
+		D548524827C1592500DDA2D1 /* FollowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D548524727C1592500DDA2D1 /* FollowRouter.swift */; };
+		D548524A27C159E900DDA2D1 /* FollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D548524927C159E900DDA2D1 /* FollowRequest.swift */; };
+		D548524C27C15AD800DDA2D1 /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D548524B27C15AD800DDA2D1 /* FollowService.swift */; };
 		D569A38C2796A19100B7BA4A /* AFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38B2796A19100B7BA4A /* AFManager.swift */; };
 		D569A38E2796A27800B7BA4A /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38D2796A27800B7BA4A /* BaseInterceptor.swift */; };
 		D569A3902796A95300B7BA4A /* MyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569A38F2796A95300B7BA4A /* MyLogger.swift */; };
@@ -66,7 +69,6 @@
 		D5C0A90D273A480A005F9E9B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D5C0A90C273A480A005F9E9B /* FirebaseFirestore */; };
 		D5C0A90F273A480A005F9E9B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D5C0A90E273A480A005F9E9B /* FirebaseStorage */; };
 		D5C0A911273A4B91005F9E9B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A910273A4B91005F9E9B /* AuthService.swift */; };
-		D5C0A913273A4CB1005F9E9B /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A912273A4CB1005F9E9B /* AuthenticationViewModel.swift */; };
 		D5C0A915273A4E8E005F9E9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A914273A4E8E005F9E9B /* User.swift */; };
 		D5C0A917273A5032005F9E9B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A916273A5032005F9E9B /* UserService.swift */; };
 		D5C0A919273A5063005F9E9B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0A918273A5063005F9E9B /* Constants.swift */; };
@@ -93,14 +95,16 @@
 		FA12E8032744CFB000EB8834 /* NickNameInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FB2744CFB000EB8834 /* NickNameInputController.swift */; };
 		FA12E8042744CFB000EB8834 /* EmailConfirmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FC2744CFB000EB8834 /* EmailConfirmController.swift */; };
 		FA12E8052744CFB000EB8834 /* PasswordInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */; };
-		FA12E8062744CFB000EB8834 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FE2744CFB000EB8834 /* SignInController.swift */; };
+		FA12E8062744CFB000EB8834 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FE2744CFB000EB8834 /* LoginController.swift */; };
 		FA12E8072744CFB000EB8834 /* NameInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12E7FF2744CFB000EB8834 /* NameInputController.swift */; };
+		FA33A23F27C3BD5500E29DF5 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33A23E27C3BD5500E29DF5 /* AuthRequest.swift */; };
+		FA33A24127C3BD8500E29DF5 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33A24027C3BD8500E29DF5 /* AuthRouter.swift */; };
+		FA359D1C27E203300075412D /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA359D1B27E2032F0075412D /* NotificationNameExtension.swift */; };
 		FA3AC8392781DA3F00B8BDFF /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */; };
 		FA3D3E0D2744D51700A86040 /* LoginHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */; };
 		FA3D3E142744EB0E00A86040 /* SignUpCompletedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */; };
 		FA43FC572751158000A020D6 /* 20425-emailtitle.json in Resources */ = {isa = PBXBuildFile; fileRef = FA43FC552751158000A020D6 /* 20425-emailtitle.json */; };
 		FA43FC592751165700A020D6 /* 70170-success-check.json in Resources */ = {isa = PBXBuildFile; fileRef = FA43FC582751165700A020D6 /* 70170-success-check.json */; };
-		FA45DE15274F6AC800E38A90 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45DE14274F6AC700E38A90 /* NotificationNameExtension.swift */; };
 		FA635F222796EDEE002D63C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA635F212796EDEE002D63C6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +150,9 @@
 		3CEC29E827CB803400294531 /* PostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRouter.swift; sourceTree = "<group>"; };
 		54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.debug.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.debug.xcconfig"; sourceTree = "<group>"; };
 		D54299CF27BB97BE002BF0EC /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
+		D548524727C1592500DDA2D1 /* FollowRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowRouter.swift; sourceTree = "<group>"; };
+		D548524927C159E900DDA2D1 /* FollowRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowRequest.swift; sourceTree = "<group>"; };
+		D548524B27C15AD800DDA2D1 /* FollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowService.swift; sourceTree = "<group>"; };
 		D569A38B2796A19100B7BA4A /* AFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFManager.swift; sourceTree = "<group>"; };
 		D569A38D2796A27800B7BA4A /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
 		D569A38F2796A95300B7BA4A /* MyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLogger.swift; sourceTree = "<group>"; };
@@ -157,7 +164,6 @@
 		D57E8EB727401C9A0099AA63 /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		D57E8EBA274020820099AA63 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		D5C0A910273A4B91005F9E9B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		D5C0A912273A4CB1005F9E9B /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		D5C0A914273A4E8E005F9E9B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D5C0A916273A5032005F9E9B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		D5C0A918273A5063005F9E9B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -183,15 +189,18 @@
 		FA12E7FB2744CFB000EB8834 /* NickNameInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NickNameInputController.swift; sourceTree = "<group>"; };
 		FA12E7FC2744CFB000EB8834 /* EmailConfirmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailConfirmController.swift; sourceTree = "<group>"; };
 		FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputController.swift; sourceTree = "<group>"; };
-		FA12E7FE2744CFB000EB8834 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		FA12E7FE2744CFB000EB8834 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FA12E7FF2744CFB000EB8834 /* NameInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameInputController.swift; sourceTree = "<group>"; };
+		FA33A23E27C3BD5500E29DF5 /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
+		FA33A24027C3BD8500E29DF5 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		FA359D1B27E2032F0075412D /* NotificationNameExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 		FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
 		FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHomeController.swift; sourceTree = "<group>"; };
 		FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletedController.swift; sourceTree = "<group>"; };
 		FA43FC552751158000A020D6 /* 20425-emailtitle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "20425-emailtitle.json"; sourceTree = "<group>"; };
 		FA43FC582751165700A020D6 /* 70170-success-check.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "70170-success-check.json"; sourceTree = "<group>"; };
-		FA45DE14274F6AC700E38A90 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 		FA635F212796EDEE002D63C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA65791727EB5169006B5D6D /* Soil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Soil.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,7 +269,6 @@
 		3C10AFCB2732971E00B1E973 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				D5C0A912273A4CB1005F9E9B /* AuthenticationViewModel.swift */,
 				D57E8EBA274020820099AA63 /* ProfileViewModel.swift */,
 				D5EF98DC279F92AD004E6E55 /* UserCellViewModel.swift */,
 			);
@@ -279,10 +287,10 @@
 		3C10AFD92732A06100B1E973 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FA359D1B27E2032F0075412D /* NotificationNameExtension.swift */,
 				3C10AFD72732A05A00B1E973 /* UIColorExtension.swift */,
 				3C10AFDA2732A1C400B1E973 /* UIFontExtension.swift */,
 				D57BEC0A274CEB8E00E65966 /* UITextFieldExtension.swift */,
-				FA45DE14274F6AC700E38A90 /* NotificationNameExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -351,6 +359,7 @@
 		3C45E0C227313ADA002E3C8D /* Soil */ = {
 			isa = PBXGroup;
 			children = (
+				FA65791727EB5169006B5D6D /* Soil.entitlements */,
 				3C10AFC9273296FC00B1E973 /* Model */,
 				3C10AFCA2732971500B1E973 /* View */,
 				3C10AFCB2732971E00B1E973 /* ViewModel */,
@@ -431,6 +440,7 @@
 			children = (
 				D5C0A916273A5032005F9E9B /* UserService.swift */,
 				D5C0A910273A4B91005F9E9B /* AuthService.swift */,
+				D548524B27C15AD800DDA2D1 /* FollowService.swift */,
 				D5EF98E427A0C35C004E6E55 /* SearchService.swift */,
 				3CEC29E427CB6ACA00294531 /* PostService.swift */,
 			);
@@ -442,6 +452,8 @@
 			children = (
 				D54299CF27BB97BE002BF0EC /* GeneralResponse.swift */,
 				D5D0C4B527975DCD00E96015 /* UserRequest.swift */,
+				FA33A23E27C3BD5500E29DF5 /* AuthRequest.swift */,
+				D548524927C159E900DDA2D1 /* FollowRequest.swift */,
 				D5EF98E2279FE3DF004E6E55 /* SearchRequest.swift */,
 				3CEC29E627CB71C000294531 /* PostUploadRequest.swift */,
 			);
@@ -452,6 +464,8 @@
 			isa = PBXGroup;
 			children = (
 				D569A3912796ADD400B7BA4A /* UserRouter.swift */,
+				FA33A24027C3BD8500E29DF5 /* AuthRouter.swift */,
+				D548524727C1592500DDA2D1 /* FollowRouter.swift */,
 				D5EF98E0279FE220004E6E55 /* SearchRouter.swift */,
 				3CEC29E827CB803400294531 /* PostRouter.swift */,
 			);
@@ -500,7 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */,
-				FA12E7FE2744CFB000EB8834 /* SignInController.swift */,
+				FA12E7FE2744CFB000EB8834 /* LoginController.swift */,
 				FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */,
 				FA12E7FC2744CFB000EB8834 /* EmailConfirmController.swift */,
 				FA12E7FD2744CFB000EB8834 /* PasswordInputController.swift */,
@@ -707,7 +721,6 @@
 				D5D12246273D1E2C0022290E /* DayController.swift in Sources */,
 				FA12E8042744CFB000EB8834 /* EmailConfirmController.swift in Sources */,
 				D56CB273279E0ACF0087FCC8 /* SearchController.swift in Sources */,
-				D5C0A913273A4CB1005F9E9B /* AuthenticationViewModel.swift in Sources */,
 				D5D12248273D1E330022290E /* MonthController.swift in Sources */,
 				3C10AFD82732A05A00B1E973 /* UIColorExtension.swift in Sources */,
 				FA3D3E0D2744D51700A86040 /* LoginHomeController.swift in Sources */,
@@ -718,9 +731,11 @@
 				3C10AFDB2732A1C400B1E973 /* UIFontExtension.swift in Sources */,
 				3C45E0C827313ADA002E3C8D /* TabBarController.swift in Sources */,
 				D5D0C4B627975DCD00E96015 /* UserRequest.swift in Sources */,
+				FA359D1C27E203300075412D /* NotificationNameExtension.swift in Sources */,
+				D548524827C1592500DDA2D1 /* FollowRouter.swift in Sources */,
 				D57E8EBB274020820099AA63 /* ProfileViewModel.swift in Sources */,
 				FA12E8072744CFB000EB8834 /* NameInputController.swift in Sources */,
-				FA12E8062744CFB000EB8834 /* SignInController.swift in Sources */,
+				FA12E8062744CFB000EB8834 /* LoginController.swift in Sources */,
 				D5C0A911273A4B91005F9E9B /* AuthService.swift in Sources */,
 				D5C0A915273A4E8E005F9E9B /* User.swift in Sources */,
 				D569A38C2796A19100B7BA4A /* AFManager.swift in Sources */,
@@ -728,6 +743,8 @@
 				D5EF98DB279F8F23004E6E55 /* UserCell.swift in Sources */,
 				D569A3922796ADD400B7BA4A /* UserRouter.swift in Sources */,
 				D5EF98E527A0C35D004E6E55 /* SearchService.swift in Sources */,
+				D548524C27C15AD800DDA2D1 /* FollowService.swift in Sources */,
+				D548524A27C159E900DDA2D1 /* FollowRequest.swift in Sources */,
 				D5EF98E727A0C442004E6E55 /* UserCellModel.swift in Sources */,
 				D5EF98DF279FB367004E6E55 /* SearchResultsTableController.swift in Sources */,
 				3CEC29E527CB6ACA00294531 /* PostService.swift in Sources */,
@@ -740,8 +757,9 @@
 				D5C0A917273A5032005F9E9B /* UserService.swift in Sources */,
 				FA12E8002744CFB000EB8834 /* EmailInputViewController.swift in Sources */,
 				3C45E0C627313ADA002E3C8D /* SceneDelegate.swift in Sources */,
+				FA33A23F27C3BD5500E29DF5 /* AuthRequest.swift in Sources */,
+				FA33A24127C3BD8500E29DF5 /* AuthRouter.swift in Sources */,
 				3CA91E6C2733CD3C00390A89 /* AuthTextField.swift in Sources */,
-				FA45DE15274F6AC800E38A90 /* NotificationNameExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,6 +901,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Soil/Soil.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -918,6 +937,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Soil/Soil.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

@@ -64,6 +64,8 @@ class YouController: UIViewController {
     do {
       try keychain.removeAll()  // keychain 비우기
       try Auth.auth().signOut()
+      UserDefaults.standard.set(false, forKey: "isSignIn") // 로그인 상태 false로 변경
+      NotificationCenter.default.post(name: .loginStateDidChange, object: nil)
     } catch let error {
       fatalError("DEBUG: Failed to Sign out with error \(error.localizedDescription)")
     }

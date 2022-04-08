@@ -10,17 +10,13 @@ import Firebase
 import Alamofire
 import KeychainAccess
 
-class SignInController: UIViewController {
+class LoginController: UIViewController {
   
   // MARK: - Properties
-  
   @IBOutlet weak var emailTextField: UITextField!
-  @IBOutlet weak var passwordTextField: UITextField!
-  @IBOutlet weak var loginButton: UIButton!
-  @IBOutlet weak var loginCheckLabel: UILabel!
+  @IBOutlet weak var passwordTextField: CustomPasswordTextField!
   @IBOutlet weak var stackView: UIStackView!
-  
-  private var viewModel = LoginViewModel()
+  @IBOutlet weak var loginCheckLabel: UILabel!
   
   private let keychain = Keychain(service: "com.chuncheonian.Soil")
   
@@ -50,7 +46,7 @@ class SignInController: UIViewController {
       return
     }
     
-    AuthService.logUserIn(withEmail: email, password: password) { [weak self] (result, error) in
+    AuthService.firebaseLogin(withEmail: email, password: password) { [weak self] (result, error) in
       if let error = error {
         print("DEBUG: Failed to log user in \(error.localizedDescription)")
         self?.loginCheckLabel.text = "아이디 또는 비밀번호가 틀렸습니다."
@@ -77,16 +73,18 @@ class SignInController: UIViewController {
         }
         
         let request = LoginRequest(fcmToken: "xxx")
-        
-        AFManager
-          .shared
-          .session
-          .request(UserRouter.loginUser(request))
-          .validate(statusCode: 200..<401)
-          .validate(contentType: ["application/json"])
-          .responseJSON { response in
-            debugPrint(response)
+
+        AuthService.login(request: request, completion: { response in
+          switch response.result {
+          case .success:
+            print("login succeess")
+            UserDefaults.standard.set(true, forKey: "isSignIn")
+            NotificationCenter.default.post(name: .loginStateDidChange, object: nil)
+          case .failure:
+            print("login failure")
           }
+        })
+        
       })
       
       self?.loginCheckLabel.text = " "
