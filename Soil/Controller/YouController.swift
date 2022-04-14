@@ -151,7 +151,10 @@ extension YouController: PagingViewControllerDataSource {
 }
 
 extension YouController: ProfileControllerDelegate {
-  func didTapUserStatBtn() {
-    navigationController?.pushViewController(UserStatController(), animated: true)
+  func didTapUserStatBtn(isFollowingsMode: Bool) {
+    guard let uid = self.uid else { return }
+    
+    let controller = UserStatController(uid: uid, isFollowingsMode: isFollowingsMode)
+    navigationController?.pushViewController(controller, animated: true)
   }
 }
