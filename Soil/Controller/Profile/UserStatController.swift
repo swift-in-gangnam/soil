@@ -9,7 +9,7 @@ import UIKit
 
 private let reuseIdentifier = "UserCell"
 
-final class UserStatController: UITableViewController, UISearchControllerDelegate {
+final class UserStatController: UITableViewController {
 
   // MARK: - Value Types
   
@@ -20,17 +20,9 @@ final class UserStatController: UITableViewController, UISearchControllerDelegat
   
   private let uid: String
   private let isFollowingsMode: Bool
+  private var userList = [UserCellModel]()
+  
   private lazy var dataSource = setupDataSource()
-  private var userList = [
-    UserCellModel(
-      uid: "ONhMtxPDPgYh06dpTPrLxk5FWpS2",
-      name: "Admin",
-      nickname: "admin",
-      profileImageURL: "https://soil-bucket.s3.ap-northeast-2.amazonaws.com/7c6ee948-ce49-4228-a995-9b8bc026df2e.jpeg"
-    ),
-    UserCellModel(uid: "2", name: "권동영", nickname: "d_oooong", profileImageURL: "A"),
-    UserCellModel(uid: "3", name: "권동영", nickname: "d_oooong", profileImageURL: "A")
-  ]
   
   private lazy var searchController = UISearchController(searchResultsController: nil).then {
     $0.searchBar.placeholder = "검색"
@@ -53,8 +45,8 @@ final class UserStatController: UITableViewController, UISearchControllerDelegat
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = .soilBackgroundColor
-    setupNavigationController()
-    self.performQuery(with: nil)
+    self.setupNavigationController()
+    self.fetchUserStatsList()
   }
   
   // MARK: - Method
@@ -99,6 +91,23 @@ final class UserStatController: UITableViewController, UISearchControllerDelegat
     self.dataSource.apply(snapshot, animatingDifferences: true)
   }
   
+  private func fetchUserStatsList() {
+    let request = UserStatsRequest(uid: self.uid)
+    
+    if self.isFollowingsMode {
+      UserService.fetchFollowingList(request: request) { response in
+        guard let userList = response.value?.data else { return }
+        self.userList = userList
+      }
+    } else {
+      UserService.fetchFollowerList(request: request) { response in
+        guard let userList = response.value?.data else { return }
+        self.userList = userList
+      }
+    }
+    
+    self.performQuery(with: nil)
+  }
 }
 
 // MARK: - UITableViewDataSource

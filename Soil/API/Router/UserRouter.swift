@@ -12,6 +12,8 @@ enum UserRouter {
   case fetchUser(FetchUserRequest)
   case updateUser(UpdateUserRequest)
   case postUser(PostUserRequest)
+  case fetchFollowingsList(UserStatsRequest)
+  case fetchFollowerList(UserStatsRequest)
 }
 
 extension UserRouter: APIConfiguration {
@@ -24,6 +26,10 @@ extension UserRouter: APIConfiguration {
       return .patch
     case .postUser:
       return .post
+    case .fetchFollowingsList:
+      return .get
+    case .fetchFollowerList:
+      return .get
     }
   }
 
@@ -35,6 +41,10 @@ extension UserRouter: APIConfiguration {
       return "user"
     case .postUser:
       return "user"
+    case .fetchFollowingsList(let request):
+      return "user/\(request.uid)/following"
+    case .fetchFollowerList(let request):
+      return "user/\(request.uid)/follower"
     }
   }
   
@@ -46,6 +56,10 @@ extension UserRouter: APIConfiguration {
       return "multipart/form-data"
     case .postUser:
       return "multipart/form-data"
+    case .fetchFollowingsList:
+      return "application/json; charset=UTF-8"
+    case .fetchFollowerList:
+      return "application/json; charset=UTF-8"
     }
   }
   
@@ -57,11 +71,16 @@ extension UserRouter: APIConfiguration {
       return .none
     case .postUser:
       return .none
+    case .fetchFollowingsList:
+      return .none
+    case .fetchFollowerList:
+      return .none
     }
   }
   
   var multipartFormData: MultipartFormData {
     let multipartFormData = MultipartFormData()
+    
     switch self {
     case .updateUser(let request):
       multipartFormData.append(request.name.data(using: .utf8)!, withName: "name")

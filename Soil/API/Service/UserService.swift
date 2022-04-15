@@ -53,4 +53,31 @@ struct UserService {
       .validate(contentType: ["application/json"])
       .response(completionHandler: completion)
   }
+  
+  static func fetchFollowingList(
+    request: UserStatsRequest,
+    completion: @escaping (DataResponse<GeneralResponse<[UserCellModel]>, AFError>) -> Void
+  ) {
+    AFManager
+      .shared
+      .session
+      .request(UserRouter.fetchFollowingsList(request))
+      .validate(statusCode: 200..<401)
+      .validate(contentType: ["application/json"])
+      .responseDecodable(of: GeneralResponse<[UserCellModel]>.self, completionHandler: completion)
+  }
+  
+  static func fetchFollowerList(
+    request: UserStatsRequest,
+    completion: @escaping (DataResponse<GeneralResponse<[UserCellModel]>, AFError>) -> Void
+  ) {
+    AFManager
+      .shared
+      .session
+      .request(UserRouter.fetchFollowerList(request))
+      .validate(statusCode: 200..<401)
+      .validate(contentType: ["application/json"])
+      .responseDecodable(of: GeneralResponse<[UserCellModel]>.self, completionHandler: completion)
+  }
+  
 }

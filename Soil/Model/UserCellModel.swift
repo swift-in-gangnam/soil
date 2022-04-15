@@ -12,10 +12,9 @@ struct UserCellModel: Codable, Hashable {
   let uid: String
   let name: String?
   let nickname: String
-  let profileImageURL: String?
+  let profileImageUrl: String?
   
   enum CodingKeys: String, CodingKey {
-    case uid, name, nickname
-    case profileImageURL = "imageUrl"
+    case uid, name, nickname, profileImageUrl
   }
 }
