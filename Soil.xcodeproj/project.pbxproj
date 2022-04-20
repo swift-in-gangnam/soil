@@ -106,6 +106,7 @@
 		FA43FC572751158000A020D6 /* 20425-emailtitle.json in Resources */ = {isa = PBXBuildFile; fileRef = FA43FC552751158000A020D6 /* 20425-emailtitle.json */; };
 		FA43FC592751165700A020D6 /* 70170-success-check.json in Resources */ = {isa = PBXBuildFile; fileRef = FA43FC582751165700A020D6 /* 70170-success-check.json */; };
 		FA635F222796EDEE002D63C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA635F212796EDEE002D63C6 /* GoogleService-Info.plist */; };
+		FAF00A9B2806D36700E965B2 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF00A9A2806D36700E965B2 /* SearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -201,6 +202,7 @@
 		FA43FC582751165700A020D6 /* 70170-success-check.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "70170-success-check.json"; sourceTree = "<group>"; };
 		FA635F212796EDEE002D63C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA65791727EB5169006B5D6D /* Soil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Soil.entitlements; sourceTree = "<group>"; };
+		FAF00A9A2806D36700E965B2 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 				3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */,
 				3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */,
 				D5EF98DA279F8F23004E6E55 /* UserCell.swift */,
+				FAF00A9A2806D36700E965B2 /* SearchTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 				3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */,
 				D569A38E2796A27800B7BA4A /* BaseInterceptor.swift in Sources */,
 				FA12E8052744CFB000EB8834 /* PasswordInputController.swift in Sources */,
+				FAF00A9B2806D36700E965B2 /* SearchTableViewCell.swift in Sources */,
 				3CC1B09C2742BB6600A715C0 /* HorizontalSeperator.swift in Sources */,
 				D57BEC0B274CEB8E00E65966 /* UITextFieldExtension.swift in Sources */,
 				D54299D027BB97BE002BF0EC /* GeneralResponse.swift in Sources */,
