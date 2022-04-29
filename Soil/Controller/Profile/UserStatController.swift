@@ -80,9 +80,15 @@ final class UserStatController: UITableViewController {
   }
     
   private func performQuery(with filter: String?) {
-    let filtered = self.userList.filter {
-      $0.nickname.hasPrefix(filter ?? "") ||
-      $0.name?.hasPrefix(filter ?? "") ?? false
+    let filtered: [UserCellModel]
+    
+    if let filter = filter {
+      filtered = self.userList.filter {
+        $0.nickname.hasPrefix(filter) ||
+        $0.name?.hasPrefix(filter) ?? false
+      }
+    } else {
+      filtered = self.userList
     }
     
     var snapshot = Snapshot()
@@ -110,7 +116,7 @@ final class UserStatController: UITableViewController {
   }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableViewDelegate
 
 extension UserStatController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
