@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ProfileControllerDelegate: AnyObject {
-  func didTapUserStatBtn()
+  func didTapUserStatBtn(isFollowingsMode: Bool)
 }
 
 class ProfileController: UIViewController {
@@ -120,11 +120,11 @@ class ProfileController: UIViewController {
   }
   
   @objc func didTapFollowersBtn() {
-    delegate?.didTapUserStatBtn()
+    delegate?.didTapUserStatBtn(isFollowingsMode: false)
   }
   
   @objc func didTapFollowingBtn() {
-    delegate?.didTapUserStatBtn()
+    delegate?.didTapUserStatBtn(isFollowingsMode: true)
   }
   
   // MARK: - Helpers

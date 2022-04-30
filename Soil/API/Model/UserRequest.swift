@@ -24,3 +24,7 @@ struct PostUserRequest: Encodable {
   let name: String
   let file: Data?
 }
+
+struct UserStatsRequest: Encodable {
+  let uid: String
+}
