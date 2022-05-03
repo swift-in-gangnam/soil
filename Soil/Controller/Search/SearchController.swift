@@ -9,24 +9,42 @@ import UIKit
 
 class SearchController: UIViewController {
   
+  // MARK: - Value Types
+  
+  typealias DataSource = UITableViewDiffableDataSource<Int, Search>
+  typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Search>
+  
   // MARK: - Properties
+  
   private let tableView = UITableView().then {
     $0.backgroundColor = .clear
+    $0.rowHeight = 50
     $0.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
   }
-  var searchArray = [String]()
+  
+  private lazy var dataSource = setupDataSource()
+  
+  var searchArray: [Search] { // UserDefault에 저장
+    get {
+      var array: [Search]?
+      if let data = UserDefaults.standard.value(forKey: "searchArray") as? Data {
+        array = try? PropertyListDecoder().decode([Search].self, from: data)
+      }
+      return array ?? []
+    }
+    set {
+      UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: "searchArray")
+    }
+  }
   
   // MARK: - Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.delegate = self
-    tableView.dataSource = self
+   
     setupSearchController()
     setConstraint()
-    
-    tableView.tableFooterView = UIView() // tableView 존재하는 셀만 표시
-    searchArray = UserDefaults.standard.array(forKey: "SearchArray") as? [String] ?? [] // 검색 기록 array
+    updateDatasource()
   }
   
   // MARK: - Method
@@ -57,15 +75,34 @@ class SearchController: UIViewController {
     }
   }
   
-  @objc func deleteCell(_ sender: UIButton) {
+  private func setupDataSource() -> DataSource {
+    dataSource = UITableViewDiffableDataSource<Int, Search>(tableView: tableView,
+                cellProvider: { tableView, indexPath, model -> UITableViewCell? in
+                guard let cell = tableView.dequeueReusableCell(
+                  withIdentifier: SearchTableViewCell.identifier,
+                  for: indexPath
+                ) as? SearchTableViewCell else { return UITableViewCell() }
+                cell.label.text = model.word
+                cell.xButton.addTarget(self, action: #selector(self.deleteCell),
+                                       for: .touchUpInside) // x버튼 클릭 시 cell 삭제
+                return cell
+    })
+    return dataSource
+  }
+  
+  @objc private func deleteCell(_ sender: UIButton) {
     let contentView = sender.superview
     guard let cell = contentView?.superview as? UITableViewCell else { return }
     guard let indexPath = tableView.indexPath(for: cell) else { return }
-    
     searchArray.remove(at: indexPath.row) // 검색한 텍스트 삭제
-    UserDefaults.standard.set(searchArray, forKey: "SearchArray")
-    tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
-    tableView.reloadData()
+    updateDatasource()
+  }
+  
+  private func updateDatasource() {
+    var snapshot = Snapshot()
+    snapshot.appendSections([0])
+    snapshot.appendItems(searchArray)
+    dataSource.apply(snapshot, animatingDifferences: true)
   }
 }
 
@@ -78,37 +115,14 @@ extension SearchController: SearchResultsTableControllerDelegate {
   }
 }
 
-// MARK: - UITableViewDelegate, UITableViewDataSource
-
-extension SearchController: UITableViewDelegate, UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return searchArray.count
-  }
-
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath)
-            as? SearchTableViewCell else { return UITableViewCell() }
-    cell.backgroundColor = UIColor(named: "E5E5E5")
-    cell.selectionStyle = .none
-    cell.label.text = searchArray[indexPath.row]
-    cell.xButton.addTarget(self, action: #selector(deleteCell), for: .touchUpInside) // x버튼 클릭 시 cell 삭제
-    return cell
-  }
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 50
-  }
-}
-
 // MARK: - UISearchBarDelegate
 
 extension SearchController: UISearchBarDelegate {
   func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-    if let searchBarText = searchBar.text {
-      if searchBarText != "" {
-        searchArray.insert(searchBarText, at: 0)
-        UserDefaults.standard.set(searchArray, forKey: "SearchArray") // 검색한 텍스트 저장
-        tableView.reloadData()
-      }
+    if let searchBarText = searchBar.text, searchBarText.isEmpty == false {
+        let search: Search = Search(word: searchBarText)
+        searchArray.insert(search, at: 0)
+        updateDatasource()
     }
   }
 }
