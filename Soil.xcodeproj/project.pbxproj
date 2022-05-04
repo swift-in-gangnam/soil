@@ -55,6 +55,7 @@
 		D531286F2822E72B00E05FC6 /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53128692822E72B00E05FC6 /* DayController.swift */; };
 		D53128702822E72B00E05FC6 /* YearTimelineController+CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531286B2822E72B00E05FC6 /* YearTimelineController+CompositionalLayout.swift */; };
 		D53128712822E72B00E05FC6 /* YearTimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531286C2822E72B00E05FC6 /* YearTimelineController.swift */; };
+		D53128742822E91700E05FC6 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = D53128732822E91700E05FC6 /* ReactorKit */; };
 		D54299D027BB97BE002BF0EC /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54299CF27BB97BE002BF0EC /* GeneralResponse.swift */; };
 		D548524827C1592500DDA2D1 /* FollowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D548524727C1592500DDA2D1 /* FollowRouter.swift */; };
 		D548524A27C159E900DDA2D1 /* FollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D548524927C159E900DDA2D1 /* FollowRequest.swift */; };
@@ -230,6 +231,7 @@
 			files = (
 				3C58C83527342D04003A1F9D /* Alamofire in Frameworks */,
 				3C58C83827342D11003A1F9D /* IQKeyboardManagerSwift in Frameworks */,
+				D53128742822E91700E05FC6 /* ReactorKit in Frameworks */,
 				D5C0A908273A4235005F9E9B /* Kingfisher in Frameworks */,
 				D5C0A90F273A480A005F9E9B /* FirebaseStorage in Frameworks */,
 				D5D44EC4277C81CF00C48D8E /* KeychainAccess in Frameworks */,
@@ -652,6 +654,7 @@
 				3CC1B09E27436B8200A715C0 /* Tags */,
 				D5D44EC3277C81CF00C48D8E /* KeychainAccess */,
 				D58C100E28221888008FB61E /* Then */,
+				D53128732822E91700E05FC6 /* ReactorKit */,
 			);
 			productName = Soil;
 			productReference = 3C45E0C027313ADA002E3C8D /* Soil.app */;
@@ -692,6 +695,7 @@
 				3CC1B09D27436B8100A715C0 /* XCRemoteSwiftPackageReference "Tags" */,
 				D5D44EC2277C81CE00C48D8E /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				D58C100D28221888008FB61E /* XCRemoteSwiftPackageReference "Then" */,
+				D53128722822E91700E05FC6 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 			);
 			productRefGroup = 3C45E0C127313ADA002E3C8D /* Products */;
 			projectDirPath = "";
@@ -1139,6 +1143,14 @@
 				minimumVersion = 0.3.2;
 			};
 		};
+		D53128722822E91700E05FC6 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		D58C100D28221888008FB61E /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -1203,6 +1215,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3CC1B09D27436B8100A715C0 /* XCRemoteSwiftPackageReference "Tags" */;
 			productName = Tags;
+		};
+		D53128732822E91700E05FC6 /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D53128722822E91700E05FC6 /* XCRemoteSwiftPackageReference "ReactorKit" */;
+			productName = ReactorKit;
 		};
 		D58C100E28221888008FB61E /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
