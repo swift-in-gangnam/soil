@@ -57,7 +57,7 @@ final class MonthTimelineController: UIViewController {
   }
   
   /// ViewModel로 이동예정
-  func setupDiffableDataSource() {
+  private func setupDiffableDataSource() {
     dataSource = MonthTimelineSection.diffableDataSource(collectionView: collectionView)
     guard let dataSource = dataSource else { return }
 

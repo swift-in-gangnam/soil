@@ -140,7 +140,7 @@ extension YouController: PagingViewControllerDataSource {
       let monthVC = MonthTimelineController()
       return monthVC
     } else {
-      let yearVC = YearController()
+      let yearVC = YearTimelineController()
       return yearVC
     }
   }

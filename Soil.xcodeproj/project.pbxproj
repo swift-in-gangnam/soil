@@ -72,6 +72,9 @@
 		D58A56FB2820EE1100E7B740 /* MonthTimelineSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A56FA2820EE1100E7B740 /* MonthTimelineSectionHeaderView.swift */; };
 		D58A56FD28210CCA00E7B740 /* MonthTimelineController+CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A56FC28210CCA00E7B740 /* MonthTimelineController+CompositionalLayout.swift */; };
 		D58C100F28221888008FB61E /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D58C100E28221888008FB61E /* Then */; };
+		D58C101128221B33008FB61E /* YearTimelineSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C101028221B33008FB61E /* YearTimelineSection.swift */; };
+		D58C101328221B6D008FB61E /* YearTimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C101228221B6D008FB61E /* YearTimelineItem.swift */; };
+		D58C101628221C16008FB61E /* YearTimelineController+CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C101528221C16008FB61E /* YearTimelineController+CompositionalLayout.swift */; };
 		D5C0A908273A4235005F9E9B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D5C0A907273A4235005F9E9B /* Kingfisher */; };
 		D5C0A90B273A480A005F9E9B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D5C0A90A273A480A005F9E9B /* FirebaseAuth */; };
 		D5C0A90D273A480A005F9E9B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D5C0A90C273A480A005F9E9B /* FirebaseFirestore */; };
@@ -86,7 +89,7 @@
 		D5D12244273D1E230022290E /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12243273D1E230022290E /* ProfileController.swift */; };
 		D5D12246273D1E2C0022290E /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12245273D1E2C0022290E /* DayController.swift */; };
 		D5D12248273D1E330022290E /* MonthTimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12247273D1E330022290E /* MonthTimelineController.swift */; };
-		D5D1224A273D1E3D0022290E /* YearController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12249273D1E3D0022290E /* YearController.swift */; };
+		D5D1224A273D1E3D0022290E /* YearTimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D12249273D1E3D0022290E /* YearTimelineController.swift */; };
 		D5D44EC4277C81CF00C48D8E /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D5D44EC3277C81CF00C48D8E /* KeychainAccess */; };
 		D5EF98DB279F8F23004E6E55 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF98DA279F8F23004E6E55 /* UserCell.swift */; };
 		D5EF98DD279F92AD004E6E55 /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF98DC279F92AD004E6E55 /* UserCellViewModel.swift */; };
@@ -177,6 +180,9 @@
 		D58A56F82820D53300E7B740 /* MonthTimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTimelineItem.swift; sourceTree = "<group>"; };
 		D58A56FA2820EE1100E7B740 /* MonthTimelineSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTimelineSectionHeaderView.swift; sourceTree = "<group>"; };
 		D58A56FC28210CCA00E7B740 /* MonthTimelineController+CompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthTimelineController+CompositionalLayout.swift"; sourceTree = "<group>"; };
+		D58C101028221B33008FB61E /* YearTimelineSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearTimelineSection.swift; sourceTree = "<group>"; };
+		D58C101228221B6D008FB61E /* YearTimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearTimelineItem.swift; sourceTree = "<group>"; };
+		D58C101528221C16008FB61E /* YearTimelineController+CompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YearTimelineController+CompositionalLayout.swift"; sourceTree = "<group>"; };
 		D5C0A910273A4B91005F9E9B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D5C0A914273A4E8E005F9E9B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D5C0A916273A5032005F9E9B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -187,7 +193,7 @@
 		D5D12243273D1E230022290E /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		D5D12245273D1E2C0022290E /* DayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
 		D5D12247273D1E330022290E /* MonthTimelineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTimelineController.swift; sourceTree = "<group>"; };
-		D5D12249273D1E3D0022290E /* YearController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearController.swift; sourceTree = "<group>"; };
+		D5D12249273D1E3D0022290E /* YearTimelineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearTimelineController.swift; sourceTree = "<group>"; };
 		D5EF98DA279F8F23004E6E55 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		D5EF98DC279F92AD004E6E55 /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		D5EF98DE279FB366004E6E55 /* SearchResultsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableController.swift; sourceTree = "<group>"; };
@@ -247,13 +253,13 @@
 				FA12E7F72744CF4700EB8834 /* Auth */,
 				D5EF98E827A0C894004E6E55 /* Search */,
 				D57E8EB927401E360099AA63 /* Profile */,
-				D554D6002821856A009F4376 /* Timeline */,
+				D58C101828222899008FB61E /* DayTimeline */,
+				D58C10172822287E008FB61E /* MonthTimeline */,
+				D554D6002821856A009F4376 /* YearTimeline */,
 				3C45E0C727313ADA002E3C8D /* TabBarController.swift */,
 				3C10AFD22732981600B1E973 /* FeedController.swift */,
 				3C968089273286F20020A72F /* UploadPostController.swift */,
 				3C10AFD42732981F00B1E973 /* YouController.swift */,
-				D5D12245273D1E2C0022290E /* DayController.swift */,
-				D5D12249273D1E3D0022290E /* YearController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -444,13 +450,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D554D6002821856A009F4376 /* Timeline */ = {
+		D554D6002821856A009F4376 /* YearTimeline */ = {
 			isa = PBXGroup;
 			children = (
-				D5D12247273D1E330022290E /* MonthTimelineController.swift */,
-				D58A56FC28210CCA00E7B740 /* MonthTimelineController+CompositionalLayout.swift */,
+				D5D12249273D1E3D0022290E /* YearTimelineController.swift */,
+				D58C101528221C16008FB61E /* YearTimelineController+CompositionalLayout.swift */,
 			);
-			path = Timeline;
+			path = YearTimeline;
 			sourceTree = "<group>";
 		};
 		D57E8EB927401E360099AA63 /* Profile */ = {
@@ -467,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				D58A56F3281FE22C00E7B740 /* Month */,
+				D58C101428221B95008FB61E /* Year */,
 			);
 			path = Diffable;
 			sourceTree = "<group>";
@@ -478,6 +485,32 @@
 				D58A56F82820D53300E7B740 /* MonthTimelineItem.swift */,
 			);
 			path = Month;
+			sourceTree = "<group>";
+		};
+		D58C101428221B95008FB61E /* Year */ = {
+			isa = PBXGroup;
+			children = (
+				D58C101028221B33008FB61E /* YearTimelineSection.swift */,
+				D58C101228221B6D008FB61E /* YearTimelineItem.swift */,
+			);
+			path = Year;
+			sourceTree = "<group>";
+		};
+		D58C10172822287E008FB61E /* MonthTimeline */ = {
+			isa = PBXGroup;
+			children = (
+				D5D12247273D1E330022290E /* MonthTimelineController.swift */,
+				D58A56FC28210CCA00E7B740 /* MonthTimelineController+CompositionalLayout.swift */,
+			);
+			path = MonthTimeline;
+			sourceTree = "<group>";
+		};
+		D58C101828222899008FB61E /* DayTimeline */ = {
+			isa = PBXGroup;
+			children = (
+				D5D12245273D1E2C0022290E /* DayController.swift */,
+			);
+			path = DayTimeline;
 			sourceTree = "<group>";
 		};
 		D5D0C4BA2798A19D00E96015 /* Service */ = {
@@ -750,6 +783,7 @@
 				D58A56F92820D53300E7B740 /* MonthTimelineItem.swift in Sources */,
 				D5D12244273D1E230022290E /* ProfileController.swift in Sources */,
 				D5EF98E1279FE220004E6E55 /* SearchRouter.swift in Sources */,
+				D58C101128221B33008FB61E /* YearTimelineSection.swift in Sources */,
 				D58A56FB2820EE1100E7B740 /* MonthTimelineSectionHeaderView.swift in Sources */,
 				3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */,
 				D569A38E2796A27800B7BA4A /* BaseInterceptor.swift in Sources */,
@@ -759,7 +793,7 @@
 				D57BEC0B274CEB8E00E65966 /* UITextFieldExtension.swift in Sources */,
 				D54299D027BB97BE002BF0EC /* GeneralResponse.swift in Sources */,
 				3CEC29E927CB803400294531 /* PostRouter.swift in Sources */,
-				D5D1224A273D1E3D0022290E /* YearController.swift in Sources */,
+				D5D1224A273D1E3D0022290E /* YearTimelineController.swift in Sources */,
 				D569A3902796A95300B7BA4A /* MyLogger.swift in Sources */,
 				FA12E8022744CFB000EB8834 /* ProfileInputController.swift in Sources */,
 				D58A56FD28210CCA00E7B740 /* MonthTimelineController+CompositionalLayout.swift in Sources */,
@@ -783,6 +817,7 @@
 				D5D0C4B627975DCD00E96015 /* UserRequest.swift in Sources */,
 				FA359D1C27E203300075412D /* NotificationNameExtension.swift in Sources */,
 				D548524827C1592500DDA2D1 /* FollowRouter.swift in Sources */,
+				D58C101328221B6D008FB61E /* YearTimelineItem.swift in Sources */,
 				D57E8EBB274020820099AA63 /* ProfileViewModel.swift in Sources */,
 				FA12E8072744CFB000EB8834 /* NameInputController.swift in Sources */,
 				FA12E8062744CFB000EB8834 /* LoginController.swift in Sources */,
@@ -802,6 +837,7 @@
 				D57E8EB827401C9A0099AA63 /* EditProfileController.swift in Sources */,
 				3C45E0C427313ADA002E3C8D /* AppDelegate.swift in Sources */,
 				3C96808A273286F20020A72F /* UploadPostController.swift in Sources */,
+				D58C101628221C16008FB61E /* YearTimelineController+CompositionalLayout.swift in Sources */,
 				FA12E7F22744CC7D00EB8834 /* CustomPasswordTextField.swift in Sources */,
 				3CEC29E727CB71C000294531 /* PostUploadRequest.swift in Sources */,
 				FA12E8032744CFB000EB8834 /* NickNameInputController.swift in Sources */,
