@@ -81,11 +81,9 @@ final class YearTimelineController: UIViewController {
     fetching
       .sorted { $0 > $1 }  // 연도 내림차순 정렬
       .forEach {
-        if #available(iOS 15.0, *) {
-          // year 중복 체크
-          if itemList.contains(.year(record: $0.formatted(.iso8601.year()))) == false {
-            itemList.append(.year(record: $0.formatted(.iso8601.year())))
-          }
+        // year 중복 체크
+        if itemList.contains(.year(record: $0.formatted(.iso8601.year()))) == false {
+          itemList.append(.year(record: $0.formatted(.iso8601.year())))
         }
       }
     

@@ -38,36 +38,26 @@ class TabBarController: UITabBarController {
     tabBar.tintColor = .black
     self.delegate = self
 
-    if #available(iOS 13.0, *) {
-      let tabBarAppearance = UITabBarAppearance()
-      tabBarAppearance.configureWithDefaultBackground()
-      tabBarAppearance.backgroundColor = .soilBackgroundColor
-      tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [
-        .font: UIFont.montserrat(size: 23, family: .medium)
-      ]
-      tabBarAppearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -14)
-      self.tabBar.standardAppearance = tabBarAppearance
-      
-      if #available(iOS 15.0, *) {
-        self.tabBar.scrollEdgeAppearance = tabBarAppearance
-      }
-    }
+    let tabBarAppearance = UITabBarAppearance()
+    tabBarAppearance.configureWithDefaultBackground()
+    tabBarAppearance.backgroundColor = .soilBackgroundColor
+    tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [
+      .font: UIFont.montserrat(size: 23, family: .medium)
+    ]
+    tabBarAppearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -14)
+    self.tabBar.standardAppearance = tabBarAppearance
+    self.tabBar.scrollEdgeAppearance = tabBarAppearance
     
-    if #available(iOS 13.0, *) {
-      let navigationBarAppearance = UINavigationBarAppearance()
-      navigationBarAppearance.configureWithDefaultBackground()
-      navigationBarAppearance.backgroundColor = .soilBackgroundColor
-      navigationBarAppearance.shadowColor = .soilBackgroundColor
-      navigationBarAppearance.largeTitleTextAttributes = [
-        NSAttributedString.Key.font: UIFont.montserrat(size: 35, family: .bold)
-      ]
-      UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-      UINavigationBar.appearance().compactAppearance = navigationBarAppearance
-      
-      if #available(iOS 15.0, *) {
-        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
-      }
-    }
+    let navigationBarAppearance = UINavigationBarAppearance()
+    navigationBarAppearance.configureWithDefaultBackground()
+    navigationBarAppearance.backgroundColor = .soilBackgroundColor
+    navigationBarAppearance.shadowColor = .soilBackgroundColor
+    navigationBarAppearance.largeTitleTextAttributes = [
+      NSAttributedString.Key.font: UIFont.montserrat(size: 35, family: .bold)
+    ]
+    UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+    UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+    UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
             
     let feedNavController = templateNavigationController(title: "feed", rootVC: FeedController())
     let youNavController = templateNavigationController(title: "you", rootVC: YouController(uid: nil))

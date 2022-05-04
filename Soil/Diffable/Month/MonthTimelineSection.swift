@@ -25,9 +25,8 @@ extension MonthTimelineSection {
             withReuseIdentifier: String(describing: TimelineCell.self), for: indexPath
           ) as? TimelineCell else { return UICollectionViewCell() }
           
-          if #available(iOS 15.0, *) {
-            cell.titleLabel.text = record.formatted(.dateTime.month(.wide).locale(Locale(identifier: "en_US"))).lowercased()
-          }
+          cell.titleLabel.text = record.formatted(.dateTime.month(.wide).locale(Locale(identifier: "en_US"))).lowercased()
+
           return cell
         case .bottomLoader:
           guard let cell = collectionView.dequeueReusableCell(

@@ -24,9 +24,8 @@ extension YearTimelineSection {
             withReuseIdentifier: String(describing: TimelineCell.self), for: indexPath
           ) as? TimelineCell else { return UICollectionViewCell() }
           
-          if #available(iOS 15.0, *) {
-            cell.titleLabel.text = record
-          }
+          cell.titleLabel.text = record
+          
           return cell
         case .bottomLoader:
           guard let cell = collectionView.dequeueReusableCell(

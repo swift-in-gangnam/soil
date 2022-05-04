@@ -102,14 +102,12 @@ final class MonthTimelineController: UIViewController {
     fetching
       .sorted { $0 > $1 }
       .forEach {
-        if #available(iOS 15.0, *) {
-          // year 중복 체크
-          if sectionList.contains(.year(record: $0.formatted(.iso8601.year()))) == false {
-            sectionList.append(.year(record: $0.formatted(.iso8601.year())))
-            sectionItemsDict[.year(record: $0.formatted(.iso8601.year()))] = [.month(record: $0)]
-          } else {
-            sectionItemsDict[.year(record: $0.formatted(.iso8601.year()))]?.append(.month(record: $0))
-          }
+        // year 중복 체크
+        if sectionList.contains(.year(record: $0.formatted(.iso8601.year()))) == false {
+          sectionList.append(.year(record: $0.formatted(.iso8601.year())))
+          sectionItemsDict[.year(record: $0.formatted(.iso8601.year()))] = [.month(record: $0)]
+        } else {
+          sectionItemsDict[.year(record: $0.formatted(.iso8601.year()))]?.append(.month(record: $0))
         }
       }
     
@@ -130,19 +128,4 @@ extension MonthTimelineController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     print(1)
   }
-  
 }
-
-// for elem in sectionList {
-//  if case let .year(record: year) = elem {
-//    let list = itemList.filter {
-//      if case let .month(date) = $0 {
-//        if #available(iOS 15.0, *) {
-//          if date.formatted(.iso8601.year()) == year { return true }
-//        }
-//      }
-//      return false
-//    }
-//    snapshot.appendItems(list, toSection: elem)
-//  }
-// }
