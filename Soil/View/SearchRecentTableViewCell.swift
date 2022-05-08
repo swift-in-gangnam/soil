@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchTableViewCell: UITableViewCell {
+class SearchRecentTableViewCell: UITableViewCell {
   
   // MARK: - Properties
   
@@ -28,7 +28,7 @@ class SearchTableViewCell: UITableViewCell {
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    backgroundColor = UIColor(named: "E5E5E5")
+    backgroundColor = .soilBackgroundColor
     selectionStyle = .none
     setConstraint()
   }
@@ -39,10 +39,6 @@ class SearchTableViewCell: UITableViewCell {
 
   override func awakeFromNib() {
     super.awakeFromNib()
-  }
-
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
   }
   
   private func setConstraint() {

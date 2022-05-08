@@ -9,5 +9,5 @@ import Foundation
 
 struct Search: Hashable, Codable {
   let word: String
-  var uuid = UUID()
+  private(set) var uuid = UUID()
 }

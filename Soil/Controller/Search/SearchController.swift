@@ -19,7 +19,7 @@ class SearchController: UIViewController {
   private let tableView = UITableView().then {
     $0.backgroundColor = .clear
     $0.rowHeight = 50
-    $0.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
+    $0.register(SearchRecentTableViewCell.self, forCellReuseIdentifier: SearchRecentTableViewCell.identifier)
   }
   
   private lazy var dataSource = setupDataSource()
@@ -63,6 +63,7 @@ class SearchController: UIViewController {
     searchController.searchBar.delegate = self
     navigationItem.hidesSearchBarWhenScrolling = false
     navigationItem.searchController = searchController
+    tableView.tableFooterView = UIView() // 존재하는 cell만 표시
   }
   
   private func setConstraint() {
@@ -76,19 +77,26 @@ class SearchController: UIViewController {
   }
   
   private func setupDataSource() -> DataSource {
-    dataSource = UITableViewDiffableDataSource<Int, Search>(tableView: tableView,
-                cellProvider: { tableView, indexPath, model -> UITableViewCell? in
-                guard let cell = tableView.dequeueReusableCell(
-                  withIdentifier: SearchTableViewCell.identifier,
-                  for: indexPath
-                ) as? SearchTableViewCell else { return UITableViewCell() }
-                cell.label.text = model.word
-                cell.xButton.addTarget(self, action: #selector(self.deleteCell),
-                                       for: .touchUpInside) // x버튼 클릭 시 cell 삭제
-                return cell
-    })
-    return dataSource
-  }
+     dataSource = UITableViewDiffableDataSource<Int, Search>(
+       tableView: tableView,
+       cellProvider: { tableView, indexPath, model -> UITableViewCell? in
+         guard let cell = tableView.dequeueReusableCell(
+           withIdentifier: SearchRecentTableViewCell.identifier,
+           for: indexPath
+         ) as? SearchRecentTableViewCell else { return UITableViewCell() }
+         
+         // x버튼 클릭 시 cell 삭제
+         cell.xButton.addTarget(
+           self,
+           action: #selector(self.deleteCell),
+           for: .touchUpInside
+         )
+         cell.label.text = model.word
+         
+         return cell
+     })
+     return dataSource
+   }
   
   @objc private func deleteCell(_ sender: UIButton) {
     let contentView = sender.superview
