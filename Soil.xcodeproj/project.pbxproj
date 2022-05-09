@@ -255,7 +255,6 @@
 				FA12E7F72744CF4700EB8834 /* Auth */,
 				D5EF98E827A0C894004E6E55 /* Search */,
 				D57E8EB927401E360099AA63 /* Profile */,
-				D53128642822E72B00E05FC6 /* Timeline */,
 				3C45E0C727313ADA002E3C8D /* TabBarController.swift */,
 				3C10AFD22732981600B1E973 /* FeedController.swift */,
 				3C968089273286F20020A72F /* UploadPostController.swift */,
@@ -283,9 +282,6 @@
 				3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */,
 				3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */,
 				D5EF98DA279F8F23004E6E55 /* UserCell.swift */,
-				D58A56EE281FD3DD00E7B740 /* TimelineCell.swift */,
-				D58A56F62820D0EC00E7B740 /* TimelineLoaderCollectionViewCell.swift */,
-				D58A56FA2820EE1100E7B740 /* MonthTimelineSectionHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,6 +384,7 @@
 				3C10AFCA2732971500B1E973 /* View */,
 				3C10AFCB2732971E00B1E973 /* ViewModel */,
 				3C10AFC52732945100B1E973 /* Controller */,
+				D53128762822EAFA00E05FC6 /* Screen */,
 				D58A56F2281FE20D00E7B740 /* Diffable */,
 				3C58C83F273431F9003A1F9D /* API */,
 				3C10AFD62732A01700B1E973 /* Utils */,
@@ -453,8 +450,9 @@
 		D53128642822E72B00E05FC6 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
-				D53128652822E72B00E05FC6 /* MonthTimeline */,
+				D53128782822ED0000E05FC6 /* Cell */,
 				D53128682822E72B00E05FC6 /* DayTimeline */,
+				D53128652822E72B00E05FC6 /* MonthTimeline */,
 				D531286A2822E72B00E05FC6 /* YearTimeline */,
 			);
 			path = Timeline;
@@ -463,8 +461,9 @@
 		D53128652822E72B00E05FC6 /* MonthTimeline */ = {
 			isa = PBXGroup;
 			children = (
-				D53128662822E72B00E05FC6 /* MonthTimelineController+CompositionalLayout.swift */,
+				D53128792822ED7A00E05FC6 /* SubView */,
 				D53128672822E72B00E05FC6 /* MonthTimelineController.swift */,
+				D53128662822E72B00E05FC6 /* MonthTimelineController+CompositionalLayout.swift */,
 			);
 			path = MonthTimeline;
 			sourceTree = "<group>";
@@ -480,10 +479,35 @@
 		D531286A2822E72B00E05FC6 /* YearTimeline */ = {
 			isa = PBXGroup;
 			children = (
-				D531286B2822E72B00E05FC6 /* YearTimelineController+CompositionalLayout.swift */,
 				D531286C2822E72B00E05FC6 /* YearTimelineController.swift */,
+				D531286B2822E72B00E05FC6 /* YearTimelineController+CompositionalLayout.swift */,
 			);
 			path = YearTimeline;
+			sourceTree = "<group>";
+		};
+		D53128762822EAFA00E05FC6 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D53128642822E72B00E05FC6 /* Timeline */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		D53128782822ED0000E05FC6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D58A56F62820D0EC00E7B740 /* TimelineLoaderCollectionViewCell.swift */,
+				D58A56EE281FD3DD00E7B740 /* TimelineCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D53128792822ED7A00E05FC6 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				D58A56FA2820EE1100E7B740 /* MonthTimelineSectionHeaderView.swift */,
+			);
+			path = SubView;
 			sourceTree = "<group>";
 		};
 		D57E8EB927401E360099AA63 /* Profile */ = {

@@ -15,7 +15,7 @@ extension MonthTimelineController {
         heightDimension: .absolute(70+16)
       )
       let item = NSCollectionLayoutItem(layoutSize: itemSize)
-      item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0)
+      item.contentInsets = .init(top: 0, leading: 0, bottom: 16, trailing: 0)
       
       let groupSize = NSCollectionLayoutSize(
         widthDimension: .fractionalWidth(1.0),
@@ -38,7 +38,7 @@ extension MonthTimelineController {
         section.boundarySupplementaryItems = [sectionHeader]
       }
       
-      section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 13, bottom: 20, trailing: 13)
+      section.contentInsets = .init(top: 0, leading: 13, bottom: 20, trailing: 13)
       
       return section
     }

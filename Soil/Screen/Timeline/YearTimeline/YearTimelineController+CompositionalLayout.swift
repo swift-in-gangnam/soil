@@ -15,7 +15,7 @@ extension YearTimelineController {
         heightDimension: .absolute(70+16)
       )
       let item = NSCollectionLayoutItem(layoutSize: itemSize)
-      item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0)
+      item.contentInsets = .init(top: 0, leading: 0, bottom: 16, trailing: 0)
       
       let groupSize = NSCollectionLayoutSize(
         widthDimension: .fractionalWidth(1.0),
@@ -24,7 +24,7 @@ extension YearTimelineController {
       let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
       
       let section = NSCollectionLayoutSection(group: group)
-      section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13)
+      section.contentInsets = .init(top: 0, leading: 13, bottom: 0, trailing: 13)
       
       return section
     }
