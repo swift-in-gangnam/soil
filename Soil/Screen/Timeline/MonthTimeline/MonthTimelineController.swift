@@ -27,9 +27,9 @@ final class MonthTimelineController: UIViewController {
       forCellWithReuseIdentifier: String(describing: TimelineLoaderCollectionViewCell.self)
     )
     $0.register(
-      MonthTimelineSectionHeaderView.self,
+      TimelineSectionHeaderView.self,
       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-      withReuseIdentifier: String(describing: MonthTimelineSectionHeaderView.self)
+      withReuseIdentifier: String(describing: TimelineSectionHeaderView.self)
     )
     $0.delegate = self
   }
@@ -61,15 +61,15 @@ final class MonthTimelineController: UIViewController {
     dataSource = MonthTimelineSection.diffableDataSource(collectionView: collectionView)
     guard let dataSource = dataSource else { return }
 
-    dataSource.supplementaryViewProvider = { [self] collectionView, kind, indexPath in
+    dataSource.supplementaryViewProvider = { [weak self] collectionView, kind, indexPath in
       guard kind == UICollectionView.elementKindSectionHeader else { return nil }
       guard let view = collectionView.dequeueReusableSupplementaryView(
          ofKind: kind,
-         withReuseIdentifier: String(describing: MonthTimelineSectionHeaderView.self),
+         withReuseIdentifier: String(describing: TimelineSectionHeaderView.self),
          for: indexPath
-       ) as? MonthTimelineSectionHeaderView else { return nil }
+      ) as? TimelineSectionHeaderView else { return nil }
       
-      if case let .year(year) = self.sectionList[indexPath.section] {
+      if case let .year(year) = self?.sectionList[indexPath.section] {
         view.label.text = year
       }
       
@@ -77,7 +77,7 @@ final class MonthTimelineController: UIViewController {
     }
     
     var snapshot = NSDiffableDataSourceSnapshot<MonthTimelineSection, MonthTimelineItem>()
-    snapshot.appendSections([.bottomLoader])
+    snapshot.appendSections(sectionList)
     snapshot.appendItems([.bottomLoader])
 
     dataSource.apply(snapshot, animatingDifferences: true)

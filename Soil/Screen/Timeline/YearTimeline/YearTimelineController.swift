@@ -12,6 +12,8 @@ final class YearTimelineController: UIViewController {
   // MARK: - Properties
   
   private var dataSource: UICollectionViewDiffableDataSource<YearTimelineSection, YearTimelineItem>?
+  
+  private(set) var loaderMode: Bool = true
   private var itemList: [YearTimelineItem] = []
   
   private lazy var collectionView = UICollectionView(
@@ -19,6 +21,11 @@ final class YearTimelineController: UIViewController {
     collectionViewLayout: setupCompositionalLayout()
   ).then {
     $0.backgroundColor = .clear
+    $0.register(
+      TimelineSectionHeaderView.self,
+      forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+      withReuseIdentifier: String(describing: TimelineSectionHeaderView.self)
+    )
     $0.register(TimelineCell.self, forCellWithReuseIdentifier: String(describing: TimelineCell.self))
     $0.register(
       TimelineLoaderCollectionViewCell.self,
@@ -44,10 +51,8 @@ final class YearTimelineController: UIViewController {
   private func configureUI() {
     view.addSubview(collectionView)
     collectionView.snp.makeConstraints { make in
-      make.top.equalToSuperview().offset(65)
-      make.leading.equalToSuperview()
-      make.bottom.equalToSuperview()
-      make.trailing.equalToSuperview()
+      make.center.equalToSuperview()
+      make.size.equalToSuperview()
     }
   }
   
@@ -55,9 +60,21 @@ final class YearTimelineController: UIViewController {
     dataSource = YearTimelineSection.diffableDataSource(collectionView: collectionView)
     guard let dataSource = dataSource else { return }
     
+    dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
+      guard kind == UICollectionView.elementKindSectionHeader else { return nil }
+      
+      guard let view = collectionView.dequeueReusableSupplementaryView(
+         ofKind: kind,
+         withReuseIdentifier: String(describing: TimelineSectionHeaderView.self),
+         for: indexPath
+      ) as? TimelineSectionHeaderView else { return nil }
+      
+      return view
+    }
+    
     var snapshot = NSDiffableDataSourceSnapshot<YearTimelineSection, YearTimelineItem>()
-    snapshot.appendSections([.main])
-    snapshot.appendItems([.bottomLoader], toSection: .main)
+    snapshot.appendSections([.loader])
+    snapshot.appendItems([.bottomLoader])
     dataSource.apply(snapshot, animatingDifferences: true)
   }
   
@@ -87,9 +104,11 @@ final class YearTimelineController: UIViewController {
         }
       }
     
+    self.loaderMode = false
+    
     var snapshot = NSDiffableDataSourceSnapshot<YearTimelineSection, YearTimelineItem>()
     snapshot.appendSections([.main])
-    snapshot.appendItems(itemList, toSection: .main)
+    snapshot.appendItems(itemList)
     dataSource.apply(snapshot, animatingDifferences: true)
   }
 }

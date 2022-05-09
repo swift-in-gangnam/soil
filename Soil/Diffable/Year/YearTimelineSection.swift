@@ -8,6 +8,11 @@
 import UIKit
 
 enum YearTimelineSection: Hashable {
+  
+  /// SectionHeader X, LoaderCell
+  case loader
+  
+  /// SectionHeader O, TimelineCell
   case main
 }
 

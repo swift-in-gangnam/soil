@@ -9,7 +9,7 @@ import UIKit
 
 extension MonthTimelineController {
   func setupCompositionalLayout() -> UICollectionViewLayout {
-    let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
+    let layout = UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
       let itemSize = NSCollectionLayoutSize(
         widthDimension: .fractionalWidth(1.0),
         heightDimension: .absolute(70+16)
@@ -34,7 +34,7 @@ extension MonthTimelineController {
           elementKind: UICollectionView.elementKindSectionHeader, alignment: .top
       )
       
-      if case .year = self.sectionList[sectionIndex] {
+      if case .year = self?.sectionList[sectionIndex] {
         section.boundarySupplementaryItems = [sectionHeader]
       }
       

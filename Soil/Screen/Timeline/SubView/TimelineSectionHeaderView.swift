@@ -1,5 +1,5 @@
 //
-//  MonthTimelineSectionHeaderView.swift
+//  TimelineSectionHeaderView.swift
 //  Soil
 //
 //  Created by dykoon on 2022/05/03.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MonthTimelineSectionHeaderView: UICollectionReusableView {
+final class TimelineSectionHeaderView: UICollectionReusableView {
   
   // MARK: - Properties
   

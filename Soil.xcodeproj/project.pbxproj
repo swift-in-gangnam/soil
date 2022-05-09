@@ -75,7 +75,7 @@
 		D58A56F5281FE24500E7B740 /* MonthTimelineSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A56F4281FE24500E7B740 /* MonthTimelineSection.swift */; };
 		D58A56F72820D0EC00E7B740 /* TimelineLoaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A56F62820D0EC00E7B740 /* TimelineLoaderCollectionViewCell.swift */; };
 		D58A56F92820D53300E7B740 /* MonthTimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A56F82820D53300E7B740 /* MonthTimelineItem.swift */; };
-		D58A56FB2820EE1100E7B740 /* MonthTimelineSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A56FA2820EE1100E7B740 /* MonthTimelineSectionHeaderView.swift */; };
+		D58A56FB2820EE1100E7B740 /* TimelineSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A56FA2820EE1100E7B740 /* TimelineSectionHeaderView.swift */; };
 		D58C100F28221888008FB61E /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D58C100E28221888008FB61E /* Then */; };
 		D58C101128221B33008FB61E /* YearTimelineSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C101028221B33008FB61E /* YearTimelineSection.swift */; };
 		D58C101328221B6D008FB61E /* YearTimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C101228221B6D008FB61E /* YearTimelineItem.swift */; };
@@ -184,7 +184,7 @@
 		D58A56F4281FE24500E7B740 /* MonthTimelineSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTimelineSection.swift; sourceTree = "<group>"; };
 		D58A56F62820D0EC00E7B740 /* TimelineLoaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineLoaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		D58A56F82820D53300E7B740 /* MonthTimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTimelineItem.swift; sourceTree = "<group>"; };
-		D58A56FA2820EE1100E7B740 /* MonthTimelineSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTimelineSectionHeaderView.swift; sourceTree = "<group>"; };
+		D58A56FA2820EE1100E7B740 /* TimelineSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineSectionHeaderView.swift; sourceTree = "<group>"; };
 		D58C101028221B33008FB61E /* YearTimelineSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearTimelineSection.swift; sourceTree = "<group>"; };
 		D58C101228221B6D008FB61E /* YearTimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearTimelineItem.swift; sourceTree = "<group>"; };
 		D5C0A910273A4B91005F9E9B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -450,6 +450,7 @@
 		D53128642822E72B00E05FC6 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				D53128792822ED7A00E05FC6 /* SubView */,
 				D53128782822ED0000E05FC6 /* Cell */,
 				D53128682822E72B00E05FC6 /* DayTimeline */,
 				D53128652822E72B00E05FC6 /* MonthTimeline */,
@@ -461,7 +462,6 @@
 		D53128652822E72B00E05FC6 /* MonthTimeline */ = {
 			isa = PBXGroup;
 			children = (
-				D53128792822ED7A00E05FC6 /* SubView */,
 				D53128672822E72B00E05FC6 /* MonthTimelineController.swift */,
 				D53128662822E72B00E05FC6 /* MonthTimelineController+CompositionalLayout.swift */,
 			);
@@ -505,7 +505,7 @@
 		D53128792822ED7A00E05FC6 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
-				D58A56FA2820EE1100E7B740 /* MonthTimelineSectionHeaderView.swift */,
+				D58A56FA2820EE1100E7B740 /* TimelineSectionHeaderView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -820,7 +820,7 @@
 				D5D12244273D1E230022290E /* ProfileController.swift in Sources */,
 				D5EF98E1279FE220004E6E55 /* SearchRouter.swift in Sources */,
 				D58C101128221B33008FB61E /* YearTimelineSection.swift in Sources */,
-				D58A56FB2820EE1100E7B740 /* MonthTimelineSectionHeaderView.swift in Sources */,
+				D58A56FB2820EE1100E7B740 /* TimelineSectionHeaderView.swift in Sources */,
 				3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */,
 				D569A38E2796A27800B7BA4A /* BaseInterceptor.swift in Sources */,
 				FA12E8052744CFB000EB8834 /* PasswordInputController.swift in Sources */,
