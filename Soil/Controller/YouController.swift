@@ -137,10 +137,10 @@ extension YouController: PagingViewControllerDataSource {
       let dayVC = DayController()
       return dayVC
     } else if index == 2 {
-      let monthVC = MonthController()
+      let monthVC = MonthTimelineController()
       return monthVC
     } else {
-      let yearVC = YearController()
+      let yearVC = YearTimelineController()
       return yearVC
     }
   }
