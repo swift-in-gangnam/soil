@@ -114,9 +114,11 @@
 		FA3AC8392781DA3F00B8BDFF /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */; };
 		FA3D3E0D2744D51700A86040 /* LoginHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */; };
 		FA3D3E142744EB0E00A86040 /* SignUpCompletedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */; };
+		FA43A16D282170EC00569D01 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43A16C282170EC00569D01 /* Search.swift */; };
 		FA43FC572751158000A020D6 /* 20425-emailtitle.json in Resources */ = {isa = PBXBuildFile; fileRef = FA43FC552751158000A020D6 /* 20425-emailtitle.json */; };
 		FA43FC592751165700A020D6 /* 70170-success-check.json in Resources */ = {isa = PBXBuildFile; fileRef = FA43FC582751165700A020D6 /* 70170-success-check.json */; };
 		FA635F222796EDEE002D63C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA635F212796EDEE002D63C6 /* GoogleService-Info.plist */; };
+		FAF00A9B2806D36700E965B2 /* SearchRecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF00A9A2806D36700E965B2 /* SearchRecentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,10 +220,12 @@
 		FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
 		FA3D3E0C2744D51700A86040 /* LoginHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHomeController.swift; sourceTree = "<group>"; };
 		FA3D3E132744EB0E00A86040 /* SignUpCompletedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletedController.swift; sourceTree = "<group>"; };
+		FA43A16C282170EC00569D01 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		FA43FC552751158000A020D6 /* 20425-emailtitle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "20425-emailtitle.json"; sourceTree = "<group>"; };
 		FA43FC582751165700A020D6 /* 70170-success-check.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "70170-success-check.json"; sourceTree = "<group>"; };
 		FA635F212796EDEE002D63C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA65791727EB5169006B5D6D /* Soil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Soil.entitlements; sourceTree = "<group>"; };
+		FAF00A9A2806D36700E965B2 /* SearchRecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +274,7 @@
 				D5EF98E627A0C442004E6E55 /* UserCellModel.swift */,
 				FA3AC8382781DA3F00B8BDFF /* AuthUser.swift */,
 				D58A56F0281FD58C00E7B740 /* MonthYear.swift */,
+				FA43A16C282170EC00569D01 /* Search.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				3CC1B09B2742BB6600A715C0 /* HorizontalSeperator.swift */,
 				3CC1B0A027439C1D00A715C0 /* UploadPostInputAccessoryView.swift */,
 				D5EF98DA279F8F23004E6E55 /* UserCell.swift */,
+				FAF00A9A2806D36700E965B2 /* SearchRecentTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -824,6 +830,7 @@
 				3CC1B0A127439C1D00A715C0 /* UploadPostInputAccessoryView.swift in Sources */,
 				D569A38E2796A27800B7BA4A /* BaseInterceptor.swift in Sources */,
 				FA12E8052744CFB000EB8834 /* PasswordInputController.swift in Sources */,
+				FAF00A9B2806D36700E965B2 /* SearchRecentTableViewCell.swift in Sources */,
 				3CC1B09C2742BB6600A715C0 /* HorizontalSeperator.swift in Sources */,
 				D58A56EF281FD3DD00E7B740 /* TimelineCell.swift in Sources */,
 				D57BEC0B274CEB8E00E65966 /* UITextFieldExtension.swift in Sources */,
@@ -831,6 +838,7 @@
 				3CEC29E927CB803400294531 /* PostRouter.swift in Sources */,
 				D569A3902796A95300B7BA4A /* MyLogger.swift in Sources */,
 				FA12E8022744CFB000EB8834 /* ProfileInputController.swift in Sources */,
+				FA43A16D282170EC00569D01 /* Search.swift in Sources */,
 				D57E8EB62740182E0099AA63 /* UserStatController.swift in Sources */,
 				D58A56F5281FE24500E7B740 /* MonthTimelineSection.swift in Sources */,
 				D5EF98E3279FE3DF004E6E55 /* SearchRequest.swift in Sources */,
