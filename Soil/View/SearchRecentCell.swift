@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchRecentTableViewCell: UITableViewCell {
+class SearchRecentCell: UITableViewCell {
   
   // MARK: - Properties
   
