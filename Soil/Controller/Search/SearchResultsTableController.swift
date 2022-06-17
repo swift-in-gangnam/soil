@@ -7,9 +7,6 @@
 
 import UIKit
 
-private let userCellIdentifier = "UserCell"
-private let tagCellIdentifier = "TagCell"
-
 protocol SearchResultsTableControllerDelegate: AnyObject {
   func didTapUsercell(uid: String)
 }
@@ -48,6 +45,9 @@ class SearchResultsTableController: UIViewController {
   }
   private var searchSegmentedControl = UISegmentedControl()
   weak var delegate: SearchResultsTableControllerDelegate?
+  
+  private let userCellIdentifier = "UserCell"
+  private let tagCellIdentifier = "TagCell"
   
   private lazy var userDataSource = setupUserDataSource()
   private var userList = [UserCellModel]()
@@ -148,7 +148,7 @@ class SearchResultsTableController: UIViewController {
       tableView: userTableView,
       cellProvider: { tableView, indexPath, userCell in
         guard let cell = tableView.dequeueReusableCell(
-          withIdentifier: userCellIdentifier,
+          withIdentifier: self.userCellIdentifier,
           for: indexPath
         ) as? UserCell else { return UITableViewCell() }
 
@@ -166,7 +166,7 @@ class SearchResultsTableController: UIViewController {
       tableView: tagTableView,
       cellProvider: { tableView, indexPath, _ in
         guard let cell = tableView.dequeueReusableCell(
-          withIdentifier: tagCellIdentifier,
+          withIdentifier: self.tagCellIdentifier,
           for: indexPath
         ) as? TagCell else { return UITableViewCell() }
 

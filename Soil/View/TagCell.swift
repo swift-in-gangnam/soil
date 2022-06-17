@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import MapKit
 
 class TagCell: UITableViewCell {
   
