@@ -19,7 +19,7 @@ class SearchController: UIViewController {
   private let tableView = UITableView().then {
     $0.backgroundColor = .clear
     $0.rowHeight = 50
-    $0.register(SearchRecentTableViewCell.self, forCellReuseIdentifier: SearchRecentTableViewCell.identifier)
+    $0.register(SearchRecentCell.self, forCellReuseIdentifier: SearchRecentCell.identifier)
   }
   
   private lazy var dataSource = setupDataSource()
@@ -81,9 +81,9 @@ class SearchController: UIViewController {
        tableView: tableView,
        cellProvider: { tableView, indexPath, model -> UITableViewCell? in
          guard let cell = tableView.dequeueReusableCell(
-           withIdentifier: SearchRecentTableViewCell.identifier,
+           withIdentifier: SearchRecentCell.identifier,
            for: indexPath
-         ) as? SearchRecentTableViewCell else { return UITableViewCell() }
+         ) as? SearchRecentCell else { return UITableViewCell() }
          
          // x버튼 클릭 시 cell 삭제
          cell.xButton.addTarget(
