@@ -7,16 +7,16 @@
 
 import UIKit
 
-import Firebase
+import KeychainAccess
 import Kingfisher
 import SnapKit
 import Then
-import KeychainAccess
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
   
   // MARK: - Properties
   
+  private let notificationService: NotificationService
   private let keychain = Keychain(service: "com.chuncheonian.Soil")
   
   private let uploadController = UploadPostController().then {
@@ -26,9 +26,19 @@ class TabBarController: UITabBarController {
   
   // MARK: - Lifecycle
   
+  init(notificationService: NotificationService) {
+    self.notificationService = notificationService
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     configureViewControllers()
+    notificationService.requestNotificationAuthorization()
   }
   
   // MARK: - Helpers

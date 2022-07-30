@@ -23,6 +23,7 @@ struct PostUserRequest: Encodable {
   let nickname: String
   let name: String
   let file: Data?
+  let fcmToken: String
 }
 
 struct UserStatsRequest: Encodable {

@@ -8,6 +8,7 @@
 import UIKit
 import Lottie
 import Firebase
+import FirebaseMessaging
 import Alamofire
 import KeychainAccess
 
@@ -76,24 +77,31 @@ class SignUpCompletedController: UIViewController {
         
         // API
         guard let email = AuthUser.shared.email,
-        let nickname = AuthUser.shared.nickname,
-        let name = AuthUser.shared.name else {
-          return
-        }
+              let nickname = AuthUser.shared.nickname,
+              let name = AuthUser.shared.name,
+              let fcmToken = Messaging.messaging().fcmToken
+        else { return }
+        
         let imageData = AuthUser.shared.profileImage?.jpegData(compressionQuality: 0.75)
         
-        let request = PostUserRequest(email: email, nickname: nickname, name: name, file: imageData)
+        let request = PostUserRequest(
+          email: email,
+          nickname: nickname,
+          name: name,
+          file: imageData,
+          fcmToken: fcmToken
+        )
         print(request)
         
         UserService.postUser(request: request, completion: { response in
           debugPrint(response)
           switch response.result {
           case .success:
-            print("signIn success")
+            print("signUp success")
             UserDefaults.standard.set(true, forKey: "isSignIn")
             NotificationCenter.default.post(name: .loginStateDidChange, object: nil)
           case .failure(let error):
-            print("DEBUG: Failed to signIn with error \(error.localizedDescription)")
+            print("DEBUG: Failed to signUp with error \(error.localizedDescription)")
           }
         })
       })
