@@ -21,7 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     configureIQKeyboardManager()
   }
   
-  func scene(_ scene: UIScene, continue userActivity: NSUserActivity) { // 동적 링크 클릭 시
+  /// 동적 링크 클릭 시
+  func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
     NotificationCenter.default.post(name: .emailAuthStateDidChange, object: nil)
   }
   

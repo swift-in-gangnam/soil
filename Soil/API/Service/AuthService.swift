@@ -10,7 +10,11 @@ import Alamofire
 import Firebase
 
 struct AuthService {
-  static func firebaseLogin(withEmail email: String, password: String, completion: AuthDataResultCallback?) {
+  static func firebaseLogin(
+    withEmail email: String,
+    password: String,
+    completion: @escaping(AuthDataResult?, Error?) -> Void
+  ) {
     Auth.auth().signIn(withEmail: email, password: password, completion: completion)
   }
 
@@ -30,7 +34,7 @@ struct AuthService {
   static func logout(
     completion: @escaping (DataResponse<Any, AFError>) -> Void
   ) {
-  AFManager
+    AFManager
       .shared
       .session
       .request(AuthRouter.logout)
@@ -43,7 +47,7 @@ struct AuthService {
     email: String,
     completion: @escaping (DataResponse<Any, AFError>) -> Void
   ) {
-  AFManager
+    AFManager
       .shared
       .session
       .request(AuthRouter.dupEmail(email))
@@ -56,7 +60,7 @@ struct AuthService {
     nickname: String,
     completion: @escaping (DataResponse<Any, AFError>) -> Void
   ) {
-  AFManager
+    AFManager
       .shared
       .session
       .request(AuthRouter.dupNickName(nickname))

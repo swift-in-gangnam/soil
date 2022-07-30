@@ -33,7 +33,6 @@ final class AppController {
   // MARK: - Lifecycle
   
   private init() {
-    FirebaseApp.configure()
     registerAuthStateDidChangeEvent()
   }
   
@@ -69,7 +68,7 @@ final class AppController {
   }
   
   private func setHome() {
-    rootViewController = TabBarController()
+    rootViewController = TabBarController(notificationService: NotificationService())
   }
   
   private func routeToLogin() {
