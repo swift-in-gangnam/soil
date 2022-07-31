@@ -15,14 +15,15 @@ final class NotificationService: NSObject {
   }
   
   func requestNotificationAuthorization() {
-
+    let notificationCenter = UNUserNotificationCenter.current()
     let authOption: UNAuthorizationOptions = [.alert, .badge, .sound]
     
-    UNUserNotificationCenter.current().requestAuthorization(options: authOption) { _, error in
-      if let error = error {
-        print(error.localizedDescription)
-      } else {
+    Task {
+      do {
+        try await notificationCenter.requestAuthorization(options: authOption)
         print("DEBUG: Notifications are granted")
+      } catch {
+        print(error.localizedDescription)
       }
     }
   }
