@@ -20,7 +20,7 @@ extension PostRouter: APIConfiguration {
   var path: String {
     switch self {
     case .uploadPost:
-      return "post"
+      return "posts"
     }
   }
   

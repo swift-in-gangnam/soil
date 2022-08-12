@@ -36,15 +36,15 @@ extension UserRouter: APIConfiguration {
   var path: String {
     switch self {
     case .fetchUser(let request):
-      return "user/\(request.uid)"
+      return "users/\(request.uid)"
     case .updateUser:
-      return "user"
+      return "users"
     case .postUser:
-      return "user"
+      return "users"
     case .fetchFollowingsList(let request):
-      return "user/\(request.uid)/following"
+      return "users/\(request.uid)/following"
     case .fetchFollowerList(let request):
-      return "user/\(request.uid)/follower"
+      return "users/\(request.uid)/follower"
     }
   }
   
@@ -96,6 +96,7 @@ extension UserRouter: APIConfiguration {
       multipartFormData.append(request.email.data(using: .utf8)!, withName: "email")
       multipartFormData.append(request.nickname.data(using: .utf8)!, withName: "nickname")
       multipartFormData.append(request.name.data(using: .utf8)!, withName: "name")
+      multipartFormData.append(request.fcmToken.data(using: .utf8)!, withName: "fcmToken")
       
       if let file = request.file {
         multipartFormData.append(file, withName: "file", fileName: "\(file).jpeg", mimeType: "image/jpeg")
