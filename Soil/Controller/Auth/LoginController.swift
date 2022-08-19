@@ -6,21 +6,26 @@
 //
 
 import UIKit
-import Firebase
+
 import Alamofire
+import Firebase
+import FirebaseMessaging
 import KeychainAccess
 
-class LoginController: UIViewController {
+final class LoginController: UIViewController {
   
-  // MARK: - Properties
+  // MARK: - outlet
+  
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: CustomPasswordTextField!
   @IBOutlet weak var stackView: UIStackView!
   @IBOutlet weak var loginCheckLabel: UILabel!
   
+  // MARK: - property
+  
   private let keychain = Keychain(service: "com.chuncheonian.Soil")
   
-  // MARK: - Lifecycle
+  // MARK: - life cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,15 +36,16 @@ class LoginController: UIViewController {
     stackView.setCustomSpacing(50, after: emailTextField)
   }
 
-  // MARK: - Actions
+  // MARK: - action
   
   @IBAction func tapView(_ sender: UITapGestureRecognizer) {
     self.view.endEditing(true)
   }
   
   @IBAction func didTapLogin(_ sender: Any) {
-    guard let email = emailTextField.text else { return }
-    guard let password = passwordTextField.text else { return }
+    guard let email = emailTextField.text,
+          let password = passwordTextField.text
+    else { return }
     
     if email.isEmpty || password.isEmpty {
       loginCheckLabel.text = "아이디 또는 비밀번호를 입력해주세요."
@@ -72,7 +78,12 @@ class LoginController: UIViewController {
           fatalError("DEBUG: Failed to add keychain with error \(error.localizedDescription)")
         }
         
-        let request = LoginRequest(fcmToken: "xxx")
+        guard let fcmtoken = Messaging.messaging().fcmToken else {
+          print("DEBUG: Failed to fetch fcm token")
+          return
+        }
+        
+        let request = LoginRequest(fcmToken: fcmtoken)
 
         AuthService.login(request: request, completion: { response in
           switch response.result {
