@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18283B74BE9164E71388BBE3 /* Pods_Soil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB83404A77136625EC07DAD /* Pods_Soil.framework */; };
 		3C10AFD32732981600B1E973 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C10AFD22732981600B1E973 /* FeedController.swift */; };
 		3C10AFD52732981F00B1E973 /* YouController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C10AFD42732981F00B1E973 /* YouController.swift */; };
 		3C10AFD82732A05A00B1E973 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C10AFD72732A05A00B1E973 /* UIColorExtension.swift */; };
@@ -125,7 +124,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2EB83404A77136625EC07DAD /* Pods_Soil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C10AFD22732981600B1E973 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		3C10AFD42732981F00B1E973 /* YouController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouController.swift; sourceTree = "<group>"; };
 		3C10AFD72732A05A00B1E973 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 		3CEC29E427CB6ACA00294531 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		3CEC29E627CB71C000294531 /* PostUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUploadRequest.swift; sourceTree = "<group>"; };
 		3CEC29E827CB803400294531 /* PostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRouter.swift; sourceTree = "<group>"; };
-		54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.debug.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.debug.xcconfig"; sourceTree = "<group>"; };
 		D511D34B2847BA610087E2E9 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		D53128662822E72B00E05FC6 /* MonthTimelineController+CompositionalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MonthTimelineController+CompositionalLayout.swift"; sourceTree = "<group>"; };
 		D53128672822E72B00E05FC6 /* MonthTimelineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTimelineController.swift; sourceTree = "<group>"; };
@@ -207,7 +204,6 @@
 		D5EF98E2279FE3DF004E6E55 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		D5EF98E427A0C35C004E6E55 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		D5EF98E627A0C442004E6E55 /* UserCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellModel.swift; sourceTree = "<group>"; };
-		F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soil.release.xcconfig"; path = "Target Support Files/Pods-Soil/Pods-Soil.release.xcconfig"; sourceTree = "<group>"; };
 		FA12E7EF2744CC7D00EB8834 /* CustomPasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPasswordTextField.swift; sourceTree = "<group>"; };
 		FA12E7F12744CC7D00EB8834 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		FA12E7F82744CFB000EB8834 /* EmailInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailInputViewController.swift; sourceTree = "<group>"; };
@@ -248,7 +244,6 @@
 				D58C100F28221888008FB61E /* Then in Frameworks */,
 				3C58C83B27342D23003A1F9D /* Parchment in Frameworks */,
 				3C58C83E27342D30003A1F9D /* SnapKit in Frameworks */,
-				18283B74BE9164E71388BBE3 /* Pods_Soil.framework in Frameworks */,
 				D5924C01284784C60098A5AE /* FirebaseAuth in Frameworks */,
 				D5924C05284784C60098A5AE /* FirebaseMessaging in Frameworks */,
 				3C58C83227342CEE003A1F9D /* Lottie in Frameworks */,
@@ -374,8 +369,6 @@
 				3C953CF22732C04D00B12039 /* .swiftlint.yml */,
 				3C45E0C227313ADA002E3C8D /* Soil */,
 				3C45E0C127313ADA002E3C8D /* Products */,
-				F1330D15E367A70B4DD9DBCF /* Pods */,
-				5BE05618A4959280097D7EC3 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -451,14 +444,6 @@
 				3CA91E6D2733CF6400390A89 /* AuthButton.swift */,
 			);
 			path = Authentication;
-			sourceTree = "<group>";
-		};
-		5BE05618A4959280097D7EC3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2EB83404A77136625EC07DAD /* Pods_Soil.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D511D3482847B6680087E2E9 /* Service */ = {
@@ -626,15 +611,6 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		F1330D15E367A70B4DD9DBCF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */,
-				F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		FA12E7EE2744CBCE00EB8834 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -676,7 +652,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C45E0D427313ADB002E3C8D /* Build configuration list for PBXNativeTarget "Soil" */;
 			buildPhases = (
-				1EEAD6A7D79419E5C5E5B032 /* [CP] Check Pods Manifest.lock */,
 				3C576CBA2732B2F7006FB222 /* SwiftLint Script */,
 				3C45E0BC27313AD9002E3C8D /* Sources */,
 				3C45E0BD27313AD9002E3C8D /* Frameworks */,
@@ -790,28 +765,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1EEAD6A7D79419E5C5E5B032 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Soil-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3C576CBA2732B2F7006FB222 /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -828,7 +781,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+			shellScript = "# Apple Silicon인 경우 PATH 변경\nif test -d \"/opt/homebrew/bin/\"; then\n    PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n    if [ \"${CONFIGURATION}\" = \"DEV\" ]; then\n        swiftlint autocorrect\n        echo \"Swift Lint run\"\n    fi\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1050,7 +1003,6 @@
 		};
 		3C45E0D527313ADB002E3C8D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54924AC0B01E1345A84BEE6B /* Pods-Soil.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1087,7 +1039,6 @@
 		};
 		3C45E0D627313ADB002E3C8D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8F3D08D027B19529DA928E6 /* Pods-Soil.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
