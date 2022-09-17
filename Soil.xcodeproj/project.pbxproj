@@ -35,7 +35,6 @@
 		3C58C83227342CEE003A1F9D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3C58C83127342CEE003A1F9D /* Lottie */; };
 		3C58C83527342D04003A1F9D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3C58C83427342D04003A1F9D /* Alamofire */; };
 		3C58C83827342D11003A1F9D /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3C58C83727342D11003A1F9D /* IQKeyboardManagerSwift */; };
-		3C58C83B27342D23003A1F9D /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = 3C58C83A27342D23003A1F9D /* Parchment */; };
 		3C58C83E27342D30003A1F9D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3C58C83D27342D30003A1F9D /* SnapKit */; };
 		3C953CF32732C04D00B12039 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3C953CF22732C04D00B12039 /* .swiftlint.yml */; };
 		3C968084273271540020A72F /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C968083273271540020A72F /* Montserrat-Medium.ttf */; };
@@ -49,6 +48,8 @@
 		3CEC29E527CB6ACA00294531 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEC29E427CB6ACA00294531 /* PostService.swift */; };
 		3CEC29E727CB71C000294531 /* PostUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEC29E627CB71C000294531 /* PostUploadRequest.swift */; };
 		3CEC29E927CB803400294531 /* PostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEC29E827CB803400294531 /* PostRouter.swift */; };
+		76E48F5128D57D7F002C0010 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E48F5028D57D7F002C0010 /* AlertBuilder.swift */; };
+		76E48F5428D5A2ED002C0010 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = 76E48F5328D5A2ED002C0010 /* Parchment */; };
 		D511D34C2847BA610087E2E9 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D511D34B2847BA610087E2E9 /* NotificationService.swift */; };
 		D531286D2822E72B00E05FC6 /* MonthTimelineController+CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53128662822E72B00E05FC6 /* MonthTimelineController+CompositionalLayout.swift */; };
 		D531286E2822E72B00E05FC6 /* MonthTimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53128672822E72B00E05FC6 /* MonthTimelineController.swift */; };
@@ -162,6 +163,7 @@
 		3CEC29E427CB6ACA00294531 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		3CEC29E627CB71C000294531 /* PostUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUploadRequest.swift; sourceTree = "<group>"; };
 		3CEC29E827CB803400294531 /* PostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRouter.swift; sourceTree = "<group>"; };
+		76E48F5028D57D7F002C0010 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		D511D34B2847BA610087E2E9 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		D53128662822E72B00E05FC6 /* MonthTimelineController+CompositionalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MonthTimelineController+CompositionalLayout.swift"; sourceTree = "<group>"; };
 		D53128672822E72B00E05FC6 /* MonthTimelineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTimelineController.swift; sourceTree = "<group>"; };
@@ -242,8 +244,8 @@
 				D5924C03284784C60098A5AE /* FirebaseDynamicLinks in Frameworks */,
 				D5D44EC4277C81CF00C48D8E /* KeychainAccess in Frameworks */,
 				D58C100F28221888008FB61E /* Then in Frameworks */,
-				3C58C83B27342D23003A1F9D /* Parchment in Frameworks */,
 				3C58C83E27342D30003A1F9D /* SnapKit in Frameworks */,
+				76E48F5428D5A2ED002C0010 /* Parchment in Frameworks */,
 				D5924C01284784C60098A5AE /* FirebaseAuth in Frameworks */,
 				D5924C05284784C60098A5AE /* FirebaseMessaging in Frameworks */,
 				3C58C83227342CEE003A1F9D /* Lottie in Frameworks */,
@@ -307,6 +309,7 @@
 		3C10AFD62732A01700B1E973 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				76E48F5028D57D7F002C0010 /* AlertBuilder.swift */,
 				3C10AFD92732A06100B1E973 /* Extensions */,
 			);
 			path = Utils;
@@ -666,7 +669,6 @@
 				3C58C83127342CEE003A1F9D /* Lottie */,
 				3C58C83427342D04003A1F9D /* Alamofire */,
 				3C58C83727342D11003A1F9D /* IQKeyboardManagerSwift */,
-				3C58C83A27342D23003A1F9D /* Parchment */,
 				3C58C83D27342D30003A1F9D /* SnapKit */,
 				D5C0A907273A4235005F9E9B /* Kingfisher */,
 				3CC1B09E27436B8200A715C0 /* Tags */,
@@ -677,6 +679,7 @@
 				D5924C00284784C60098A5AE /* FirebaseAuth */,
 				D5924C02284784C60098A5AE /* FirebaseDynamicLinks */,
 				D5924C04284784C60098A5AE /* FirebaseMessaging */,
+				76E48F5328D5A2ED002C0010 /* Parchment */,
 			);
 			productName = Soil;
 			productReference = 3C45E0C027313ADA002E3C8D /* Soil.app */;
@@ -710,7 +713,6 @@
 				3C58C83027342CEE003A1F9D /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				3C58C83327342D03003A1F9D /* XCRemoteSwiftPackageReference "Alamofire" */,
 				3C58C83627342D11003A1F9D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				3C58C83927342D23003A1F9D /* XCRemoteSwiftPackageReference "Parchment" */,
 				3C58C83C27342D30003A1F9D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				D5C0A906273A4235005F9E9B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				3CC1B09D27436B8100A715C0 /* XCRemoteSwiftPackageReference "Tags" */,
@@ -718,6 +720,7 @@
 				D58C100D28221888008FB61E /* XCRemoteSwiftPackageReference "Then" */,
 				D53128722822E91700E05FC6 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				D5924BFD284784C60098A5AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				76E48F5228D5A2ED002C0010 /* XCRemoteSwiftPackageReference "Parchment" */,
 			);
 			productRefGroup = 3C45E0C127313ADA002E3C8D /* Products */;
 			projectDirPath = "";
@@ -859,6 +862,7 @@
 				D5C0A917273A5032005F9E9B /* UserService.swift in Sources */,
 				FA556E4D2850745100934027 /* TagCellModel.swift in Sources */,
 				FA12E8002744CFB000EB8834 /* EmailInputViewController.swift in Sources */,
+				76E48F5128D57D7F002C0010 /* AlertBuilder.swift in Sources */,
 				3C45E0C627313ADA002E3C8D /* SceneDelegate.swift in Sources */,
 				FA33A23F27C3BD5500E29DF5 /* AuthRequest.swift in Sources */,
 				D58A56F1281FD58C00E7B740 /* MonthYear.swift in Sources */,
@@ -1030,10 +1034,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chuncheonian.Soil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZE_OBJECT_LIFETIME = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1066,10 +1073,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chuncheonian.Soil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZE_OBJECT_LIFETIME = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1121,14 +1131,6 @@
 				minimumVersion = 6.0.0;
 			};
 		};
-		3C58C83927342D23003A1F9D /* XCRemoteSwiftPackageReference "Parchment" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/rechsteiner/Parchment.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 		3C58C83C27342D30003A1F9D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1143,6 +1145,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.3.2;
+			};
+		};
+		76E48F5228D5A2ED002C0010 /* XCRemoteSwiftPackageReference "Parchment" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rechsteiner/Parchment";
+			requirement = {
+				kind = exactVersion;
+				version = 3.1.0;
 			};
 		};
 		D53128722822E91700E05FC6 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
@@ -1203,11 +1213,6 @@
 			package = 3C58C83627342D11003A1F9D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
 		};
-		3C58C83A27342D23003A1F9D /* Parchment */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3C58C83927342D23003A1F9D /* XCRemoteSwiftPackageReference "Parchment" */;
-			productName = Parchment;
-		};
 		3C58C83D27342D30003A1F9D /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3C58C83C27342D30003A1F9D /* XCRemoteSwiftPackageReference "SnapKit" */;
@@ -1217,6 +1222,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3CC1B09D27436B8100A715C0 /* XCRemoteSwiftPackageReference "Tags" */;
 			productName = Tags;
+		};
+		76E48F5328D5A2ED002C0010 /* Parchment */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76E48F5228D5A2ED002C0010 /* XCRemoteSwiftPackageReference "Parchment" */;
+			productName = Parchment;
 		};
 		D53128732822E91700E05FC6 /* ReactorKit */ = {
 			isa = XCSwiftPackageProductDependency;

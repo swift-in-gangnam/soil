@@ -315,10 +315,12 @@ extension UploadPostController {
   }
   
   private func showAlert(title: String?, message: String?) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let confirm = UIAlertAction(title: "확인", style: .default)
-    alert.addAction(confirm)
-    present(alert, animated: true)
+    AlertBuilder(viewController: self)
+      .title(title)
+      .message(message)
+      .preferredStyle(.alert)
+      .onDefaultAction(title: "확인")
+      .show()
   }
   
   // MARK: - Actions
@@ -354,19 +356,28 @@ extension UploadPostController {
   }
   
   @objc private func didTapImageView(gestureRecognizer: UITapGestureRecognizer) {
-    let alertController = UIAlertController(title: nil, message: "이미지를 삭제하시겠어요?", preferredStyle: .alert)
-    let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-    cancelAction.setValue(UIColor.black, forKey: "titleTextColor")
-    let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { [weak self] _ in
-      self?.imageView.snp.updateConstraints { make in
-        make.height.equalTo(0)
+    let cancelAction = {
+      let action = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+      action.setValue(UIColor.black, forKey: "titleTextColor")
+      return action
+    }()
+    
+    let deleteAction = {
+      let action = UIAlertAction(title: "삭제", style: .destructive) { [weak self] _ in
+        self?.imageView.snp.updateConstraints { make in
+          make.height.equalTo(0)
+        }
       }
-      self?.imageView.image = nil
-    }
-    deleteAction.setValue(UIColor.black, forKey: "titleTextColor")
-    alertController.addAction(cancelAction)
-    alertController.addAction(deleteAction)
-    present(alertController, animated: true, completion: nil)
+      action.setValue(UIColor.black, forKey: "titleTextColor")
+      return action
+    }()
+    
+    AlertBuilder(viewController: self)
+      .message("이미지를 삭제하시겠어요?")
+      .preferredStyle(.alert)
+      .onAction(cancelAction)
+      .onAction(deleteAction)
+      .show()
   }
 }
 
