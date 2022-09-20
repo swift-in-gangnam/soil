@@ -8,7 +8,6 @@
 import Foundation
 
 struct TagCellModel: Codable, Hashable {
-  private(set) var uuid = UUID()
-  let tag: String
-  let tagCount: String
+  let tagName: String
+  let tagCnt: Int
 }

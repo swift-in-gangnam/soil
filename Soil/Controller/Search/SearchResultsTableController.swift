@@ -52,8 +52,7 @@ class SearchResultsTableController: UIViewController {
   private lazy var userDataSource = setupUserDataSource()
   private var userList = [UserCellModel]()
   private lazy var tagDataSource = setupTagDataSource()
-  private var tagList: [TagCellModel] =
-      [TagCellModel(tag: "#tag1", tagCount: "10만 게시물"), TagCellModel(tag: "#tag2", tagCount: "1만 게시물")]
+  private var tagList = [TagCellModel]()
   
   // MARK: - Lifecycle
   
@@ -170,8 +169,8 @@ class SearchResultsTableController: UIViewController {
           for: indexPath
         ) as? TagCell else { return UITableViewCell() }
 
-        cell.tagLabel.text = self.tagList[indexPath.row].tag
-        cell.tagCountLabel.text = self.tagList[indexPath.row].tagCount
+        cell.tagLabel.text = self.tagList[indexPath.row].tagName
+        cell.tagCountLabel.text = String(self.tagList[indexPath.row].tagCnt)
 
         return cell
     })
@@ -200,14 +199,21 @@ extension SearchResultsTableController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
     guard let text = searchController.searchBar.text?.lowercased() else { return }
     if !text.isEmpty {
-       let request = SearchRequest(query: text, type: "user")
+       let userRequest = SearchRequest(query: text, type: "user")
        
-       SearchService.search(request: request) { response in
+       SearchService.searchUser(request: userRequest) { response in
          guard let userList = response.value?.data else { return }
          self.userList = userList
          self.applyUserSnapshot()
        }
-     }
+      let tagRequest = SearchRequest(query: text, type: "tag")
+      
+      SearchService.searchTag(request: tagRequest) { response in
+        guard let tagList = response.value?.data else { return }
+        self.tagList = tagList
+        self.applyTagSnapshot()
+      }
+    }
   }
 }
 
