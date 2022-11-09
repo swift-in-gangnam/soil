@@ -10,7 +10,7 @@ import Alamofire
 
 struct SearchService {
   
-  static func search(
+  static func searchUser(
     request: SearchRequest,
     completion: @escaping (DataResponse<GeneralResponse<[UserCellModel]>, AFError>) -> Void
   ) {
@@ -21,5 +21,18 @@ struct SearchService {
       .validate(statusCode: 200..<401)
       .validate(contentType: ["application/json"])
       .responseDecodable(of: GeneralResponse<[UserCellModel]>.self, completionHandler: completion)
+  }
+  
+  static func searchTag(
+    request: SearchRequest,
+    completion: @escaping (DataResponse<GeneralResponse<[TagCellModel]>, AFError>) -> Void
+  ) {
+    AFManager
+      .shared
+      .session
+      .request(SearchRouter.search(request))
+      .validate(statusCode: 200..<401)
+      .validate(contentType: ["application/json"])
+      .responseDecodable(of: GeneralResponse<[TagCellModel]>.self, completionHandler: completion)
   }
 }
